@@ -20,7 +20,7 @@ docker run -ti --user itam --name octave-console \
 Si no lo has hecho antes, si ya la habías creado, utiliza
 
 ```{r, eval=FALSE}
-docker -ai start octave-console
+docker start -ai octave-console
 ```
 
 
@@ -44,7 +44,7 @@ docker -ai start octave-console
 - Los principales objetos en `octave` son las matrices. 
   - Los vectores simplemente son una subclase de las matrices.
 
-# Vectores
+## Vectores
 
 Los vectores-fila:
 
@@ -253,3 +253,138 @@ a.^I
 - `rand(m,n)` y `randn(m,n)` regresan matrices cuyos elementos son seleccionados al azar (de una densidad uniforme o normal).
 - `diag(A)` Regresa la diagonal de la matriz $A$.
 - `diag(x)` Regresa una matriz cuadrada cuya diagonal es el vector $x$.
+
+
+## Ejercicio 1
+
+Sea $\vec{a} = [0, -1, 2, 4, -2, 1, 5, 3]$ y  $\vec{b} = [5, 2, 1, 6, 3, 8, 4, 7]$. Determine que hacen las siguientes operaciones:
+
+```
+x = a'
+A = x*x'
+S = x'*x
+W = x*b
+length(x)
+length(a)
+size(A)
+size(x)
+size(a)
+size(S)
+```
+
+
+## Ejercicio 2
+
+- ¿Qué hace lo siguiente?
+
+```
+n = 101
+x = linspace(0,1,n)
+```
+
+- Determina la salida del siguiente código
+
+```
+x = 1:10
+y = 1:2:11
+z = 5:-2:-3
+```
+
+- Usando los vectores $\vec{a}$ y $\vec{b}$ ¿Cuál es la salida de lo siguiente?
+
+```
+a(2:5)
+a(b)
+```
+
+## Ejercicio 3
+
+¿Cuál es el espacio entre los puntos?
+
+```
+x = linspace(1, 1000, 5)
+y = logspace(0,3,5)
+```
+
+
+## Gráficas
+
+Queremos graficar la función $y = x^2 - \sqrt{x+5} + \sin 5x$ en el intervalo $-1 \leq x \leq 6$.
+
+La idea es crear varios puntos $(x_i, y_i)$ y luego unirlos con líneas.
+
+```
+n = 100
+x = linspace(-1, 6, n)
+y = zeros(1, n)
+for i = 1:n
+  y(i) = x(i)^2 - sqrt(x(i) + 5) + sin(5*x(i));
+end
+plot(x,y)
+```
+Esto lo mostrará en la consola...
+
+
+## Gráficas
+
+Es muy triste usar un `for` para una operación así, recordando los operadores de elemento, 
+podemos reescribirlo como sigue:  
+
+```
+n = 100;
+y = zeros(1,n);
+x = linspace(-1, 6, n);
+
+y = x.^2 - sqrt(x+5) + sin(5*x);
+
+plot(x,y)
+```
+
+Siempre que puedas usa operaciones _vectorizadas_ son más eficientes.
+
+## Gráficas
+
+¿Cómo hacerle para guardar la imagen?
+
+**NOTA**: `octave` soporta los comandos del SO directo  ( a diferencia de `ipython` que requiere `!`)
+
+1. Navega a tu carpeta de alumnos y crea una carpeta `graficas`.
+
+```
+print('grafica-test', "-dpng")  # Para guardarla como PNG
+print('grafica-test', "-deps")  # Para guardarla como EPS
+```
+
+## Ejercicio 
+
+Los 2 primeros [polinomios de Hermite](http://en.wikipedia.org/wiki/Hermite_polynomials) son
+
+$$
+H_1(x) = 1 \\
+H_2(x) = 2x
+$$
+
+Los podemos graficar usando `subplot` en un rango de $-2 \leq x \leq 3$
+
+```
+...  # Aquí falta código -> x, H1, H2, H3, H4
+subplot(2,2,1), plot(x,H1)
+subplot(2,2,2), plot(x,H2)
+... # Aquí falta más código
+```
+
+Grafica en subgráficas los primeros 4 polinomios de Hermite. ¿Cómo interpretas los argumentos de `subplot`?
+Guarda la gráfica en `graficas` con el nombre `hermite` en formato `eps` y `png`.
+
+## Ejercicio
+
+Para guardar todo en una gráfica usa el comando `hold on`
+
+```
+subplot(1,1,1)
+plot(x, H1, 'b')  # La `b` es el color negro
+hold on
+plot(x, H2, 'r')
+... # Aquí falta código
+```
+Guarda la gráfica como `hermite2` en ambos formatos.

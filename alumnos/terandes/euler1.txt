@@ -1,0 +1,13 @@
+In [5]: suma = 0 #inicializamos la suma en cero
+   ...: # uso el for con xrange porque se en que número parar y pues avanzo de 1 en 1
+   ...: # para no omitir ningun múltiplo de 3 o 5
+   ...: for i in xrange (1, 1001, 1):
+   ...:     if i%3 == 0 | i%5 == 0: # aquí se pregunta si es o no múltiplo de los
+   ...:        # números de interés
+   ...:        suma += i   #si cumple la condición se suma al total anterior, en caso
+   ...:        # contrario se deja el total anterior
+   ...:     else:
+   ...:        suma = suma
+   ...: print suma
+   ...: 
+33165

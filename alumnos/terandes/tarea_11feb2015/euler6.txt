@@ -1,0 +1,18 @@
+ Resolución del problema 6 en R
+> sum(num1[1:10])
+[1] 55
+> sum(num1^2[1:10])
+[1] NA
+> p1=num1^2
+> sum(p1[1:10])
+[1] 385
+> num1=seq(from=1, to=100, by=1)
+> num1_cuad=num1^2
+> sum(num1[1:100])^2
+[1] 25502500
+> sum(num1_cuad[1:100])
+[1] 338350
+> SumCuad100=sum(num1[1:100])^2
+> Sum100Cuad=sum(num1_cuad[1:100])
+> SumCuad100-Sum100Cuad
+[1] 25164150 

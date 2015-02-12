@@ -417,6 +417,3 @@ renderPlot({
 })
 ```
 
-## Tarea
-
-Para el 3 de febrero, haber tomado el curso de [TryR](http://tryr.codeschool.com) de CodeSchool.

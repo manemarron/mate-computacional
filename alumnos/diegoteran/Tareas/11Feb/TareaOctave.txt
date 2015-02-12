@@ -1,0 +1,25 @@
+
+x = linspace(-5, 5, 100)
+y = y = 1 ./ (1 + x.^2) .* (sin(x.^2))
+plot(x, y)
+
+
+for k = 1:6
+  x = linspace(0, 4*pi, 2^(k+1)+1);
+  subplot(2,3,k), plot(x, cos(3*x)-2*sin(x))
+  axis([0, 4*pi, -1.5, 1.5])
+end
+
+Lo que hace el código es grafica la misma función cos(3*x)-2*sin(x) en el dominio de 0 a 4pi, 6 veces 
+con vada vez más puntos(porque k va aumentando). Con subplot lo va acomodando en dos filas y 3 columnas en el lugar k
+para cad auna de las 6 gráficas. Con el axís es para ajustar la escala de los ejes como nosotros queremos.
+
+Si se hace subplot(3,2,k) va a cambiar a que sean 3 renglones y dos columnas.
+
+Si se quita el axis, el "autoscaling" de Octave se activará y lo escalara de alguna manera diferente a la que 
+nosotros le asignamos.
+
+
+
+
+

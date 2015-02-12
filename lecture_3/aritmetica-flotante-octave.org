@@ -1,0 +1,176 @@
+#+TITLE: Aritmética de punto flotante: Ejemplos
+#+AUTHOR: Adolfo De Unánue Tiscareño
+#+EMAIL: adolfo.deunanue@itam.mx
+
+Observemos el número racional $x = 1/7$, cuya representación en /decimal/ es periódica: $0.\bar{142857}$.
+La máquina no puede contener un número infinito de dígitos, veamos como lo resuelve ~GNU/Octave~:
+
+#+begin_src octave :session *octave* :results output :exports both
+x = 1/7
+x
+#+end_src
+
+Ahora esta expresión que devuelve ~octave~  se debe al formato de salida establecido con el comando `format`:
+
+#+begin_src octave :session *octave* :results output :exports both
+format long
+x = 1/7
+x
+format short e
+x
+format long e
+x
+format short g
+x
+format long g
+x
+format  # Para reiniciar el formato.
+#+end_src
+
+El /error de redondeo/ siempre aparece ya que la computadora sustituye el número real $x$ por su contraparte $almacenado(x)$,
+pero esta diferencia está controlada por el *epsilón de la máquina* $\epsilon_M$, el cuál es la distancia entre `1` y el número
+en punto flotante mayor que `1`y más cercano a éste.
+
+#+begin_src octave :session *octave* :results output :exports both
+eps
+#+end_src
+
+Los límites se obtienen como sigue:
+
+#+begin_src octave :session *octave* :results output :exports both
+realmin
+#+end_src
+
+#+begin_src octave :session *octave* :results output :exports both
+realmax
+#+end_src
+
+Los números flotantes no verifican todas las propiedades aritméticas de los reales, por ejemplo,
+se violan las propiedades /asociativa/ y /distributiva/:
+
+#+begin_src octave :session *octave* :results output :exports both
+a = 1;
+b = 1;
+while a + b != a
+   b = b/2
+end
+#+end_src
+
+Este programa si fuera en los *reales* nunca acabaría (¿Por qué?), en cambio aquí observamos que hay por lo menos un número `b` diferente de cero
+para el cual $a+b=a$.
+
+La asociatividad  se ve rota cuando ocurre un /overflow/ o un /underflow/
+
+#+begin_src octave :session *octave* :results output :exports both
+a = 1.0e+308;
+b = 1.1e+308;
+c = -1.001e+308
+#+end_src
+
+#+begin_src octave :session *octave* :results output :exports both
+a + (b + c)
+#+end_src
+
+#+begin_src octave :session *octave* :results output :exports both
+(a + b ) + c
+#+end_src
+
+Otro ejemplo es cuando sumamos dos números con signos opuestos pero valor absoluto similar,
+a esta situación se le conoce como /pérdida de cifras significativas/:
+
+#+begin_src octave :session *octave* :results output :exports both
+x = 1.e-15;
+((1+x) - 1)/x
+#+end_src
+
+¿A qué debería de dar? ¿De cuánto es el error?
+
+Un concepto de relativa utilidad es el de *funciones anónimas*:
+
+*** Ejercicio
+
+#+begin_src octave :session *octave* :results output :exports both
+f = @(x) x ./ (x.*(x-1));
+g = @(x) 1 ./ (x-1);
+#+end_src
+
+¿A qué es igual (y por qué) estas funciones cuándo las evaluamos en `0`, `eps` e `Inf`?
+
+En ~GNU/Octave~ los cálculos son realizados siguiendo el estándar de la *IEEE*, es decir utilizan doble precisión.
+Para poder ver la representación interna, le pediremos a ~octave~  que lo muestre en =hexadecimal=.
+
+#+begin_src octave :session *octave* :results output :exports both
+  format hex;
+  x = 2;
+  ans = x
+#+end_src
+
+#+RESULTS:
+:
+: ans = 4000000000000000
+
+
+
+#+begin_src octave :results file :exports results
+  figure(1, "visible", "off");
+  x = 1:0.1:10;
+  y = cos(x);
+  plot(x,y);
+  print("chart", "-dpng");
+  ans = "chart.png";
+#+end_src
+
+#+RESULTS:
+[[file:chart.png]]
+
+
+#+begin_src python :results value :exports both
+  import time
+  print("Hola, hoy es %s" % time.ctime())
+  print("Dos mas dos es")
+  return 2 + 2
+#+end_src
+
+#+RESULTS:
+: 4
+
+
+
+#+begin_src R :results both :exports both
+  ## Edit Your R Code Here.
+  x <- rnorm(100)
+  summary(x)
+#+end_src
+
+#+RESULTS:
+
+#+begin_src R  :file a.png :results graphics :exports both
+  x <- rnorm(100)
+  y <- rnorm(100)
+  plot(x, y)
+#+end_src
+
+#+RESULTS:
+[[file:a.png]]
+
+Same plot with larger dimension:
+
+#+begin_src R  :file b.png :width 800 :height 800 :results graphics :exports both
+  x <- rnorm(100)
+  y <- rnorm(100)
+  plot(x, y)
+#+end_src
+
+
+#+begin_src python :session *python* :results output :exports both
+  import time
+  print("Hola, hoy es %s" % time.ctime())
+  print("Dos mas dos es")
+  2 + 2
+#+end_src
+
+#+RESULTS:
+:
+: Hola, hoy es Mon Feb  9 01:12:45 2015
+: Dos mas dos es
+: 4

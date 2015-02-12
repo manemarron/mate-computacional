@@ -1,0 +1,19 @@
+In [6]: #problema 2. Inicializo 2 contadores uno para los elementos de la secuencia 
+   ...: #Fibonacci: suma1 y otro para el valor de la suma total de los elementos 
+   ...: #pares de la anterior: sumaT
+   ...: suma1 = 1
+   ...: i = 1
+   ...: sumaT = 0
+   ...: while i <= 4000000:  #pregunto si estoy por debajo del número hasta el cual
+   ...:     # se quiere hacer la suma
+   ...:     k = suma1 + i #elemento nuevo de la secuencia de Fibonacci
+   ...:     suma1 = i     #elemento anterior de la secuencia de Fibonacci
+   ...:     if k%2 == 0:
+   ...:        sumaT = sumaT + k
+   ...:     else:
+   ...:         sumaT = sumaT
+   ...:     i = k         # terminando la iteracion k ya es el valor antiguo de la
+   ...:     # secuencia quizas me podría ahorrar esto si pusiera i = suma1 + i
+   ...: print sumaT
+   ...: 
+4613732

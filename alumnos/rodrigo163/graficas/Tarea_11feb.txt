@@ -1,0 +1,4 @@
+Este código hace 6 gráficas de la misma función. 
+Cada gráfica tiene más puntos (más "precisión") que la anterior. 
+Si cambiamos los argumentos del subplot cambia la forma en que octave acomoda las gráficas. 
+Si quitamos la instrucción axis, octave impone los parámetros para nuestras gráficas. 
