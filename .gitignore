@@ -62,4 +62,5 @@ target/
 **/*.out
 **/.Rhistory
 **/.RData
-
+**/Thumbs.db
+**/.DS_Store

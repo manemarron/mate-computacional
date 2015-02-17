@@ -1,0 +1,10 @@
+ Por aquello de que la gráfica no es la respuesta se me olvido incluir los comandos en octave para obtenerla:
+>> n=50;
+>> x=linspace(-5,5,n);
+>> y=zeros(1,n);
+>> for i=1:n
+y(i) = (1/(1+x(i)^2))*sin(x(i)^2);
+end
+>> plot(x,y)
+
+NO PUDE LOGRAR IMPRIMIR LA ECUACION DESDE IPYTHON CONSOLE, la obtuve con latex aparte

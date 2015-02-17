@@ -9,5 +9,4 @@ def DecimalABinario(decimal):
     binario=''
     for i in xrange(0,len(b),1):
         binario=binario+str(b[i])
-    print binario
     return binario

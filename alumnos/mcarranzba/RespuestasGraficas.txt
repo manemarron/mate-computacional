@@ -1,0 +1,29 @@
+1.Explica el siguiente código
+
+for k = 1:6 
+
+#lo corre del uno al seis
+
+  x = linspace(0, 4*pi, 2^(k+1)+1);
+
+# el dominio es del 0 al 4pi
+#conforme vaya creciendo k, los puntos en que grafica son más numerosos
+# y asi la distancia entre ellos menor, se hace más precisa, ya que los imagenes
+# de los puntos indicados las une con una recta
+
+  subplot(2,3,k), plot(x, cos(3*x)-2*sin(x))
+
+#hace una división de panatalla
+#para las gráficas, 2 filas tres columnas, ordena las gráficas 
+#primero todas las columnas de cada renglón
+
+  axis([0, 4*pi, -1.5, 1.5])
+
+#limita las partes de los ejes que se muestran
+#primero el segmento de las horizontales, y después el de las verticales
+
+2.De estar dividido de dos filas y tres columnas pasa a tres filas y dos columnas
+
+3. Se ajusta al rango para el eje vertical, y para el horizontal
+continua hasta la sigiente gradación (etiqueta), una vez que términa el dominio. Queda un 
+#pequeño espacio donde no esta definida

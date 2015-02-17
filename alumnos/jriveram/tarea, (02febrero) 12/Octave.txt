@@ -1,0 +1,23 @@
+* Evalúa y grafica...
+	A continuación, el código: 
+		x = linspace(-5, 5, 1000)
+		y = 1 ./ (1 + x.**2) .* (sin(x.**2))
+		plot(x, y)	
+	(ver 1.0.png)
+
+
+* Explica el siguiente código...
+	El código imprime seis gráficas de la misma función;
+	cada gráfica es dibujada con más puntos que la gráfica
+	anterior (ver 2.0.png).
+
+	* ¿Qué pasa si cambias los argumentos de subplot a (3, 2, k)?
+		En lugar de dibujar las gráficas en dos filas, 
+		tres columnas, las dibuja en tres filas, dos columnas;
+		las gráficas se escalan para ocupar el área de impresión
+		completa (ver 2.1.png).
+
+	* ¿Qué pasa si quitas la instrucción axis?
+		la función axis modificaba los los límites de los ejes de
+		las gráficas. Sin esa instrucción ahora se aprencian mejor
+		las gráficas (ver 2.2.png).
