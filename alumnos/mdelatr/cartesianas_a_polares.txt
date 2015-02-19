@@ -1,0 +1,30 @@
+from IPython.html.widgets import interact, fixed
+from IPython.html import widgets #Aquí primero necesitamos los widgets para poder 
+#interactuar con las funciones que definamos mas adelante
+
+from math import atan, pi, sqrt  #Vamos a hacer una función, importas raíz, arcotangente y pi
+#arcocoseno
+def cartesianas(x,y): #lo que queremos es meter cartesianas que nos den polares
+    r = sqrt(x*x + y*y ) #por definición de polares sacamos estas ecuaciones
+    theta = (atan(y/x)*180)/pi
+    return r, theta
+
+r, theta =cartesianas(4,5) #Definimos r como el primer resultado que nos devuelve la función 'cartesianas' y theta al segundo
+print La coordenada r es:  , r # Para probar que funciona pedimos que nos imprima ambos resultados
+print El ángulo theta es: , theta
+
+%%file transformaciones.py #Aquí guardo mi función en mi archivo que se llama transformaciones
+from math import atan, pi, sqrt 
+#arcocoseno
+def cartesianas(x ,y):
+    r = sqrt(x*x + y*y) 
+    theta = (atan(y/x)*180)/pi
+    return r, theta
+
+! cat transformaciones.py #Para verificar que este guardado 
+
+from transformaciones import cartesianas #mando a llamar mi función desde el archivo
+
+r, theta =cartesianas(3,4) #le asigno un nombre a cada variable que me regresa mi función y la imprimo para ver si está bien
+print La coordenada r es:  , r
+print El ángulo theta es:  , theta

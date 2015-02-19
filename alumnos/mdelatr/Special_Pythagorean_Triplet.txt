@@ -1,0 +1,15 @@
+from IPython.html.widgets import interact, fixed
+from IPython.html import widgets #Aquí primero necesitamos los widgets para poder 
+#interactuar con las funciones que definamos mas adelante
+
+for a in xrange(1,500): #Lo que busco es que a vaya recorriendo diferentes números de 1 en 1, escogí hasta el 500
+    #porque de otra forma ya no sería más chico que a y b
+    for b in xrange(2,500): #b requiere ser más grande que a, por eso empieza desde dos y tampoco puede ser más
+        #grande que c y se busca que la suma sea 1000 entonces no puede ser mayor a 500
+       if a<b: #Aquí me aseguro que 'a' sea menor que 'b'
+            c=1000- a -b; #Como buscamos la 'c' que cumpla a+b+c=1000, entonces sólo la despeje
+       if a*a + b*b == c*c: #Pero con eso no basta, también se tiene que cumplir que cumplan esa ecuación
+            print a*b*c # si cumplen todos los requerimentos quiero que me enseñen el múltiplo de los tres números
+            print a,b,c #para asegurarme que si se cumplieron todas las condiciones pedí que me enseñara que números encontró
+            #me regreso como a= 200, b=375, c=425 y su multiplicación = 31875000
+

@@ -1,0 +1,86 @@
+octave:5> n=100       #Aquí definimos el número de puntos que vamos a querer en la gráfica         
+
+n =  100
+
+octave:6> x= linspace(-5,5,n); #Esto crea linearly spaced vectors, que van desde -5 a 5 (se incluyen esos extremos ) y tenemos tantos números como n
+
+octave:7> y = zeros(1, n);  #Defino a y como un arreglo con puros ceros desde 1 hasta n 
+
+octave:8>for i=1:n #Aquí busco definir cada puto de la gráfica, y para esto pido a ‘i’ que vaya de 1 a n
+
+> y(i)=(1/(1+x(i)^2))*sin(x(i)^2); #Para cada entrada ‘i' de y, le asigno un valor que depende de la entrada ‘i’ de x
+> end
+octave:10> plot(x,y) # esta función gráfica los puntos que ya obtuvimos
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                                                                                                                   |
+| 0.5 ++---------------------------+---------------------------+----------------------------+---------------------------+----------------------------+--------------------------++  |
+|     +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------++  |
+|     |                                                                                                                                                                         ||  |
+|     |                                                                                                                                                                         ||  |
+|     |                                                                                                                                                                         ||  |
+|     |                                                                     +-                            -+                                                                    ||  |
+|     |                                                                    +  +                          +  +                                                                   ||  |
+| 0.4 |+                                                                   |   |                         |   |                                                                  |+  |
+|     |                                                                   +    +                        +    +                                                                  ||  |
+|     |                                                                   |     |                      |      |                                                                 ||  |
+|     |                                                                  |      |                      |      |                                                                 ||  |
+|     |                                                                  |       +                    +        |                                                                ||  |
+|     |                                                                 +        |                    |        +                                                                ||  |
+|     |                                                                 |         |                   |        |                                                                ||  |
+| 0.3 |+                                                                |         |                  |          |                                                               |+  |
+|     |                                                                |          +                  +          |                                                               ||  |
+|     |                                                                +           |                 |          +                                                               ||  |
+|     |                                                                |           |                |           |                                                               ||  |
+|     |                                                               |             |               |            |                                                              ||  |
+|     |                                                               |             +              +             |                                                              ||  |
+|     |                                                               |             |              |             |                                                              ||  |
+| 0.2 |+                                                             |               |             |              |                                                             |+  |
+|     |                                                              +               |            |               +                                                             ||  |
+|     |                                                              |               +            +               |                                                             ||  |
+|     |                                                              |               |            |               |                                                             ||  |
+|     |                                                              |                |           |                |                                                            ||  |
+|     |                                                             |                 |          |                 |                                                            ||  |
+|     |                                            -+               |                 +          +                 |               +-                                           ||  |
+| 0.1 |+                                          +  +              +                  |         |                 +              +  +                                          |+  |
+|     |                                           |   |             |                  |        |                  |              |  |                                          ||  |
+|     |                                          |    |            |                    |       |                   |            |    |                                         ||  |
+|     |                               ++         +     |           |                    +      +                    |            |    +         ++                              ||  |
+|     |                    +-        + |         |     +           |                     |     |                    |           +     |         | +        -+                   ||  |
+|     |                   +  +      +   |        |     |           |                     +    +                     |           |      |       |   +      +  +                  ||  |
+|     |                   |  |      |   +       |      |          |                       +  +                       |          |      |       +   |      |   |                 ||  |
+|   0 |+            +    +    |    |     |      +       |         +                        ++                        +         |       +      |     |    |    +    +            |+  |
+|     |              |  +     +    +     |      |       |         |                                                  |         |        |     |     +    +     +  |             ||  |
+|     |              | +       |  +       +    |        +         |                                                  |         +        |    +       +  |       + |             ||  |
+|     |               +        | +        |    |         |       |                                                    |        |         |   |        + |        +              ||  |
+|     |                         +          |  +          |       |                                                    |       |          +  |          +                        ||  |
+|     |                                    +- |           |      +                                                    +       |           |-+                                   ||  |
+|     |                                      +            +      |                                                    |      +            +                                     ||  |
+|-0.1 |+                                                  |     |                                                      |     |                                                  |+  |
+|     |                                                    |    |                                                      |     |                                                  ||  |
+|     |                                                    |   |                                                        |   |                                                   ||  |
+|     |                                                    +   +                                                        +   +                                                   ||  |
+|     |                                                     +  |                                                         | +                                                    ||  |
+|     |                                                      ++                                                          ++                                                     ||  |
+|     |                            +                           +                            +                           +                            +                          |+  |
+|-0.2 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------++  |
+|    -6                           -4                          -2                            0                           2                            4                           6  |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+for k = 1:6 #Le pido a ‘k’ que vaya del número 1 al 6
+  x = linspace(0, 4*pi, 2^(k+1)+1); #creo un linearly spaced vector, que va desde cero hasta 4*pi
+#y dependiendo de la ‘k’ correspondiente, el número de valores que están en x es 2^(k+1)+1
+  subplot(2,3,k), plot(x, cos(3*x)-2*sin(x)) #Aquí el subplot nos dice que van a haber
+# dos renglones de gráficas con tres gráficas en cada uno, y la posición que se va a traficar
+#depende de ‘k’, plot grafica la gráfica correspondiente a la posición que ya asignamos
+  axis([0, 4*pi, -1.5, 1.5]) #Aquí definimos los ejes, 0 a 4*pi es el eje de las absisas
+# mientras que -1.5 a 1.5 es el tamaño del eje de las ordenadas
+end
+
+si hay cambios en subplot (2,3,k)
+
+si cambiamos el 2=  entonces cambiamos el número de renglones donde van a estar las gráficas, es decir,si ponemos ahora 1, entonces solo va a haber tres gráficas en un mismo renglón.
+Si cambiamos el 3= entonces cambiamos la cantidad de gráficas en cada renglón
+Si cambiamos k= entonces cambias la posición, es decir, si k=1, eso es la gráfica del primer renglón y  la primer columna
+
+Si quitamos la instrucción de axis, entonces todas las gráficas van de [0,14] en el eje de las abscisas, y en el de las ordenadas de [-3,3], exceptuando la primer gráfica que va de [-1.5, 1.5]

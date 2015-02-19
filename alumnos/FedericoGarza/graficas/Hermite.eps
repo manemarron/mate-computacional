@@ -1,0 +1,11388 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: polinomios-de-Hermite.eps
+%%Creator: gnuplot 4.6 patchlevel 5
+%%CreationDate: Thu Feb  5 14:58:27 2015
+%%DocumentFonts: (atend)
+%%BoundingBox: 50 50 626 482
+%%EndComments
+%%BeginProlog
+/gnudict 256 dict def
+gnudict begin
+%
+% The following true/false flags may be edited by hand if desired.
+% The unit line width and grayscale image gamma correction may also be changed.
+%
+/Color false def
+/Blacktext false def
+/Solid false def
+/Dashlength 2 def
+/Landscape false def
+/Level1 true def
+/Rounded false def
+/ClipToBoundingBox false def
+/SuppressPDFMark false def
+/TransparentPatterns false def
+/gnulinewidth 5.000 def
+/userlinewidth gnulinewidth def
+/Gamma 1.0 def
+/BackgroundColor {-1.000 -1.000 -1.000} def
+%
+/vshift -66 def
+/dl1 {
+  10.0 Dashlength mul mul
+  Rounded { currentlinewidth 0.75 mul sub dup 0 le { pop 0.01 } if } if
+} def
+/dl2 {
+  10.0 Dashlength mul mul
+  Rounded { currentlinewidth 0.75 mul add } if
+} def
+/hpt_ 31.5 def
+/vpt_ 31.5 def
+/hpt hpt_ def
+/vpt vpt_ def
+/doclip {
+  ClipToBoundingBox {
+    newpath 50 50 moveto 626 50 lineto 626 482 lineto 50 482 lineto closepath
+    clip
+  } if
+} def
+%
+% Gnuplot Prolog Version 4.6 (September 2012)
+%
+%/SuppressPDFMark true def
+%
+/M {moveto} bind def
+/L {lineto} bind def
+/R {rmoveto} bind def
+/V {rlineto} bind def
+/N {newpath moveto} bind def
+/Z {closepath} bind def
+/C {setrgbcolor} bind def
+/f {rlineto fill} bind def
+/g {setgray} bind def
+/Gshow {show} def   % May be redefined later in the file to support UTF-8
+/vpt2 vpt 2 mul def
+/hpt2 hpt 2 mul def
+/Lshow {currentpoint stroke M 0 vshift R 
+	Blacktext {gsave 0 setgray show grestore} {show} ifelse} def
+/Rshow {currentpoint stroke M dup stringwidth pop neg vshift R
+	Blacktext {gsave 0 setgray show grestore} {show} ifelse} def
+/Cshow {currentpoint stroke M dup stringwidth pop -2 div vshift R 
+	Blacktext {gsave 0 setgray show grestore} {show} ifelse} def
+/UP {dup vpt_ mul /vpt exch def hpt_ mul /hpt exch def
+  /hpt2 hpt 2 mul def /vpt2 vpt 2 mul def} def
+/DL {Color {setrgbcolor Solid {pop []} if 0 setdash}
+ {pop pop pop 0 setgray Solid {pop []} if 0 setdash} ifelse} def
+/BL {stroke userlinewidth 2 mul setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+/AL {stroke userlinewidth 2 div setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+/UL {dup gnulinewidth mul /userlinewidth exch def
+	dup 1 lt {pop 1} if 10 mul /udl exch def} def
+/PL {stroke userlinewidth setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+3.8 setmiterlimit
+% Default Line colors
+/LCw {1 1 1} def
+/LCb {0 0 0} def
+/LCa {0 0 0} def
+/LC0 {1 0 0} def
+/LC1 {0 1 0} def
+/LC2 {0 0 1} def
+/LC3 {1 0 1} def
+/LC4 {0 1 1} def
+/LC5 {1 1 0} def
+/LC6 {0 0 0} def
+/LC7 {1 0.3 0} def
+/LC8 {0.5 0.5 0.5} def
+% Default Line Types
+/LTw {PL [] 1 setgray} def
+/LTb {BL [] LCb DL} def
+/LTa {AL [1 udl mul 2 udl mul] 0 setdash LCa setrgbcolor} def
+/LT0 {PL [] LC0 DL} def
+/LT1 {PL [4 dl1 2 dl2] LC1 DL} def
+/LT2 {PL [2 dl1 3 dl2] LC2 DL} def
+/LT3 {PL [1 dl1 1.5 dl2] LC3 DL} def
+/LT4 {PL [6 dl1 2 dl2 1 dl1 2 dl2] LC4 DL} def
+/LT5 {PL [3 dl1 3 dl2 1 dl1 3 dl2] LC5 DL} def
+/LT6 {PL [2 dl1 2 dl2 2 dl1 6 dl2] LC6 DL} def
+/LT7 {PL [1 dl1 2 dl2 6 dl1 2 dl2 1 dl1 2 dl2] LC7 DL} def
+/LT8 {PL [2 dl1 2 dl2 2 dl1 2 dl2 2 dl1 2 dl2 2 dl1 4 dl2] LC8 DL} def
+/Pnt {stroke [] 0 setdash gsave 1 setlinecap M 0 0 V stroke grestore} def
+/Dia {stroke [] 0 setdash 2 copy vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath stroke
+  Pnt} def
+/Pls {stroke [] 0 setdash vpt sub M 0 vpt2 V
+  currentpoint stroke M
+  hpt neg vpt neg R hpt2 0 V stroke
+ } def
+/Box {stroke [] 0 setdash 2 copy exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath stroke
+  Pnt} def
+/Crs {stroke [] 0 setdash exch hpt sub exch vpt add M
+  hpt2 vpt2 neg V currentpoint stroke M
+  hpt2 neg 0 R hpt2 vpt2 V stroke} def
+/TriU {stroke [] 0 setdash 2 copy vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath stroke
+  Pnt} def
+/Star {2 copy Pls Crs} def
+/BoxF {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath fill} def
+/TriUF {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath fill} def
+/TriD {stroke [] 0 setdash 2 copy vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath stroke
+  Pnt} def
+/TriDF {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath fill} def
+/DiaF {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath fill} def
+/Pent {stroke [] 0 setdash 2 copy gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath stroke grestore Pnt} def
+/PentF {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath fill grestore} def
+/Circle {stroke [] 0 setdash 2 copy
+  hpt 0 360 arc stroke Pnt} def
+/CircleF {stroke [] 0 setdash hpt 0 360 arc fill} def
+/C0 {BL [] 0 setdash 2 copy moveto vpt 90 450 arc} bind def
+/C1 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C2 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C3 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C4 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 180 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C5 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc
+	2 copy moveto
+	2 copy vpt 180 270 arc closepath fill
+	vpt 0 360 arc} bind def
+/C6 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C7 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C8 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 270 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C9 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 270 450 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C10 {BL [] 0 setdash 2 copy 2 copy moveto vpt 270 360 arc closepath fill
+	2 copy moveto
+	2 copy vpt 90 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C11 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 180 arc closepath fill
+	2 copy moveto
+	2 copy vpt 270 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C12 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 180 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C13 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc closepath fill
+	2 copy moveto
+	2 copy vpt 180 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C14 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 360 arc closepath fill
+	vpt 0 360 arc} bind def
+/C15 {BL [] 0 setdash 2 copy vpt 0 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/Rec {newpath 4 2 roll moveto 1 index 0 rlineto 0 exch rlineto
+	neg 0 rlineto closepath} bind def
+/Square {dup Rec} bind def
+/Bsquare {vpt sub exch vpt sub exch vpt2 Square} bind def
+/S0 {BL [] 0 setdash 2 copy moveto 0 vpt rlineto BL Bsquare} bind def
+/S1 {BL [] 0 setdash 2 copy vpt Square fill Bsquare} bind def
+/S2 {BL [] 0 setdash 2 copy exch vpt sub exch vpt Square fill Bsquare} bind def
+/S3 {BL [] 0 setdash 2 copy exch vpt sub exch vpt2 vpt Rec fill Bsquare} bind def
+/S4 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt Square fill Bsquare} bind def
+/S5 {BL [] 0 setdash 2 copy 2 copy vpt Square fill
+	exch vpt sub exch vpt sub vpt Square fill Bsquare} bind def
+/S6 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt vpt2 Rec fill Bsquare} bind def
+/S7 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt vpt2 Rec fill
+	2 copy vpt Square fill Bsquare} bind def
+/S8 {BL [] 0 setdash 2 copy vpt sub vpt Square fill Bsquare} bind def
+/S9 {BL [] 0 setdash 2 copy vpt sub vpt vpt2 Rec fill Bsquare} bind def
+/S10 {BL [] 0 setdash 2 copy vpt sub vpt Square fill 2 copy exch vpt sub exch vpt Square fill
+	Bsquare} bind def
+/S11 {BL [] 0 setdash 2 copy vpt sub vpt Square fill 2 copy exch vpt sub exch vpt2 vpt Rec fill
+	Bsquare} bind def
+/S12 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill Bsquare} bind def
+/S13 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill
+	2 copy vpt Square fill Bsquare} bind def
+/S14 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill
+	2 copy exch vpt sub exch vpt Square fill Bsquare} bind def
+/S15 {BL [] 0 setdash 2 copy Bsquare fill Bsquare} bind def
+/D0 {gsave translate 45 rotate 0 0 S0 stroke grestore} bind def
+/D1 {gsave translate 45 rotate 0 0 S1 stroke grestore} bind def
+/D2 {gsave translate 45 rotate 0 0 S2 stroke grestore} bind def
+/D3 {gsave translate 45 rotate 0 0 S3 stroke grestore} bind def
+/D4 {gsave translate 45 rotate 0 0 S4 stroke grestore} bind def
+/D5 {gsave translate 45 rotate 0 0 S5 stroke grestore} bind def
+/D6 {gsave translate 45 rotate 0 0 S6 stroke grestore} bind def
+/D7 {gsave translate 45 rotate 0 0 S7 stroke grestore} bind def
+/D8 {gsave translate 45 rotate 0 0 S8 stroke grestore} bind def
+/D9 {gsave translate 45 rotate 0 0 S9 stroke grestore} bind def
+/D10 {gsave translate 45 rotate 0 0 S10 stroke grestore} bind def
+/D11 {gsave translate 45 rotate 0 0 S11 stroke grestore} bind def
+/D12 {gsave translate 45 rotate 0 0 S12 stroke grestore} bind def
+/D13 {gsave translate 45 rotate 0 0 S13 stroke grestore} bind def
+/D14 {gsave translate 45 rotate 0 0 S14 stroke grestore} bind def
+/D15 {gsave translate 45 rotate 0 0 S15 stroke grestore} bind def
+/DiaE {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath stroke} def
+/BoxE {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath stroke} def
+/TriUE {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath stroke} def
+/TriDE {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath stroke} def
+/PentE {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath stroke grestore} def
+/CircE {stroke [] 0 setdash 
+  hpt 0 360 arc stroke} def
+/Opaque {gsave closepath 1 setgray fill grestore 0 setgray closepath} def
+/DiaW {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V Opaque stroke} def
+/BoxW {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V Opaque stroke} def
+/TriUW {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V Opaque stroke} def
+/TriDW {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V Opaque stroke} def
+/PentW {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  Opaque stroke grestore} def
+/CircW {stroke [] 0 setdash 
+  hpt 0 360 arc Opaque stroke} def
+/BoxFill {gsave Rec 1 setgray fill grestore} def
+/Density {
+  /Fillden exch def
+  currentrgbcolor
+  /ColB exch def /ColG exch def /ColR exch def
+  /ColR ColR Fillden mul Fillden sub 1 add def
+  /ColG ColG Fillden mul Fillden sub 1 add def
+  /ColB ColB Fillden mul Fillden sub 1 add def
+  ColR ColG ColB setrgbcolor} def
+/BoxColFill {gsave Rec PolyFill} def
+/PolyFill {gsave Density fill grestore grestore} def
+/h {rlineto rlineto rlineto gsave closepath fill grestore} bind def
+%
+% PostScript Level 1 Pattern Fill routine for rectangles
+% Usage: x y w h s a XX PatternFill
+%	x,y = lower left corner of box to be filled
+%	w,h = width and height of box
+%	  a = angle in degrees between lines and x-axis
+%	 XX = 0/1 for no/yes cross-hatch
+%
+/PatternFill {gsave /PFa [ 9 2 roll ] def
+  PFa 0 get PFa 2 get 2 div add PFa 1 get PFa 3 get 2 div add translate
+  PFa 2 get -2 div PFa 3 get -2 div PFa 2 get PFa 3 get Rec
+  TransparentPatterns {} {gsave 1 setgray fill grestore} ifelse
+  clip
+  currentlinewidth 0.5 mul setlinewidth
+  /PFs PFa 2 get dup mul PFa 3 get dup mul add sqrt def
+  0 0 M PFa 5 get rotate PFs -2 div dup translate
+  0 1 PFs PFa 4 get div 1 add floor cvi
+	{PFa 4 get mul 0 M 0 PFs V} for
+  0 PFa 6 get ne {
+	0 1 PFs PFa 4 get div 1 add floor cvi
+	{PFa 4 get mul 0 2 1 roll M PFs 0 V} for
+ } if
+  stroke grestore} def
+%
+/languagelevel where
+ {pop languagelevel} {1} ifelse
+ 2 lt
+	{/InterpretLevel1 true def}
+	{/InterpretLevel1 Level1 def}
+ ifelse
+%
+% PostScript level 2 pattern fill definitions
+%
+/Level2PatternFill {
+/Tile8x8 {/PaintType 2 /PatternType 1 /TilingType 1 /BBox [0 0 8 8] /XStep 8 /YStep 8}
+	bind def
+/KeepColor {currentrgbcolor [/Pattern /DeviceRGB] setcolorspace} bind def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 8 8 L 0 8 M 8 0 L stroke} 
+>> matrix makepattern
+/Pat1 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 8 8 L 0 8 M 8 0 L stroke
+	0 4 M 4 8 L 8 4 L 4 0 L 0 4 L stroke}
+>> matrix makepattern
+/Pat2 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 0 8 L
+	8 8 L 8 0 L 0 0 L fill}
+>> matrix makepattern
+/Pat3 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -4 8 M 8 -4 L
+	0 12 M 12 0 L stroke}
+>> matrix makepattern
+/Pat4 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -4 0 M 8 12 L
+	0 -4 M 12 8 L stroke}
+>> matrix makepattern
+/Pat5 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -2 8 M 4 -4 L
+	0 12 M 8 -4 L 4 12 M 10 0 L stroke}
+>> matrix makepattern
+/Pat6 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -2 0 M 4 12 L
+	0 -4 M 8 12 L 4 -4 M 10 8 L stroke}
+>> matrix makepattern
+/Pat7 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 8 -2 M -4 4 L
+	12 0 M -4 8 L 12 4 M 0 10 L stroke}
+>> matrix makepattern
+/Pat8 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 -2 M 12 4 L
+	-4 0 M 12 8 L -4 4 M 8 10 L stroke}
+>> matrix makepattern
+/Pat9 exch def
+/Pattern1 {PatternBgnd KeepColor Pat1 setpattern} bind def
+/Pattern2 {PatternBgnd KeepColor Pat2 setpattern} bind def
+/Pattern3 {PatternBgnd KeepColor Pat3 setpattern} bind def
+/Pattern4 {PatternBgnd KeepColor Landscape {Pat5} {Pat4} ifelse setpattern} bind def
+/Pattern5 {PatternBgnd KeepColor Landscape {Pat4} {Pat5} ifelse setpattern} bind def
+/Pattern6 {PatternBgnd KeepColor Landscape {Pat9} {Pat6} ifelse setpattern} bind def
+/Pattern7 {PatternBgnd KeepColor Landscape {Pat8} {Pat7} ifelse setpattern} bind def
+} def
+%
+%
+%End of PostScript Level 2 code
+%
+/PatternBgnd {
+  TransparentPatterns {} {gsave 1 setgray fill grestore} ifelse
+} def
+%
+% Substitute for Level 2 pattern fill codes with
+% grayscale if Level 2 support is not selected.
+%
+/Level1PatternFill {
+/Pattern1 {0.250 Density} bind def
+/Pattern2 {0.500 Density} bind def
+/Pattern3 {0.750 Density} bind def
+/Pattern4 {0.125 Density} bind def
+/Pattern5 {0.375 Density} bind def
+/Pattern6 {0.625 Density} bind def
+/Pattern7 {0.875 Density} bind def
+} def
+%
+% Now test for support of Level 2 code
+%
+Level1 {Level1PatternFill} {Level2PatternFill} ifelse
+%
+/Symbol-Oblique /Symbol findfont [1 0 .167 1 0 0] makefont
+dup length dict begin {1 index /FID eq {pop pop} {def} ifelse} forall
+currentdict end definefont pop
+/MFshow {
+   { dup 5 get 3 ge
+     { 5 get 3 eq {gsave} {grestore} ifelse }
+     {dup dup 0 get findfont exch 1 get scalefont setfont
+     [ currentpoint ] exch dup 2 get 0 exch R dup 5 get 2 ne {dup dup 6
+     get exch 4 get {Gshow} {stringwidth pop 0 R} ifelse }if dup 5 get 0 eq
+     {dup 3 get {2 get neg 0 exch R pop} {pop aload pop M} ifelse} {dup 5
+     get 1 eq {dup 2 get exch dup 3 get exch 6 get stringwidth pop -2 div
+     dup 0 R} {dup 6 get stringwidth pop -2 div 0 R 6 get
+     show 2 index {aload pop M neg 3 -1 roll neg R pop pop} {pop pop pop
+     pop aload pop M} ifelse }ifelse }ifelse }
+     ifelse }
+   forall} def
+/Gswidth {dup type /stringtype eq {stringwidth} {pop (n) stringwidth} ifelse} def
+/MFwidth {0 exch { dup 5 get 3 ge { 5 get 3 eq { 0 } { pop } ifelse }
+ {dup 3 get{dup dup 0 get findfont exch 1 get scalefont setfont
+     6 get Gswidth pop add} {pop} ifelse} ifelse} forall} def
+/MLshow { currentpoint stroke M
+  0 exch R
+  Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
+/MRshow { currentpoint stroke M
+  exch dup MFwidth neg 3 -1 roll R
+  Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
+/MCshow { currentpoint stroke M
+  exch dup MFwidth -2 div 3 -1 roll R
+  Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
+/XYsave    { [( ) 1 2 true false 3 ()] } bind def
+/XYrestore { [( ) 1 2 true false 4 ()] } bind def
+Level1 SuppressPDFMark or 
+{} {
+/SDict 10 dict def
+systemdict /pdfmark known not {
+  userdict /pdfmark systemdict /cleartomark get put
+} if
+SDict begin [
+  /Title (polinomios-de-Hermite.eps)
+  /Subject (gnuplot plot)
+  /Creator (gnuplot 4.6 patchlevel 5)
+  /Author ()
+%  /Producer (gnuplot)
+%  /Keywords ()
+  /CreationDate (Thu Feb  5 14:58:27 2015)
+  /DOCINFO pdfmark
+end
+} ifelse
+end
+%%EndProlog
+%%Page: 1 1
+gnudict begin
+gsave
+doclip
+50 50 translate
+0.050 0.050 scale
+0 setgray
+newpath
+(Helvetica) findfont 200 scalefont setfont
+BackgroundColor 0 lt 3 1 roll 0 lt exch 0 lt or or not {BackgroundColor C 1.000 0 0 11520.00 8640.00 BoxColFill} if
+gsave % colour palette begin
+/maxcolors 64 def
+/HSV2RGB {  exch dup 0.0 eq {pop exch pop dup dup} % achromatic gray
+  { /HSVs exch def /HSVv exch def 6.0 mul dup floor dup 3 1 roll sub
+     /HSVf exch def /HSVi exch cvi def /HSVp HSVv 1.0 HSVs sub mul def
+	 /HSVq HSVv 1.0 HSVs HSVf mul sub mul def 
+	 /HSVt HSVv 1.0 HSVs 1.0 HSVf sub mul sub mul def
+	 /HSVi HSVi 6 mod def 0 HSVi eq {HSVv HSVt HSVp}
+	 {1 HSVi eq {HSVq HSVv HSVp}{2 HSVi eq {HSVp HSVv HSVt}
+	 {3 HSVi eq {HSVp HSVq HSVv}{4 HSVi eq {HSVt HSVp HSVv}
+	 {HSVv HSVp HSVq} ifelse} ifelse} ifelse} ifelse} ifelse
+  } ifelse} def
+/Constrain {
+  dup 0 lt {0 exch pop}{dup 1 gt {1 exch pop} if} ifelse} def
+/YIQ2RGB {
+  3 copy -1.702 mul exch -1.105 mul add add Constrain 4 1 roll
+  3 copy -0.647 mul exch -0.272 mul add add Constrain 5 1 roll
+  0.621 mul exch -0.956 mul add add Constrain 3 1 roll } def
+/CMY2RGB {  1 exch sub exch 1 exch sub 3 2 roll 1 exch sub 3 1 roll exch } def
+/XYZ2RGB {  3 copy -0.9017 mul exch -0.1187 mul add exch 0.0585 mul exch add
+  Constrain 4 1 roll 3 copy -0.0279 mul exch 1.999 mul add exch
+  -0.9844 mul add Constrain 5 1 roll -0.2891 mul exch -0.5338 mul add
+  exch 1.91 mul exch add Constrain 3 1 roll} def
+/SelectSpace {ColorSpace (HSV) eq {HSV2RGB}{ColorSpace (XYZ) eq {
+  XYZ2RGB}{ColorSpace (CMY) eq {CMY2RGB}{ColorSpace (YIQ) eq {YIQ2RGB}
+  if} ifelse} ifelse} ifelse} def
+/InterpolatedColor true def
+/grayindex {/gidx 0 def
+  {GrayA gidx get grayv ge {exit} if /gidx gidx 1 add def} loop} def
+/dgdx {grayv GrayA gidx get sub GrayA gidx 1 sub get
+  GrayA gidx get sub div} def 
+/redvalue {RedA gidx get RedA gidx 1 sub get
+  RedA gidx get sub dgdxval mul add} def
+/greenvalue {GreenA gidx get GreenA gidx 1 sub get
+  GreenA gidx get sub dgdxval mul add} def
+/bluevalue {BlueA gidx get BlueA gidx 1 sub get
+  BlueA gidx get sub dgdxval mul add} def
+/interpolate {
+  grayindex grayv GrayA gidx get sub abs 1e-5 le
+    {RedA gidx get GreenA gidx get BlueA gidx get}
+    {/dgdxval dgdx def redvalue greenvalue bluevalue} ifelse} def
+/GrayA [0 .0159 .0317 .0476 .0635 .0794 .0952 .1111 .127 .1429 .1587 .1746 
+  .1905 .2063 .2222 .2381 .254 .2698 .2857 .3016 .3175 .3333 .3492 .3651 
+  .381 .3968 .4127 .4286 .4444 .4603 .4762 .4921 .5079 .5238 .5397 .5556 
+  .5714 .5873 .6032 .619 .6349 .6508 .6667 .6825 .6984 .7143 .7302 .746 
+  .7619 .7778 .7937 .8095 .8254 .8413 .8571 .873 .8889 .9048 .9206 .9365 
+  .9524 .9683 .9841 1 ] def
+/RedA [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .0238 .0873 .1508 
+  .2143 .2778 .3413 .4048 .4683 .5317 .5952 .6587 .7222 .7857 .8492 .9127 
+  .9762 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 .9444 .881 .8175 .754 .6905 .627 
+  .5635 .5 ] def
+/GreenA [0 0 0 0 0 0 0 0 .0079 .0714 .1349 .1984 .2619 .3254 .3889 .4524 
+  .5159 .5794 .6429 .7063 .7698 .8333 .8968 .9603 1 1 1 1 1 1 1 1 1 1 1 1 1 
+  1 1 1 .9603 .8968 .8333 .7698 .7063 .6429 .5794 .5159 .4524 .3889 .3254 
+  .2619 .1984 .1349 .0714 .0079 0 0 0 0 0 0 0 0 ] def
+/BlueA [.5 .5635 .627 .6905 .754 .8175 .881 .9444 1 1 1 1 1 1 1 1 1 1 1 1 1 
+  1 1 1 .9762 .9127 .8492 .7857 .7222 .6587 .5952 .5317 .4683 .4048 .3413 
+  .2778 .2143 .1508 .0873 .0238 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 ] def
+/pm3dround {maxcolors 0 gt {dup 1 ge
+	{pop 1} {maxcolors mul floor maxcolors 1 sub div} ifelse} if} def
+/pm3dGamma 1.0 1.5 Gamma mul div def
+/ColorSpace (RGB) def
+Color InterpolatedColor or { % COLOUR vs. GRAY map
+  InterpolatedColor { %% Interpolation vs. RGB-Formula
+    /g {stroke pm3dround /grayv exch def interpolate
+        SelectSpace setrgbcolor} bind def
+  }{
+  /g {stroke pm3dround dup cF7 Constrain exch dup cF5 Constrain exch cF15 Constrain 
+       SelectSpace setrgbcolor} bind def
+  } ifelse
+}{
+  /g {stroke pm3dround pm3dGamma exp setgray} bind def
+} ifelse
+1.000 UL
+LTb
+1.00 1.00 1.00 C 1.000 1497 5044 3854 2946 BoxColFill
+LCb setrgbcolor
+1497 5044 M
+0 2946 V
+3854 0 V
+0 -2946 V
+-3854 0 V
+stroke
+0.500 UL
+LTb
+1497 5044 M
+88 0 V
+3767 0 R
+-88 0 V
+stroke
+1377 5044 M
+[ [({}) 200.0 0.0 true true 0 (0.9)]
+] -66.7 MRshow
+0.500 UL
+LTb
+1497 5781 M
+88 0 V
+3767 0 R
+-88 0 V
+stroke
+1377 5781 M
+[ [({}) 200.0 0.0 true true 0 (0.95)]
+] -66.7 MRshow
+0.500 UL
+LTb
+1497 6517 M
+88 0 V
+3767 0 R
+-88 0 V
+stroke
+1377 6517 M
+[ [({}) 200.0 0.0 true true 0 (1)]
+] -66.7 MRshow
+0.500 UL
+LTb
+1497 7254 M
+88 0 V
+3767 0 R
+-88 0 V
+stroke
+1377 7254 M
+[ [({}) 200.0 0.0 true true 0 (1.05)]
+] -66.7 MRshow
+0.500 UL
+LTb
+1497 7991 M
+88 0 V
+3767 0 R
+-88 0 V
+stroke
+1377 7991 M
+[ [({}) 200.0 0.0 true true 0 (1.1)]
+] -66.7 MRshow
+0.500 UL
+LTb
+1497 5044 M
+0 88 V
+0 2859 R
+0 -88 V
+stroke
+1497 4844 M
+[ [({}) 200.0 0.0 true true 0 (-2)]
+] -66.7 MCshow
+0.500 UL
+LTb
+2268 5044 M
+0 88 V
+0 2859 R
+0 -88 V
+stroke
+2268 4844 M
+[ [({}) 200.0 0.0 true true 0 (-1)]
+] -66.7 MCshow
+0.500 UL
+LTb
+3039 5044 M
+0 88 V
+0 2859 R
+0 -88 V
+stroke
+3039 4844 M
+[ [({}) 200.0 0.0 true true 0 (0)]
+] -66.7 MCshow
+0.500 UL
+LTb
+3810 5044 M
+0 88 V
+0 2859 R
+0 -88 V
+stroke
+3810 4844 M
+[ [({}) 200.0 0.0 true true 0 (1)]
+] -66.7 MCshow
+0.500 UL
+LTb
+4581 5044 M
+0 88 V
+0 2859 R
+0 -88 V
+stroke
+4581 4844 M
+[ [({}) 200.0 0.0 true true 0 (2)]
+] -66.7 MCshow
+0.500 UL
+LTb
+5352 5044 M
+0 88 V
+0 2859 R
+0 -88 V
+stroke
+5352 4844 M
+[ [({}) 200.0 0.0 true true 0 (3)]
+] -66.7 MCshow
+0.500 UL
+LTb
+0.500 UL
+LTb
+1497 7991 N
+0 -2947 V
+3855 0 V
+0 2947 V
+-3855 0 V
+Z stroke
+1.000 UP
+0.500 UL
+LTb
+% Begin plot #1
+0.667 UP
+0.500 UL
+LT0
+1497 6517 M
+1497 6517 CircleF
+% End plot #1
+% Begin plot #2
+0.667 UP
+0.500 UL
+LT0
+1501 6517 M
+1501 6517 CircleF
+% End plot #2
+% Begin plot #3
+0.667 UP
+0.500 UL
+LT0
+1505 6517 M
+1505 6517 CircleF
+% End plot #3
+% Begin plot #4
+0.667 UP
+0.500 UL
+LT0
+1509 6517 M
+1509 6517 CircleF
+% End plot #4
+% Begin plot #5
+0.667 UP
+0.500 UL
+LT0
+1512 6517 M
+1512 6517 CircleF
+% End plot #5
+% Begin plot #6
+0.667 UP
+0.500 UL
+LT0
+1516 6517 M
+1516 6517 CircleF
+% End plot #6
+% Begin plot #7
+0.667 UP
+0.500 UL
+LT0
+1520 6517 M
+1520 6517 CircleF
+% End plot #7
+% Begin plot #8
+0.667 UP
+0.500 UL
+LT0
+1524 6517 M
+1524 6517 CircleF
+% End plot #8
+% Begin plot #9
+0.667 UP
+0.500 UL
+LT0
+1528 6517 M
+1528 6517 CircleF
+% End plot #9
+% Begin plot #10
+0.667 UP
+0.500 UL
+LT0
+1532 6517 M
+1532 6517 CircleF
+% End plot #10
+% Begin plot #11
+0.667 UP
+0.500 UL
+LT0
+1536 6517 M
+1536 6517 CircleF
+% End plot #11
+% Begin plot #12
+0.667 UP
+0.500 UL
+LT0
+1539 6517 M
+1539 6517 CircleF
+% End plot #12
+% Begin plot #13
+0.667 UP
+0.500 UL
+LT0
+1543 6517 M
+1543 6517 CircleF
+% End plot #13
+% Begin plot #14
+0.667 UP
+0.500 UL
+LT0
+1547 6517 M
+1547 6517 CircleF
+% End plot #14
+% Begin plot #15
+0.667 UP
+0.500 UL
+LT0
+1551 6517 M
+1551 6517 CircleF
+% End plot #15
+% Begin plot #16
+0.667 UP
+0.500 UL
+LT0
+1555 6517 M
+1555 6517 CircleF
+% End plot #16
+% Begin plot #17
+0.667 UP
+0.500 UL
+LT0
+1559 6517 M
+1559 6517 CircleF
+% End plot #17
+% Begin plot #18
+0.667 UP
+0.500 UL
+LT0
+1563 6517 M
+1563 6517 CircleF
+% End plot #18
+% Begin plot #19
+0.667 UP
+0.500 UL
+LT0
+1566 6517 M
+1566 6517 CircleF
+% End plot #19
+% Begin plot #20
+0.667 UP
+0.500 UL
+LT0
+1570 6517 M
+1570 6517 CircleF
+% End plot #20
+% Begin plot #21
+0.667 UP
+0.500 UL
+LT0
+1574 6517 M
+1574 6517 CircleF
+% End plot #21
+% Begin plot #22
+0.667 UP
+0.500 UL
+LT0
+1578 6517 M
+1578 6517 CircleF
+% End plot #22
+% Begin plot #23
+0.667 UP
+0.500 UL
+LT0
+1582 6517 M
+1582 6517 CircleF
+% End plot #23
+% Begin plot #24
+0.667 UP
+0.500 UL
+LT0
+1586 6517 M
+1586 6517 CircleF
+% End plot #24
+% Begin plot #25
+0.667 UP
+0.500 UL
+LT0
+1590 6517 M
+1590 6517 CircleF
+% End plot #25
+% Begin plot #26
+0.667 UP
+0.500 UL
+LT0
+1593 6517 M
+1593 6517 CircleF
+% End plot #26
+% Begin plot #27
+0.667 UP
+0.500 UL
+LT0
+1597 6517 M
+1597 6517 CircleF
+% End plot #27
+% Begin plot #28
+0.667 UP
+0.500 UL
+LT0
+1601 6517 M
+1601 6517 CircleF
+% End plot #28
+% Begin plot #29
+0.667 UP
+0.500 UL
+LT0
+1605 6517 M
+1605 6517 CircleF
+% End plot #29
+% Begin plot #30
+0.667 UP
+0.500 UL
+LT0
+1609 6517 M
+1609 6517 CircleF
+% End plot #30
+% Begin plot #31
+0.667 UP
+0.500 UL
+LT0
+1613 6517 M
+1613 6517 CircleF
+% End plot #31
+% Begin plot #32
+0.667 UP
+0.500 UL
+LT0
+1617 6517 M
+1617 6517 CircleF
+% End plot #32
+% Begin plot #33
+0.667 UP
+0.500 UL
+LT0
+1620 6517 M
+1620 6517 CircleF
+% End plot #33
+% Begin plot #34
+0.667 UP
+0.500 UL
+LT0
+1624 6517 M
+1624 6517 CircleF
+% End plot #34
+% Begin plot #35
+0.667 UP
+0.500 UL
+LT0
+1628 6517 M
+1628 6517 CircleF
+% End plot #35
+% Begin plot #36
+0.667 UP
+0.500 UL
+LT0
+1632 6517 M
+1632 6517 CircleF
+% End plot #36
+% Begin plot #37
+0.667 UP
+0.500 UL
+LT0
+1636 6517 M
+1636 6517 CircleF
+% End plot #37
+% Begin plot #38
+0.667 UP
+0.500 UL
+LT0
+1640 6517 M
+1640 6517 CircleF
+% End plot #38
+% Begin plot #39
+0.667 UP
+0.500 UL
+LT0
+1644 6517 M
+1644 6517 CircleF
+% End plot #39
+% Begin plot #40
+0.667 UP
+0.500 UL
+LT0
+1647 6517 M
+1647 6517 CircleF
+% End plot #40
+% Begin plot #41
+0.667 UP
+0.500 UL
+LT0
+1651 6517 M
+1651 6517 CircleF
+% End plot #41
+% Begin plot #42
+0.667 UP
+0.500 UL
+LT0
+1655 6517 M
+1655 6517 CircleF
+% End plot #42
+% Begin plot #43
+0.667 UP
+0.500 UL
+LT0
+1659 6517 M
+1659 6517 CircleF
+% End plot #43
+% Begin plot #44
+0.667 UP
+0.500 UL
+LT0
+1663 6517 M
+1663 6517 CircleF
+% End plot #44
+% Begin plot #45
+0.667 UP
+0.500 UL
+LT0
+1667 6517 M
+1667 6517 CircleF
+% End plot #45
+% Begin plot #46
+0.667 UP
+0.500 UL
+LT0
+1671 6517 M
+1671 6517 CircleF
+% End plot #46
+% Begin plot #47
+0.667 UP
+0.500 UL
+LT0
+1675 6517 M
+1675 6517 CircleF
+% End plot #47
+% Begin plot #48
+0.667 UP
+0.500 UL
+LT0
+1678 6517 M
+1678 6517 CircleF
+% End plot #48
+% Begin plot #49
+0.667 UP
+0.500 UL
+LT0
+1682 6517 M
+1682 6517 CircleF
+% End plot #49
+% Begin plot #50
+0.667 UP
+0.500 UL
+LT0
+1686 6517 M
+1686 6517 CircleF
+% End plot #50
+% Begin plot #51
+0.667 UP
+0.500 UL
+LT0
+1690 6517 M
+1690 6517 CircleF
+% End plot #51
+% Begin plot #52
+0.667 UP
+0.500 UL
+LT0
+1694 6517 M
+1694 6517 CircleF
+% End plot #52
+% Begin plot #53
+0.667 UP
+0.500 UL
+LT0
+1698 6517 M
+1698 6517 CircleF
+% End plot #53
+% Begin plot #54
+0.667 UP
+0.500 UL
+LT0
+1702 6517 M
+1702 6517 CircleF
+% End plot #54
+% Begin plot #55
+0.667 UP
+0.500 UL
+LT0
+1705 6517 M
+1705 6517 CircleF
+% End plot #55
+% Begin plot #56
+0.667 UP
+0.500 UL
+LT0
+1709 6517 M
+1709 6517 CircleF
+% End plot #56
+% Begin plot #57
+0.667 UP
+0.500 UL
+LT0
+1713 6517 M
+1713 6517 CircleF
+% End plot #57
+% Begin plot #58
+0.667 UP
+0.500 UL
+LT0
+1717 6517 M
+1717 6517 CircleF
+% End plot #58
+% Begin plot #59
+0.667 UP
+0.500 UL
+LT0
+1721 6517 M
+1721 6517 CircleF
+% End plot #59
+% Begin plot #60
+0.667 UP
+0.500 UL
+LT0
+1725 6517 M
+1725 6517 CircleF
+% End plot #60
+% Begin plot #61
+0.667 UP
+0.500 UL
+LT0
+1729 6517 M
+1729 6517 CircleF
+% End plot #61
+% Begin plot #62
+0.667 UP
+0.500 UL
+LT0
+1732 6517 M
+1732 6517 CircleF
+% End plot #62
+% Begin plot #63
+0.667 UP
+0.500 UL
+LT0
+1736 6517 M
+1736 6517 CircleF
+% End plot #63
+% Begin plot #64
+0.667 UP
+0.500 UL
+LT0
+1740 6517 M
+1740 6517 CircleF
+% End plot #64
+% Begin plot #65
+0.667 UP
+0.500 UL
+LT0
+1744 6517 M
+1744 6517 CircleF
+% End plot #65
+% Begin plot #66
+0.667 UP
+0.500 UL
+LT0
+1748 6517 M
+1748 6517 CircleF
+% End plot #66
+% Begin plot #67
+0.667 UP
+0.500 UL
+LT0
+1752 6517 M
+1752 6517 CircleF
+% End plot #67
+% Begin plot #68
+0.667 UP
+0.500 UL
+LT0
+1756 6517 M
+1756 6517 CircleF
+% End plot #68
+% Begin plot #69
+0.667 UP
+0.500 UL
+LT0
+1759 6517 M
+1759 6517 CircleF
+% End plot #69
+% Begin plot #70
+0.667 UP
+0.500 UL
+LT0
+1763 6517 M
+1763 6517 CircleF
+% End plot #70
+% Begin plot #71
+0.667 UP
+0.500 UL
+LT0
+1767 6517 M
+1767 6517 CircleF
+% End plot #71
+% Begin plot #72
+0.667 UP
+0.500 UL
+LT0
+1771 6517 M
+1771 6517 CircleF
+% End plot #72
+% Begin plot #73
+0.667 UP
+0.500 UL
+LT0
+1775 6517 M
+1775 6517 CircleF
+% End plot #73
+% Begin plot #74
+0.667 UP
+0.500 UL
+LT0
+1779 6517 M
+1779 6517 CircleF
+% End plot #74
+% Begin plot #75
+0.667 UP
+0.500 UL
+LT0
+1783 6517 M
+1783 6517 CircleF
+% End plot #75
+% Begin plot #76
+0.667 UP
+0.500 UL
+LT0
+1786 6517 M
+1786 6517 CircleF
+% End plot #76
+% Begin plot #77
+0.667 UP
+0.500 UL
+LT0
+1790 6517 M
+1790 6517 CircleF
+% End plot #77
+% Begin plot #78
+0.667 UP
+0.500 UL
+LT0
+1794 6517 M
+1794 6517 CircleF
+% End plot #78
+% Begin plot #79
+0.667 UP
+0.500 UL
+LT0
+1798 6517 M
+1798 6517 CircleF
+% End plot #79
+% Begin plot #80
+0.667 UP
+0.500 UL
+LT0
+1802 6517 M
+1802 6517 CircleF
+% End plot #80
+% Begin plot #81
+0.667 UP
+0.500 UL
+LT0
+1806 6517 M
+1806 6517 CircleF
+% End plot #81
+% Begin plot #82
+0.667 UP
+0.500 UL
+LT0
+1810 6517 M
+1810 6517 CircleF
+% End plot #82
+% Begin plot #83
+0.667 UP
+0.500 UL
+LT0
+1813 6517 M
+1813 6517 CircleF
+% End plot #83
+% Begin plot #84
+0.667 UP
+0.500 UL
+LT0
+1817 6517 M
+1817 6517 CircleF
+% End plot #84
+% Begin plot #85
+0.667 UP
+0.500 UL
+LT0
+1821 6517 M
+1821 6517 CircleF
+% End plot #85
+% Begin plot #86
+0.667 UP
+0.500 UL
+LT0
+1825 6517 M
+1825 6517 CircleF
+% End plot #86
+% Begin plot #87
+0.667 UP
+0.500 UL
+LT0
+1829 6517 M
+1829 6517 CircleF
+% End plot #87
+% Begin plot #88
+0.667 UP
+0.500 UL
+LT0
+1833 6517 M
+1833 6517 CircleF
+% End plot #88
+% Begin plot #89
+0.667 UP
+0.500 UL
+LT0
+1837 6517 M
+1837 6517 CircleF
+% End plot #89
+% Begin plot #90
+0.667 UP
+0.500 UL
+LT0
+1840 6517 M
+1840 6517 CircleF
+% End plot #90
+% Begin plot #91
+0.667 UP
+0.500 UL
+LT0
+1844 6517 M
+1844 6517 CircleF
+% End plot #91
+% Begin plot #92
+0.667 UP
+0.500 UL
+LT0
+1848 6517 M
+1848 6517 CircleF
+% End plot #92
+% Begin plot #93
+0.667 UP
+0.500 UL
+LT0
+1852 6517 M
+1852 6517 CircleF
+% End plot #93
+% Begin plot #94
+0.667 UP
+0.500 UL
+LT0
+1856 6517 M
+1856 6517 CircleF
+% End plot #94
+% Begin plot #95
+0.667 UP
+0.500 UL
+LT0
+1860 6517 M
+1860 6517 CircleF
+% End plot #95
+% Begin plot #96
+0.667 UP
+0.500 UL
+LT0
+1864 6517 M
+1864 6517 CircleF
+% End plot #96
+% Begin plot #97
+0.667 UP
+0.500 UL
+LT0
+1867 6517 M
+1867 6517 CircleF
+% End plot #97
+% Begin plot #98
+0.667 UP
+0.500 UL
+LT0
+1871 6517 M
+1871 6517 CircleF
+% End plot #98
+% Begin plot #99
+0.667 UP
+0.500 UL
+LT0
+1875 6517 M
+1875 6517 CircleF
+% End plot #99
+% Begin plot #100
+0.667 UP
+0.500 UL
+LT0
+1879 6517 M
+1879 6517 CircleF
+% End plot #100
+% Begin plot #101
+0.667 UP
+0.500 UL
+LT0
+1883 6517 M
+1883 6517 CircleF
+% End plot #101
+% Begin plot #102
+0.667 UP
+0.500 UL
+LT0
+1887 6517 M
+1887 6517 CircleF
+% End plot #102
+% Begin plot #103
+0.667 UP
+0.500 UL
+LT0
+1891 6517 M
+1891 6517 CircleF
+% End plot #103
+% Begin plot #104
+0.667 UP
+0.500 UL
+LT0
+1894 6517 M
+1894 6517 CircleF
+% End plot #104
+% Begin plot #105
+0.667 UP
+0.500 UL
+LT0
+1898 6517 M
+1898 6517 CircleF
+% End plot #105
+% Begin plot #106
+0.667 UP
+0.500 UL
+LT0
+1902 6517 M
+1902 6517 CircleF
+% End plot #106
+% Begin plot #107
+0.667 UP
+0.500 UL
+LT0
+1906 6517 M
+1906 6517 CircleF
+% End plot #107
+% Begin plot #108
+0.667 UP
+0.500 UL
+LT0
+1910 6517 M
+1910 6517 CircleF
+% End plot #108
+% Begin plot #109
+0.667 UP
+0.500 UL
+LT0
+1914 6517 M
+1914 6517 CircleF
+% End plot #109
+% Begin plot #110
+0.667 UP
+0.500 UL
+LT0
+1918 6517 M
+1918 6517 CircleF
+% End plot #110
+% Begin plot #111
+0.667 UP
+0.500 UL
+LT0
+1921 6517 M
+1921 6517 CircleF
+% End plot #111
+% Begin plot #112
+0.667 UP
+0.500 UL
+LT0
+1925 6517 M
+1925 6517 CircleF
+% End plot #112
+% Begin plot #113
+0.667 UP
+0.500 UL
+LT0
+1929 6517 M
+1929 6517 CircleF
+% End plot #113
+% Begin plot #114
+0.667 UP
+0.500 UL
+LT0
+1933 6517 M
+1933 6517 CircleF
+% End plot #114
+% Begin plot #115
+0.667 UP
+0.500 UL
+LT0
+1937 6517 M
+1937 6517 CircleF
+% End plot #115
+% Begin plot #116
+0.667 UP
+0.500 UL
+LT0
+1941 6517 M
+1941 6517 CircleF
+% End plot #116
+% Begin plot #117
+0.667 UP
+0.500 UL
+LT0
+1945 6517 M
+1945 6517 CircleF
+% End plot #117
+% Begin plot #118
+0.667 UP
+0.500 UL
+LT0
+1948 6517 M
+1948 6517 CircleF
+% End plot #118
+% Begin plot #119
+0.667 UP
+0.500 UL
+LT0
+1952 6517 M
+1952 6517 CircleF
+% End plot #119
+% Begin plot #120
+0.667 UP
+0.500 UL
+LT0
+1956 6517 M
+1956 6517 CircleF
+% End plot #120
+% Begin plot #121
+0.667 UP
+0.500 UL
+LT0
+1960 6517 M
+1960 6517 CircleF
+% End plot #121
+% Begin plot #122
+0.667 UP
+0.500 UL
+LT0
+1964 6517 M
+1964 6517 CircleF
+% End plot #122
+% Begin plot #123
+0.667 UP
+0.500 UL
+LT0
+1968 6517 M
+1968 6517 CircleF
+% End plot #123
+% Begin plot #124
+0.667 UP
+0.500 UL
+LT0
+1972 6517 M
+1972 6517 CircleF
+% End plot #124
+% Begin plot #125
+0.667 UP
+0.500 UL
+LT0
+1975 6517 M
+1975 6517 CircleF
+% End plot #125
+% Begin plot #126
+0.667 UP
+0.500 UL
+LT0
+1979 6517 M
+1979 6517 CircleF
+% End plot #126
+% Begin plot #127
+0.667 UP
+0.500 UL
+LT0
+1983 6517 M
+1983 6517 CircleF
+% End plot #127
+% Begin plot #128
+0.667 UP
+0.500 UL
+LT0
+1987 6517 M
+1987 6517 CircleF
+% End plot #128
+% Begin plot #129
+0.667 UP
+0.500 UL
+LT0
+1991 6517 M
+1991 6517 CircleF
+% End plot #129
+% Begin plot #130
+0.667 UP
+0.500 UL
+LT0
+1995 6517 M
+1995 6517 CircleF
+% End plot #130
+% Begin plot #131
+0.667 UP
+0.500 UL
+LT0
+1999 6517 M
+1999 6517 CircleF
+% End plot #131
+% Begin plot #132
+0.667 UP
+0.500 UL
+LT0
+2003 6517 M
+2003 6517 CircleF
+% End plot #132
+% Begin plot #133
+0.667 UP
+0.500 UL
+LT0
+2006 6517 M
+2006 6517 CircleF
+% End plot #133
+% Begin plot #134
+0.667 UP
+0.500 UL
+LT0
+2010 6517 M
+2010 6517 CircleF
+% End plot #134
+% Begin plot #135
+0.667 UP
+0.500 UL
+LT0
+2014 6517 M
+2014 6517 CircleF
+% End plot #135
+% Begin plot #136
+0.667 UP
+0.500 UL
+LT0
+2018 6517 M
+2018 6517 CircleF
+% End plot #136
+% Begin plot #137
+0.667 UP
+0.500 UL
+LT0
+2022 6517 M
+2022 6517 CircleF
+% End plot #137
+% Begin plot #138
+0.667 UP
+0.500 UL
+LT0
+2026 6517 M
+2026 6517 CircleF
+% End plot #138
+% Begin plot #139
+0.667 UP
+0.500 UL
+LT0
+2030 6517 M
+2030 6517 CircleF
+% End plot #139
+% Begin plot #140
+0.667 UP
+0.500 UL
+LT0
+2033 6517 M
+2033 6517 CircleF
+% End plot #140
+% Begin plot #141
+0.667 UP
+0.500 UL
+LT0
+2037 6517 M
+2037 6517 CircleF
+% End plot #141
+% Begin plot #142
+0.667 UP
+0.500 UL
+LT0
+2041 6517 M
+2041 6517 CircleF
+% End plot #142
+% Begin plot #143
+0.667 UP
+0.500 UL
+LT0
+2045 6517 M
+2045 6517 CircleF
+% End plot #143
+% Begin plot #144
+0.667 UP
+0.500 UL
+LT0
+2049 6517 M
+2049 6517 CircleF
+% End plot #144
+% Begin plot #145
+0.667 UP
+0.500 UL
+LT0
+2053 6517 M
+2053 6517 CircleF
+% End plot #145
+% Begin plot #146
+0.667 UP
+0.500 UL
+LT0
+2057 6517 M
+2057 6517 CircleF
+% End plot #146
+% Begin plot #147
+0.667 UP
+0.500 UL
+LT0
+2060 6517 M
+2060 6517 CircleF
+% End plot #147
+% Begin plot #148
+0.667 UP
+0.500 UL
+LT0
+2064 6517 M
+2064 6517 CircleF
+% End plot #148
+% Begin plot #149
+0.667 UP
+0.500 UL
+LT0
+2068 6517 M
+2068 6517 CircleF
+% End plot #149
+% Begin plot #150
+0.667 UP
+0.500 UL
+LT0
+2072 6517 M
+2072 6517 CircleF
+% End plot #150
+% Begin plot #151
+0.667 UP
+0.500 UL
+LT0
+2076 6517 M
+2076 6517 CircleF
+% End plot #151
+% Begin plot #152
+0.667 UP
+0.500 UL
+LT0
+2080 6517 M
+2080 6517 CircleF
+% End plot #152
+% Begin plot #153
+0.667 UP
+0.500 UL
+LT0
+2084 6517 M
+2084 6517 CircleF
+% End plot #153
+% Begin plot #154
+0.667 UP
+0.500 UL
+LT0
+2087 6517 M
+2087 6517 CircleF
+% End plot #154
+% Begin plot #155
+0.667 UP
+0.500 UL
+LT0
+2091 6517 M
+2091 6517 CircleF
+% End plot #155
+% Begin plot #156
+0.667 UP
+0.500 UL
+LT0
+2095 6517 M
+2095 6517 CircleF
+% End plot #156
+% Begin plot #157
+0.667 UP
+0.500 UL
+LT0
+2099 6517 M
+2099 6517 CircleF
+% End plot #157
+% Begin plot #158
+0.667 UP
+0.500 UL
+LT0
+2103 6517 M
+2103 6517 CircleF
+% End plot #158
+% Begin plot #159
+0.667 UP
+0.500 UL
+LT0
+2107 6517 M
+2107 6517 CircleF
+% End plot #159
+% Begin plot #160
+0.667 UP
+0.500 UL
+LT0
+2111 6517 M
+2111 6517 CircleF
+% End plot #160
+% Begin plot #161
+0.667 UP
+0.500 UL
+LT0
+2114 6517 M
+2114 6517 CircleF
+% End plot #161
+% Begin plot #162
+0.667 UP
+0.500 UL
+LT0
+2118 6517 M
+2118 6517 CircleF
+% End plot #162
+% Begin plot #163
+0.667 UP
+0.500 UL
+LT0
+2122 6517 M
+2122 6517 CircleF
+% End plot #163
+% Begin plot #164
+0.667 UP
+0.500 UL
+LT0
+2126 6517 M
+2126 6517 CircleF
+% End plot #164
+% Begin plot #165
+0.667 UP
+0.500 UL
+LT0
+2130 6517 M
+2130 6517 CircleF
+% End plot #165
+% Begin plot #166
+0.667 UP
+0.500 UL
+LT0
+2134 6517 M
+2134 6517 CircleF
+% End plot #166
+% Begin plot #167
+0.667 UP
+0.500 UL
+LT0
+2138 6517 M
+2138 6517 CircleF
+% End plot #167
+% Begin plot #168
+0.667 UP
+0.500 UL
+LT0
+2141 6517 M
+2141 6517 CircleF
+% End plot #168
+% Begin plot #169
+0.667 UP
+0.500 UL
+LT0
+2145 6517 M
+2145 6517 CircleF
+% End plot #169
+% Begin plot #170
+0.667 UP
+0.500 UL
+LT0
+2149 6517 M
+2149 6517 CircleF
+% End plot #170
+% Begin plot #171
+0.667 UP
+0.500 UL
+LT0
+2153 6517 M
+2153 6517 CircleF
+% End plot #171
+% Begin plot #172
+0.667 UP
+0.500 UL
+LT0
+2157 6517 M
+2157 6517 CircleF
+% End plot #172
+% Begin plot #173
+0.667 UP
+0.500 UL
+LT0
+2161 6517 M
+2161 6517 CircleF
+% End plot #173
+% Begin plot #174
+0.667 UP
+0.500 UL
+LT0
+2165 6517 M
+2165 6517 CircleF
+% End plot #174
+% Begin plot #175
+0.667 UP
+0.500 UL
+LT0
+2168 6517 M
+2168 6517 CircleF
+% End plot #175
+% Begin plot #176
+0.667 UP
+0.500 UL
+LT0
+2172 6517 M
+2172 6517 CircleF
+% End plot #176
+% Begin plot #177
+0.667 UP
+0.500 UL
+LT0
+2176 6517 M
+2176 6517 CircleF
+% End plot #177
+% Begin plot #178
+0.667 UP
+0.500 UL
+LT0
+2180 6517 M
+2180 6517 CircleF
+% End plot #178
+% Begin plot #179
+0.667 UP
+0.500 UL
+LT0
+2184 6517 M
+2184 6517 CircleF
+% End plot #179
+% Begin plot #180
+0.667 UP
+0.500 UL
+LT0
+2188 6517 M
+2188 6517 CircleF
+% End plot #180
+% Begin plot #181
+0.667 UP
+0.500 UL
+LT0
+2192 6517 M
+2192 6517 CircleF
+% End plot #181
+% Begin plot #182
+0.667 UP
+0.500 UL
+LT0
+2195 6517 M
+2195 6517 CircleF
+% End plot #182
+% Begin plot #183
+0.667 UP
+0.500 UL
+LT0
+2199 6517 M
+2199 6517 CircleF
+% End plot #183
+% Begin plot #184
+0.667 UP
+0.500 UL
+LT0
+2203 6517 M
+2203 6517 CircleF
+% End plot #184
+% Begin plot #185
+0.667 UP
+0.500 UL
+LT0
+2207 6517 M
+2207 6517 CircleF
+% End plot #185
+% Begin plot #186
+0.667 UP
+0.500 UL
+LT0
+2211 6517 M
+2211 6517 CircleF
+% End plot #186
+% Begin plot #187
+0.667 UP
+0.500 UL
+LT0
+2215 6517 M
+2215 6517 CircleF
+% End plot #187
+% Begin plot #188
+0.667 UP
+0.500 UL
+LT0
+2219 6517 M
+2219 6517 CircleF
+% End plot #188
+% Begin plot #189
+0.667 UP
+0.500 UL
+LT0
+2222 6517 M
+2222 6517 CircleF
+% End plot #189
+% Begin plot #190
+0.667 UP
+0.500 UL
+LT0
+2226 6517 M
+2226 6517 CircleF
+% End plot #190
+% Begin plot #191
+0.667 UP
+0.500 UL
+LT0
+2230 6517 M
+2230 6517 CircleF
+% End plot #191
+% Begin plot #192
+0.667 UP
+0.500 UL
+LT0
+2234 6517 M
+2234 6517 CircleF
+% End plot #192
+% Begin plot #193
+0.667 UP
+0.500 UL
+LT0
+2238 6517 M
+2238 6517 CircleF
+% End plot #193
+% Begin plot #194
+0.667 UP
+0.500 UL
+LT0
+2242 6517 M
+2242 6517 CircleF
+% End plot #194
+% Begin plot #195
+0.667 UP
+0.500 UL
+LT0
+2246 6517 M
+2246 6517 CircleF
+% End plot #195
+% Begin plot #196
+0.667 UP
+0.500 UL
+LT0
+2249 6517 M
+2249 6517 CircleF
+% End plot #196
+% Begin plot #197
+0.667 UP
+0.500 UL
+LT0
+2253 6517 M
+2253 6517 CircleF
+% End plot #197
+% Begin plot #198
+0.667 UP
+0.500 UL
+LT0
+2257 6517 M
+2257 6517 CircleF
+% End plot #198
+% Begin plot #199
+0.667 UP
+0.500 UL
+LT0
+2261 6517 M
+2261 6517 CircleF
+% End plot #199
+% Begin plot #200
+0.667 UP
+0.500 UL
+LT0
+2265 6517 M
+2265 6517 CircleF
+% End plot #200
+% Begin plot #201
+0.667 UP
+0.500 UL
+LT0
+2269 6517 M
+2269 6517 CircleF
+% End plot #201
+% Begin plot #202
+0.667 UP
+0.500 UL
+LT0
+2273 6517 M
+2273 6517 CircleF
+% End plot #202
+% Begin plot #203
+0.667 UP
+0.500 UL
+LT0
+2276 6517 M
+2276 6517 CircleF
+% End plot #203
+% Begin plot #204
+0.667 UP
+0.500 UL
+LT0
+2280 6517 M
+2280 6517 CircleF
+% End plot #204
+% Begin plot #205
+0.667 UP
+0.500 UL
+LT0
+2284 6517 M
+2284 6517 CircleF
+% End plot #205
+% Begin plot #206
+0.667 UP
+0.500 UL
+LT0
+2288 6517 M
+2288 6517 CircleF
+% End plot #206
+% Begin plot #207
+0.667 UP
+0.500 UL
+LT0
+2292 6517 M
+2292 6517 CircleF
+% End plot #207
+% Begin plot #208
+0.667 UP
+0.500 UL
+LT0
+2296 6517 M
+2296 6517 CircleF
+% End plot #208
+% Begin plot #209
+0.667 UP
+0.500 UL
+LT0
+2300 6517 M
+2300 6517 CircleF
+% End plot #209
+% Begin plot #210
+0.667 UP
+0.500 UL
+LT0
+2304 6517 M
+2304 6517 CircleF
+% End plot #210
+% Begin plot #211
+0.667 UP
+0.500 UL
+LT0
+2307 6517 M
+2307 6517 CircleF
+% End plot #211
+% Begin plot #212
+0.667 UP
+0.500 UL
+LT0
+2311 6517 M
+2311 6517 CircleF
+% End plot #212
+% Begin plot #213
+0.667 UP
+0.500 UL
+LT0
+2315 6517 M
+2315 6517 CircleF
+% End plot #213
+% Begin plot #214
+0.667 UP
+0.500 UL
+LT0
+2319 6517 M
+2319 6517 CircleF
+% End plot #214
+% Begin plot #215
+0.667 UP
+0.500 UL
+LT0
+2323 6517 M
+2323 6517 CircleF
+% End plot #215
+% Begin plot #216
+0.667 UP
+0.500 UL
+LT0
+2327 6517 M
+2327 6517 CircleF
+% End plot #216
+% Begin plot #217
+0.667 UP
+0.500 UL
+LT0
+2331 6517 M
+2331 6517 CircleF
+% End plot #217
+% Begin plot #218
+0.667 UP
+0.500 UL
+LT0
+2334 6517 M
+2334 6517 CircleF
+% End plot #218
+% Begin plot #219
+0.667 UP
+0.500 UL
+LT0
+2338 6517 M
+2338 6517 CircleF
+% End plot #219
+% Begin plot #220
+0.667 UP
+0.500 UL
+LT0
+2342 6517 M
+2342 6517 CircleF
+% End plot #220
+% Begin plot #221
+0.667 UP
+0.500 UL
+LT0
+2346 6517 M
+2346 6517 CircleF
+% End plot #221
+% Begin plot #222
+0.667 UP
+0.500 UL
+LT0
+2350 6517 M
+2350 6517 CircleF
+% End plot #222
+% Begin plot #223
+0.667 UP
+0.500 UL
+LT0
+2354 6517 M
+2354 6517 CircleF
+% End plot #223
+% Begin plot #224
+0.667 UP
+0.500 UL
+LT0
+2358 6517 M
+2358 6517 CircleF
+% End plot #224
+% Begin plot #225
+0.667 UP
+0.500 UL
+LT0
+2361 6517 M
+2361 6517 CircleF
+% End plot #225
+% Begin plot #226
+0.667 UP
+0.500 UL
+LT0
+2365 6517 M
+2365 6517 CircleF
+% End plot #226
+% Begin plot #227
+0.667 UP
+0.500 UL
+LT0
+2369 6517 M
+2369 6517 CircleF
+% End plot #227
+% Begin plot #228
+0.667 UP
+0.500 UL
+LT0
+2373 6517 M
+2373 6517 CircleF
+% End plot #228
+% Begin plot #229
+0.667 UP
+0.500 UL
+LT0
+2377 6517 M
+2377 6517 CircleF
+% End plot #229
+% Begin plot #230
+0.667 UP
+0.500 UL
+LT0
+2381 6517 M
+2381 6517 CircleF
+% End plot #230
+% Begin plot #231
+0.667 UP
+0.500 UL
+LT0
+2385 6517 M
+2385 6517 CircleF
+% End plot #231
+% Begin plot #232
+0.667 UP
+0.500 UL
+LT0
+2388 6517 M
+2388 6517 CircleF
+% End plot #232
+% Begin plot #233
+0.667 UP
+0.500 UL
+LT0
+2392 6517 M
+2392 6517 CircleF
+% End plot #233
+% Begin plot #234
+0.667 UP
+0.500 UL
+LT0
+2396 6517 M
+2396 6517 CircleF
+% End plot #234
+% Begin plot #235
+0.667 UP
+0.500 UL
+LT0
+2400 6517 M
+2400 6517 CircleF
+% End plot #235
+% Begin plot #236
+0.667 UP
+0.500 UL
+LT0
+2404 6517 M
+2404 6517 CircleF
+% End plot #236
+% Begin plot #237
+0.667 UP
+0.500 UL
+LT0
+2408 6517 M
+2408 6517 CircleF
+% End plot #237
+% Begin plot #238
+0.667 UP
+0.500 UL
+LT0
+2412 6517 M
+2412 6517 CircleF
+% End plot #238
+% Begin plot #239
+0.667 UP
+0.500 UL
+LT0
+2415 6517 M
+2415 6517 CircleF
+% End plot #239
+% Begin plot #240
+0.667 UP
+0.500 UL
+LT0
+2419 6517 M
+2419 6517 CircleF
+% End plot #240
+% Begin plot #241
+0.667 UP
+0.500 UL
+LT0
+2423 6517 M
+2423 6517 CircleF
+% End plot #241
+% Begin plot #242
+0.667 UP
+0.500 UL
+LT0
+2427 6517 M
+2427 6517 CircleF
+% End plot #242
+% Begin plot #243
+0.667 UP
+0.500 UL
+LT0
+2431 6517 M
+2431 6517 CircleF
+% End plot #243
+% Begin plot #244
+0.667 UP
+0.500 UL
+LT0
+2435 6517 M
+2435 6517 CircleF
+% End plot #244
+% Begin plot #245
+0.667 UP
+0.500 UL
+LT0
+2439 6517 M
+2439 6517 CircleF
+% End plot #245
+% Begin plot #246
+0.667 UP
+0.500 UL
+LT0
+2442 6517 M
+2442 6517 CircleF
+% End plot #246
+% Begin plot #247
+0.667 UP
+0.500 UL
+LT0
+2446 6517 M
+2446 6517 CircleF
+% End plot #247
+% Begin plot #248
+0.667 UP
+0.500 UL
+LT0
+2450 6517 M
+2450 6517 CircleF
+% End plot #248
+% Begin plot #249
+0.667 UP
+0.500 UL
+LT0
+2454 6517 M
+2454 6517 CircleF
+% End plot #249
+% Begin plot #250
+0.667 UP
+0.500 UL
+LT0
+2458 6517 M
+2458 6517 CircleF
+% End plot #250
+% Begin plot #251
+0.667 UP
+0.500 UL
+LT0
+2462 6517 M
+2462 6517 CircleF
+% End plot #251
+% Begin plot #252
+0.667 UP
+0.500 UL
+LT0
+2466 6517 M
+2466 6517 CircleF
+% End plot #252
+% Begin plot #253
+0.667 UP
+0.500 UL
+LT0
+2469 6517 M
+2469 6517 CircleF
+% End plot #253
+% Begin plot #254
+0.667 UP
+0.500 UL
+LT0
+2473 6517 M
+2473 6517 CircleF
+% End plot #254
+% Begin plot #255
+0.667 UP
+0.500 UL
+LT0
+2477 6517 M
+2477 6517 CircleF
+% End plot #255
+% Begin plot #256
+0.667 UP
+0.500 UL
+LT0
+2481 6517 M
+2481 6517 CircleF
+% End plot #256
+% Begin plot #257
+0.667 UP
+0.500 UL
+LT0
+2485 6517 M
+2485 6517 CircleF
+% End plot #257
+% Begin plot #258
+0.667 UP
+0.500 UL
+LT0
+2489 6517 M
+2489 6517 CircleF
+% End plot #258
+% Begin plot #259
+0.667 UP
+0.500 UL
+LT0
+2493 6517 M
+2493 6517 CircleF
+% End plot #259
+% Begin plot #260
+0.667 UP
+0.500 UL
+LT0
+2496 6517 M
+2496 6517 CircleF
+% End plot #260
+% Begin plot #261
+0.667 UP
+0.500 UL
+LT0
+2500 6517 M
+2500 6517 CircleF
+% End plot #261
+% Begin plot #262
+0.667 UP
+0.500 UL
+LT0
+2504 6517 M
+2504 6517 CircleF
+% End plot #262
+% Begin plot #263
+0.667 UP
+0.500 UL
+LT0
+2508 6517 M
+2508 6517 CircleF
+% End plot #263
+% Begin plot #264
+0.667 UP
+0.500 UL
+LT0
+2512 6517 M
+2512 6517 CircleF
+% End plot #264
+% Begin plot #265
+0.667 UP
+0.500 UL
+LT0
+2516 6517 M
+2516 6517 CircleF
+% End plot #265
+% Begin plot #266
+0.667 UP
+0.500 UL
+LT0
+2520 6517 M
+2520 6517 CircleF
+% End plot #266
+% Begin plot #267
+0.667 UP
+0.500 UL
+LT0
+2523 6517 M
+2523 6517 CircleF
+% End plot #267
+% Begin plot #268
+0.667 UP
+0.500 UL
+LT0
+2527 6517 M
+2527 6517 CircleF
+% End plot #268
+% Begin plot #269
+0.667 UP
+0.500 UL
+LT0
+2531 6517 M
+2531 6517 CircleF
+% End plot #269
+% Begin plot #270
+0.667 UP
+0.500 UL
+LT0
+2535 6517 M
+2535 6517 CircleF
+% End plot #270
+% Begin plot #271
+0.667 UP
+0.500 UL
+LT0
+2539 6517 M
+2539 6517 CircleF
+% End plot #271
+% Begin plot #272
+0.667 UP
+0.500 UL
+LT0
+2543 6517 M
+2543 6517 CircleF
+% End plot #272
+% Begin plot #273
+0.667 UP
+0.500 UL
+LT0
+2547 6517 M
+2547 6517 CircleF
+% End plot #273
+% Begin plot #274
+0.667 UP
+0.500 UL
+LT0
+2550 6517 M
+2550 6517 CircleF
+% End plot #274
+% Begin plot #275
+0.667 UP
+0.500 UL
+LT0
+2554 6517 M
+2554 6517 CircleF
+% End plot #275
+% Begin plot #276
+0.667 UP
+0.500 UL
+LT0
+2558 6517 M
+2558 6517 CircleF
+% End plot #276
+% Begin plot #277
+0.667 UP
+0.500 UL
+LT0
+2562 6517 M
+2562 6517 CircleF
+% End plot #277
+% Begin plot #278
+0.667 UP
+0.500 UL
+LT0
+2566 6517 M
+2566 6517 CircleF
+% End plot #278
+% Begin plot #279
+0.667 UP
+0.500 UL
+LT0
+2570 6517 M
+2570 6517 CircleF
+% End plot #279
+% Begin plot #280
+0.667 UP
+0.500 UL
+LT0
+2574 6517 M
+2574 6517 CircleF
+% End plot #280
+% Begin plot #281
+0.667 UP
+0.500 UL
+LT0
+2577 6517 M
+2577 6517 CircleF
+% End plot #281
+% Begin plot #282
+0.667 UP
+0.500 UL
+LT0
+2581 6517 M
+2581 6517 CircleF
+% End plot #282
+% Begin plot #283
+0.667 UP
+0.500 UL
+LT0
+2585 6517 M
+2585 6517 CircleF
+% End plot #283
+% Begin plot #284
+0.667 UP
+0.500 UL
+LT0
+2589 6517 M
+2589 6517 CircleF
+% End plot #284
+% Begin plot #285
+0.667 UP
+0.500 UL
+LT0
+2593 6517 M
+2593 6517 CircleF
+% End plot #285
+% Begin plot #286
+0.667 UP
+0.500 UL
+LT0
+2597 6517 M
+2597 6517 CircleF
+% End plot #286
+% Begin plot #287
+0.667 UP
+0.500 UL
+LT0
+2601 6517 M
+2601 6517 CircleF
+% End plot #287
+% Begin plot #288
+0.667 UP
+0.500 UL
+LT0
+2604 6517 M
+2604 6517 CircleF
+% End plot #288
+% Begin plot #289
+0.667 UP
+0.500 UL
+LT0
+2608 6517 M
+2608 6517 CircleF
+% End plot #289
+% Begin plot #290
+0.667 UP
+0.500 UL
+LT0
+2612 6517 M
+2612 6517 CircleF
+% End plot #290
+% Begin plot #291
+0.667 UP
+0.500 UL
+LT0
+2616 6517 M
+2616 6517 CircleF
+% End plot #291
+% Begin plot #292
+0.667 UP
+0.500 UL
+LT0
+2620 6517 M
+2620 6517 CircleF
+% End plot #292
+% Begin plot #293
+0.667 UP
+0.500 UL
+LT0
+2624 6517 M
+2624 6517 CircleF
+% End plot #293
+% Begin plot #294
+0.667 UP
+0.500 UL
+LT0
+2628 6517 M
+2628 6517 CircleF
+% End plot #294
+% Begin plot #295
+0.667 UP
+0.500 UL
+LT0
+2632 6517 M
+2632 6517 CircleF
+% End plot #295
+% Begin plot #296
+0.667 UP
+0.500 UL
+LT0
+2635 6517 M
+2635 6517 CircleF
+% End plot #296
+% Begin plot #297
+0.667 UP
+0.500 UL
+LT0
+2639 6517 M
+2639 6517 CircleF
+% End plot #297
+% Begin plot #298
+0.667 UP
+0.500 UL
+LT0
+2643 6517 M
+2643 6517 CircleF
+% End plot #298
+% Begin plot #299
+0.667 UP
+0.500 UL
+LT0
+2647 6517 M
+2647 6517 CircleF
+% End plot #299
+% Begin plot #300
+0.667 UP
+0.500 UL
+LT0
+2651 6517 M
+2651 6517 CircleF
+% End plot #300
+% Begin plot #301
+0.667 UP
+0.500 UL
+LT0
+2655 6517 M
+2655 6517 CircleF
+% End plot #301
+% Begin plot #302
+0.667 UP
+0.500 UL
+LT0
+2659 6517 M
+2659 6517 CircleF
+% End plot #302
+% Begin plot #303
+0.667 UP
+0.500 UL
+LT0
+2662 6517 M
+2662 6517 CircleF
+% End plot #303
+% Begin plot #304
+0.667 UP
+0.500 UL
+LT0
+2666 6517 M
+2666 6517 CircleF
+% End plot #304
+% Begin plot #305
+0.667 UP
+0.500 UL
+LT0
+2670 6517 M
+2670 6517 CircleF
+% End plot #305
+% Begin plot #306
+0.667 UP
+0.500 UL
+LT0
+2674 6517 M
+2674 6517 CircleF
+% End plot #306
+% Begin plot #307
+0.667 UP
+0.500 UL
+LT0
+2678 6517 M
+2678 6517 CircleF
+% End plot #307
+% Begin plot #308
+0.667 UP
+0.500 UL
+LT0
+2682 6517 M
+2682 6517 CircleF
+% End plot #308
+% Begin plot #309
+0.667 UP
+0.500 UL
+LT0
+2686 6517 M
+2686 6517 CircleF
+% End plot #309
+% Begin plot #310
+0.667 UP
+0.500 UL
+LT0
+2689 6517 M
+2689 6517 CircleF
+% End plot #310
+% Begin plot #311
+0.667 UP
+0.500 UL
+LT0
+2693 6517 M
+2693 6517 CircleF
+% End plot #311
+% Begin plot #312
+0.667 UP
+0.500 UL
+LT0
+2697 6517 M
+2697 6517 CircleF
+% End plot #312
+% Begin plot #313
+0.667 UP
+0.500 UL
+LT0
+2701 6517 M
+2701 6517 CircleF
+% End plot #313
+% Begin plot #314
+0.667 UP
+0.500 UL
+LT0
+2705 6517 M
+2705 6517 CircleF
+% End plot #314
+% Begin plot #315
+0.667 UP
+0.500 UL
+LT0
+2709 6517 M
+2709 6517 CircleF
+% End plot #315
+% Begin plot #316
+0.667 UP
+0.500 UL
+LT0
+2713 6517 M
+2713 6517 CircleF
+% End plot #316
+% Begin plot #317
+0.667 UP
+0.500 UL
+LT0
+2716 6517 M
+2716 6517 CircleF
+% End plot #317
+% Begin plot #318
+0.667 UP
+0.500 UL
+LT0
+2720 6517 M
+2720 6517 CircleF
+% End plot #318
+% Begin plot #319
+0.667 UP
+0.500 UL
+LT0
+2724 6517 M
+2724 6517 CircleF
+% End plot #319
+% Begin plot #320
+0.667 UP
+0.500 UL
+LT0
+2728 6517 M
+2728 6517 CircleF
+% End plot #320
+% Begin plot #321
+0.667 UP
+0.500 UL
+LT0
+2732 6517 M
+2732 6517 CircleF
+% End plot #321
+% Begin plot #322
+0.667 UP
+0.500 UL
+LT0
+2736 6517 M
+2736 6517 CircleF
+% End plot #322
+% Begin plot #323
+0.667 UP
+0.500 UL
+LT0
+2740 6517 M
+2740 6517 CircleF
+% End plot #323
+% Begin plot #324
+0.667 UP
+0.500 UL
+LT0
+2743 6517 M
+2743 6517 CircleF
+% End plot #324
+% Begin plot #325
+0.667 UP
+0.500 UL
+LT0
+2747 6517 M
+2747 6517 CircleF
+% End plot #325
+% Begin plot #326
+0.667 UP
+0.500 UL
+LT0
+2751 6517 M
+2751 6517 CircleF
+% End plot #326
+% Begin plot #327
+0.667 UP
+0.500 UL
+LT0
+2755 6517 M
+2755 6517 CircleF
+% End plot #327
+% Begin plot #328
+0.667 UP
+0.500 UL
+LT0
+2759 6517 M
+2759 6517 CircleF
+% End plot #328
+% Begin plot #329
+0.667 UP
+0.500 UL
+LT0
+2763 6517 M
+2763 6517 CircleF
+% End plot #329
+% Begin plot #330
+0.667 UP
+0.500 UL
+LT0
+2767 6517 M
+2767 6517 CircleF
+% End plot #330
+% Begin plot #331
+0.667 UP
+0.500 UL
+LT0
+2770 6517 M
+2770 6517 CircleF
+% End plot #331
+% Begin plot #332
+0.667 UP
+0.500 UL
+LT0
+2774 6517 M
+2774 6517 CircleF
+% End plot #332
+% Begin plot #333
+0.667 UP
+0.500 UL
+LT0
+2778 6517 M
+2778 6517 CircleF
+% End plot #333
+% Begin plot #334
+0.667 UP
+0.500 UL
+LT0
+2782 6517 M
+2782 6517 CircleF
+% End plot #334
+% Begin plot #335
+0.667 UP
+0.500 UL
+LT0
+2786 6517 M
+2786 6517 CircleF
+% End plot #335
+% Begin plot #336
+0.667 UP
+0.500 UL
+LT0
+2790 6517 M
+2790 6517 CircleF
+% End plot #336
+% Begin plot #337
+0.667 UP
+0.500 UL
+LT0
+2794 6517 M
+2794 6517 CircleF
+% End plot #337
+% Begin plot #338
+0.667 UP
+0.500 UL
+LT0
+2797 6517 M
+2797 6517 CircleF
+% End plot #338
+% Begin plot #339
+0.667 UP
+0.500 UL
+LT0
+2801 6517 M
+2801 6517 CircleF
+% End plot #339
+% Begin plot #340
+0.667 UP
+0.500 UL
+LT0
+2805 6517 M
+2805 6517 CircleF
+% End plot #340
+% Begin plot #341
+0.667 UP
+0.500 UL
+LT0
+2809 6517 M
+2809 6517 CircleF
+% End plot #341
+% Begin plot #342
+0.667 UP
+0.500 UL
+LT0
+2813 6517 M
+2813 6517 CircleF
+% End plot #342
+% Begin plot #343
+0.667 UP
+0.500 UL
+LT0
+2817 6517 M
+2817 6517 CircleF
+% End plot #343
+% Begin plot #344
+0.667 UP
+0.500 UL
+LT0
+2821 6517 M
+2821 6517 CircleF
+% End plot #344
+% Begin plot #345
+0.667 UP
+0.500 UL
+LT0
+2824 6517 M
+2824 6517 CircleF
+% End plot #345
+% Begin plot #346
+0.667 UP
+0.500 UL
+LT0
+2828 6517 M
+2828 6517 CircleF
+% End plot #346
+% Begin plot #347
+0.667 UP
+0.500 UL
+LT0
+2832 6517 M
+2832 6517 CircleF
+% End plot #347
+% Begin plot #348
+0.667 UP
+0.500 UL
+LT0
+2836 6517 M
+2836 6517 CircleF
+% End plot #348
+% Begin plot #349
+0.667 UP
+0.500 UL
+LT0
+2840 6517 M
+2840 6517 CircleF
+% End plot #349
+% Begin plot #350
+0.667 UP
+0.500 UL
+LT0
+2844 6517 M
+2844 6517 CircleF
+% End plot #350
+% Begin plot #351
+0.667 UP
+0.500 UL
+LT0
+2848 6517 M
+2848 6517 CircleF
+% End plot #351
+% Begin plot #352
+0.667 UP
+0.500 UL
+LT0
+2851 6517 M
+2851 6517 CircleF
+% End plot #352
+% Begin plot #353
+0.667 UP
+0.500 UL
+LT0
+2855 6517 M
+2855 6517 CircleF
+% End plot #353
+% Begin plot #354
+0.667 UP
+0.500 UL
+LT0
+2859 6517 M
+2859 6517 CircleF
+% End plot #354
+% Begin plot #355
+0.667 UP
+0.500 UL
+LT0
+2863 6517 M
+2863 6517 CircleF
+% End plot #355
+% Begin plot #356
+0.667 UP
+0.500 UL
+LT0
+2867 6517 M
+2867 6517 CircleF
+% End plot #356
+% Begin plot #357
+0.667 UP
+0.500 UL
+LT0
+2871 6517 M
+2871 6517 CircleF
+% End plot #357
+% Begin plot #358
+0.667 UP
+0.500 UL
+LT0
+2875 6517 M
+2875 6517 CircleF
+% End plot #358
+% Begin plot #359
+0.667 UP
+0.500 UL
+LT0
+2878 6517 M
+2878 6517 CircleF
+% End plot #359
+% Begin plot #360
+0.667 UP
+0.500 UL
+LT0
+2882 6517 M
+2882 6517 CircleF
+% End plot #360
+% Begin plot #361
+0.667 UP
+0.500 UL
+LT0
+2886 6517 M
+2886 6517 CircleF
+% End plot #361
+% Begin plot #362
+0.667 UP
+0.500 UL
+LT0
+2890 6517 M
+2890 6517 CircleF
+% End plot #362
+% Begin plot #363
+0.667 UP
+0.500 UL
+LT0
+2894 6517 M
+2894 6517 CircleF
+% End plot #363
+% Begin plot #364
+0.667 UP
+0.500 UL
+LT0
+2898 6517 M
+2898 6517 CircleF
+% End plot #364
+% Begin plot #365
+0.667 UP
+0.500 UL
+LT0
+2902 6517 M
+2902 6517 CircleF
+% End plot #365
+% Begin plot #366
+0.667 UP
+0.500 UL
+LT0
+2905 6517 M
+2905 6517 CircleF
+% End plot #366
+% Begin plot #367
+0.667 UP
+0.500 UL
+LT0
+2909 6517 M
+2909 6517 CircleF
+% End plot #367
+% Begin plot #368
+0.667 UP
+0.500 UL
+LT0
+2913 6517 M
+2913 6517 CircleF
+% End plot #368
+% Begin plot #369
+0.667 UP
+0.500 UL
+LT0
+2917 6517 M
+2917 6517 CircleF
+% End plot #369
+% Begin plot #370
+0.667 UP
+0.500 UL
+LT0
+2921 6517 M
+2921 6517 CircleF
+% End plot #370
+% Begin plot #371
+0.667 UP
+0.500 UL
+LT0
+2925 6517 M
+2925 6517 CircleF
+% End plot #371
+% Begin plot #372
+0.667 UP
+0.500 UL
+LT0
+2929 6517 M
+2929 6517 CircleF
+% End plot #372
+% Begin plot #373
+0.667 UP
+0.500 UL
+LT0
+2932 6517 M
+2932 6517 CircleF
+% End plot #373
+% Begin plot #374
+0.667 UP
+0.500 UL
+LT0
+2936 6517 M
+2936 6517 CircleF
+% End plot #374
+% Begin plot #375
+0.667 UP
+0.500 UL
+LT0
+2940 6517 M
+2940 6517 CircleF
+% End plot #375
+% Begin plot #376
+0.667 UP
+0.500 UL
+LT0
+2944 6517 M
+2944 6517 CircleF
+% End plot #376
+% Begin plot #377
+0.667 UP
+0.500 UL
+LT0
+2948 6517 M
+2948 6517 CircleF
+% End plot #377
+% Begin plot #378
+0.667 UP
+0.500 UL
+LT0
+2952 6517 M
+2952 6517 CircleF
+% End plot #378
+% Begin plot #379
+0.667 UP
+0.500 UL
+LT0
+2956 6517 M
+2956 6517 CircleF
+% End plot #379
+% Begin plot #380
+0.667 UP
+0.500 UL
+LT0
+2960 6517 M
+2960 6517 CircleF
+% End plot #380
+% Begin plot #381
+0.667 UP
+0.500 UL
+LT0
+2963 6517 M
+2963 6517 CircleF
+% End plot #381
+% Begin plot #382
+0.667 UP
+0.500 UL
+LT0
+2967 6517 M
+2967 6517 CircleF
+% End plot #382
+% Begin plot #383
+0.667 UP
+0.500 UL
+LT0
+2971 6517 M
+2971 6517 CircleF
+% End plot #383
+% Begin plot #384
+0.667 UP
+0.500 UL
+LT0
+2975 6517 M
+2975 6517 CircleF
+% End plot #384
+% Begin plot #385
+0.667 UP
+0.500 UL
+LT0
+2979 6517 M
+2979 6517 CircleF
+% End plot #385
+% Begin plot #386
+0.667 UP
+0.500 UL
+LT0
+2983 6517 M
+2983 6517 CircleF
+% End plot #386
+% Begin plot #387
+0.667 UP
+0.500 UL
+LT0
+2987 6517 M
+2987 6517 CircleF
+% End plot #387
+% Begin plot #388
+0.667 UP
+0.500 UL
+LT0
+2990 6517 M
+2990 6517 CircleF
+% End plot #388
+% Begin plot #389
+0.667 UP
+0.500 UL
+LT0
+2994 6517 M
+2994 6517 CircleF
+% End plot #389
+% Begin plot #390
+0.667 UP
+0.500 UL
+LT0
+2998 6517 M
+2998 6517 CircleF
+% End plot #390
+% Begin plot #391
+0.667 UP
+0.500 UL
+LT0
+3002 6517 M
+3002 6517 CircleF
+% End plot #391
+% Begin plot #392
+0.667 UP
+0.500 UL
+LT0
+3006 6517 M
+3006 6517 CircleF
+% End plot #392
+% Begin plot #393
+0.667 UP
+0.500 UL
+LT0
+3010 6517 M
+3010 6517 CircleF
+% End plot #393
+% Begin plot #394
+0.667 UP
+0.500 UL
+LT0
+3014 6517 M
+3014 6517 CircleF
+% End plot #394
+% Begin plot #395
+0.667 UP
+0.500 UL
+LT0
+3017 6517 M
+3017 6517 CircleF
+% End plot #395
+% Begin plot #396
+0.667 UP
+0.500 UL
+LT0
+3021 6517 M
+3021 6517 CircleF
+% End plot #396
+% Begin plot #397
+0.667 UP
+0.500 UL
+LT0
+3025 6517 M
+3025 6517 CircleF
+% End plot #397
+% Begin plot #398
+0.667 UP
+0.500 UL
+LT0
+3029 6517 M
+3029 6517 CircleF
+% End plot #398
+% Begin plot #399
+0.667 UP
+0.500 UL
+LT0
+3033 6517 M
+3033 6517 CircleF
+% End plot #399
+% Begin plot #400
+0.667 UP
+0.500 UL
+LT0
+3037 6517 M
+3037 6517 CircleF
+% End plot #400
+% Begin plot #401
+0.667 UP
+0.500 UL
+LT0
+3041 6517 M
+3041 6517 CircleF
+% End plot #401
+% Begin plot #402
+0.667 UP
+0.500 UL
+LT0
+3044 6517 M
+3044 6517 CircleF
+% End plot #402
+% Begin plot #403
+0.667 UP
+0.500 UL
+LT0
+3048 6517 M
+3048 6517 CircleF
+% End plot #403
+% Begin plot #404
+0.667 UP
+0.500 UL
+LT0
+3052 6517 M
+3052 6517 CircleF
+% End plot #404
+% Begin plot #405
+0.667 UP
+0.500 UL
+LT0
+3056 6517 M
+3056 6517 CircleF
+% End plot #405
+% Begin plot #406
+0.667 UP
+0.500 UL
+LT0
+3060 6517 M
+3060 6517 CircleF
+% End plot #406
+% Begin plot #407
+0.667 UP
+0.500 UL
+LT0
+3064 6517 M
+3064 6517 CircleF
+% End plot #407
+% Begin plot #408
+0.667 UP
+0.500 UL
+LT0
+3068 6517 M
+3068 6517 CircleF
+% End plot #408
+% Begin plot #409
+0.667 UP
+0.500 UL
+LT0
+3071 6517 M
+3071 6517 CircleF
+% End plot #409
+% Begin plot #410
+0.667 UP
+0.500 UL
+LT0
+3075 6517 M
+3075 6517 CircleF
+% End plot #410
+% Begin plot #411
+0.667 UP
+0.500 UL
+LT0
+3079 6517 M
+3079 6517 CircleF
+% End plot #411
+% Begin plot #412
+0.667 UP
+0.500 UL
+LT0
+3083 6517 M
+3083 6517 CircleF
+% End plot #412
+% Begin plot #413
+0.667 UP
+0.500 UL
+LT0
+3087 6517 M
+3087 6517 CircleF
+% End plot #413
+% Begin plot #414
+0.667 UP
+0.500 UL
+LT0
+3091 6517 M
+3091 6517 CircleF
+% End plot #414
+% Begin plot #415
+0.667 UP
+0.500 UL
+LT0
+3095 6517 M
+3095 6517 CircleF
+% End plot #415
+% Begin plot #416
+0.667 UP
+0.500 UL
+LT0
+3098 6517 M
+3098 6517 CircleF
+% End plot #416
+% Begin plot #417
+0.667 UP
+0.500 UL
+LT0
+3102 6517 M
+3102 6517 CircleF
+% End plot #417
+% Begin plot #418
+0.667 UP
+0.500 UL
+LT0
+3106 6517 M
+3106 6517 CircleF
+% End plot #418
+% Begin plot #419
+0.667 UP
+0.500 UL
+LT0
+3110 6517 M
+3110 6517 CircleF
+% End plot #419
+% Begin plot #420
+0.667 UP
+0.500 UL
+LT0
+3114 6517 M
+3114 6517 CircleF
+% End plot #420
+% Begin plot #421
+0.667 UP
+0.500 UL
+LT0
+3118 6517 M
+3118 6517 CircleF
+% End plot #421
+% Begin plot #422
+0.667 UP
+0.500 UL
+LT0
+3122 6517 M
+3122 6517 CircleF
+% End plot #422
+% Begin plot #423
+0.667 UP
+0.500 UL
+LT0
+3125 6517 M
+3125 6517 CircleF
+% End plot #423
+% Begin plot #424
+0.667 UP
+0.500 UL
+LT0
+3129 6517 M
+3129 6517 CircleF
+% End plot #424
+% Begin plot #425
+0.667 UP
+0.500 UL
+LT0
+3133 6517 M
+3133 6517 CircleF
+% End plot #425
+% Begin plot #426
+0.667 UP
+0.500 UL
+LT0
+3137 6517 M
+3137 6517 CircleF
+% End plot #426
+% Begin plot #427
+0.667 UP
+0.500 UL
+LT0
+3141 6517 M
+3141 6517 CircleF
+% End plot #427
+% Begin plot #428
+0.667 UP
+0.500 UL
+LT0
+3145 6517 M
+3145 6517 CircleF
+% End plot #428
+% Begin plot #429
+0.667 UP
+0.500 UL
+LT0
+3149 6517 M
+3149 6517 CircleF
+% End plot #429
+% Begin plot #430
+0.667 UP
+0.500 UL
+LT0
+3152 6517 M
+3152 6517 CircleF
+% End plot #430
+% Begin plot #431
+0.667 UP
+0.500 UL
+LT0
+3156 6517 M
+3156 6517 CircleF
+% End plot #431
+% Begin plot #432
+0.667 UP
+0.500 UL
+LT0
+3160 6517 M
+3160 6517 CircleF
+% End plot #432
+% Begin plot #433
+0.667 UP
+0.500 UL
+LT0
+3164 6517 M
+3164 6517 CircleF
+% End plot #433
+% Begin plot #434
+0.667 UP
+0.500 UL
+LT0
+3168 6517 M
+3168 6517 CircleF
+% End plot #434
+% Begin plot #435
+0.667 UP
+0.500 UL
+LT0
+3172 6517 M
+3172 6517 CircleF
+% End plot #435
+% Begin plot #436
+0.667 UP
+0.500 UL
+LT0
+3176 6517 M
+3176 6517 CircleF
+% End plot #436
+% Begin plot #437
+0.667 UP
+0.500 UL
+LT0
+3179 6517 M
+3179 6517 CircleF
+% End plot #437
+% Begin plot #438
+0.667 UP
+0.500 UL
+LT0
+3183 6517 M
+3183 6517 CircleF
+% End plot #438
+% Begin plot #439
+0.667 UP
+0.500 UL
+LT0
+3187 6517 M
+3187 6517 CircleF
+% End plot #439
+% Begin plot #440
+0.667 UP
+0.500 UL
+LT0
+3191 6517 M
+3191 6517 CircleF
+% End plot #440
+% Begin plot #441
+0.667 UP
+0.500 UL
+LT0
+3195 6517 M
+3195 6517 CircleF
+% End plot #441
+% Begin plot #442
+0.667 UP
+0.500 UL
+LT0
+3199 6517 M
+3199 6517 CircleF
+% End plot #442
+% Begin plot #443
+0.667 UP
+0.500 UL
+LT0
+3203 6517 M
+3203 6517 CircleF
+% End plot #443
+% Begin plot #444
+0.667 UP
+0.500 UL
+LT0
+3206 6517 M
+3206 6517 CircleF
+% End plot #444
+% Begin plot #445
+0.667 UP
+0.500 UL
+LT0
+3210 6517 M
+3210 6517 CircleF
+% End plot #445
+% Begin plot #446
+0.667 UP
+0.500 UL
+LT0
+3214 6517 M
+3214 6517 CircleF
+% End plot #446
+% Begin plot #447
+0.667 UP
+0.500 UL
+LT0
+3218 6517 M
+3218 6517 CircleF
+% End plot #447
+% Begin plot #448
+0.667 UP
+0.500 UL
+LT0
+3222 6517 M
+3222 6517 CircleF
+% End plot #448
+% Begin plot #449
+0.667 UP
+0.500 UL
+LT0
+3226 6517 M
+3226 6517 CircleF
+% End plot #449
+% Begin plot #450
+0.667 UP
+0.500 UL
+LT0
+3230 6517 M
+3230 6517 CircleF
+% End plot #450
+% Begin plot #451
+0.667 UP
+0.500 UL
+LT0
+3233 6517 M
+3233 6517 CircleF
+% End plot #451
+% Begin plot #452
+0.667 UP
+0.500 UL
+LT0
+3237 6517 M
+3237 6517 CircleF
+% End plot #452
+% Begin plot #453
+0.667 UP
+0.500 UL
+LT0
+3241 6517 M
+3241 6517 CircleF
+% End plot #453
+% Begin plot #454
+0.667 UP
+0.500 UL
+LT0
+3245 6517 M
+3245 6517 CircleF
+% End plot #454
+% Begin plot #455
+0.667 UP
+0.500 UL
+LT0
+3249 6517 M
+3249 6517 CircleF
+% End plot #455
+% Begin plot #456
+0.667 UP
+0.500 UL
+LT0
+3253 6517 M
+3253 6517 CircleF
+% End plot #456
+% Begin plot #457
+0.667 UP
+0.500 UL
+LT0
+3257 6517 M
+3257 6517 CircleF
+% End plot #457
+% Begin plot #458
+0.667 UP
+0.500 UL
+LT0
+3260 6517 M
+3260 6517 CircleF
+% End plot #458
+% Begin plot #459
+0.667 UP
+0.500 UL
+LT0
+3264 6517 M
+3264 6517 CircleF
+% End plot #459
+% Begin plot #460
+0.667 UP
+0.500 UL
+LT0
+3268 6517 M
+3268 6517 CircleF
+% End plot #460
+% Begin plot #461
+0.667 UP
+0.500 UL
+LT0
+3272 6517 M
+3272 6517 CircleF
+% End plot #461
+% Begin plot #462
+0.667 UP
+0.500 UL
+LT0
+3276 6517 M
+3276 6517 CircleF
+% End plot #462
+% Begin plot #463
+0.667 UP
+0.500 UL
+LT0
+3280 6517 M
+3280 6517 CircleF
+% End plot #463
+% Begin plot #464
+0.667 UP
+0.500 UL
+LT0
+3284 6517 M
+3284 6517 CircleF
+% End plot #464
+% Begin plot #465
+0.667 UP
+0.500 UL
+LT0
+3288 6517 M
+3288 6517 CircleF
+% End plot #465
+% Begin plot #466
+0.667 UP
+0.500 UL
+LT0
+3291 6517 M
+3291 6517 CircleF
+% End plot #466
+% Begin plot #467
+0.667 UP
+0.500 UL
+LT0
+3295 6517 M
+3295 6517 CircleF
+% End plot #467
+% Begin plot #468
+0.667 UP
+0.500 UL
+LT0
+3299 6517 M
+3299 6517 CircleF
+% End plot #468
+% Begin plot #469
+0.667 UP
+0.500 UL
+LT0
+3303 6517 M
+3303 6517 CircleF
+% End plot #469
+% Begin plot #470
+0.667 UP
+0.500 UL
+LT0
+3307 6517 M
+3307 6517 CircleF
+% End plot #470
+% Begin plot #471
+0.667 UP
+0.500 UL
+LT0
+3311 6517 M
+3311 6517 CircleF
+% End plot #471
+% Begin plot #472
+0.667 UP
+0.500 UL
+LT0
+3315 6517 M
+3315 6517 CircleF
+% End plot #472
+% Begin plot #473
+0.667 UP
+0.500 UL
+LT0
+3318 6517 M
+3318 6517 CircleF
+% End plot #473
+% Begin plot #474
+0.667 UP
+0.500 UL
+LT0
+3322 6517 M
+3322 6517 CircleF
+% End plot #474
+% Begin plot #475
+0.667 UP
+0.500 UL
+LT0
+3326 6517 M
+3326 6517 CircleF
+% End plot #475
+% Begin plot #476
+0.667 UP
+0.500 UL
+LT0
+3330 6517 M
+3330 6517 CircleF
+% End plot #476
+% Begin plot #477
+0.667 UP
+0.500 UL
+LT0
+3334 6517 M
+3334 6517 CircleF
+% End plot #477
+% Begin plot #478
+0.667 UP
+0.500 UL
+LT0
+3338 6517 M
+3338 6517 CircleF
+% End plot #478
+% Begin plot #479
+0.667 UP
+0.500 UL
+LT0
+3342 6517 M
+3342 6517 CircleF
+% End plot #479
+% Begin plot #480
+0.667 UP
+0.500 UL
+LT0
+3345 6517 M
+3345 6517 CircleF
+% End plot #480
+% Begin plot #481
+0.667 UP
+0.500 UL
+LT0
+3349 6517 M
+3349 6517 CircleF
+% End plot #481
+% Begin plot #482
+0.667 UP
+0.500 UL
+LT0
+3353 6517 M
+3353 6517 CircleF
+% End plot #482
+% Begin plot #483
+0.667 UP
+0.500 UL
+LT0
+3357 6517 M
+3357 6517 CircleF
+% End plot #483
+% Begin plot #484
+0.667 UP
+0.500 UL
+LT0
+3361 6517 M
+3361 6517 CircleF
+% End plot #484
+% Begin plot #485
+0.667 UP
+0.500 UL
+LT0
+3365 6517 M
+3365 6517 CircleF
+% End plot #485
+% Begin plot #486
+0.667 UP
+0.500 UL
+LT0
+3369 6517 M
+3369 6517 CircleF
+% End plot #486
+% Begin plot #487
+0.667 UP
+0.500 UL
+LT0
+3372 6517 M
+3372 6517 CircleF
+% End plot #487
+% Begin plot #488
+0.667 UP
+0.500 UL
+LT0
+3376 6517 M
+3376 6517 CircleF
+% End plot #488
+% Begin plot #489
+0.667 UP
+0.500 UL
+LT0
+3380 6517 M
+3380 6517 CircleF
+% End plot #489
+% Begin plot #490
+0.667 UP
+0.500 UL
+LT0
+3384 6517 M
+3384 6517 CircleF
+% End plot #490
+% Begin plot #491
+0.667 UP
+0.500 UL
+LT0
+3388 6517 M
+3388 6517 CircleF
+% End plot #491
+% Begin plot #492
+0.667 UP
+0.500 UL
+LT0
+3392 6517 M
+3392 6517 CircleF
+% End plot #492
+% Begin plot #493
+0.667 UP
+0.500 UL
+LT0
+3396 6517 M
+3396 6517 CircleF
+% End plot #493
+% Begin plot #494
+0.667 UP
+0.500 UL
+LT0
+3399 6517 M
+3399 6517 CircleF
+% End plot #494
+% Begin plot #495
+0.667 UP
+0.500 UL
+LT0
+3403 6517 M
+3403 6517 CircleF
+% End plot #495
+% Begin plot #496
+0.667 UP
+0.500 UL
+LT0
+3407 6517 M
+3407 6517 CircleF
+% End plot #496
+% Begin plot #497
+0.667 UP
+0.500 UL
+LT0
+3411 6517 M
+3411 6517 CircleF
+% End plot #497
+% Begin plot #498
+0.667 UP
+0.500 UL
+LT0
+3415 6517 M
+3415 6517 CircleF
+% End plot #498
+% Begin plot #499
+0.667 UP
+0.500 UL
+LT0
+3419 6517 M
+3419 6517 CircleF
+% End plot #499
+% Begin plot #500
+0.667 UP
+0.500 UL
+LT0
+3423 6517 M
+3423 6517 CircleF
+% End plot #500
+% Begin plot #501
+0.667 UP
+0.500 UL
+LT0
+3426 6517 M
+3426 6517 CircleF
+% End plot #501
+% Begin plot #502
+0.667 UP
+0.500 UL
+LT0
+3430 6517 M
+3430 6517 CircleF
+% End plot #502
+% Begin plot #503
+0.667 UP
+0.500 UL
+LT0
+3434 6517 M
+3434 6517 CircleF
+% End plot #503
+% Begin plot #504
+0.667 UP
+0.500 UL
+LT0
+3438 6517 M
+3438 6517 CircleF
+% End plot #504
+% Begin plot #505
+0.667 UP
+0.500 UL
+LT0
+3442 6517 M
+3442 6517 CircleF
+% End plot #505
+% Begin plot #506
+0.667 UP
+0.500 UL
+LT0
+3446 6517 M
+3446 6517 CircleF
+% End plot #506
+% Begin plot #507
+0.667 UP
+0.500 UL
+LT0
+3450 6517 M
+3450 6517 CircleF
+% End plot #507
+% Begin plot #508
+0.667 UP
+0.500 UL
+LT0
+3453 6517 M
+3453 6517 CircleF
+% End plot #508
+% Begin plot #509
+0.667 UP
+0.500 UL
+LT0
+3457 6517 M
+3457 6517 CircleF
+% End plot #509
+% Begin plot #510
+0.667 UP
+0.500 UL
+LT0
+3461 6517 M
+3461 6517 CircleF
+% End plot #510
+% Begin plot #511
+0.667 UP
+0.500 UL
+LT0
+3465 6517 M
+3465 6517 CircleF
+% End plot #511
+% Begin plot #512
+0.667 UP
+0.500 UL
+LT0
+3469 6517 M
+3469 6517 CircleF
+% End plot #512
+% Begin plot #513
+0.667 UP
+0.500 UL
+LT0
+3473 6517 M
+3473 6517 CircleF
+% End plot #513
+% Begin plot #514
+0.667 UP
+0.500 UL
+LT0
+3477 6517 M
+3477 6517 CircleF
+% End plot #514
+% Begin plot #515
+0.667 UP
+0.500 UL
+LT0
+3480 6517 M
+3480 6517 CircleF
+% End plot #515
+% Begin plot #516
+0.667 UP
+0.500 UL
+LT0
+3484 6517 M
+3484 6517 CircleF
+% End plot #516
+% Begin plot #517
+0.667 UP
+0.500 UL
+LT0
+3488 6517 M
+3488 6517 CircleF
+% End plot #517
+% Begin plot #518
+0.667 UP
+0.500 UL
+LT0
+3492 6517 M
+3492 6517 CircleF
+% End plot #518
+% Begin plot #519
+0.667 UP
+0.500 UL
+LT0
+3496 6517 M
+3496 6517 CircleF
+% End plot #519
+% Begin plot #520
+0.667 UP
+0.500 UL
+LT0
+3500 6517 M
+3500 6517 CircleF
+% End plot #520
+% Begin plot #521
+0.667 UP
+0.500 UL
+LT0
+3504 6517 M
+3504 6517 CircleF
+% End plot #521
+% Begin plot #522
+0.667 UP
+0.500 UL
+LT0
+3507 6517 M
+3507 6517 CircleF
+% End plot #522
+% Begin plot #523
+0.667 UP
+0.500 UL
+LT0
+3511 6517 M
+3511 6517 CircleF
+% End plot #523
+% Begin plot #524
+0.667 UP
+0.500 UL
+LT0
+3515 6517 M
+3515 6517 CircleF
+% End plot #524
+% Begin plot #525
+0.667 UP
+0.500 UL
+LT0
+3519 6517 M
+3519 6517 CircleF
+% End plot #525
+% Begin plot #526
+0.667 UP
+0.500 UL
+LT0
+3523 6517 M
+3523 6517 CircleF
+% End plot #526
+% Begin plot #527
+0.667 UP
+0.500 UL
+LT0
+3527 6517 M
+3527 6517 CircleF
+% End plot #527
+% Begin plot #528
+0.667 UP
+0.500 UL
+LT0
+3531 6517 M
+3531 6517 CircleF
+% End plot #528
+% Begin plot #529
+0.667 UP
+0.500 UL
+LT0
+3534 6517 M
+3534 6517 CircleF
+% End plot #529
+% Begin plot #530
+0.667 UP
+0.500 UL
+LT0
+3538 6517 M
+3538 6517 CircleF
+% End plot #530
+% Begin plot #531
+0.667 UP
+0.500 UL
+LT0
+3542 6517 M
+3542 6517 CircleF
+% End plot #531
+% Begin plot #532
+0.667 UP
+0.500 UL
+LT0
+3546 6517 M
+3546 6517 CircleF
+% End plot #532
+% Begin plot #533
+0.667 UP
+0.500 UL
+LT0
+3550 6517 M
+3550 6517 CircleF
+% End plot #533
+% Begin plot #534
+0.667 UP
+0.500 UL
+LT0
+3554 6517 M
+3554 6517 CircleF
+% End plot #534
+% Begin plot #535
+0.667 UP
+0.500 UL
+LT0
+3558 6517 M
+3558 6517 CircleF
+% End plot #535
+% Begin plot #536
+0.667 UP
+0.500 UL
+LT0
+3561 6517 M
+3561 6517 CircleF
+% End plot #536
+% Begin plot #537
+0.667 UP
+0.500 UL
+LT0
+3565 6517 M
+3565 6517 CircleF
+% End plot #537
+% Begin plot #538
+0.667 UP
+0.500 UL
+LT0
+3569 6517 M
+3569 6517 CircleF
+% End plot #538
+% Begin plot #539
+0.667 UP
+0.500 UL
+LT0
+3573 6517 M
+3573 6517 CircleF
+% End plot #539
+% Begin plot #540
+0.667 UP
+0.500 UL
+LT0
+3577 6517 M
+3577 6517 CircleF
+% End plot #540
+% Begin plot #541
+0.667 UP
+0.500 UL
+LT0
+3581 6517 M
+3581 6517 CircleF
+% End plot #541
+% Begin plot #542
+0.667 UP
+0.500 UL
+LT0
+3585 6517 M
+3585 6517 CircleF
+% End plot #542
+% Begin plot #543
+0.667 UP
+0.500 UL
+LT0
+3589 6517 M
+3589 6517 CircleF
+% End plot #543
+% Begin plot #544
+0.667 UP
+0.500 UL
+LT0
+3592 6517 M
+3592 6517 CircleF
+% End plot #544
+% Begin plot #545
+0.667 UP
+0.500 UL
+LT0
+3596 6517 M
+3596 6517 CircleF
+% End plot #545
+% Begin plot #546
+0.667 UP
+0.500 UL
+LT0
+3600 6517 M
+3600 6517 CircleF
+% End plot #546
+% Begin plot #547
+0.667 UP
+0.500 UL
+LT0
+3604 6517 M
+3604 6517 CircleF
+% End plot #547
+% Begin plot #548
+0.667 UP
+0.500 UL
+LT0
+3608 6517 M
+3608 6517 CircleF
+% End plot #548
+% Begin plot #549
+0.667 UP
+0.500 UL
+LT0
+3612 6517 M
+3612 6517 CircleF
+% End plot #549
+% Begin plot #550
+0.667 UP
+0.500 UL
+LT0
+3616 6517 M
+3616 6517 CircleF
+% End plot #550
+% Begin plot #551
+0.667 UP
+0.500 UL
+LT0
+3619 6517 M
+3619 6517 CircleF
+% End plot #551
+% Begin plot #552
+0.667 UP
+0.500 UL
+LT0
+3623 6517 M
+3623 6517 CircleF
+% End plot #552
+% Begin plot #553
+0.667 UP
+0.500 UL
+LT0
+3627 6517 M
+3627 6517 CircleF
+% End plot #553
+% Begin plot #554
+0.667 UP
+0.500 UL
+LT0
+3631 6517 M
+3631 6517 CircleF
+% End plot #554
+% Begin plot #555
+0.667 UP
+0.500 UL
+LT0
+3635 6517 M
+3635 6517 CircleF
+% End plot #555
+% Begin plot #556
+0.667 UP
+0.500 UL
+LT0
+3639 6517 M
+3639 6517 CircleF
+% End plot #556
+% Begin plot #557
+0.667 UP
+0.500 UL
+LT0
+3643 6517 M
+3643 6517 CircleF
+% End plot #557
+% Begin plot #558
+0.667 UP
+0.500 UL
+LT0
+3646 6517 M
+3646 6517 CircleF
+% End plot #558
+% Begin plot #559
+0.667 UP
+0.500 UL
+LT0
+3650 6517 M
+3650 6517 CircleF
+% End plot #559
+% Begin plot #560
+0.667 UP
+0.500 UL
+LT0
+3654 6517 M
+3654 6517 CircleF
+% End plot #560
+% Begin plot #561
+0.667 UP
+0.500 UL
+LT0
+3658 6517 M
+3658 6517 CircleF
+% End plot #561
+% Begin plot #562
+0.667 UP
+0.500 UL
+LT0
+3662 6517 M
+3662 6517 CircleF
+% End plot #562
+% Begin plot #563
+0.667 UP
+0.500 UL
+LT0
+3666 6517 M
+3666 6517 CircleF
+% End plot #563
+% Begin plot #564
+0.667 UP
+0.500 UL
+LT0
+3670 6517 M
+3670 6517 CircleF
+% End plot #564
+% Begin plot #565
+0.667 UP
+0.500 UL
+LT0
+3673 6517 M
+3673 6517 CircleF
+% End plot #565
+% Begin plot #566
+0.667 UP
+0.500 UL
+LT0
+3677 6517 M
+3677 6517 CircleF
+% End plot #566
+% Begin plot #567
+0.667 UP
+0.500 UL
+LT0
+3681 6517 M
+3681 6517 CircleF
+% End plot #567
+% Begin plot #568
+0.667 UP
+0.500 UL
+LT0
+3685 6517 M
+3685 6517 CircleF
+% End plot #568
+% Begin plot #569
+0.667 UP
+0.500 UL
+LT0
+3689 6517 M
+3689 6517 CircleF
+% End plot #569
+% Begin plot #570
+0.667 UP
+0.500 UL
+LT0
+3693 6517 M
+3693 6517 CircleF
+% End plot #570
+% Begin plot #571
+0.667 UP
+0.500 UL
+LT0
+3697 6517 M
+3697 6517 CircleF
+% End plot #571
+% Begin plot #572
+0.667 UP
+0.500 UL
+LT0
+3700 6517 M
+3700 6517 CircleF
+% End plot #572
+% Begin plot #573
+0.667 UP
+0.500 UL
+LT0
+3704 6517 M
+3704 6517 CircleF
+% End plot #573
+% Begin plot #574
+0.667 UP
+0.500 UL
+LT0
+3708 6517 M
+3708 6517 CircleF
+% End plot #574
+% Begin plot #575
+0.667 UP
+0.500 UL
+LT0
+3712 6517 M
+3712 6517 CircleF
+% End plot #575
+% Begin plot #576
+0.667 UP
+0.500 UL
+LT0
+3716 6517 M
+3716 6517 CircleF
+% End plot #576
+% Begin plot #577
+0.667 UP
+0.500 UL
+LT0
+3720 6517 M
+3720 6517 CircleF
+% End plot #577
+% Begin plot #578
+0.667 UP
+0.500 UL
+LT0
+3724 6517 M
+3724 6517 CircleF
+% End plot #578
+% Begin plot #579
+0.667 UP
+0.500 UL
+LT0
+3727 6517 M
+3727 6517 CircleF
+% End plot #579
+% Begin plot #580
+0.667 UP
+0.500 UL
+LT0
+3731 6517 M
+3731 6517 CircleF
+% End plot #580
+% Begin plot #581
+0.667 UP
+0.500 UL
+LT0
+3735 6517 M
+3735 6517 CircleF
+% End plot #581
+% Begin plot #582
+0.667 UP
+0.500 UL
+LT0
+3739 6517 M
+3739 6517 CircleF
+% End plot #582
+% Begin plot #583
+0.667 UP
+0.500 UL
+LT0
+3743 6517 M
+3743 6517 CircleF
+% End plot #583
+% Begin plot #584
+0.667 UP
+0.500 UL
+LT0
+3747 6517 M
+3747 6517 CircleF
+% End plot #584
+% Begin plot #585
+0.667 UP
+0.500 UL
+LT0
+3751 6517 M
+3751 6517 CircleF
+% End plot #585
+% Begin plot #586
+0.667 UP
+0.500 UL
+LT0
+3754 6517 M
+3754 6517 CircleF
+% End plot #586
+% Begin plot #587
+0.667 UP
+0.500 UL
+LT0
+3758 6517 M
+3758 6517 CircleF
+% End plot #587
+% Begin plot #588
+0.667 UP
+0.500 UL
+LT0
+3762 6517 M
+3762 6517 CircleF
+% End plot #588
+% Begin plot #589
+0.667 UP
+0.500 UL
+LT0
+3766 6517 M
+3766 6517 CircleF
+% End plot #589
+% Begin plot #590
+0.667 UP
+0.500 UL
+LT0
+3770 6517 M
+3770 6517 CircleF
+% End plot #590
+% Begin plot #591
+0.667 UP
+0.500 UL
+LT0
+3774 6517 M
+3774 6517 CircleF
+% End plot #591
+% Begin plot #592
+0.667 UP
+0.500 UL
+LT0
+3778 6517 M
+3778 6517 CircleF
+% End plot #592
+% Begin plot #593
+0.667 UP
+0.500 UL
+LT0
+3781 6517 M
+3781 6517 CircleF
+% End plot #593
+% Begin plot #594
+0.667 UP
+0.500 UL
+LT0
+3785 6517 M
+3785 6517 CircleF
+% End plot #594
+% Begin plot #595
+0.667 UP
+0.500 UL
+LT0
+3789 6517 M
+3789 6517 CircleF
+% End plot #595
+% Begin plot #596
+0.667 UP
+0.500 UL
+LT0
+3793 6517 M
+3793 6517 CircleF
+% End plot #596
+% Begin plot #597
+0.667 UP
+0.500 UL
+LT0
+3797 6517 M
+3797 6517 CircleF
+% End plot #597
+% Begin plot #598
+0.667 UP
+0.500 UL
+LT0
+3801 6517 M
+3801 6517 CircleF
+% End plot #598
+% Begin plot #599
+0.667 UP
+0.500 UL
+LT0
+3805 6517 M
+3805 6517 CircleF
+% End plot #599
+% Begin plot #600
+0.667 UP
+0.500 UL
+LT0
+3808 6517 M
+3808 6517 CircleF
+% End plot #600
+% Begin plot #601
+0.667 UP
+0.500 UL
+LT0
+3812 6517 M
+3812 6517 CircleF
+% End plot #601
+% Begin plot #602
+0.667 UP
+0.500 UL
+LT0
+3816 6517 M
+3816 6517 CircleF
+% End plot #602
+% Begin plot #603
+0.667 UP
+0.500 UL
+LT0
+3820 6517 M
+3820 6517 CircleF
+% End plot #603
+% Begin plot #604
+0.667 UP
+0.500 UL
+LT0
+3824 6517 M
+3824 6517 CircleF
+% End plot #604
+% Begin plot #605
+0.667 UP
+0.500 UL
+LT0
+3828 6517 M
+3828 6517 CircleF
+% End plot #605
+% Begin plot #606
+0.667 UP
+0.500 UL
+LT0
+3832 6517 M
+3832 6517 CircleF
+% End plot #606
+% Begin plot #607
+0.667 UP
+0.500 UL
+LT0
+3835 6517 M
+3835 6517 CircleF
+% End plot #607
+% Begin plot #608
+0.667 UP
+0.500 UL
+LT0
+3839 6517 M
+3839 6517 CircleF
+% End plot #608
+% Begin plot #609
+0.667 UP
+0.500 UL
+LT0
+3843 6517 M
+3843 6517 CircleF
+% End plot #609
+% Begin plot #610
+0.667 UP
+0.500 UL
+LT0
+3847 6517 M
+3847 6517 CircleF
+% End plot #610
+% Begin plot #611
+0.667 UP
+0.500 UL
+LT0
+3851 6517 M
+3851 6517 CircleF
+% End plot #611
+% Begin plot #612
+0.667 UP
+0.500 UL
+LT0
+3855 6517 M
+3855 6517 CircleF
+% End plot #612
+% Begin plot #613
+0.667 UP
+0.500 UL
+LT0
+3859 6517 M
+3859 6517 CircleF
+% End plot #613
+% Begin plot #614
+0.667 UP
+0.500 UL
+LT0
+3862 6517 M
+3862 6517 CircleF
+% End plot #614
+% Begin plot #615
+0.667 UP
+0.500 UL
+LT0
+3866 6517 M
+3866 6517 CircleF
+% End plot #615
+% Begin plot #616
+0.667 UP
+0.500 UL
+LT0
+3870 6517 M
+3870 6517 CircleF
+% End plot #616
+% Begin plot #617
+0.667 UP
+0.500 UL
+LT0
+3874 6517 M
+3874 6517 CircleF
+% End plot #617
+% Begin plot #618
+0.667 UP
+0.500 UL
+LT0
+3878 6517 M
+3878 6517 CircleF
+% End plot #618
+% Begin plot #619
+0.667 UP
+0.500 UL
+LT0
+3882 6517 M
+3882 6517 CircleF
+% End plot #619
+% Begin plot #620
+0.667 UP
+0.500 UL
+LT0
+3886 6517 M
+3886 6517 CircleF
+% End plot #620
+% Begin plot #621
+0.667 UP
+0.500 UL
+LT0
+3889 6517 M
+3889 6517 CircleF
+% End plot #621
+% Begin plot #622
+0.667 UP
+0.500 UL
+LT0
+3893 6517 M
+3893 6517 CircleF
+% End plot #622
+% Begin plot #623
+0.667 UP
+0.500 UL
+LT0
+3897 6517 M
+3897 6517 CircleF
+% End plot #623
+% Begin plot #624
+0.667 UP
+0.500 UL
+LT0
+3901 6517 M
+3901 6517 CircleF
+% End plot #624
+% Begin plot #625
+0.667 UP
+0.500 UL
+LT0
+3905 6517 M
+3905 6517 CircleF
+% End plot #625
+% Begin plot #626
+0.667 UP
+0.500 UL
+LT0
+3909 6517 M
+3909 6517 CircleF
+% End plot #626
+% Begin plot #627
+0.667 UP
+0.500 UL
+LT0
+3913 6517 M
+3913 6517 CircleF
+% End plot #627
+% Begin plot #628
+0.667 UP
+0.500 UL
+LT0
+3917 6517 M
+3917 6517 CircleF
+% End plot #628
+% Begin plot #629
+0.667 UP
+0.500 UL
+LT0
+3920 6517 M
+3920 6517 CircleF
+% End plot #629
+% Begin plot #630
+0.667 UP
+0.500 UL
+LT0
+3924 6517 M
+3924 6517 CircleF
+% End plot #630
+% Begin plot #631
+0.667 UP
+0.500 UL
+LT0
+3928 6517 M
+3928 6517 CircleF
+% End plot #631
+% Begin plot #632
+0.667 UP
+0.500 UL
+LT0
+3932 6517 M
+3932 6517 CircleF
+% End plot #632
+% Begin plot #633
+0.667 UP
+0.500 UL
+LT0
+3936 6517 M
+3936 6517 CircleF
+% End plot #633
+% Begin plot #634
+0.667 UP
+0.500 UL
+LT0
+3940 6517 M
+3940 6517 CircleF
+% End plot #634
+% Begin plot #635
+0.667 UP
+0.500 UL
+LT0
+3944 6517 M
+3944 6517 CircleF
+% End plot #635
+% Begin plot #636
+0.667 UP
+0.500 UL
+LT0
+3947 6517 M
+3947 6517 CircleF
+% End plot #636
+% Begin plot #637
+0.667 UP
+0.500 UL
+LT0
+3951 6517 M
+3951 6517 CircleF
+% End plot #637
+% Begin plot #638
+0.667 UP
+0.500 UL
+LT0
+3955 6517 M
+3955 6517 CircleF
+% End plot #638
+% Begin plot #639
+0.667 UP
+0.500 UL
+LT0
+3959 6517 M
+3959 6517 CircleF
+% End plot #639
+% Begin plot #640
+0.667 UP
+0.500 UL
+LT0
+3963 6517 M
+3963 6517 CircleF
+% End plot #640
+% Begin plot #641
+0.667 UP
+0.500 UL
+LT0
+3967 6517 M
+3967 6517 CircleF
+% End plot #641
+% Begin plot #642
+0.667 UP
+0.500 UL
+LT0
+3971 6517 M
+3971 6517 CircleF
+% End plot #642
+% Begin plot #643
+0.667 UP
+0.500 UL
+LT0
+3974 6517 M
+3974 6517 CircleF
+% End plot #643
+% Begin plot #644
+0.667 UP
+0.500 UL
+LT0
+3978 6517 M
+3978 6517 CircleF
+% End plot #644
+% Begin plot #645
+0.667 UP
+0.500 UL
+LT0
+3982 6517 M
+3982 6517 CircleF
+% End plot #645
+% Begin plot #646
+0.667 UP
+0.500 UL
+LT0
+3986 6517 M
+3986 6517 CircleF
+% End plot #646
+% Begin plot #647
+0.667 UP
+0.500 UL
+LT0
+3990 6517 M
+3990 6517 CircleF
+% End plot #647
+% Begin plot #648
+0.667 UP
+0.500 UL
+LT0
+3994 6517 M
+3994 6517 CircleF
+% End plot #648
+% Begin plot #649
+0.667 UP
+0.500 UL
+LT0
+3998 6517 M
+3998 6517 CircleF
+% End plot #649
+% Begin plot #650
+0.667 UP
+0.500 UL
+LT0
+4001 6517 M
+4001 6517 CircleF
+% End plot #650
+% Begin plot #651
+0.667 UP
+0.500 UL
+LT0
+4005 6517 M
+4005 6517 CircleF
+% End plot #651
+% Begin plot #652
+0.667 UP
+0.500 UL
+LT0
+4009 6517 M
+4009 6517 CircleF
+% End plot #652
+% Begin plot #653
+0.667 UP
+0.500 UL
+LT0
+4013 6517 M
+4013 6517 CircleF
+% End plot #653
+% Begin plot #654
+0.667 UP
+0.500 UL
+LT0
+4017 6517 M
+4017 6517 CircleF
+% End plot #654
+% Begin plot #655
+0.667 UP
+0.500 UL
+LT0
+4021 6517 M
+4021 6517 CircleF
+% End plot #655
+% Begin plot #656
+0.667 UP
+0.500 UL
+LT0
+4025 6517 M
+4025 6517 CircleF
+% End plot #656
+% Begin plot #657
+0.667 UP
+0.500 UL
+LT0
+4028 6517 M
+4028 6517 CircleF
+% End plot #657
+% Begin plot #658
+0.667 UP
+0.500 UL
+LT0
+4032 6517 M
+4032 6517 CircleF
+% End plot #658
+% Begin plot #659
+0.667 UP
+0.500 UL
+LT0
+4036 6517 M
+4036 6517 CircleF
+% End plot #659
+% Begin plot #660
+0.667 UP
+0.500 UL
+LT0
+4040 6517 M
+4040 6517 CircleF
+% End plot #660
+% Begin plot #661
+0.667 UP
+0.500 UL
+LT0
+4044 6517 M
+4044 6517 CircleF
+% End plot #661
+% Begin plot #662
+0.667 UP
+0.500 UL
+LT0
+4048 6517 M
+4048 6517 CircleF
+% End plot #662
+% Begin plot #663
+0.667 UP
+0.500 UL
+LT0
+4052 6517 M
+4052 6517 CircleF
+% End plot #663
+% Begin plot #664
+0.667 UP
+0.500 UL
+LT0
+4055 6517 M
+4055 6517 CircleF
+% End plot #664
+% Begin plot #665
+0.667 UP
+0.500 UL
+LT0
+4059 6517 M
+4059 6517 CircleF
+% End plot #665
+% Begin plot #666
+0.667 UP
+0.500 UL
+LT0
+4063 6517 M
+4063 6517 CircleF
+% End plot #666
+% Begin plot #667
+0.667 UP
+0.500 UL
+LT0
+4067 6517 M
+4067 6517 CircleF
+% End plot #667
+% Begin plot #668
+0.667 UP
+0.500 UL
+LT0
+4071 6517 M
+4071 6517 CircleF
+% End plot #668
+% Begin plot #669
+0.667 UP
+0.500 UL
+LT0
+4075 6517 M
+4075 6517 CircleF
+% End plot #669
+% Begin plot #670
+0.667 UP
+0.500 UL
+LT0
+4079 6517 M
+4079 6517 CircleF
+% End plot #670
+% Begin plot #671
+0.667 UP
+0.500 UL
+LT0
+4082 6517 M
+4082 6517 CircleF
+% End plot #671
+% Begin plot #672
+0.667 UP
+0.500 UL
+LT0
+4086 6517 M
+4086 6517 CircleF
+% End plot #672
+% Begin plot #673
+0.667 UP
+0.500 UL
+LT0
+4090 6517 M
+4090 6517 CircleF
+% End plot #673
+% Begin plot #674
+0.667 UP
+0.500 UL
+LT0
+4094 6517 M
+4094 6517 CircleF
+% End plot #674
+% Begin plot #675
+0.667 UP
+0.500 UL
+LT0
+4098 6517 M
+4098 6517 CircleF
+% End plot #675
+% Begin plot #676
+0.667 UP
+0.500 UL
+LT0
+4102 6517 M
+4102 6517 CircleF
+% End plot #676
+% Begin plot #677
+0.667 UP
+0.500 UL
+LT0
+4106 6517 M
+4106 6517 CircleF
+% End plot #677
+% Begin plot #678
+0.667 UP
+0.500 UL
+LT0
+4109 6517 M
+4109 6517 CircleF
+% End plot #678
+% Begin plot #679
+0.667 UP
+0.500 UL
+LT0
+4113 6517 M
+4113 6517 CircleF
+% End plot #679
+% Begin plot #680
+0.667 UP
+0.500 UL
+LT0
+4117 6517 M
+4117 6517 CircleF
+% End plot #680
+% Begin plot #681
+0.667 UP
+0.500 UL
+LT0
+4121 6517 M
+4121 6517 CircleF
+% End plot #681
+% Begin plot #682
+0.667 UP
+0.500 UL
+LT0
+4125 6517 M
+4125 6517 CircleF
+% End plot #682
+% Begin plot #683
+0.667 UP
+0.500 UL
+LT0
+4129 6517 M
+4129 6517 CircleF
+% End plot #683
+% Begin plot #684
+0.667 UP
+0.500 UL
+LT0
+4133 6517 M
+4133 6517 CircleF
+% End plot #684
+% Begin plot #685
+0.667 UP
+0.500 UL
+LT0
+4136 6517 M
+4136 6517 CircleF
+% End plot #685
+% Begin plot #686
+0.667 UP
+0.500 UL
+LT0
+4140 6517 M
+4140 6517 CircleF
+% End plot #686
+% Begin plot #687
+0.667 UP
+0.500 UL
+LT0
+4144 6517 M
+4144 6517 CircleF
+% End plot #687
+% Begin plot #688
+0.667 UP
+0.500 UL
+LT0
+4148 6517 M
+4148 6517 CircleF
+% End plot #688
+% Begin plot #689
+0.667 UP
+0.500 UL
+LT0
+4152 6517 M
+4152 6517 CircleF
+% End plot #689
+% Begin plot #690
+0.667 UP
+0.500 UL
+LT0
+4156 6517 M
+4156 6517 CircleF
+% End plot #690
+% Begin plot #691
+0.667 UP
+0.500 UL
+LT0
+4160 6517 M
+4160 6517 CircleF
+% End plot #691
+% Begin plot #692
+0.667 UP
+0.500 UL
+LT0
+4163 6517 M
+4163 6517 CircleF
+% End plot #692
+% Begin plot #693
+0.667 UP
+0.500 UL
+LT0
+4167 6517 M
+4167 6517 CircleF
+% End plot #693
+% Begin plot #694
+0.667 UP
+0.500 UL
+LT0
+4171 6517 M
+4171 6517 CircleF
+% End plot #694
+% Begin plot #695
+0.667 UP
+0.500 UL
+LT0
+4175 6517 M
+4175 6517 CircleF
+% End plot #695
+% Begin plot #696
+0.667 UP
+0.500 UL
+LT0
+4179 6517 M
+4179 6517 CircleF
+% End plot #696
+% Begin plot #697
+0.667 UP
+0.500 UL
+LT0
+4183 6517 M
+4183 6517 CircleF
+% End plot #697
+% Begin plot #698
+0.667 UP
+0.500 UL
+LT0
+4187 6517 M
+4187 6517 CircleF
+% End plot #698
+% Begin plot #699
+0.667 UP
+0.500 UL
+LT0
+4190 6517 M
+4190 6517 CircleF
+% End plot #699
+% Begin plot #700
+0.667 UP
+0.500 UL
+LT0
+4194 6517 M
+4194 6517 CircleF
+% End plot #700
+% Begin plot #701
+0.667 UP
+0.500 UL
+LT0
+4198 6517 M
+4198 6517 CircleF
+% End plot #701
+% Begin plot #702
+0.667 UP
+0.500 UL
+LT0
+4202 6517 M
+4202 6517 CircleF
+% End plot #702
+% Begin plot #703
+0.667 UP
+0.500 UL
+LT0
+4206 6517 M
+4206 6517 CircleF
+% End plot #703
+% Begin plot #704
+0.667 UP
+0.500 UL
+LT0
+4210 6517 M
+4210 6517 CircleF
+% End plot #704
+% Begin plot #705
+0.667 UP
+0.500 UL
+LT0
+4214 6517 M
+4214 6517 CircleF
+% End plot #705
+% Begin plot #706
+0.667 UP
+0.500 UL
+LT0
+4217 6517 M
+4217 6517 CircleF
+% End plot #706
+% Begin plot #707
+0.667 UP
+0.500 UL
+LT0
+4221 6517 M
+4221 6517 CircleF
+% End plot #707
+% Begin plot #708
+0.667 UP
+0.500 UL
+LT0
+4225 6517 M
+4225 6517 CircleF
+% End plot #708
+% Begin plot #709
+0.667 UP
+0.500 UL
+LT0
+4229 6517 M
+4229 6517 CircleF
+% End plot #709
+% Begin plot #710
+0.667 UP
+0.500 UL
+LT0
+4233 6517 M
+4233 6517 CircleF
+% End plot #710
+% Begin plot #711
+0.667 UP
+0.500 UL
+LT0
+4237 6517 M
+4237 6517 CircleF
+% End plot #711
+% Begin plot #712
+0.667 UP
+0.500 UL
+LT0
+4241 6517 M
+4241 6517 CircleF
+% End plot #712
+% Begin plot #713
+0.667 UP
+0.500 UL
+LT0
+4245 6517 M
+4245 6517 CircleF
+% End plot #713
+% Begin plot #714
+0.667 UP
+0.500 UL
+LT0
+4248 6517 M
+4248 6517 CircleF
+% End plot #714
+% Begin plot #715
+0.667 UP
+0.500 UL
+LT0
+4252 6517 M
+4252 6517 CircleF
+% End plot #715
+% Begin plot #716
+0.667 UP
+0.500 UL
+LT0
+4256 6517 M
+4256 6517 CircleF
+% End plot #716
+% Begin plot #717
+0.667 UP
+0.500 UL
+LT0
+4260 6517 M
+4260 6517 CircleF
+% End plot #717
+% Begin plot #718
+0.667 UP
+0.500 UL
+LT0
+4264 6517 M
+4264 6517 CircleF
+% End plot #718
+% Begin plot #719
+0.667 UP
+0.500 UL
+LT0
+4268 6517 M
+4268 6517 CircleF
+% End plot #719
+% Begin plot #720
+0.667 UP
+0.500 UL
+LT0
+4272 6517 M
+4272 6517 CircleF
+% End plot #720
+% Begin plot #721
+0.667 UP
+0.500 UL
+LT0
+4275 6517 M
+4275 6517 CircleF
+% End plot #721
+% Begin plot #722
+0.667 UP
+0.500 UL
+LT0
+4279 6517 M
+4279 6517 CircleF
+% End plot #722
+% Begin plot #723
+0.667 UP
+0.500 UL
+LT0
+4283 6517 M
+4283 6517 CircleF
+% End plot #723
+% Begin plot #724
+0.667 UP
+0.500 UL
+LT0
+4287 6517 M
+4287 6517 CircleF
+% End plot #724
+% Begin plot #725
+0.667 UP
+0.500 UL
+LT0
+4291 6517 M
+4291 6517 CircleF
+% End plot #725
+% Begin plot #726
+0.667 UP
+0.500 UL
+LT0
+4295 6517 M
+4295 6517 CircleF
+% End plot #726
+% Begin plot #727
+0.667 UP
+0.500 UL
+LT0
+4299 6517 M
+4299 6517 CircleF
+% End plot #727
+% Begin plot #728
+0.667 UP
+0.500 UL
+LT0
+4302 6517 M
+4302 6517 CircleF
+% End plot #728
+% Begin plot #729
+0.667 UP
+0.500 UL
+LT0
+4306 6517 M
+4306 6517 CircleF
+% End plot #729
+% Begin plot #730
+0.667 UP
+0.500 UL
+LT0
+4310 6517 M
+4310 6517 CircleF
+% End plot #730
+% Begin plot #731
+0.667 UP
+0.500 UL
+LT0
+4314 6517 M
+4314 6517 CircleF
+% End plot #731
+% Begin plot #732
+0.667 UP
+0.500 UL
+LT0
+4318 6517 M
+4318 6517 CircleF
+% End plot #732
+% Begin plot #733
+0.667 UP
+0.500 UL
+LT0
+4322 6517 M
+4322 6517 CircleF
+% End plot #733
+% Begin plot #734
+0.667 UP
+0.500 UL
+LT0
+4326 6517 M
+4326 6517 CircleF
+% End plot #734
+% Begin plot #735
+0.667 UP
+0.500 UL
+LT0
+4329 6517 M
+4329 6517 CircleF
+% End plot #735
+% Begin plot #736
+0.667 UP
+0.500 UL
+LT0
+4333 6517 M
+4333 6517 CircleF
+% End plot #736
+% Begin plot #737
+0.667 UP
+0.500 UL
+LT0
+4337 6517 M
+4337 6517 CircleF
+% End plot #737
+% Begin plot #738
+0.667 UP
+0.500 UL
+LT0
+4341 6517 M
+4341 6517 CircleF
+% End plot #738
+% Begin plot #739
+0.667 UP
+0.500 UL
+LT0
+4345 6517 M
+4345 6517 CircleF
+% End plot #739
+% Begin plot #740
+0.667 UP
+0.500 UL
+LT0
+4349 6517 M
+4349 6517 CircleF
+% End plot #740
+% Begin plot #741
+0.667 UP
+0.500 UL
+LT0
+4353 6517 M
+4353 6517 CircleF
+% End plot #741
+% Begin plot #742
+0.667 UP
+0.500 UL
+LT0
+4356 6517 M
+4356 6517 CircleF
+% End plot #742
+% Begin plot #743
+0.667 UP
+0.500 UL
+LT0
+4360 6517 M
+4360 6517 CircleF
+% End plot #743
+% Begin plot #744
+0.667 UP
+0.500 UL
+LT0
+4364 6517 M
+4364 6517 CircleF
+% End plot #744
+% Begin plot #745
+0.667 UP
+0.500 UL
+LT0
+4368 6517 M
+4368 6517 CircleF
+% End plot #745
+% Begin plot #746
+0.667 UP
+0.500 UL
+LT0
+4372 6517 M
+4372 6517 CircleF
+% End plot #746
+% Begin plot #747
+0.667 UP
+0.500 UL
+LT0
+4376 6517 M
+4376 6517 CircleF
+% End plot #747
+% Begin plot #748
+0.667 UP
+0.500 UL
+LT0
+4380 6517 M
+4380 6517 CircleF
+% End plot #748
+% Begin plot #749
+0.667 UP
+0.500 UL
+LT0
+4383 6517 M
+4383 6517 CircleF
+% End plot #749
+% Begin plot #750
+0.667 UP
+0.500 UL
+LT0
+4387 6517 M
+4387 6517 CircleF
+% End plot #750
+% Begin plot #751
+0.667 UP
+0.500 UL
+LT0
+4391 6517 M
+4391 6517 CircleF
+% End plot #751
+% Begin plot #752
+0.667 UP
+0.500 UL
+LT0
+4395 6517 M
+4395 6517 CircleF
+% End plot #752
+% Begin plot #753
+0.667 UP
+0.500 UL
+LT0
+4399 6517 M
+4399 6517 CircleF
+% End plot #753
+% Begin plot #754
+0.667 UP
+0.500 UL
+LT0
+4403 6517 M
+4403 6517 CircleF
+% End plot #754
+% Begin plot #755
+0.667 UP
+0.500 UL
+LT0
+4407 6517 M
+4407 6517 CircleF
+% End plot #755
+% Begin plot #756
+0.667 UP
+0.500 UL
+LT0
+4410 6517 M
+4410 6517 CircleF
+% End plot #756
+% Begin plot #757
+0.667 UP
+0.500 UL
+LT0
+4414 6517 M
+4414 6517 CircleF
+% End plot #757
+% Begin plot #758
+0.667 UP
+0.500 UL
+LT0
+4418 6517 M
+4418 6517 CircleF
+% End plot #758
+% Begin plot #759
+0.667 UP
+0.500 UL
+LT0
+4422 6517 M
+4422 6517 CircleF
+% End plot #759
+% Begin plot #760
+0.667 UP
+0.500 UL
+LT0
+4426 6517 M
+4426 6517 CircleF
+% End plot #760
+% Begin plot #761
+0.667 UP
+0.500 UL
+LT0
+4430 6517 M
+4430 6517 CircleF
+% End plot #761
+% Begin plot #762
+0.667 UP
+0.500 UL
+LT0
+4434 6517 M
+4434 6517 CircleF
+% End plot #762
+% Begin plot #763
+0.667 UP
+0.500 UL
+LT0
+4437 6517 M
+4437 6517 CircleF
+% End plot #763
+% Begin plot #764
+0.667 UP
+0.500 UL
+LT0
+4441 6517 M
+4441 6517 CircleF
+% End plot #764
+% Begin plot #765
+0.667 UP
+0.500 UL
+LT0
+4445 6517 M
+4445 6517 CircleF
+% End plot #765
+% Begin plot #766
+0.667 UP
+0.500 UL
+LT0
+4449 6517 M
+4449 6517 CircleF
+% End plot #766
+% Begin plot #767
+0.667 UP
+0.500 UL
+LT0
+4453 6517 M
+4453 6517 CircleF
+% End plot #767
+% Begin plot #768
+0.667 UP
+0.500 UL
+LT0
+4457 6517 M
+4457 6517 CircleF
+% End plot #768
+% Begin plot #769
+0.667 UP
+0.500 UL
+LT0
+4461 6517 M
+4461 6517 CircleF
+% End plot #769
+% Begin plot #770
+0.667 UP
+0.500 UL
+LT0
+4464 6517 M
+4464 6517 CircleF
+% End plot #770
+% Begin plot #771
+0.667 UP
+0.500 UL
+LT0
+4468 6517 M
+4468 6517 CircleF
+% End plot #771
+% Begin plot #772
+0.667 UP
+0.500 UL
+LT0
+4472 6517 M
+4472 6517 CircleF
+% End plot #772
+% Begin plot #773
+0.667 UP
+0.500 UL
+LT0
+4476 6517 M
+4476 6517 CircleF
+% End plot #773
+% Begin plot #774
+0.667 UP
+0.500 UL
+LT0
+4480 6517 M
+4480 6517 CircleF
+% End plot #774
+% Begin plot #775
+0.667 UP
+0.500 UL
+LT0
+4484 6517 M
+4484 6517 CircleF
+% End plot #775
+% Begin plot #776
+0.667 UP
+0.500 UL
+LT0
+4488 6517 M
+4488 6517 CircleF
+% End plot #776
+% Begin plot #777
+0.667 UP
+0.500 UL
+LT0
+4491 6517 M
+4491 6517 CircleF
+% End plot #777
+% Begin plot #778
+0.667 UP
+0.500 UL
+LT0
+4495 6517 M
+4495 6517 CircleF
+% End plot #778
+% Begin plot #779
+0.667 UP
+0.500 UL
+LT0
+4499 6517 M
+4499 6517 CircleF
+% End plot #779
+% Begin plot #780
+0.667 UP
+0.500 UL
+LT0
+4503 6517 M
+4503 6517 CircleF
+% End plot #780
+% Begin plot #781
+0.667 UP
+0.500 UL
+LT0
+4507 6517 M
+4507 6517 CircleF
+% End plot #781
+% Begin plot #782
+0.667 UP
+0.500 UL
+LT0
+4511 6517 M
+4511 6517 CircleF
+% End plot #782
+% Begin plot #783
+0.667 UP
+0.500 UL
+LT0
+4515 6517 M
+4515 6517 CircleF
+% End plot #783
+% Begin plot #784
+0.667 UP
+0.500 UL
+LT0
+4518 6517 M
+4518 6517 CircleF
+% End plot #784
+% Begin plot #785
+0.667 UP
+0.500 UL
+LT0
+4522 6517 M
+4522 6517 CircleF
+% End plot #785
+% Begin plot #786
+0.667 UP
+0.500 UL
+LT0
+4526 6517 M
+4526 6517 CircleF
+% End plot #786
+% Begin plot #787
+0.667 UP
+0.500 UL
+LT0
+4530 6517 M
+4530 6517 CircleF
+% End plot #787
+% Begin plot #788
+0.667 UP
+0.500 UL
+LT0
+4534 6517 M
+4534 6517 CircleF
+% End plot #788
+% Begin plot #789
+0.667 UP
+0.500 UL
+LT0
+4538 6517 M
+4538 6517 CircleF
+% End plot #789
+% Begin plot #790
+0.667 UP
+0.500 UL
+LT0
+4542 6517 M
+4542 6517 CircleF
+% End plot #790
+% Begin plot #791
+0.667 UP
+0.500 UL
+LT0
+4545 6517 M
+4545 6517 CircleF
+% End plot #791
+% Begin plot #792
+0.667 UP
+0.500 UL
+LT0
+4549 6517 M
+4549 6517 CircleF
+% End plot #792
+% Begin plot #793
+0.667 UP
+0.500 UL
+LT0
+4553 6517 M
+4553 6517 CircleF
+% End plot #793
+% Begin plot #794
+0.667 UP
+0.500 UL
+LT0
+4557 6517 M
+4557 6517 CircleF
+% End plot #794
+% Begin plot #795
+0.667 UP
+0.500 UL
+LT0
+4561 6517 M
+4561 6517 CircleF
+% End plot #795
+% Begin plot #796
+0.667 UP
+0.500 UL
+LT0
+4565 6517 M
+4565 6517 CircleF
+% End plot #796
+% Begin plot #797
+0.667 UP
+0.500 UL
+LT0
+4569 6517 M
+4569 6517 CircleF
+% End plot #797
+% Begin plot #798
+0.667 UP
+0.500 UL
+LT0
+4573 6517 M
+4573 6517 CircleF
+% End plot #798
+% Begin plot #799
+0.667 UP
+0.500 UL
+LT0
+4576 6517 M
+4576 6517 CircleF
+% End plot #799
+% Begin plot #800
+0.667 UP
+0.500 UL
+LT0
+4580 6517 M
+4580 6517 CircleF
+% End plot #800
+% Begin plot #801
+0.667 UP
+0.500 UL
+LT0
+4584 6517 M
+4584 6517 CircleF
+% End plot #801
+% Begin plot #802
+0.667 UP
+0.500 UL
+LT0
+4588 6517 M
+4588 6517 CircleF
+% End plot #802
+% Begin plot #803
+0.667 UP
+0.500 UL
+LT0
+4592 6517 M
+4592 6517 CircleF
+% End plot #803
+% Begin plot #804
+0.667 UP
+0.500 UL
+LT0
+4596 6517 M
+4596 6517 CircleF
+% End plot #804
+% Begin plot #805
+0.667 UP
+0.500 UL
+LT0
+4600 6517 M
+4600 6517 CircleF
+% End plot #805
+% Begin plot #806
+0.667 UP
+0.500 UL
+LT0
+4603 6517 M
+4603 6517 CircleF
+% End plot #806
+% Begin plot #807
+0.667 UP
+0.500 UL
+LT0
+4607 6517 M
+4607 6517 CircleF
+% End plot #807
+% Begin plot #808
+0.667 UP
+0.500 UL
+LT0
+4611 6517 M
+4611 6517 CircleF
+% End plot #808
+% Begin plot #809
+0.667 UP
+0.500 UL
+LT0
+4615 6517 M
+4615 6517 CircleF
+% End plot #809
+% Begin plot #810
+0.667 UP
+0.500 UL
+LT0
+4619 6517 M
+4619 6517 CircleF
+% End plot #810
+% Begin plot #811
+0.667 UP
+0.500 UL
+LT0
+4623 6517 M
+4623 6517 CircleF
+% End plot #811
+% Begin plot #812
+0.667 UP
+0.500 UL
+LT0
+4627 6517 M
+4627 6517 CircleF
+% End plot #812
+% Begin plot #813
+0.667 UP
+0.500 UL
+LT0
+4630 6517 M
+4630 6517 CircleF
+% End plot #813
+% Begin plot #814
+0.667 UP
+0.500 UL
+LT0
+4634 6517 M
+4634 6517 CircleF
+% End plot #814
+% Begin plot #815
+0.667 UP
+0.500 UL
+LT0
+4638 6517 M
+4638 6517 CircleF
+% End plot #815
+% Begin plot #816
+0.667 UP
+0.500 UL
+LT0
+4642 6517 M
+4642 6517 CircleF
+% End plot #816
+% Begin plot #817
+0.667 UP
+0.500 UL
+LT0
+4646 6517 M
+4646 6517 CircleF
+% End plot #817
+% Begin plot #818
+0.667 UP
+0.500 UL
+LT0
+4650 6517 M
+4650 6517 CircleF
+% End plot #818
+% Begin plot #819
+0.667 UP
+0.500 UL
+LT0
+4654 6517 M
+4654 6517 CircleF
+% End plot #819
+% Begin plot #820
+0.667 UP
+0.500 UL
+LT0
+4657 6517 M
+4657 6517 CircleF
+% End plot #820
+% Begin plot #821
+0.667 UP
+0.500 UL
+LT0
+4661 6517 M
+4661 6517 CircleF
+% End plot #821
+% Begin plot #822
+0.667 UP
+0.500 UL
+LT0
+4665 6517 M
+4665 6517 CircleF
+% End plot #822
+% Begin plot #823
+0.667 UP
+0.500 UL
+LT0
+4669 6517 M
+4669 6517 CircleF
+% End plot #823
+% Begin plot #824
+0.667 UP
+0.500 UL
+LT0
+4673 6517 M
+4673 6517 CircleF
+% End plot #824
+% Begin plot #825
+0.667 UP
+0.500 UL
+LT0
+4677 6517 M
+4677 6517 CircleF
+% End plot #825
+% Begin plot #826
+0.667 UP
+0.500 UL
+LT0
+4681 6517 M
+4681 6517 CircleF
+% End plot #826
+% Begin plot #827
+0.667 UP
+0.500 UL
+LT0
+4684 6517 M
+4684 6517 CircleF
+% End plot #827
+% Begin plot #828
+0.667 UP
+0.500 UL
+LT0
+4688 6517 M
+4688 6517 CircleF
+% End plot #828
+% Begin plot #829
+0.667 UP
+0.500 UL
+LT0
+4692 6517 M
+4692 6517 CircleF
+% End plot #829
+% Begin plot #830
+0.667 UP
+0.500 UL
+LT0
+4696 6517 M
+4696 6517 CircleF
+% End plot #830
+% Begin plot #831
+0.667 UP
+0.500 UL
+LT0
+4700 6517 M
+4700 6517 CircleF
+% End plot #831
+% Begin plot #832
+0.667 UP
+0.500 UL
+LT0
+4704 6517 M
+4704 6517 CircleF
+% End plot #832
+% Begin plot #833
+0.667 UP
+0.500 UL
+LT0
+4708 6517 M
+4708 6517 CircleF
+% End plot #833
+% Begin plot #834
+0.667 UP
+0.500 UL
+LT0
+4711 6517 M
+4711 6517 CircleF
+% End plot #834
+% Begin plot #835
+0.667 UP
+0.500 UL
+LT0
+4715 6517 M
+4715 6517 CircleF
+% End plot #835
+% Begin plot #836
+0.667 UP
+0.500 UL
+LT0
+4719 6517 M
+4719 6517 CircleF
+% End plot #836
+% Begin plot #837
+0.667 UP
+0.500 UL
+LT0
+4723 6517 M
+4723 6517 CircleF
+% End plot #837
+% Begin plot #838
+0.667 UP
+0.500 UL
+LT0
+4727 6517 M
+4727 6517 CircleF
+% End plot #838
+% Begin plot #839
+0.667 UP
+0.500 UL
+LT0
+4731 6517 M
+4731 6517 CircleF
+% End plot #839
+% Begin plot #840
+0.667 UP
+0.500 UL
+LT0
+4735 6517 M
+4735 6517 CircleF
+% End plot #840
+% Begin plot #841
+0.667 UP
+0.500 UL
+LT0
+4738 6517 M
+4738 6517 CircleF
+% End plot #841
+% Begin plot #842
+0.667 UP
+0.500 UL
+LT0
+4742 6517 M
+4742 6517 CircleF
+% End plot #842
+% Begin plot #843
+0.667 UP
+0.500 UL
+LT0
+4746 6517 M
+4746 6517 CircleF
+% End plot #843
+% Begin plot #844
+0.667 UP
+0.500 UL
+LT0
+4750 6517 M
+4750 6517 CircleF
+% End plot #844
+% Begin plot #845
+0.667 UP
+0.500 UL
+LT0
+4754 6517 M
+4754 6517 CircleF
+% End plot #845
+% Begin plot #846
+0.667 UP
+0.500 UL
+LT0
+4758 6517 M
+4758 6517 CircleF
+% End plot #846
+% Begin plot #847
+0.667 UP
+0.500 UL
+LT0
+4762 6517 M
+4762 6517 CircleF
+% End plot #847
+% Begin plot #848
+0.667 UP
+0.500 UL
+LT0
+4765 6517 M
+4765 6517 CircleF
+% End plot #848
+% Begin plot #849
+0.667 UP
+0.500 UL
+LT0
+4769 6517 M
+4769 6517 CircleF
+% End plot #849
+% Begin plot #850
+0.667 UP
+0.500 UL
+LT0
+4773 6517 M
+4773 6517 CircleF
+% End plot #850
+% Begin plot #851
+0.667 UP
+0.500 UL
+LT0
+4777 6517 M
+4777 6517 CircleF
+% End plot #851
+% Begin plot #852
+0.667 UP
+0.500 UL
+LT0
+4781 6517 M
+4781 6517 CircleF
+% End plot #852
+% Begin plot #853
+0.667 UP
+0.500 UL
+LT0
+4785 6517 M
+4785 6517 CircleF
+% End plot #853
+% Begin plot #854
+0.667 UP
+0.500 UL
+LT0
+4789 6517 M
+4789 6517 CircleF
+% End plot #854
+% Begin plot #855
+0.667 UP
+0.500 UL
+LT0
+4792 6517 M
+4792 6517 CircleF
+% End plot #855
+% Begin plot #856
+0.667 UP
+0.500 UL
+LT0
+4796 6517 M
+4796 6517 CircleF
+% End plot #856
+% Begin plot #857
+0.667 UP
+0.500 UL
+LT0
+4800 6517 M
+4800 6517 CircleF
+% End plot #857
+% Begin plot #858
+0.667 UP
+0.500 UL
+LT0
+4804 6517 M
+4804 6517 CircleF
+% End plot #858
+% Begin plot #859
+0.667 UP
+0.500 UL
+LT0
+4808 6517 M
+4808 6517 CircleF
+% End plot #859
+% Begin plot #860
+0.667 UP
+0.500 UL
+LT0
+4812 6517 M
+4812 6517 CircleF
+% End plot #860
+% Begin plot #861
+0.667 UP
+0.500 UL
+LT0
+4816 6517 M
+4816 6517 CircleF
+% End plot #861
+% Begin plot #862
+0.667 UP
+0.500 UL
+LT0
+4819 6517 M
+4819 6517 CircleF
+% End plot #862
+% Begin plot #863
+0.667 UP
+0.500 UL
+LT0
+4823 6517 M
+4823 6517 CircleF
+% End plot #863
+% Begin plot #864
+0.667 UP
+0.500 UL
+LT0
+4827 6517 M
+4827 6517 CircleF
+% End plot #864
+% Begin plot #865
+0.667 UP
+0.500 UL
+LT0
+4831 6517 M
+4831 6517 CircleF
+% End plot #865
+% Begin plot #866
+0.667 UP
+0.500 UL
+LT0
+4835 6517 M
+4835 6517 CircleF
+% End plot #866
+% Begin plot #867
+0.667 UP
+0.500 UL
+LT0
+4839 6517 M
+4839 6517 CircleF
+% End plot #867
+% Begin plot #868
+0.667 UP
+0.500 UL
+LT0
+4843 6517 M
+4843 6517 CircleF
+% End plot #868
+% Begin plot #869
+0.667 UP
+0.500 UL
+LT0
+4846 6517 M
+4846 6517 CircleF
+% End plot #869
+% Begin plot #870
+0.667 UP
+0.500 UL
+LT0
+4850 6517 M
+4850 6517 CircleF
+% End plot #870
+% Begin plot #871
+0.667 UP
+0.500 UL
+LT0
+4854 6517 M
+4854 6517 CircleF
+% End plot #871
+% Begin plot #872
+0.667 UP
+0.500 UL
+LT0
+4858 6517 M
+4858 6517 CircleF
+% End plot #872
+% Begin plot #873
+0.667 UP
+0.500 UL
+LT0
+4862 6517 M
+4862 6517 CircleF
+% End plot #873
+% Begin plot #874
+0.667 UP
+0.500 UL
+LT0
+4866 6517 M
+4866 6517 CircleF
+% End plot #874
+% Begin plot #875
+0.667 UP
+0.500 UL
+LT0
+4870 6517 M
+4870 6517 CircleF
+% End plot #875
+% Begin plot #876
+0.667 UP
+0.500 UL
+LT0
+4874 6517 M
+4874 6517 CircleF
+% End plot #876
+% Begin plot #877
+0.667 UP
+0.500 UL
+LT0
+4877 6517 M
+4877 6517 CircleF
+% End plot #877
+% Begin plot #878
+0.667 UP
+0.500 UL
+LT0
+4881 6517 M
+4881 6517 CircleF
+% End plot #878
+% Begin plot #879
+0.667 UP
+0.500 UL
+LT0
+4885 6517 M
+4885 6517 CircleF
+% End plot #879
+% Begin plot #880
+0.667 UP
+0.500 UL
+LT0
+4889 6517 M
+4889 6517 CircleF
+% End plot #880
+% Begin plot #881
+0.667 UP
+0.500 UL
+LT0
+4893 6517 M
+4893 6517 CircleF
+% End plot #881
+% Begin plot #882
+0.667 UP
+0.500 UL
+LT0
+4897 6517 M
+4897 6517 CircleF
+% End plot #882
+% Begin plot #883
+0.667 UP
+0.500 UL
+LT0
+4901 6517 M
+4901 6517 CircleF
+% End plot #883
+% Begin plot #884
+0.667 UP
+0.500 UL
+LT0
+4904 6517 M
+4904 6517 CircleF
+% End plot #884
+% Begin plot #885
+0.667 UP
+0.500 UL
+LT0
+4908 6517 M
+4908 6517 CircleF
+% End plot #885
+% Begin plot #886
+0.667 UP
+0.500 UL
+LT0
+4912 6517 M
+4912 6517 CircleF
+% End plot #886
+% Begin plot #887
+0.667 UP
+0.500 UL
+LT0
+4916 6517 M
+4916 6517 CircleF
+% End plot #887
+% Begin plot #888
+0.667 UP
+0.500 UL
+LT0
+4920 6517 M
+4920 6517 CircleF
+% End plot #888
+% Begin plot #889
+0.667 UP
+0.500 UL
+LT0
+4924 6517 M
+4924 6517 CircleF
+% End plot #889
+% Begin plot #890
+0.667 UP
+0.500 UL
+LT0
+4928 6517 M
+4928 6517 CircleF
+% End plot #890
+% Begin plot #891
+0.667 UP
+0.500 UL
+LT0
+4931 6517 M
+4931 6517 CircleF
+% End plot #891
+% Begin plot #892
+0.667 UP
+0.500 UL
+LT0
+4935 6517 M
+4935 6517 CircleF
+% End plot #892
+% Begin plot #893
+0.667 UP
+0.500 UL
+LT0
+4939 6517 M
+4939 6517 CircleF
+% End plot #893
+% Begin plot #894
+0.667 UP
+0.500 UL
+LT0
+4943 6517 M
+4943 6517 CircleF
+% End plot #894
+% Begin plot #895
+0.667 UP
+0.500 UL
+LT0
+4947 6517 M
+4947 6517 CircleF
+% End plot #895
+% Begin plot #896
+0.667 UP
+0.500 UL
+LT0
+4951 6517 M
+4951 6517 CircleF
+% End plot #896
+% Begin plot #897
+0.667 UP
+0.500 UL
+LT0
+4955 6517 M
+4955 6517 CircleF
+% End plot #897
+% Begin plot #898
+0.667 UP
+0.500 UL
+LT0
+4958 6517 M
+4958 6517 CircleF
+% End plot #898
+% Begin plot #899
+0.667 UP
+0.500 UL
+LT0
+4962 6517 M
+4962 6517 CircleF
+% End plot #899
+% Begin plot #900
+0.667 UP
+0.500 UL
+LT0
+4966 6517 M
+4966 6517 CircleF
+% End plot #900
+% Begin plot #901
+0.667 UP
+0.500 UL
+LT0
+4970 6517 M
+4970 6517 CircleF
+% End plot #901
+% Begin plot #902
+0.667 UP
+0.500 UL
+LT0
+4974 6517 M
+4974 6517 CircleF
+% End plot #902
+% Begin plot #903
+0.667 UP
+0.500 UL
+LT0
+4978 6517 M
+4978 6517 CircleF
+% End plot #903
+% Begin plot #904
+0.667 UP
+0.500 UL
+LT0
+4982 6517 M
+4982 6517 CircleF
+% End plot #904
+% Begin plot #905
+0.667 UP
+0.500 UL
+LT0
+4985 6517 M
+4985 6517 CircleF
+% End plot #905
+% Begin plot #906
+0.667 UP
+0.500 UL
+LT0
+4989 6517 M
+4989 6517 CircleF
+% End plot #906
+% Begin plot #907
+0.667 UP
+0.500 UL
+LT0
+4993 6517 M
+4993 6517 CircleF
+% End plot #907
+% Begin plot #908
+0.667 UP
+0.500 UL
+LT0
+4997 6517 M
+4997 6517 CircleF
+% End plot #908
+% Begin plot #909
+0.667 UP
+0.500 UL
+LT0
+5001 6517 M
+5001 6517 CircleF
+% End plot #909
+% Begin plot #910
+0.667 UP
+0.500 UL
+LT0
+5005 6517 M
+5005 6517 CircleF
+% End plot #910
+% Begin plot #911
+0.667 UP
+0.500 UL
+LT0
+5009 6517 M
+5009 6517 CircleF
+% End plot #911
+% Begin plot #912
+0.667 UP
+0.500 UL
+LT0
+5012 6517 M
+5012 6517 CircleF
+% End plot #912
+% Begin plot #913
+0.667 UP
+0.500 UL
+LT0
+5016 6517 M
+5016 6517 CircleF
+% End plot #913
+% Begin plot #914
+0.667 UP
+0.500 UL
+LT0
+5020 6517 M
+5020 6517 CircleF
+% End plot #914
+% Begin plot #915
+0.667 UP
+0.500 UL
+LT0
+5024 6517 M
+5024 6517 CircleF
+% End plot #915
+% Begin plot #916
+0.667 UP
+0.500 UL
+LT0
+5028 6517 M
+5028 6517 CircleF
+% End plot #916
+% Begin plot #917
+0.667 UP
+0.500 UL
+LT0
+5032 6517 M
+5032 6517 CircleF
+% End plot #917
+% Begin plot #918
+0.667 UP
+0.500 UL
+LT0
+5036 6517 M
+5036 6517 CircleF
+% End plot #918
+% Begin plot #919
+0.667 UP
+0.500 UL
+LT0
+5039 6517 M
+5039 6517 CircleF
+% End plot #919
+% Begin plot #920
+0.667 UP
+0.500 UL
+LT0
+5043 6517 M
+5043 6517 CircleF
+% End plot #920
+% Begin plot #921
+0.667 UP
+0.500 UL
+LT0
+5047 6517 M
+5047 6517 CircleF
+% End plot #921
+% Begin plot #922
+0.667 UP
+0.500 UL
+LT0
+5051 6517 M
+5051 6517 CircleF
+% End plot #922
+% Begin plot #923
+0.667 UP
+0.500 UL
+LT0
+5055 6517 M
+5055 6517 CircleF
+% End plot #923
+% Begin plot #924
+0.667 UP
+0.500 UL
+LT0
+5059 6517 M
+5059 6517 CircleF
+% End plot #924
+% Begin plot #925
+0.667 UP
+0.500 UL
+LT0
+5063 6517 M
+5063 6517 CircleF
+% End plot #925
+% Begin plot #926
+0.667 UP
+0.500 UL
+LT0
+5066 6517 M
+5066 6517 CircleF
+% End plot #926
+% Begin plot #927
+0.667 UP
+0.500 UL
+LT0
+5070 6517 M
+5070 6517 CircleF
+% End plot #927
+% Begin plot #928
+0.667 UP
+0.500 UL
+LT0
+5074 6517 M
+5074 6517 CircleF
+% End plot #928
+% Begin plot #929
+0.667 UP
+0.500 UL
+LT0
+5078 6517 M
+5078 6517 CircleF
+% End plot #929
+% Begin plot #930
+0.667 UP
+0.500 UL
+LT0
+5082 6517 M
+5082 6517 CircleF
+% End plot #930
+% Begin plot #931
+0.667 UP
+0.500 UL
+LT0
+5086 6517 M
+5086 6517 CircleF
+% End plot #931
+% Begin plot #932
+0.667 UP
+0.500 UL
+LT0
+5090 6517 M
+5090 6517 CircleF
+% End plot #932
+% Begin plot #933
+0.667 UP
+0.500 UL
+LT0
+5093 6517 M
+5093 6517 CircleF
+% End plot #933
+% Begin plot #934
+0.667 UP
+0.500 UL
+LT0
+5097 6517 M
+5097 6517 CircleF
+% End plot #934
+% Begin plot #935
+0.667 UP
+0.500 UL
+LT0
+5101 6517 M
+5101 6517 CircleF
+% End plot #935
+% Begin plot #936
+0.667 UP
+0.500 UL
+LT0
+5105 6517 M
+5105 6517 CircleF
+% End plot #936
+% Begin plot #937
+0.667 UP
+0.500 UL
+LT0
+5109 6517 M
+5109 6517 CircleF
+% End plot #937
+% Begin plot #938
+0.667 UP
+0.500 UL
+LT0
+5113 6517 M
+5113 6517 CircleF
+% End plot #938
+% Begin plot #939
+0.667 UP
+0.500 UL
+LT0
+5117 6517 M
+5117 6517 CircleF
+% End plot #939
+% Begin plot #940
+0.667 UP
+0.500 UL
+LT0
+5120 6517 M
+5120 6517 CircleF
+% End plot #940
+% Begin plot #941
+0.667 UP
+0.500 UL
+LT0
+5124 6517 M
+5124 6517 CircleF
+% End plot #941
+% Begin plot #942
+0.667 UP
+0.500 UL
+LT0
+5128 6517 M
+5128 6517 CircleF
+% End plot #942
+% Begin plot #943
+0.667 UP
+0.500 UL
+LT0
+5132 6517 M
+5132 6517 CircleF
+% End plot #943
+% Begin plot #944
+0.667 UP
+0.500 UL
+LT0
+5136 6517 M
+5136 6517 CircleF
+% End plot #944
+% Begin plot #945
+0.667 UP
+0.500 UL
+LT0
+5140 6517 M
+5140 6517 CircleF
+% End plot #945
+% Begin plot #946
+0.667 UP
+0.500 UL
+LT0
+5144 6517 M
+5144 6517 CircleF
+% End plot #946
+% Begin plot #947
+0.667 UP
+0.500 UL
+LT0
+5147 6517 M
+5147 6517 CircleF
+% End plot #947
+% Begin plot #948
+0.667 UP
+0.500 UL
+LT0
+5151 6517 M
+5151 6517 CircleF
+% End plot #948
+% Begin plot #949
+0.667 UP
+0.500 UL
+LT0
+5155 6517 M
+5155 6517 CircleF
+% End plot #949
+% Begin plot #950
+0.667 UP
+0.500 UL
+LT0
+5159 6517 M
+5159 6517 CircleF
+% End plot #950
+% Begin plot #951
+0.667 UP
+0.500 UL
+LT0
+5163 6517 M
+5163 6517 CircleF
+% End plot #951
+% Begin plot #952
+0.667 UP
+0.500 UL
+LT0
+5167 6517 M
+5167 6517 CircleF
+% End plot #952
+% Begin plot #953
+0.667 UP
+0.500 UL
+LT0
+5171 6517 M
+5171 6517 CircleF
+% End plot #953
+% Begin plot #954
+0.667 UP
+0.500 UL
+LT0
+5174 6517 M
+5174 6517 CircleF
+% End plot #954
+% Begin plot #955
+0.667 UP
+0.500 UL
+LT0
+5178 6517 M
+5178 6517 CircleF
+% End plot #955
+% Begin plot #956
+0.667 UP
+0.500 UL
+LT0
+5182 6517 M
+5182 6517 CircleF
+% End plot #956
+% Begin plot #957
+0.667 UP
+0.500 UL
+LT0
+5186 6517 M
+5186 6517 CircleF
+% End plot #957
+% Begin plot #958
+0.667 UP
+0.500 UL
+LT0
+5190 6517 M
+5190 6517 CircleF
+% End plot #958
+% Begin plot #959
+0.667 UP
+0.500 UL
+LT0
+5194 6517 M
+5194 6517 CircleF
+% End plot #959
+% Begin plot #960
+0.667 UP
+0.500 UL
+LT0
+5198 6517 M
+5198 6517 CircleF
+% End plot #960
+% Begin plot #961
+0.667 UP
+0.500 UL
+LT0
+5202 6517 M
+5202 6517 CircleF
+% End plot #961
+% Begin plot #962
+0.667 UP
+0.500 UL
+LT0
+5205 6517 M
+5205 6517 CircleF
+% End plot #962
+% Begin plot #963
+0.667 UP
+0.500 UL
+LT0
+5209 6517 M
+5209 6517 CircleF
+% End plot #963
+% Begin plot #964
+0.667 UP
+0.500 UL
+LT0
+5213 6517 M
+5213 6517 CircleF
+% End plot #964
+% Begin plot #965
+0.667 UP
+0.500 UL
+LT0
+5217 6517 M
+5217 6517 CircleF
+% End plot #965
+% Begin plot #966
+0.667 UP
+0.500 UL
+LT0
+5221 6517 M
+5221 6517 CircleF
+% End plot #966
+% Begin plot #967
+0.667 UP
+0.500 UL
+LT0
+5225 6517 M
+5225 6517 CircleF
+% End plot #967
+% Begin plot #968
+0.667 UP
+0.500 UL
+LT0
+5229 6517 M
+5229 6517 CircleF
+% End plot #968
+% Begin plot #969
+0.667 UP
+0.500 UL
+LT0
+5232 6517 M
+5232 6517 CircleF
+% End plot #969
+% Begin plot #970
+0.667 UP
+0.500 UL
+LT0
+5236 6517 M
+5236 6517 CircleF
+% End plot #970
+% Begin plot #971
+0.667 UP
+0.500 UL
+LT0
+5240 6517 M
+5240 6517 CircleF
+% End plot #971
+% Begin plot #972
+0.667 UP
+0.500 UL
+LT0
+5244 6517 M
+5244 6517 CircleF
+% End plot #972
+% Begin plot #973
+0.667 UP
+0.500 UL
+LT0
+5248 6517 M
+5248 6517 CircleF
+% End plot #973
+% Begin plot #974
+0.667 UP
+0.500 UL
+LT0
+5252 6517 M
+5252 6517 CircleF
+% End plot #974
+% Begin plot #975
+0.667 UP
+0.500 UL
+LT0
+5256 6517 M
+5256 6517 CircleF
+% End plot #975
+% Begin plot #976
+0.667 UP
+0.500 UL
+LT0
+5259 6517 M
+5259 6517 CircleF
+% End plot #976
+% Begin plot #977
+0.667 UP
+0.500 UL
+LT0
+5263 6517 M
+5263 6517 CircleF
+% End plot #977
+% Begin plot #978
+0.667 UP
+0.500 UL
+LT0
+5267 6517 M
+5267 6517 CircleF
+% End plot #978
+% Begin plot #979
+0.667 UP
+0.500 UL
+LT0
+5271 6517 M
+5271 6517 CircleF
+% End plot #979
+% Begin plot #980
+0.667 UP
+0.500 UL
+LT0
+5275 6517 M
+5275 6517 CircleF
+% End plot #980
+% Begin plot #981
+0.667 UP
+0.500 UL
+LT0
+5279 6517 M
+5279 6517 CircleF
+% End plot #981
+% Begin plot #982
+0.667 UP
+0.500 UL
+LT0
+5283 6517 M
+5283 6517 CircleF
+% End plot #982
+% Begin plot #983
+0.667 UP
+0.500 UL
+LT0
+5286 6517 M
+5286 6517 CircleF
+% End plot #983
+% Begin plot #984
+0.667 UP
+0.500 UL
+LT0
+5290 6517 M
+5290 6517 CircleF
+% End plot #984
+% Begin plot #985
+0.667 UP
+0.500 UL
+LT0
+5294 6517 M
+5294 6517 CircleF
+% End plot #985
+% Begin plot #986
+0.667 UP
+0.500 UL
+LT0
+5298 6517 M
+5298 6517 CircleF
+% End plot #986
+% Begin plot #987
+0.667 UP
+0.500 UL
+LT0
+5302 6517 M
+5302 6517 CircleF
+% End plot #987
+% Begin plot #988
+0.667 UP
+0.500 UL
+LT0
+5306 6517 M
+5306 6517 CircleF
+% End plot #988
+% Begin plot #989
+0.667 UP
+0.500 UL
+LT0
+5310 6517 M
+5310 6517 CircleF
+% End plot #989
+% Begin plot #990
+0.667 UP
+0.500 UL
+LT0
+5313 6517 M
+5313 6517 CircleF
+% End plot #990
+% Begin plot #991
+0.667 UP
+0.500 UL
+LT0
+5317 6517 M
+5317 6517 CircleF
+% End plot #991
+% Begin plot #992
+0.667 UP
+0.500 UL
+LT0
+5321 6517 M
+5321 6517 CircleF
+% End plot #992
+% Begin plot #993
+0.667 UP
+0.500 UL
+LT0
+5325 6517 M
+5325 6517 CircleF
+% End plot #993
+% Begin plot #994
+0.667 UP
+0.500 UL
+LT0
+5329 6517 M
+5329 6517 CircleF
+% End plot #994
+% Begin plot #995
+0.667 UP
+0.500 UL
+LT0
+5333 6517 M
+5333 6517 CircleF
+% End plot #995
+% Begin plot #996
+0.667 UP
+0.500 UL
+LT0
+5337 6517 M
+5337 6517 CircleF
+% End plot #996
+% Begin plot #997
+0.667 UP
+0.500 UL
+LT0
+5340 6517 M
+5340 6517 CircleF
+% End plot #997
+% Begin plot #998
+0.667 UP
+0.500 UL
+LT0
+5344 6517 M
+5344 6517 CircleF
+% End plot #998
+% Begin plot #999
+0.667 UP
+0.500 UL
+LT0
+5348 6517 M
+5348 6517 CircleF
+% End plot #999
+% Begin plot #1000
+0.667 UP
+0.500 UL
+LT0
+5352 6517 M
+5352 6517 CircleF
+% End plot #1000
+1.000 UP
+0.500 UL
+LTb
+grestore % colour palette end
+gsave % colour palette begin
+/maxcolors 64 def
+/HSV2RGB {  exch dup 0.0 eq {pop exch pop dup dup} % achromatic gray
+  { /HSVs exch def /HSVv exch def 6.0 mul dup floor dup 3 1 roll sub
+     /HSVf exch def /HSVi exch cvi def /HSVp HSVv 1.0 HSVs sub mul def
+	 /HSVq HSVv 1.0 HSVs HSVf mul sub mul def 
+	 /HSVt HSVv 1.0 HSVs 1.0 HSVf sub mul sub mul def
+	 /HSVi HSVi 6 mod def 0 HSVi eq {HSVv HSVt HSVp}
+	 {1 HSVi eq {HSVq HSVv HSVp}{2 HSVi eq {HSVp HSVv HSVt}
+	 {3 HSVi eq {HSVp HSVq HSVv}{4 HSVi eq {HSVt HSVp HSVv}
+	 {HSVv HSVp HSVq} ifelse} ifelse} ifelse} ifelse} ifelse
+  } ifelse} def
+/Constrain {
+  dup 0 lt {0 exch pop}{dup 1 gt {1 exch pop} if} ifelse} def
+/YIQ2RGB {
+  3 copy -1.702 mul exch -1.105 mul add add Constrain 4 1 roll
+  3 copy -0.647 mul exch -0.272 mul add add Constrain 5 1 roll
+  0.621 mul exch -0.956 mul add add Constrain 3 1 roll } def
+/CMY2RGB {  1 exch sub exch 1 exch sub 3 2 roll 1 exch sub 3 1 roll exch } def
+/XYZ2RGB {  3 copy -0.9017 mul exch -0.1187 mul add exch 0.0585 mul exch add
+  Constrain 4 1 roll 3 copy -0.0279 mul exch 1.999 mul add exch
+  -0.9844 mul add Constrain 5 1 roll -0.2891 mul exch -0.5338 mul add
+  exch 1.91 mul exch add Constrain 3 1 roll} def
+/SelectSpace {ColorSpace (HSV) eq {HSV2RGB}{ColorSpace (XYZ) eq {
+  XYZ2RGB}{ColorSpace (CMY) eq {CMY2RGB}{ColorSpace (YIQ) eq {YIQ2RGB}
+  if} ifelse} ifelse} ifelse} def
+/InterpolatedColor true def
+/grayindex {/gidx 0 def
+  {GrayA gidx get grayv ge {exit} if /gidx gidx 1 add def} loop} def
+/dgdx {grayv GrayA gidx get sub GrayA gidx 1 sub get
+  GrayA gidx get sub div} def 
+/redvalue {RedA gidx get RedA gidx 1 sub get
+  RedA gidx get sub dgdxval mul add} def
+/greenvalue {GreenA gidx get GreenA gidx 1 sub get
+  GreenA gidx get sub dgdxval mul add} def
+/bluevalue {BlueA gidx get BlueA gidx 1 sub get
+  BlueA gidx get sub dgdxval mul add} def
+/interpolate {
+  grayindex grayv GrayA gidx get sub abs 1e-5 le
+    {RedA gidx get GreenA gidx get BlueA gidx get}
+    {/dgdxval dgdx def redvalue greenvalue bluevalue} ifelse} def
+/GrayA [0 .0159 .0317 .0476 .0635 .0794 .0952 .1111 .127 .1429 .1587 .1746 
+  .1905 .2063 .2222 .2381 .254 .2698 .2857 .3016 .3175 .3333 .3492 .3651 
+  .381 .3968 .4127 .4286 .4444 .4603 .4762 .4921 .5079 .5238 .5397 .5556 
+  .5714 .5873 .6032 .619 .6349 .6508 .6667 .6825 .6984 .7143 .7302 .746 
+  .7619 .7778 .7937 .8095 .8254 .8413 .8571 .873 .8889 .9048 .9206 .9365 
+  .9524 .9683 .9841 1 ] def
+/RedA [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .0238 .0873 .1508 
+  .2143 .2778 .3413 .4048 .4683 .5317 .5952 .6587 .7222 .7857 .8492 .9127 
+  .9762 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 .9444 .881 .8175 .754 .6905 .627 
+  .5635 .5 ] def
+/GreenA [0 0 0 0 0 0 0 0 .0079 .0714 .1349 .1984 .2619 .3254 .3889 .4524 
+  .5159 .5794 .6429 .7063 .7698 .8333 .8968 .9603 1 1 1 1 1 1 1 1 1 1 1 1 1 
+  1 1 1 .9603 .8968 .8333 .7698 .7063 .6429 .5794 .5159 .4524 .3889 .3254 
+  .2619 .1984 .1349 .0714 .0079 0 0 0 0 0 0 0 0 ] def
+/BlueA [.5 .5635 .627 .6905 .754 .8175 .881 .9444 1 1 1 1 1 1 1 1 1 1 1 1 1 
+  1 1 1 .9762 .9127 .8492 .7857 .7222 .6587 .5952 .5317 .4683 .4048 .3413 
+  .2778 .2143 .1508 .0873 .0238 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 ] def
+/pm3dround {maxcolors 0 gt {dup 1 ge
+	{pop 1} {maxcolors mul floor maxcolors 1 sub div} ifelse} if} def
+/pm3dGamma 1.0 1.5 Gamma mul div def
+/ColorSpace (RGB) def
+Color InterpolatedColor or { % COLOUR vs. GRAY map
+  InterpolatedColor { %% Interpolation vs. RGB-Formula
+    /g {stroke pm3dround /grayv exch def interpolate
+        SelectSpace setrgbcolor} bind def
+  }{
+  /g {stroke pm3dround dup cF7 Constrain exch dup cF5 Constrain exch cF15 Constrain 
+       SelectSpace setrgbcolor} bind def
+  } ifelse
+}{
+  /g {stroke pm3dround pm3dGamma exp setgray} bind def
+} ifelse
+1.000 UL
+LTb
+1.00 1.00 1.00 C 1.000 6570 5044 3853 2946 BoxColFill
+LCb setrgbcolor
+6570 5044 M
+0 2946 V
+3853 0 V
+0 -2946 V
+-3853 0 V
+stroke
+0.500 UL
+LTb
+6570 5044 M
+88 0 V
+3766 0 R
+-88 0 V
+stroke
+6450 5044 M
+[ [({}) 200.0 0.0 true true 0 (-4)]
+] -66.7 MRshow
+0.500 UL
+LTb
+6570 5633 M
+88 0 V
+3766 0 R
+-88 0 V
+stroke
+6450 5633 M
+[ [({}) 200.0 0.0 true true 0 (-2)]
+] -66.7 MRshow
+0.500 UL
+LTb
+6570 6223 M
+88 0 V
+3766 0 R
+-88 0 V
+stroke
+6450 6223 M
+[ [({}) 200.0 0.0 true true 0 (0)]
+] -66.7 MRshow
+0.500 UL
+LTb
+6570 6812 M
+88 0 V
+3766 0 R
+-88 0 V
+stroke
+6450 6812 M
+[ [({}) 200.0 0.0 true true 0 (2)]
+] -66.7 MRshow
+0.500 UL
+LTb
+6570 7402 M
+88 0 V
+3766 0 R
+-88 0 V
+stroke
+6450 7402 M
+[ [({}) 200.0 0.0 true true 0 (4)]
+] -66.7 MRshow
+0.500 UL
+LTb
+6570 7991 M
+88 0 V
+3766 0 R
+-88 0 V
+stroke
+6450 7991 M
+[ [({}) 200.0 0.0 true true 0 (6)]
+] -66.7 MRshow
+0.500 UL
+LTb
+6570 5044 M
+0 88 V
+0 2859 R
+0 -88 V
+stroke
+6570 4844 M
+[ [({}) 200.0 0.0 true true 0 (-2)]
+] -66.7 MCshow
+0.500 UL
+LTb
+7341 5044 M
+0 88 V
+0 2859 R
+0 -88 V
+stroke
+7341 4844 M
+[ [({}) 200.0 0.0 true true 0 (-1)]
+] -66.7 MCshow
+0.500 UL
+LTb
+8112 5044 M
+0 88 V
+0 2859 R
+0 -88 V
+stroke
+8112 4844 M
+[ [({}) 200.0 0.0 true true 0 (0)]
+] -66.7 MCshow
+0.500 UL
+LTb
+8882 5044 M
+0 88 V
+0 2859 R
+0 -88 V
+stroke
+8882 4844 M
+[ [({}) 200.0 0.0 true true 0 (1)]
+] -66.7 MCshow
+0.500 UL
+LTb
+9653 5044 M
+0 88 V
+0 2859 R
+0 -88 V
+stroke
+9653 4844 M
+[ [({}) 200.0 0.0 true true 0 (2)]
+] -66.7 MCshow
+0.500 UL
+LTb
+10424 5044 M
+0 88 V
+0 2859 R
+0 -88 V
+stroke
+10424 4844 M
+[ [({}) 200.0 0.0 true true 0 (3)]
+] -66.7 MCshow
+0.500 UL
+LTb
+0.500 UL
+LTb
+6570 7991 N
+0 -2947 V
+3854 0 V
+0 2947 V
+-3854 0 V
+Z stroke
+1.000 UP
+0.500 UL
+LTb
+% Begin plot #1
+0.500 UL
+LT0
+6570 5044 M
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 2 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+stroke 6971 5351 M
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 2 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+stroke 7372 5658 M
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 2 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+stroke 7774 5964 M
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 2 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+stroke 8175 6271 M
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 2 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+stroke 8576 6578 M
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+stroke 8977 6885 M
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 2 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+stroke 9379 7192 M
+3 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 2 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+stroke 9780 7498 M
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+stroke 10181 7805 M
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+% End plot #1
+1.000 UP
+stroke
+LTb
+grestore % colour palette end
+gsave % colour palette begin
+/maxcolors 64 def
+/HSV2RGB {  exch dup 0.0 eq {pop exch pop dup dup} % achromatic gray
+  { /HSVs exch def /HSVv exch def 6.0 mul dup floor dup 3 1 roll sub
+     /HSVf exch def /HSVi exch cvi def /HSVp HSVv 1.0 HSVs sub mul def
+	 /HSVq HSVv 1.0 HSVs HSVf mul sub mul def 
+	 /HSVt HSVv 1.0 HSVs 1.0 HSVf sub mul sub mul def
+	 /HSVi HSVi 6 mod def 0 HSVi eq {HSVv HSVt HSVp}
+	 {1 HSVi eq {HSVq HSVv HSVp}{2 HSVi eq {HSVp HSVv HSVt}
+	 {3 HSVi eq {HSVp HSVq HSVv}{4 HSVi eq {HSVt HSVp HSVv}
+	 {HSVv HSVp HSVq} ifelse} ifelse} ifelse} ifelse} ifelse
+  } ifelse} def
+/Constrain {
+  dup 0 lt {0 exch pop}{dup 1 gt {1 exch pop} if} ifelse} def
+/YIQ2RGB {
+  3 copy -1.702 mul exch -1.105 mul add add Constrain 4 1 roll
+  3 copy -0.647 mul exch -0.272 mul add add Constrain 5 1 roll
+  0.621 mul exch -0.956 mul add add Constrain 3 1 roll } def
+/CMY2RGB {  1 exch sub exch 1 exch sub 3 2 roll 1 exch sub 3 1 roll exch } def
+/XYZ2RGB {  3 copy -0.9017 mul exch -0.1187 mul add exch 0.0585 mul exch add
+  Constrain 4 1 roll 3 copy -0.0279 mul exch 1.999 mul add exch
+  -0.9844 mul add Constrain 5 1 roll -0.2891 mul exch -0.5338 mul add
+  exch 1.91 mul exch add Constrain 3 1 roll} def
+/SelectSpace {ColorSpace (HSV) eq {HSV2RGB}{ColorSpace (XYZ) eq {
+  XYZ2RGB}{ColorSpace (CMY) eq {CMY2RGB}{ColorSpace (YIQ) eq {YIQ2RGB}
+  if} ifelse} ifelse} ifelse} def
+/InterpolatedColor true def
+/grayindex {/gidx 0 def
+  {GrayA gidx get grayv ge {exit} if /gidx gidx 1 add def} loop} def
+/dgdx {grayv GrayA gidx get sub GrayA gidx 1 sub get
+  GrayA gidx get sub div} def 
+/redvalue {RedA gidx get RedA gidx 1 sub get
+  RedA gidx get sub dgdxval mul add} def
+/greenvalue {GreenA gidx get GreenA gidx 1 sub get
+  GreenA gidx get sub dgdxval mul add} def
+/bluevalue {BlueA gidx get BlueA gidx 1 sub get
+  BlueA gidx get sub dgdxval mul add} def
+/interpolate {
+  grayindex grayv GrayA gidx get sub abs 1e-5 le
+    {RedA gidx get GreenA gidx get BlueA gidx get}
+    {/dgdxval dgdx def redvalue greenvalue bluevalue} ifelse} def
+/GrayA [0 .0159 .0317 .0476 .0635 .0794 .0952 .1111 .127 .1429 .1587 .1746 
+  .1905 .2063 .2222 .2381 .254 .2698 .2857 .3016 .3175 .3333 .3492 .3651 
+  .381 .3968 .4127 .4286 .4444 .4603 .4762 .4921 .5079 .5238 .5397 .5556 
+  .5714 .5873 .6032 .619 .6349 .6508 .6667 .6825 .6984 .7143 .7302 .746 
+  .7619 .7778 .7937 .8095 .8254 .8413 .8571 .873 .8889 .9048 .9206 .9365 
+  .9524 .9683 .9841 1 ] def
+/RedA [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .0238 .0873 .1508 
+  .2143 .2778 .3413 .4048 .4683 .5317 .5952 .6587 .7222 .7857 .8492 .9127 
+  .9762 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 .9444 .881 .8175 .754 .6905 .627 
+  .5635 .5 ] def
+/GreenA [0 0 0 0 0 0 0 0 .0079 .0714 .1349 .1984 .2619 .3254 .3889 .4524 
+  .5159 .5794 .6429 .7063 .7698 .8333 .8968 .9603 1 1 1 1 1 1 1 1 1 1 1 1 1 
+  1 1 1 .9603 .8968 .8333 .7698 .7063 .6429 .5794 .5159 .4524 .3889 .3254 
+  .2619 .1984 .1349 .0714 .0079 0 0 0 0 0 0 0 0 ] def
+/BlueA [.5 .5635 .627 .6905 .754 .8175 .881 .9444 1 1 1 1 1 1 1 1 1 1 1 1 1 
+  1 1 1 .9762 .9127 .8492 .7857 .7222 .6587 .5952 .5317 .4683 .4048 .3413 
+  .2778 .2143 .1508 .0873 .0238 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 ] def
+/pm3dround {maxcolors 0 gt {dup 1 ge
+	{pop 1} {maxcolors mul floor maxcolors 1 sub div} ifelse} if} def
+/pm3dGamma 1.0 1.5 Gamma mul div def
+/ColorSpace (RGB) def
+Color InterpolatedColor or { % COLOUR vs. GRAY map
+  InterpolatedColor { %% Interpolation vs. RGB-Formula
+    /g {stroke pm3dround /grayv exch def interpolate
+        SelectSpace setrgbcolor} bind def
+  }{
+  /g {stroke pm3dround dup cF7 Constrain exch dup cF5 Constrain exch cF15 Constrain 
+       SelectSpace setrgbcolor} bind def
+  } ifelse
+}{
+  /g {stroke pm3dround pm3dGamma exp setgray} bind def
+} ifelse
+1.000 UL
+LTb
+1.00 1.00 1.00 C 1.000 1497 950 3854 2946 BoxColFill
+LCb setrgbcolor
+1497 950 M
+0 2946 V
+3854 0 V
+0 -2946 V
+-3854 0 V
+stroke
+0.500 UL
+LTb
+1497 950 M
+88 0 V
+3767 0 R
+-88 0 V
+stroke
+1377 950 M
+[ [({}) 200.0 0.0 true true 0 (-50)]
+] -66.7 MRshow
+0.500 UL
+LTb
+1497 1539 M
+88 0 V
+3767 0 R
+-88 0 V
+stroke
+1377 1539 M
+[ [({}) 200.0 0.0 true true 0 (0)]
+] -66.7 MRshow
+0.500 UL
+LTb
+1497 2129 M
+88 0 V
+3767 0 R
+-88 0 V
+stroke
+1377 2129 M
+[ [({}) 200.0 0.0 true true 0 (50)]
+] -66.7 MRshow
+0.500 UL
+LTb
+1497 2718 M
+88 0 V
+3767 0 R
+-88 0 V
+stroke
+1377 2718 M
+[ [({}) 200.0 0.0 true true 0 (100)]
+] -66.7 MRshow
+0.500 UL
+LTb
+1497 3308 M
+88 0 V
+3767 0 R
+-88 0 V
+stroke
+1377 3308 M
+[ [({}) 200.0 0.0 true true 0 (150)]
+] -66.7 MRshow
+0.500 UL
+LTb
+1497 3897 M
+88 0 V
+3767 0 R
+-88 0 V
+stroke
+1377 3897 M
+[ [({}) 200.0 0.0 true true 0 (200)]
+] -66.7 MRshow
+0.500 UL
+LTb
+1497 950 M
+0 88 V
+0 2859 R
+0 -88 V
+stroke
+1497 750 M
+[ [({}) 200.0 0.0 true true 0 (-2)]
+] -66.7 MCshow
+0.500 UL
+LTb
+2268 950 M
+0 88 V
+0 2859 R
+0 -88 V
+stroke
+2268 750 M
+[ [({}) 200.0 0.0 true true 0 (-1)]
+] -66.7 MCshow
+0.500 UL
+LTb
+3039 950 M
+0 88 V
+0 2859 R
+0 -88 V
+stroke
+3039 750 M
+[ [({}) 200.0 0.0 true true 0 (0)]
+] -66.7 MCshow
+0.500 UL
+LTb
+3810 950 M
+0 88 V
+0 2859 R
+0 -88 V
+stroke
+3810 750 M
+[ [({}) 200.0 0.0 true true 0 (1)]
+] -66.7 MCshow
+0.500 UL
+LTb
+4581 950 M
+0 88 V
+0 2859 R
+0 -88 V
+stroke
+4581 750 M
+[ [({}) 200.0 0.0 true true 0 (2)]
+] -66.7 MCshow
+0.500 UL
+LTb
+5352 950 M
+0 88 V
+0 2859 R
+0 -88 V
+stroke
+5352 750 M
+[ [({}) 200.0 0.0 true true 0 (3)]
+] -66.7 MCshow
+0.500 UL
+LTb
+0.500 UL
+LTb
+1497 3897 N
+0 -2947 V
+3855 0 V
+0 2947 V
+-3855 0 V
+Z stroke
+1.000 UP
+0.500 UL
+LTb
+% Begin plot #1
+0.500 UL
+LT0
+1497 2270 M
+4 -4 V
+4 -3 V
+4 -4 V
+3 -4 V
+4 -4 V
+4 -3 V
+4 -4 V
+4 -4 V
+4 -3 V
+4 -4 V
+3 -4 V
+4 -3 V
+4 -4 V
+4 -4 V
+4 -3 V
+4 -4 V
+4 -4 V
+3 -3 V
+4 -4 V
+4 -3 V
+4 -4 V
+4 -4 V
+4 -3 V
+4 -4 V
+3 -3 V
+4 -4 V
+4 -3 V
+4 -4 V
+4 -3 V
+4 -4 V
+4 -3 V
+3 -4 V
+4 -3 V
+4 -4 V
+4 -3 V
+4 -4 V
+4 -3 V
+4 -3 V
+3 -4 V
+4 -3 V
+4 -4 V
+4 -3 V
+4 -3 V
+4 -4 V
+4 -3 V
+4 -3 V
+3 -4 V
+4 -3 V
+4 -3 V
+4 -4 V
+4 -3 V
+4 -3 V
+4 -4 V
+3 -3 V
+4 -3 V
+4 -3 V
+4 -4 V
+4 -3 V
+4 -3 V
+4 -3 V
+3 -3 V
+4 -4 V
+4 -3 V
+4 -3 V
+4 -3 V
+4 -3 V
+4 -4 V
+3 -3 V
+4 -3 V
+4 -3 V
+4 -3 V
+4 -3 V
+4 -3 V
+4 -3 V
+3 -3 V
+4 -3 V
+4 -3 V
+4 -4 V
+4 -3 V
+4 -3 V
+4 -3 V
+3 -3 V
+4 -3 V
+4 -3 V
+4 -3 V
+4 -3 V
+4 -2 V
+4 -3 V
+3 -3 V
+4 -3 V
+4 -3 V
+4 -3 V
+4 -3 V
+4 -3 V
+4 -3 V
+3 -3 V
+4 -3 V
+4 -2 V
+4 -3 V
+4 -3 V
+4 -3 V
+4 -3 V
+3 -3 V
+4 -2 V
+stroke 1898 1929 M
+4 -3 V
+4 -3 V
+4 -3 V
+4 -2 V
+4 -3 V
+3 -3 V
+4 -3 V
+4 -2 V
+4 -3 V
+4 -3 V
+4 -2 V
+4 -3 V
+3 -3 V
+4 -3 V
+4 -2 V
+4 -3 V
+4 -2 V
+4 -3 V
+4 -3 V
+3 -2 V
+4 -3 V
+4 -3 V
+4 -2 V
+4 -3 V
+4 -2 V
+4 -3 V
+4 -2 V
+3 -3 V
+4 -2 V
+4 -3 V
+4 -2 V
+4 -3 V
+4 -2 V
+4 -3 V
+3 -2 V
+4 -3 V
+4 -2 V
+4 -3 V
+4 -2 V
+4 -3 V
+4 -2 V
+3 -2 V
+4 -3 V
+4 -2 V
+4 -2 V
+4 -3 V
+4 -2 V
+4 -3 V
+3 -2 V
+4 -2 V
+4 -3 V
+4 -2 V
+4 -2 V
+4 -2 V
+4 -3 V
+3 -2 V
+4 -2 V
+4 -2 V
+4 -3 V
+4 -2 V
+4 -2 V
+4 -2 V
+3 -3 V
+4 -2 V
+4 -2 V
+4 -2 V
+4 -2 V
+4 -2 V
+4 -3 V
+3 -2 V
+4 -2 V
+4 -2 V
+4 -2 V
+4 -2 V
+4 -2 V
+4 -2 V
+3 -2 V
+4 -2 V
+4 -3 V
+4 -2 V
+4 -2 V
+4 -2 V
+4 -2 V
+3 -2 V
+4 -2 V
+4 -2 V
+4 -2 V
+4 -2 V
+4 -2 V
+4 -1 V
+3 -2 V
+4 -2 V
+4 -2 V
+4 -2 V
+4 -2 V
+4 -2 V
+4 -2 V
+3 -2 V
+4 -2 V
+4 -1 V
+4 -2 V
+4 -2 V
+4 -2 V
+4 -2 V
+stroke 2300 1689 M
+4 -2 V
+3 -1 V
+4 -2 V
+4 -2 V
+4 -2 V
+4 -1 V
+4 -2 V
+4 -2 V
+3 -2 V
+4 -1 V
+4 -2 V
+4 -2 V
+4 -1 V
+4 -2 V
+4 -2 V
+3 -1 V
+4 -2 V
+4 -2 V
+4 -1 V
+4 -2 V
+4 -2 V
+4 -1 V
+3 -2 V
+4 -1 V
+4 -2 V
+4 -2 V
+4 -1 V
+4 -2 V
+4 -1 V
+3 -2 V
+4 -1 V
+4 -2 V
+4 -1 V
+4 -2 V
+4 -1 V
+4 -2 V
+3 -1 V
+4 -2 V
+4 -1 V
+4 -2 V
+4 -1 V
+4 -1 V
+4 -2 V
+3 -1 V
+4 -2 V
+4 -1 V
+4 -1 V
+4 -2 V
+4 -1 V
+4 -1 V
+3 -2 V
+4 -1 V
+4 -1 V
+4 -2 V
+4 -1 V
+4 -1 V
+4 -2 V
+3 -1 V
+4 -1 V
+4 -1 V
+4 -2 V
+4 -1 V
+4 -1 V
+4 -1 V
+3 -1 V
+4 -2 V
+4 -1 V
+4 -1 V
+4 -1 V
+4 -1 V
+4 -1 V
+3 -2 V
+4 -1 V
+4 -1 V
+4 -1 V
+4 -1 V
+4 -1 V
+4 -1 V
+3 -1 V
+4 -1 V
+4 -1 V
+4 -1 V
+4 -1 V
+4 -1 V
+4 -1 V
+4 -1 V
+3 -1 V
+4 -1 V
+4 -1 V
+4 -1 V
+4 -1 V
+4 -1 V
+4 -1 V
+3 -1 V
+4 -1 V
+4 -1 V
+4 -1 V
+4 -1 V
+4 -1 V
+4 -1 V
+3 0 V
+4 -1 V
+4 -1 V
+4 -1 V
+stroke 2701 1552 M
+4 -1 V
+4 -1 V
+4 0 V
+3 -1 V
+4 -1 V
+4 -1 V
+4 0 V
+4 -1 V
+4 -1 V
+4 -1 V
+3 0 V
+4 -1 V
+4 -1 V
+4 -1 V
+4 0 V
+4 -1 V
+4 -1 V
+3 0 V
+4 -1 V
+4 -1 V
+4 0 V
+4 -1 V
+4 0 V
+4 -1 V
+3 -1 V
+4 0 V
+4 -1 V
+4 0 V
+4 -1 V
+4 -1 V
+4 0 V
+3 -1 V
+4 0 V
+4 -1 V
+4 0 V
+4 -1 V
+4 0 V
+4 -1 V
+3 0 V
+4 0 V
+4 -1 V
+4 0 V
+4 -1 V
+4 0 V
+4 -1 V
+3 0 V
+4 0 V
+4 -1 V
+4 0 V
+4 0 V
+4 -1 V
+4 0 V
+3 -1 V
+4 0 V
+4 0 V
+4 0 V
+4 -1 V
+4 0 V
+4 0 V
+3 -1 V
+4 0 V
+4 0 V
+4 0 V
+4 -1 V
+4 0 V
+4 0 V
+4 0 V
+3 0 V
+4 -1 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+3 0 V
+4 -1 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+4 0 V
+4 0 V
+4 1 V
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+stroke 3102 1517 M
+4 0 V
+4 0 V
+4 1 V
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+4 1 V
+4 0 V
+4 0 V
+4 0 V
+4 1 V
+3 0 V
+4 0 V
+4 0 V
+4 1 V
+4 0 V
+4 0 V
+4 1 V
+3 0 V
+4 0 V
+4 1 V
+4 0 V
+4 1 V
+4 0 V
+4 0 V
+3 1 V
+4 0 V
+4 1 V
+4 0 V
+4 0 V
+4 1 V
+4 0 V
+3 1 V
+4 0 V
+4 1 V
+4 0 V
+4 1 V
+4 0 V
+4 1 V
+3 0 V
+4 1 V
+4 0 V
+4 1 V
+4 1 V
+4 0 V
+4 1 V
+4 0 V
+3 1 V
+4 1 V
+4 0 V
+4 1 V
+4 1 V
+4 0 V
+4 1 V
+3 1 V
+4 0 V
+4 1 V
+4 1 V
+4 0 V
+4 1 V
+4 1 V
+3 1 V
+4 0 V
+4 1 V
+4 1 V
+4 1 V
+4 0 V
+4 1 V
+3 1 V
+4 1 V
+4 1 V
+4 1 V
+4 0 V
+4 1 V
+4 1 V
+3 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+3 0 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+3 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+4 2 V
+4 1 V
+3 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+stroke 3504 1584 M
+3 1 V
+4 2 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+4 2 V
+3 1 V
+4 1 V
+4 1 V
+4 1 V
+4 2 V
+4 1 V
+4 1 V
+3 1 V
+4 2 V
+4 1 V
+4 1 V
+4 2 V
+4 1 V
+4 1 V
+4 2 V
+3 1 V
+4 1 V
+4 2 V
+4 1 V
+4 1 V
+4 2 V
+4 1 V
+3 2 V
+4 1 V
+4 2 V
+4 1 V
+4 1 V
+4 2 V
+4 1 V
+3 2 V
+4 1 V
+4 2 V
+4 1 V
+4 2 V
+4 1 V
+4 2 V
+3 2 V
+4 1 V
+4 2 V
+4 1 V
+4 2 V
+4 1 V
+4 2 V
+3 2 V
+4 1 V
+4 2 V
+4 2 V
+4 1 V
+4 2 V
+4 2 V
+3 1 V
+4 2 V
+4 2 V
+4 1 V
+4 2 V
+4 2 V
+4 1 V
+3 2 V
+4 2 V
+4 2 V
+4 2 V
+4 1 V
+4 2 V
+4 2 V
+3 2 V
+4 2 V
+4 1 V
+4 2 V
+4 2 V
+4 2 V
+4 2 V
+3 2 V
+4 2 V
+4 1 V
+4 2 V
+4 2 V
+4 2 V
+4 2 V
+3 2 V
+4 2 V
+4 2 V
+4 2 V
+4 2 V
+4 2 V
+4 2 V
+3 2 V
+4 2 V
+4 2 V
+4 2 V
+4 2 V
+4 2 V
+4 2 V
+3 2 V
+4 2 V
+4 3 V
+4 2 V
+4 2 V
+stroke 3905 1754 M
+4 2 V
+4 2 V
+4 2 V
+3 2 V
+4 2 V
+4 3 V
+4 2 V
+4 2 V
+4 2 V
+4 2 V
+3 3 V
+4 2 V
+4 2 V
+4 2 V
+4 3 V
+4 2 V
+4 2 V
+3 2 V
+4 3 V
+4 2 V
+4 2 V
+4 3 V
+4 2 V
+4 2 V
+3 3 V
+4 2 V
+4 2 V
+4 3 V
+4 2 V
+4 3 V
+4 2 V
+3 2 V
+4 3 V
+4 2 V
+4 3 V
+4 2 V
+4 3 V
+4 2 V
+3 3 V
+4 2 V
+4 3 V
+4 2 V
+4 3 V
+4 2 V
+4 3 V
+3 2 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+3 2 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+4 2 V
+3 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+4 2 V
+3 3 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+stroke 4306 2025 M
+4 3 V
+4 4 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 4 V
+4 3 V
+4 3 V
+4 3 V
+3 4 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 4 V
+4 3 V
+3 3 V
+4 4 V
+4 3 V
+4 3 V
+4 4 V
+4 3 V
+4 3 V
+3 4 V
+4 3 V
+4 3 V
+4 4 V
+4 3 V
+4 3 V
+4 4 V
+3 3 V
+4 4 V
+4 3 V
+4 4 V
+4 3 V
+4 4 V
+4 3 V
+3 4 V
+4 3 V
+4 4 V
+4 3 V
+4 4 V
+4 3 V
+4 4 V
+3 3 V
+4 4 V
+4 3 V
+4 4 V
+4 3 V
+4 4 V
+4 4 V
+3 3 V
+4 4 V
+4 4 V
+4 3 V
+4 4 V
+4 4 V
+4 3 V
+3 4 V
+4 4 V
+4 3 V
+4 4 V
+4 4 V
+4 3 V
+4 4 V
+4 4 V
+3 4 V
+4 4 V
+4 3 V
+4 4 V
+4 4 V
+4 4 V
+4 3 V
+3 4 V
+4 4 V
+4 4 V
+4 4 V
+4 4 V
+4 4 V
+4 3 V
+3 4 V
+4 4 V
+4 4 V
+4 4 V
+4 4 V
+4 4 V
+4 4 V
+3 4 V
+4 4 V
+4 4 V
+4 4 V
+4 4 V
+4 4 V
+4 4 V
+3 4 V
+4 4 V
+4 4 V
+4 4 V
+4 4 V
+4 4 V
+4 4 V
+stroke 4708 2399 M
+3 4 V
+4 4 V
+4 4 V
+4 5 V
+4 4 V
+4 4 V
+4 4 V
+3 4 V
+4 4 V
+4 5 V
+4 4 V
+4 4 V
+4 4 V
+4 4 V
+3 5 V
+4 4 V
+4 4 V
+4 4 V
+4 5 V
+4 4 V
+4 4 V
+3 4 V
+4 5 V
+4 4 V
+4 4 V
+4 5 V
+4 4 V
+4 4 V
+3 5 V
+4 4 V
+4 4 V
+4 5 V
+4 4 V
+4 5 V
+4 4 V
+3 4 V
+4 5 V
+4 4 V
+4 5 V
+4 4 V
+4 5 V
+4 4 V
+4 5 V
+3 4 V
+4 5 V
+4 4 V
+4 5 V
+4 4 V
+4 5 V
+4 4 V
+3 5 V
+4 4 V
+4 5 V
+4 5 V
+4 4 V
+4 5 V
+4 4 V
+3 5 V
+4 5 V
+4 4 V
+4 5 V
+4 5 V
+4 4 V
+4 5 V
+3 5 V
+4 4 V
+4 5 V
+4 5 V
+4 5 V
+4 4 V
+4 5 V
+3 5 V
+4 5 V
+4 4 V
+4 5 V
+4 5 V
+4 5 V
+4 5 V
+3 4 V
+4 5 V
+4 5 V
+4 5 V
+4 5 V
+4 5 V
+4 5 V
+3 5 V
+4 4 V
+4 5 V
+4 5 V
+4 5 V
+4 5 V
+4 5 V
+3 5 V
+4 5 V
+4 5 V
+4 5 V
+4 5 V
+4 5 V
+4 5 V
+3 5 V
+4 5 V
+4 5 V
+4 5 V
+4 5 V
+stroke 5109 2875 M
+4 5 V
+4 5 V
+3 5 V
+4 6 V
+4 5 V
+4 5 V
+4 5 V
+4 5 V
+4 5 V
+3 5 V
+4 6 V
+4 5 V
+4 5 V
+4 5 V
+4 5 V
+4 6 V
+3 5 V
+4 5 V
+4 5 V
+4 5 V
+4 6 V
+4 5 V
+4 5 V
+4 6 V
+3 5 V
+4 5 V
+4 6 V
+4 5 V
+4 5 V
+4 6 V
+4 5 V
+3 5 V
+4 6 V
+4 5 V
+4 5 V
+4 6 V
+4 5 V
+4 6 V
+3 5 V
+4 6 V
+4 5 V
+4 5 V
+4 6 V
+4 5 V
+4 6 V
+3 5 V
+4 6 V
+4 5 V
+4 6 V
+4 5 V
+4 6 V
+4 6 V
+3 5 V
+4 6 V
+4 5 V
+4 6 V
+4 5 V
+4 6 V
+4 6 V
+3 5 V
+4 6 V
+4 6 V
+4 5 V
+% End plot #1
+1.000 UP
+stroke
+LTb
+grestore % colour palette end
+gsave % colour palette begin
+/maxcolors 64 def
+/HSV2RGB {  exch dup 0.0 eq {pop exch pop dup dup} % achromatic gray
+  { /HSVs exch def /HSVv exch def 6.0 mul dup floor dup 3 1 roll sub
+     /HSVf exch def /HSVi exch cvi def /HSVp HSVv 1.0 HSVs sub mul def
+	 /HSVq HSVv 1.0 HSVs HSVf mul sub mul def 
+	 /HSVt HSVv 1.0 HSVs 1.0 HSVf sub mul sub mul def
+	 /HSVi HSVi 6 mod def 0 HSVi eq {HSVv HSVt HSVp}
+	 {1 HSVi eq {HSVq HSVv HSVp}{2 HSVi eq {HSVp HSVv HSVt}
+	 {3 HSVi eq {HSVp HSVq HSVv}{4 HSVi eq {HSVt HSVp HSVv}
+	 {HSVv HSVp HSVq} ifelse} ifelse} ifelse} ifelse} ifelse
+  } ifelse} def
+/Constrain {
+  dup 0 lt {0 exch pop}{dup 1 gt {1 exch pop} if} ifelse} def
+/YIQ2RGB {
+  3 copy -1.702 mul exch -1.105 mul add add Constrain 4 1 roll
+  3 copy -0.647 mul exch -0.272 mul add add Constrain 5 1 roll
+  0.621 mul exch -0.956 mul add add Constrain 3 1 roll } def
+/CMY2RGB {  1 exch sub exch 1 exch sub 3 2 roll 1 exch sub 3 1 roll exch } def
+/XYZ2RGB {  3 copy -0.9017 mul exch -0.1187 mul add exch 0.0585 mul exch add
+  Constrain 4 1 roll 3 copy -0.0279 mul exch 1.999 mul add exch
+  -0.9844 mul add Constrain 5 1 roll -0.2891 mul exch -0.5338 mul add
+  exch 1.91 mul exch add Constrain 3 1 roll} def
+/SelectSpace {ColorSpace (HSV) eq {HSV2RGB}{ColorSpace (XYZ) eq {
+  XYZ2RGB}{ColorSpace (CMY) eq {CMY2RGB}{ColorSpace (YIQ) eq {YIQ2RGB}
+  if} ifelse} ifelse} ifelse} def
+/InterpolatedColor true def
+/grayindex {/gidx 0 def
+  {GrayA gidx get grayv ge {exit} if /gidx gidx 1 add def} loop} def
+/dgdx {grayv GrayA gidx get sub GrayA gidx 1 sub get
+  GrayA gidx get sub div} def 
+/redvalue {RedA gidx get RedA gidx 1 sub get
+  RedA gidx get sub dgdxval mul add} def
+/greenvalue {GreenA gidx get GreenA gidx 1 sub get
+  GreenA gidx get sub dgdxval mul add} def
+/bluevalue {BlueA gidx get BlueA gidx 1 sub get
+  BlueA gidx get sub dgdxval mul add} def
+/interpolate {
+  grayindex grayv GrayA gidx get sub abs 1e-5 le
+    {RedA gidx get GreenA gidx get BlueA gidx get}
+    {/dgdxval dgdx def redvalue greenvalue bluevalue} ifelse} def
+/GrayA [0 .0159 .0317 .0476 .0635 .0794 .0952 .1111 .127 .1429 .1587 .1746 
+  .1905 .2063 .2222 .2381 .254 .2698 .2857 .3016 .3175 .3333 .3492 .3651 
+  .381 .3968 .4127 .4286 .4444 .4603 .4762 .4921 .5079 .5238 .5397 .5556 
+  .5714 .5873 .6032 .619 .6349 .6508 .6667 .6825 .6984 .7143 .7302 .746 
+  .7619 .7778 .7937 .8095 .8254 .8413 .8571 .873 .8889 .9048 .9206 .9365 
+  .9524 .9683 .9841 1 ] def
+/RedA [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .0238 .0873 .1508 
+  .2143 .2778 .3413 .4048 .4683 .5317 .5952 .6587 .7222 .7857 .8492 .9127 
+  .9762 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 .9444 .881 .8175 .754 .6905 .627 
+  .5635 .5 ] def
+/GreenA [0 0 0 0 0 0 0 0 .0079 .0714 .1349 .1984 .2619 .3254 .3889 .4524 
+  .5159 .5794 .6429 .7063 .7698 .8333 .8968 .9603 1 1 1 1 1 1 1 1 1 1 1 1 1 
+  1 1 1 .9603 .8968 .8333 .7698 .7063 .6429 .5794 .5159 .4524 .3889 .3254 
+  .2619 .1984 .1349 .0714 .0079 0 0 0 0 0 0 0 0 ] def
+/BlueA [.5 .5635 .627 .6905 .754 .8175 .881 .9444 1 1 1 1 1 1 1 1 1 1 1 1 1 
+  1 1 1 .9762 .9127 .8492 .7857 .7222 .6587 .5952 .5317 .4683 .4048 .3413 
+  .2778 .2143 .1508 .0873 .0238 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 ] def
+/pm3dround {maxcolors 0 gt {dup 1 ge
+	{pop 1} {maxcolors mul floor maxcolors 1 sub div} ifelse} if} def
+/pm3dGamma 1.0 1.5 Gamma mul div def
+/ColorSpace (RGB) def
+Color InterpolatedColor or { % COLOUR vs. GRAY map
+  InterpolatedColor { %% Interpolation vs. RGB-Formula
+    /g {stroke pm3dround /grayv exch def interpolate
+        SelectSpace setrgbcolor} bind def
+  }{
+  /g {stroke pm3dround dup cF7 Constrain exch dup cF5 Constrain exch cF15 Constrain 
+       SelectSpace setrgbcolor} bind def
+  } ifelse
+}{
+  /g {stroke pm3dround pm3dGamma exp setgray} bind def
+} ifelse
+1.000 UL
+LTb
+1.00 1.00 1.00 C 1.000 6570 950 3853 2946 BoxColFill
+LCb setrgbcolor
+6570 950 M
+0 2946 V
+3853 0 V
+0 -2946 V
+-3853 0 V
+stroke
+0.500 UL
+LTb
+6570 950 M
+88 0 V
+3766 0 R
+-88 0 V
+stroke
+6450 950 M
+[ [({}) 200.0 0.0 true true 0 (-5000)]
+] -66.7 MRshow
+0.500 UL
+LTb
+6570 1687 M
+88 0 V
+3766 0 R
+-88 0 V
+stroke
+6450 1687 M
+[ [({}) 200.0 0.0 true true 0 (0)]
+] -66.7 MRshow
+0.500 UL
+LTb
+6570 2424 M
+88 0 V
+3766 0 R
+-88 0 V
+stroke
+6450 2424 M
+[ [({}) 200.0 0.0 true true 0 (5000)]
+] -66.7 MRshow
+0.500 UL
+LTb
+6570 3160 M
+88 0 V
+3766 0 R
+-88 0 V
+stroke
+6450 3160 M
+[ [({}) 200.0 0.0 true true 0 (10000)]
+] -66.7 MRshow
+0.500 UL
+LTb
+6570 3897 M
+88 0 V
+3766 0 R
+-88 0 V
+stroke
+6450 3897 M
+[ [({}) 200.0 0.0 true true 0 (15000)]
+] -66.7 MRshow
+0.500 UL
+LTb
+6570 950 M
+0 88 V
+0 2859 R
+0 -88 V
+stroke
+6570 750 M
+[ [({}) 200.0 0.0 true true 0 (-2)]
+] -66.7 MCshow
+0.500 UL
+LTb
+7341 950 M
+0 88 V
+0 2859 R
+0 -88 V
+stroke
+7341 750 M
+[ [({}) 200.0 0.0 true true 0 (-1)]
+] -66.7 MCshow
+0.500 UL
+LTb
+8112 950 M
+0 88 V
+0 2859 R
+0 -88 V
+stroke
+8112 750 M
+[ [({}) 200.0 0.0 true true 0 (0)]
+] -66.7 MCshow
+0.500 UL
+LTb
+8882 950 M
+0 88 V
+0 2859 R
+0 -88 V
+stroke
+8882 750 M
+[ [({}) 200.0 0.0 true true 0 (1)]
+] -66.7 MCshow
+0.500 UL
+LTb
+9653 950 M
+0 88 V
+0 2859 R
+0 -88 V
+stroke
+9653 750 M
+[ [({}) 200.0 0.0 true true 0 (2)]
+] -66.7 MCshow
+0.500 UL
+LTb
+10424 950 M
+0 88 V
+0 2859 R
+0 -88 V
+stroke
+10424 750 M
+[ [({}) 200.0 0.0 true true 0 (3)]
+] -66.7 MCshow
+0.500 UL
+LTb
+0.500 UL
+LTb
+6570 3897 N
+0 -2947 V
+3854 0 V
+0 2947 V
+-3854 0 V
+Z stroke
+1.000 UP
+0.500 UL
+LTb
+% Begin plot #1
+0.500 UL
+LT0
+6570 1087 M
+4 4 V
+4 5 V
+4 4 V
+3 5 V
+4 4 V
+4 4 V
+4 5 V
+4 4 V
+4 5 V
+4 4 V
+3 4 V
+4 4 V
+4 5 V
+4 4 V
+4 4 V
+4 4 V
+4 4 V
+3 5 V
+4 4 V
+4 4 V
+4 4 V
+4 4 V
+4 4 V
+4 4 V
+3 4 V
+4 4 V
+4 4 V
+4 4 V
+4 4 V
+4 3 V
+4 4 V
+3 4 V
+4 4 V
+4 4 V
+4 4 V
+4 3 V
+4 4 V
+4 4 V
+3 3 V
+4 4 V
+4 4 V
+4 3 V
+4 4 V
+4 4 V
+4 3 V
+3 4 V
+4 3 V
+4 4 V
+4 3 V
+4 4 V
+4 3 V
+4 4 V
+3 3 V
+4 3 V
+4 4 V
+4 3 V
+4 3 V
+4 4 V
+4 3 V
+3 3 V
+4 4 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 4 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 2 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+4 2 V
+3 3 V
+4 3 V
+4 2 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+4 2 V
+3 3 V
+4 2 V
+stroke 6971 1445 M
+4 3 V
+4 2 V
+4 2 V
+4 3 V
+4 2 V
+3 3 V
+4 2 V
+4 2 V
+4 3 V
+4 2 V
+4 2 V
+4 3 V
+3 2 V
+4 2 V
+4 2 V
+4 2 V
+4 3 V
+4 2 V
+4 2 V
+3 2 V
+4 2 V
+4 2 V
+4 3 V
+4 2 V
+4 2 V
+4 2 V
+3 2 V
+4 2 V
+4 2 V
+4 2 V
+4 2 V
+4 2 V
+4 2 V
+3 2 V
+4 2 V
+4 2 V
+4 1 V
+4 2 V
+4 2 V
+4 2 V
+3 2 V
+4 2 V
+4 2 V
+4 1 V
+4 2 V
+4 2 V
+4 2 V
+3 1 V
+4 2 V
+4 2 V
+4 1 V
+4 2 V
+4 2 V
+4 1 V
+3 2 V
+4 2 V
+4 1 V
+4 2 V
+4 2 V
+4 1 V
+4 2 V
+3 1 V
+4 2 V
+4 1 V
+4 2 V
+4 1 V
+4 2 V
+4 1 V
+3 2 V
+4 1 V
+4 2 V
+4 1 V
+4 1 V
+4 2 V
+4 1 V
+3 2 V
+4 1 V
+4 1 V
+4 2 V
+4 1 V
+4 1 V
+4 1 V
+3 2 V
+4 1 V
+4 1 V
+4 2 V
+4 1 V
+4 1 V
+4 1 V
+3 1 V
+4 2 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+3 1 V
+4 2 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+3 1 V
+stroke 7372 1622 M
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+3 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+4 0 V
+3 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+4 0 V
+3 1 V
+4 1 V
+4 1 V
+4 1 V
+4 0 V
+4 1 V
+4 1 V
+3 1 V
+4 1 V
+4 0 V
+4 1 V
+4 1 V
+4 0 V
+4 1 V
+3 1 V
+4 0 V
+4 1 V
+4 1 V
+4 0 V
+4 1 V
+4 1 V
+3 0 V
+4 1 V
+4 1 V
+4 0 V
+4 1 V
+4 0 V
+4 1 V
+3 1 V
+4 0 V
+4 1 V
+4 0 V
+4 1 V
+4 0 V
+4 1 V
+3 0 V
+4 1 V
+4 0 V
+4 1 V
+4 0 V
+4 1 V
+4 0 V
+3 1 V
+4 0 V
+4 1 V
+4 0 V
+4 1 V
+4 0 V
+4 0 V
+3 1 V
+4 0 V
+4 1 V
+4 0 V
+4 0 V
+4 1 V
+4 0 V
+3 1 V
+4 0 V
+4 0 V
+4 1 V
+4 0 V
+4 0 V
+4 1 V
+3 0 V
+4 0 V
+4 1 V
+4 0 V
+4 0 V
+4 0 V
+4 1 V
+3 0 V
+4 0 V
+4 1 V
+4 0 V
+4 0 V
+4 0 V
+4 1 V
+4 0 V
+3 0 V
+4 0 V
+4 1 V
+4 0 V
+4 0 V
+4 0 V
+stroke 7774 1681 M
+4 0 V
+3 1 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 1 V
+4 0 V
+3 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 1 V
+4 0 V
+3 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 1 V
+4 0 V
+3 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+3 0 V
+4 1 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+4 0 V
+4 0 V
+4 1 V
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+stroke 8175 1687 M
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+4 0 V
+4 1 V
+4 0 V
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+4 1 V
+4 0 V
+4 0 V
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+4 0 V
+4 1 V
+4 0 V
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+4 0 V
+4 1 V
+4 0 V
+4 0 V
+4 0 V
+3 0 V
+4 0 V
+4 1 V
+4 0 V
+4 0 V
+4 0 V
+4 1 V
+3 0 V
+4 0 V
+4 0 V
+4 0 V
+4 1 V
+4 0 V
+4 0 V
+3 0 V
+4 1 V
+4 0 V
+4 0 V
+4 0 V
+4 1 V
+4 0 V
+4 0 V
+3 1 V
+4 0 V
+4 0 V
+4 1 V
+4 0 V
+4 0 V
+4 1 V
+3 0 V
+4 0 V
+4 1 V
+4 0 V
+4 0 V
+4 1 V
+4 0 V
+3 0 V
+4 1 V
+4 0 V
+stroke 8576 1702 M
+4 1 V
+4 0 V
+4 0 V
+4 1 V
+3 0 V
+4 1 V
+4 0 V
+4 1 V
+4 0 V
+4 1 V
+4 0 V
+3 1 V
+4 0 V
+4 1 V
+4 0 V
+4 1 V
+4 0 V
+4 1 V
+3 0 V
+4 1 V
+4 0 V
+4 1 V
+4 0 V
+4 1 V
+4 1 V
+3 0 V
+4 1 V
+4 0 V
+4 1 V
+4 1 V
+4 0 V
+4 1 V
+3 1 V
+4 0 V
+4 1 V
+4 1 V
+4 0 V
+4 1 V
+4 1 V
+3 0 V
+4 1 V
+4 1 V
+4 1 V
+4 0 V
+4 1 V
+4 1 V
+3 1 V
+4 0 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+3 0 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+3 1 V
+4 1 V
+4 0 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+3 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+4 2 V
+3 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+3 1 V
+4 2 V
+4 1 V
+4 1 V
+4 1 V
+4 1 V
+4 2 V
+3 1 V
+4 1 V
+4 1 V
+4 2 V
+4 1 V
+4 1 V
+4 1 V
+3 2 V
+4 1 V
+4 1 V
+4 2 V
+4 1 V
+4 1 V
+4 2 V
+3 1 V
+4 2 V
+stroke 8977 1792 M
+4 1 V
+4 2 V
+4 1 V
+4 1 V
+4 2 V
+3 1 V
+4 2 V
+4 1 V
+4 2 V
+4 1 V
+4 2 V
+4 2 V
+3 1 V
+4 2 V
+4 1 V
+4 2 V
+4 2 V
+4 1 V
+4 2 V
+3 2 V
+4 1 V
+4 2 V
+4 2 V
+4 2 V
+4 1 V
+4 2 V
+3 2 V
+4 2 V
+4 1 V
+4 2 V
+4 2 V
+4 2 V
+4 2 V
+3 2 V
+4 2 V
+4 1 V
+4 2 V
+4 2 V
+4 2 V
+4 2 V
+3 2 V
+4 2 V
+4 2 V
+4 2 V
+4 2 V
+4 2 V
+4 2 V
+3 3 V
+4 2 V
+4 2 V
+4 2 V
+4 2 V
+4 2 V
+4 2 V
+3 3 V
+4 2 V
+4 2 V
+4 2 V
+4 3 V
+4 2 V
+4 2 V
+3 2 V
+4 3 V
+4 2 V
+4 2 V
+4 3 V
+4 2 V
+4 3 V
+3 2 V
+4 2 V
+4 3 V
+4 2 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+3 2 V
+4 3 V
+4 2 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+3 2 V
+4 3 V
+4 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 2 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+stroke 9379 2019 M
+3 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 3 V
+4 4 V
+3 3 V
+4 3 V
+4 3 V
+4 4 V
+4 3 V
+4 3 V
+4 3 V
+3 4 V
+4 3 V
+4 3 V
+4 4 V
+4 3 V
+4 4 V
+4 3 V
+3 4 V
+4 3 V
+4 4 V
+4 3 V
+4 4 V
+4 3 V
+4 4 V
+3 3 V
+4 4 V
+4 4 V
+4 3 V
+4 4 V
+4 4 V
+4 3 V
+3 4 V
+4 4 V
+4 4 V
+4 4 V
+4 3 V
+4 4 V
+4 4 V
+3 4 V
+4 4 V
+4 4 V
+4 4 V
+4 4 V
+4 4 V
+4 4 V
+3 4 V
+4 4 V
+4 4 V
+4 4 V
+4 4 V
+4 4 V
+4 5 V
+3 4 V
+4 4 V
+4 4 V
+4 5 V
+4 4 V
+4 4 V
+4 4 V
+3 5 V
+4 4 V
+4 5 V
+4 4 V
+4 4 V
+4 5 V
+4 4 V
+3 5 V
+4 4 V
+4 5 V
+4 5 V
+4 4 V
+4 5 V
+4 4 V
+3 5 V
+4 5 V
+4 4 V
+4 5 V
+4 5 V
+4 5 V
+4 5 V
+3 4 V
+4 5 V
+4 5 V
+4 5 V
+4 5 V
+4 5 V
+4 5 V
+3 5 V
+4 5 V
+4 5 V
+4 5 V
+4 5 V
+4 5 V
+4 5 V
+3 5 V
+4 6 V
+4 5 V
+4 5 V
+4 5 V
+4 6 V
+stroke 9780 2448 M
+4 5 V
+3 5 V
+4 6 V
+4 5 V
+4 5 V
+4 6 V
+4 5 V
+4 6 V
+3 5 V
+4 6 V
+4 5 V
+4 6 V
+4 6 V
+4 5 V
+4 6 V
+3 6 V
+4 5 V
+4 6 V
+4 6 V
+4 6 V
+4 5 V
+4 6 V
+3 6 V
+4 6 V
+4 6 V
+4 6 V
+4 6 V
+4 6 V
+4 6 V
+3 6 V
+4 6 V
+4 6 V
+4 6 V
+4 6 V
+4 6 V
+4 7 V
+3 6 V
+4 6 V
+4 6 V
+4 7 V
+4 6 V
+4 6 V
+4 7 V
+3 6 V
+4 7 V
+4 6 V
+4 7 V
+4 6 V
+4 7 V
+4 6 V
+3 7 V
+4 7 V
+4 6 V
+4 7 V
+4 7 V
+4 6 V
+4 7 V
+3 7 V
+4 7 V
+4 7 V
+4 7 V
+4 6 V
+4 7 V
+4 7 V
+3 7 V
+4 7 V
+4 7 V
+4 8 V
+4 7 V
+4 7 V
+4 7 V
+4 7 V
+3 7 V
+4 8 V
+4 7 V
+4 7 V
+4 8 V
+4 7 V
+4 7 V
+3 8 V
+4 7 V
+4 8 V
+4 7 V
+4 8 V
+4 7 V
+4 8 V
+3 8 V
+4 7 V
+4 8 V
+4 8 V
+4 7 V
+4 8 V
+4 8 V
+3 8 V
+4 8 V
+4 8 V
+4 7 V
+4 8 V
+4 8 V
+4 8 V
+3 8 V
+4 9 V
+4 8 V
+4 8 V
+stroke 10181 3142 M
+4 8 V
+4 8 V
+4 8 V
+3 9 V
+4 8 V
+4 8 V
+4 9 V
+4 8 V
+4 8 V
+4 9 V
+3 8 V
+4 9 V
+4 8 V
+4 9 V
+4 9 V
+4 8 V
+4 9 V
+3 9 V
+4 8 V
+4 9 V
+4 9 V
+4 9 V
+4 9 V
+4 8 V
+3 9 V
+4 9 V
+4 9 V
+4 9 V
+4 9 V
+4 9 V
+4 10 V
+3 9 V
+4 9 V
+4 9 V
+4 9 V
+4 10 V
+4 9 V
+4 9 V
+3 10 V
+4 9 V
+4 9 V
+4 10 V
+4 9 V
+4 10 V
+4 10 V
+3 9 V
+4 10 V
+4 9 V
+4 10 V
+4 10 V
+4 10 V
+4 9 V
+3 10 V
+4 10 V
+4 10 V
+4 10 V
+4 10 V
+4 10 V
+4 10 V
+3 10 V
+4 10 V
+4 10 V
+4 10 V
+% End plot #1
+1.000 UP
+stroke
+LTb
+grestore % colour palette end
+stroke
+grestore
+end
+showpage
+%%Trailer
+%%DocumentFonts: Helvetica
