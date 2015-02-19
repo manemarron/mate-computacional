@@ -1,0 +1,25 @@
+from IPython.html.widgets import interact, fixed
+from IPython.html import widgets #Aquí primero necesitamos los widgets para poder 
+#interactuar con las funciones que definamos mas adelante
+
+def sumacuadrados(x):#primero definí una función que me regrese la suma de cada número al cuadrado hasta el que tu le pidas
+    suma=0 #para que empiece a sumar tiene que estar en cero la variable
+    for s in xrange(1,x+1): #quiero algo que vaya de uno en uno para incluir su cuadrado en la suma
+        suma+=s*s #a la suma le voy agregando cada cuadrado
+    return suma #le pedí que me entreegara la suma
+
+def sumaalcuadrado(x): #También el ejercicio pide que saquemos el cuadrado de una suma, entonces eso hace esta función
+    suma=0#para que empiece a sumar tiene que estar en cero la variable
+    for s in xrange(1,x+1): #Para cada número desde uno hasta el que se indique voy a sumarlo en la variable 'suma'
+        suma+=s
+    return suma*suma #ya que tenemos la suma, lo que quiero que me regrese es ese valor al cuadrado
+
+def diferencia(x): #pero lo que en verdad nos pide el problema es la diferencia entre ambas funciones, entonces eso
+    #hace esta función
+    print sumaalcuadrado(x)-sumacuadrados(x)
+
+interact(diferencia,x=10);#primero chequé que si se cumpliera para x=10, y me regresó el valor 2640, entonces
+#concluí que estaban bien definidas las funciones
+
+interact(diferencia,x=100);#ya que me aseguré que me diera lo que quería ahora si le pedi esa diferencia pero para los primeros 
+#100 números y me regresó el valor de 25164150

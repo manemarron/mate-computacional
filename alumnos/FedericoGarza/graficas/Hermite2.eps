@@ -1,0 +1,10732 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: Hermite2.eps
+%%Creator: gnuplot 4.6 patchlevel 5
+%%CreationDate: Thu Feb  5 15:07:51 2015
+%%DocumentFonts: (atend)
+%%BoundingBox: 50 50 626 482
+%%EndComments
+%%BeginProlog
+/gnudict 256 dict def
+gnudict begin
+%
+% The following true/false flags may be edited by hand if desired.
+% The unit line width and grayscale image gamma correction may also be changed.
+%
+/Color false def
+/Blacktext false def
+/Solid false def
+/Dashlength 2 def
+/Landscape false def
+/Level1 true def
+/Rounded false def
+/ClipToBoundingBox false def
+/SuppressPDFMark false def
+/TransparentPatterns false def
+/gnulinewidth 5.000 def
+/userlinewidth gnulinewidth def
+/Gamma 1.0 def
+/BackgroundColor {-1.000 -1.000 -1.000} def
+%
+/vshift -66 def
+/dl1 {
+  10.0 Dashlength mul mul
+  Rounded { currentlinewidth 0.75 mul sub dup 0 le { pop 0.01 } if } if
+} def
+/dl2 {
+  10.0 Dashlength mul mul
+  Rounded { currentlinewidth 0.75 mul add } if
+} def
+/hpt_ 31.5 def
+/vpt_ 31.5 def
+/hpt hpt_ def
+/vpt vpt_ def
+/doclip {
+  ClipToBoundingBox {
+    newpath 50 50 moveto 626 50 lineto 626 482 lineto 50 482 lineto closepath
+    clip
+  } if
+} def
+%
+% Gnuplot Prolog Version 4.6 (September 2012)
+%
+%/SuppressPDFMark true def
+%
+/M {moveto} bind def
+/L {lineto} bind def
+/R {rmoveto} bind def
+/V {rlineto} bind def
+/N {newpath moveto} bind def
+/Z {closepath} bind def
+/C {setrgbcolor} bind def
+/f {rlineto fill} bind def
+/g {setgray} bind def
+/Gshow {show} def   % May be redefined later in the file to support UTF-8
+/vpt2 vpt 2 mul def
+/hpt2 hpt 2 mul def
+/Lshow {currentpoint stroke M 0 vshift R 
+	Blacktext {gsave 0 setgray show grestore} {show} ifelse} def
+/Rshow {currentpoint stroke M dup stringwidth pop neg vshift R
+	Blacktext {gsave 0 setgray show grestore} {show} ifelse} def
+/Cshow {currentpoint stroke M dup stringwidth pop -2 div vshift R 
+	Blacktext {gsave 0 setgray show grestore} {show} ifelse} def
+/UP {dup vpt_ mul /vpt exch def hpt_ mul /hpt exch def
+  /hpt2 hpt 2 mul def /vpt2 vpt 2 mul def} def
+/DL {Color {setrgbcolor Solid {pop []} if 0 setdash}
+ {pop pop pop 0 setgray Solid {pop []} if 0 setdash} ifelse} def
+/BL {stroke userlinewidth 2 mul setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+/AL {stroke userlinewidth 2 div setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+/UL {dup gnulinewidth mul /userlinewidth exch def
+	dup 1 lt {pop 1} if 10 mul /udl exch def} def
+/PL {stroke userlinewidth setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+3.8 setmiterlimit
+% Default Line colors
+/LCw {1 1 1} def
+/LCb {0 0 0} def
+/LCa {0 0 0} def
+/LC0 {1 0 0} def
+/LC1 {0 1 0} def
+/LC2 {0 0 1} def
+/LC3 {1 0 1} def
+/LC4 {0 1 1} def
+/LC5 {1 1 0} def
+/LC6 {0 0 0} def
+/LC7 {1 0.3 0} def
+/LC8 {0.5 0.5 0.5} def
+% Default Line Types
+/LTw {PL [] 1 setgray} def
+/LTb {BL [] LCb DL} def
+/LTa {AL [1 udl mul 2 udl mul] 0 setdash LCa setrgbcolor} def
+/LT0 {PL [] LC0 DL} def
+/LT1 {PL [4 dl1 2 dl2] LC1 DL} def
+/LT2 {PL [2 dl1 3 dl2] LC2 DL} def
+/LT3 {PL [1 dl1 1.5 dl2] LC3 DL} def
+/LT4 {PL [6 dl1 2 dl2 1 dl1 2 dl2] LC4 DL} def
+/LT5 {PL [3 dl1 3 dl2 1 dl1 3 dl2] LC5 DL} def
+/LT6 {PL [2 dl1 2 dl2 2 dl1 6 dl2] LC6 DL} def
+/LT7 {PL [1 dl1 2 dl2 6 dl1 2 dl2 1 dl1 2 dl2] LC7 DL} def
+/LT8 {PL [2 dl1 2 dl2 2 dl1 2 dl2 2 dl1 2 dl2 2 dl1 4 dl2] LC8 DL} def
+/Pnt {stroke [] 0 setdash gsave 1 setlinecap M 0 0 V stroke grestore} def
+/Dia {stroke [] 0 setdash 2 copy vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath stroke
+  Pnt} def
+/Pls {stroke [] 0 setdash vpt sub M 0 vpt2 V
+  currentpoint stroke M
+  hpt neg vpt neg R hpt2 0 V stroke
+ } def
+/Box {stroke [] 0 setdash 2 copy exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath stroke
+  Pnt} def
+/Crs {stroke [] 0 setdash exch hpt sub exch vpt add M
+  hpt2 vpt2 neg V currentpoint stroke M
+  hpt2 neg 0 R hpt2 vpt2 V stroke} def
+/TriU {stroke [] 0 setdash 2 copy vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath stroke
+  Pnt} def
+/Star {2 copy Pls Crs} def
+/BoxF {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath fill} def
+/TriUF {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath fill} def
+/TriD {stroke [] 0 setdash 2 copy vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath stroke
+  Pnt} def
+/TriDF {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath fill} def
+/DiaF {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath fill} def
+/Pent {stroke [] 0 setdash 2 copy gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath stroke grestore Pnt} def
+/PentF {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath fill grestore} def
+/Circle {stroke [] 0 setdash 2 copy
+  hpt 0 360 arc stroke Pnt} def
+/CircleF {stroke [] 0 setdash hpt 0 360 arc fill} def
+/C0 {BL [] 0 setdash 2 copy moveto vpt 90 450 arc} bind def
+/C1 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C2 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C3 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C4 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 180 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C5 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc
+	2 copy moveto
+	2 copy vpt 180 270 arc closepath fill
+	vpt 0 360 arc} bind def
+/C6 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C7 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C8 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 270 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C9 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 270 450 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C10 {BL [] 0 setdash 2 copy 2 copy moveto vpt 270 360 arc closepath fill
+	2 copy moveto
+	2 copy vpt 90 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C11 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 180 arc closepath fill
+	2 copy moveto
+	2 copy vpt 270 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C12 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 180 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C13 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc closepath fill
+	2 copy moveto
+	2 copy vpt 180 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C14 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 360 arc closepath fill
+	vpt 0 360 arc} bind def
+/C15 {BL [] 0 setdash 2 copy vpt 0 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/Rec {newpath 4 2 roll moveto 1 index 0 rlineto 0 exch rlineto
+	neg 0 rlineto closepath} bind def
+/Square {dup Rec} bind def
+/Bsquare {vpt sub exch vpt sub exch vpt2 Square} bind def
+/S0 {BL [] 0 setdash 2 copy moveto 0 vpt rlineto BL Bsquare} bind def
+/S1 {BL [] 0 setdash 2 copy vpt Square fill Bsquare} bind def
+/S2 {BL [] 0 setdash 2 copy exch vpt sub exch vpt Square fill Bsquare} bind def
+/S3 {BL [] 0 setdash 2 copy exch vpt sub exch vpt2 vpt Rec fill Bsquare} bind def
+/S4 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt Square fill Bsquare} bind def
+/S5 {BL [] 0 setdash 2 copy 2 copy vpt Square fill
+	exch vpt sub exch vpt sub vpt Square fill Bsquare} bind def
+/S6 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt vpt2 Rec fill Bsquare} bind def
+/S7 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt vpt2 Rec fill
+	2 copy vpt Square fill Bsquare} bind def
+/S8 {BL [] 0 setdash 2 copy vpt sub vpt Square fill Bsquare} bind def
+/S9 {BL [] 0 setdash 2 copy vpt sub vpt vpt2 Rec fill Bsquare} bind def
+/S10 {BL [] 0 setdash 2 copy vpt sub vpt Square fill 2 copy exch vpt sub exch vpt Square fill
+	Bsquare} bind def
+/S11 {BL [] 0 setdash 2 copy vpt sub vpt Square fill 2 copy exch vpt sub exch vpt2 vpt Rec fill
+	Bsquare} bind def
+/S12 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill Bsquare} bind def
+/S13 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill
+	2 copy vpt Square fill Bsquare} bind def
+/S14 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill
+	2 copy exch vpt sub exch vpt Square fill Bsquare} bind def
+/S15 {BL [] 0 setdash 2 copy Bsquare fill Bsquare} bind def
+/D0 {gsave translate 45 rotate 0 0 S0 stroke grestore} bind def
+/D1 {gsave translate 45 rotate 0 0 S1 stroke grestore} bind def
+/D2 {gsave translate 45 rotate 0 0 S2 stroke grestore} bind def
+/D3 {gsave translate 45 rotate 0 0 S3 stroke grestore} bind def
+/D4 {gsave translate 45 rotate 0 0 S4 stroke grestore} bind def
+/D5 {gsave translate 45 rotate 0 0 S5 stroke grestore} bind def
+/D6 {gsave translate 45 rotate 0 0 S6 stroke grestore} bind def
+/D7 {gsave translate 45 rotate 0 0 S7 stroke grestore} bind def
+/D8 {gsave translate 45 rotate 0 0 S8 stroke grestore} bind def
+/D9 {gsave translate 45 rotate 0 0 S9 stroke grestore} bind def
+/D10 {gsave translate 45 rotate 0 0 S10 stroke grestore} bind def
+/D11 {gsave translate 45 rotate 0 0 S11 stroke grestore} bind def
+/D12 {gsave translate 45 rotate 0 0 S12 stroke grestore} bind def
+/D13 {gsave translate 45 rotate 0 0 S13 stroke grestore} bind def
+/D14 {gsave translate 45 rotate 0 0 S14 stroke grestore} bind def
+/D15 {gsave translate 45 rotate 0 0 S15 stroke grestore} bind def
+/DiaE {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath stroke} def
+/BoxE {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath stroke} def
+/TriUE {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath stroke} def
+/TriDE {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath stroke} def
+/PentE {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath stroke grestore} def
+/CircE {stroke [] 0 setdash 
+  hpt 0 360 arc stroke} def
+/Opaque {gsave closepath 1 setgray fill grestore 0 setgray closepath} def
+/DiaW {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V Opaque stroke} def
+/BoxW {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V Opaque stroke} def
+/TriUW {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V Opaque stroke} def
+/TriDW {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V Opaque stroke} def
+/PentW {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  Opaque stroke grestore} def
+/CircW {stroke [] 0 setdash 
+  hpt 0 360 arc Opaque stroke} def
+/BoxFill {gsave Rec 1 setgray fill grestore} def
+/Density {
+  /Fillden exch def
+  currentrgbcolor
+  /ColB exch def /ColG exch def /ColR exch def
+  /ColR ColR Fillden mul Fillden sub 1 add def
+  /ColG ColG Fillden mul Fillden sub 1 add def
+  /ColB ColB Fillden mul Fillden sub 1 add def
+  ColR ColG ColB setrgbcolor} def
+/BoxColFill {gsave Rec PolyFill} def
+/PolyFill {gsave Density fill grestore grestore} def
+/h {rlineto rlineto rlineto gsave closepath fill grestore} bind def
+%
+% PostScript Level 1 Pattern Fill routine for rectangles
+% Usage: x y w h s a XX PatternFill
+%	x,y = lower left corner of box to be filled
+%	w,h = width and height of box
+%	  a = angle in degrees between lines and x-axis
+%	 XX = 0/1 for no/yes cross-hatch
+%
+/PatternFill {gsave /PFa [ 9 2 roll ] def
+  PFa 0 get PFa 2 get 2 div add PFa 1 get PFa 3 get 2 div add translate
+  PFa 2 get -2 div PFa 3 get -2 div PFa 2 get PFa 3 get Rec
+  TransparentPatterns {} {gsave 1 setgray fill grestore} ifelse
+  clip
+  currentlinewidth 0.5 mul setlinewidth
+  /PFs PFa 2 get dup mul PFa 3 get dup mul add sqrt def
+  0 0 M PFa 5 get rotate PFs -2 div dup translate
+  0 1 PFs PFa 4 get div 1 add floor cvi
+	{PFa 4 get mul 0 M 0 PFs V} for
+  0 PFa 6 get ne {
+	0 1 PFs PFa 4 get div 1 add floor cvi
+	{PFa 4 get mul 0 2 1 roll M PFs 0 V} for
+ } if
+  stroke grestore} def
+%
+/languagelevel where
+ {pop languagelevel} {1} ifelse
+ 2 lt
+	{/InterpretLevel1 true def}
+	{/InterpretLevel1 Level1 def}
+ ifelse
+%
+% PostScript level 2 pattern fill definitions
+%
+/Level2PatternFill {
+/Tile8x8 {/PaintType 2 /PatternType 1 /TilingType 1 /BBox [0 0 8 8] /XStep 8 /YStep 8}
+	bind def
+/KeepColor {currentrgbcolor [/Pattern /DeviceRGB] setcolorspace} bind def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 8 8 L 0 8 M 8 0 L stroke} 
+>> matrix makepattern
+/Pat1 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 8 8 L 0 8 M 8 0 L stroke
+	0 4 M 4 8 L 8 4 L 4 0 L 0 4 L stroke}
+>> matrix makepattern
+/Pat2 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 0 8 L
+	8 8 L 8 0 L 0 0 L fill}
+>> matrix makepattern
+/Pat3 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -4 8 M 8 -4 L
+	0 12 M 12 0 L stroke}
+>> matrix makepattern
+/Pat4 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -4 0 M 8 12 L
+	0 -4 M 12 8 L stroke}
+>> matrix makepattern
+/Pat5 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -2 8 M 4 -4 L
+	0 12 M 8 -4 L 4 12 M 10 0 L stroke}
+>> matrix makepattern
+/Pat6 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -2 0 M 4 12 L
+	0 -4 M 8 12 L 4 -4 M 10 8 L stroke}
+>> matrix makepattern
+/Pat7 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 8 -2 M -4 4 L
+	12 0 M -4 8 L 12 4 M 0 10 L stroke}
+>> matrix makepattern
+/Pat8 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 -2 M 12 4 L
+	-4 0 M 12 8 L -4 4 M 8 10 L stroke}
+>> matrix makepattern
+/Pat9 exch def
+/Pattern1 {PatternBgnd KeepColor Pat1 setpattern} bind def
+/Pattern2 {PatternBgnd KeepColor Pat2 setpattern} bind def
+/Pattern3 {PatternBgnd KeepColor Pat3 setpattern} bind def
+/Pattern4 {PatternBgnd KeepColor Landscape {Pat5} {Pat4} ifelse setpattern} bind def
+/Pattern5 {PatternBgnd KeepColor Landscape {Pat4} {Pat5} ifelse setpattern} bind def
+/Pattern6 {PatternBgnd KeepColor Landscape {Pat9} {Pat6} ifelse setpattern} bind def
+/Pattern7 {PatternBgnd KeepColor Landscape {Pat8} {Pat7} ifelse setpattern} bind def
+} def
+%
+%
+%End of PostScript Level 2 code
+%
+/PatternBgnd {
+  TransparentPatterns {} {gsave 1 setgray fill grestore} ifelse
+} def
+%
+% Substitute for Level 2 pattern fill codes with
+% grayscale if Level 2 support is not selected.
+%
+/Level1PatternFill {
+/Pattern1 {0.250 Density} bind def
+/Pattern2 {0.500 Density} bind def
+/Pattern3 {0.750 Density} bind def
+/Pattern4 {0.125 Density} bind def
+/Pattern5 {0.375 Density} bind def
+/Pattern6 {0.625 Density} bind def
+/Pattern7 {0.875 Density} bind def
+} def
+%
+% Now test for support of Level 2 code
+%
+Level1 {Level1PatternFill} {Level2PatternFill} ifelse
+%
+/Symbol-Oblique /Symbol findfont [1 0 .167 1 0 0] makefont
+dup length dict begin {1 index /FID eq {pop pop} {def} ifelse} forall
+currentdict end definefont pop
+/MFshow {
+   { dup 5 get 3 ge
+     { 5 get 3 eq {gsave} {grestore} ifelse }
+     {dup dup 0 get findfont exch 1 get scalefont setfont
+     [ currentpoint ] exch dup 2 get 0 exch R dup 5 get 2 ne {dup dup 6
+     get exch 4 get {Gshow} {stringwidth pop 0 R} ifelse }if dup 5 get 0 eq
+     {dup 3 get {2 get neg 0 exch R pop} {pop aload pop M} ifelse} {dup 5
+     get 1 eq {dup 2 get exch dup 3 get exch 6 get stringwidth pop -2 div
+     dup 0 R} {dup 6 get stringwidth pop -2 div 0 R 6 get
+     show 2 index {aload pop M neg 3 -1 roll neg R pop pop} {pop pop pop
+     pop aload pop M} ifelse }ifelse }ifelse }
+     ifelse }
+   forall} def
+/Gswidth {dup type /stringtype eq {stringwidth} {pop (n) stringwidth} ifelse} def
+/MFwidth {0 exch { dup 5 get 3 ge { 5 get 3 eq { 0 } { pop } ifelse }
+ {dup 3 get{dup dup 0 get findfont exch 1 get scalefont setfont
+     6 get Gswidth pop add} {pop} ifelse} ifelse} forall} def
+/MLshow { currentpoint stroke M
+  0 exch R
+  Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
+/MRshow { currentpoint stroke M
+  exch dup MFwidth neg 3 -1 roll R
+  Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
+/MCshow { currentpoint stroke M
+  exch dup MFwidth -2 div 3 -1 roll R
+  Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
+/XYsave    { [( ) 1 2 true false 3 ()] } bind def
+/XYrestore { [( ) 1 2 true false 4 ()] } bind def
+Level1 SuppressPDFMark or 
+{} {
+/SDict 10 dict def
+systemdict /pdfmark known not {
+  userdict /pdfmark systemdict /cleartomark get put
+} if
+SDict begin [
+  /Title (Hermite2.eps)
+  /Subject (gnuplot plot)
+  /Creator (gnuplot 4.6 patchlevel 5)
+  /Author ()
+%  /Producer (gnuplot)
+%  /Keywords ()
+  /CreationDate (Thu Feb  5 15:07:51 2015)
+  /DOCINFO pdfmark
+end
+} ifelse
+end
+%%EndProlog
+%%Page: 1 1
+gnudict begin
+gsave
+doclip
+50 50 translate
+0.050 0.050 scale
+0 setgray
+newpath
+(Helvetica) findfont 200 scalefont setfont
+BackgroundColor 0 lt 3 1 roll 0 lt exch 0 lt or or not {BackgroundColor C 1.000 0 0 11520.00 8640.00 BoxColFill} if
+gsave % colour palette begin
+/maxcolors 64 def
+/HSV2RGB {  exch dup 0.0 eq {pop exch pop dup dup} % achromatic gray
+  { /HSVs exch def /HSVv exch def 6.0 mul dup floor dup 3 1 roll sub
+     /HSVf exch def /HSVi exch cvi def /HSVp HSVv 1.0 HSVs sub mul def
+	 /HSVq HSVv 1.0 HSVs HSVf mul sub mul def 
+	 /HSVt HSVv 1.0 HSVs 1.0 HSVf sub mul sub mul def
+	 /HSVi HSVi 6 mod def 0 HSVi eq {HSVv HSVt HSVp}
+	 {1 HSVi eq {HSVq HSVv HSVp}{2 HSVi eq {HSVp HSVv HSVt}
+	 {3 HSVi eq {HSVp HSVq HSVv}{4 HSVi eq {HSVt HSVp HSVv}
+	 {HSVv HSVp HSVq} ifelse} ifelse} ifelse} ifelse} ifelse
+  } ifelse} def
+/Constrain {
+  dup 0 lt {0 exch pop}{dup 1 gt {1 exch pop} if} ifelse} def
+/YIQ2RGB {
+  3 copy -1.702 mul exch -1.105 mul add add Constrain 4 1 roll
+  3 copy -0.647 mul exch -0.272 mul add add Constrain 5 1 roll
+  0.621 mul exch -0.956 mul add add Constrain 3 1 roll } def
+/CMY2RGB {  1 exch sub exch 1 exch sub 3 2 roll 1 exch sub 3 1 roll exch } def
+/XYZ2RGB {  3 copy -0.9017 mul exch -0.1187 mul add exch 0.0585 mul exch add
+  Constrain 4 1 roll 3 copy -0.0279 mul exch 1.999 mul add exch
+  -0.9844 mul add Constrain 5 1 roll -0.2891 mul exch -0.5338 mul add
+  exch 1.91 mul exch add Constrain 3 1 roll} def
+/SelectSpace {ColorSpace (HSV) eq {HSV2RGB}{ColorSpace (XYZ) eq {
+  XYZ2RGB}{ColorSpace (CMY) eq {CMY2RGB}{ColorSpace (YIQ) eq {YIQ2RGB}
+  if} ifelse} ifelse} ifelse} def
+/InterpolatedColor true def
+/grayindex {/gidx 0 def
+  {GrayA gidx get grayv ge {exit} if /gidx gidx 1 add def} loop} def
+/dgdx {grayv GrayA gidx get sub GrayA gidx 1 sub get
+  GrayA gidx get sub div} def 
+/redvalue {RedA gidx get RedA gidx 1 sub get
+  RedA gidx get sub dgdxval mul add} def
+/greenvalue {GreenA gidx get GreenA gidx 1 sub get
+  GreenA gidx get sub dgdxval mul add} def
+/bluevalue {BlueA gidx get BlueA gidx 1 sub get
+  BlueA gidx get sub dgdxval mul add} def
+/interpolate {
+  grayindex grayv GrayA gidx get sub abs 1e-5 le
+    {RedA gidx get GreenA gidx get BlueA gidx get}
+    {/dgdxval dgdx def redvalue greenvalue bluevalue} ifelse} def
+/GrayA [0 .0159 .0317 .0476 .0635 .0794 .0952 .1111 .127 .1429 .1587 .1746 
+  .1905 .2063 .2222 .2381 .254 .2698 .2857 .3016 .3175 .3333 .3492 .3651 
+  .381 .3968 .4127 .4286 .4444 .4603 .4762 .4921 .5079 .5238 .5397 .5556 
+  .5714 .5873 .6032 .619 .6349 .6508 .6667 .6825 .6984 .7143 .7302 .746 
+  .7619 .7778 .7937 .8095 .8254 .8413 .8571 .873 .8889 .9048 .9206 .9365 
+  .9524 .9683 .9841 1 ] def
+/RedA [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .0238 .0873 .1508 
+  .2143 .2778 .3413 .4048 .4683 .5317 .5952 .6587 .7222 .7857 .8492 .9127 
+  .9762 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 .9444 .881 .8175 .754 .6905 .627 
+  .5635 .5 ] def
+/GreenA [0 0 0 0 0 0 0 0 .0079 .0714 .1349 .1984 .2619 .3254 .3889 .4524 
+  .5159 .5794 .6429 .7063 .7698 .8333 .8968 .9603 1 1 1 1 1 1 1 1 1 1 1 1 1 
+  1 1 1 .9603 .8968 .8333 .7698 .7063 .6429 .5794 .5159 .4524 .3889 .3254 
+  .2619 .1984 .1349 .0714 .0079 0 0 0 0 0 0 0 0 ] def
+/BlueA [.5 .5635 .627 .6905 .754 .8175 .881 .9444 1 1 1 1 1 1 1 1 1 1 1 1 1 
+  1 1 1 .9762 .9127 .8492 .7857 .7222 .6587 .5952 .5317 .4683 .4048 .3413 
+  .2778 .2143 .1508 .0873 .0238 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+  0 0 ] def
+/pm3dround {maxcolors 0 gt {dup 1 ge
+	{pop 1} {maxcolors mul floor maxcolors 1 sub div} ifelse} if} def
+/pm3dGamma 1.0 1.5 Gamma mul div def
+/ColorSpace (RGB) def
+Color InterpolatedColor or { % COLOUR vs. GRAY map
+  InterpolatedColor { %% Interpolation vs. RGB-Formula
+    /g {stroke pm3dround /grayv exch def interpolate
+        SelectSpace setrgbcolor} bind def
+  }{
+  /g {stroke pm3dround dup cF7 Constrain exch dup cF5 Constrain exch cF15 Constrain 
+       SelectSpace setrgbcolor} bind def
+  } ifelse
+}{
+  /g {stroke pm3dround pm3dGamma exp setgray} bind def
+} ifelse
+1.000 UL
+LTb
+1.00 1.00 1.00 C 1.000 1497 950 8926 7040 BoxColFill
+LCb setrgbcolor
+1497 950 M
+0 7040 V
+8926 0 V
+0 -7040 V
+-8926 0 V
+stroke
+0.500 UL
+LTb
+1497 950 M
+88 0 V
+8839 0 R
+-88 0 V
+stroke
+1377 950 M
+[ [({}) 200.0 0.0 true true 0 (-5000)]
+] -66.7 MRshow
+0.500 UL
+LTb
+1497 2710 M
+88 0 V
+8839 0 R
+-88 0 V
+stroke
+1377 2710 M
+[ [({}) 200.0 0.0 true true 0 (0)]
+] -66.7 MRshow
+0.500 UL
+LTb
+1497 4471 M
+88 0 V
+8839 0 R
+-88 0 V
+stroke
+1377 4471 M
+[ [({}) 200.0 0.0 true true 0 (5000)]
+] -66.7 MRshow
+0.500 UL
+LTb
+1497 6231 M
+88 0 V
+8839 0 R
+-88 0 V
+stroke
+1377 6231 M
+[ [({}) 200.0 0.0 true true 0 (10000)]
+] -66.7 MRshow
+0.500 UL
+LTb
+1497 7991 M
+88 0 V
+8839 0 R
+-88 0 V
+stroke
+1377 7991 M
+[ [({}) 200.0 0.0 true true 0 (15000)]
+] -66.7 MRshow
+0.500 UL
+LTb
+1497 950 M
+0 88 V
+0 6953 R
+0 -88 V
+stroke
+1497 750 M
+[ [({}) 200.0 0.0 true true 0 (-2)]
+] -66.7 MCshow
+0.500 UL
+LTb
+3282 950 M
+0 88 V
+0 6953 R
+0 -88 V
+stroke
+3282 750 M
+[ [({}) 200.0 0.0 true true 0 (-1)]
+] -66.7 MCshow
+0.500 UL
+LTb
+5068 950 M
+0 88 V
+0 6953 R
+0 -88 V
+stroke
+5068 750 M
+[ [({}) 200.0 0.0 true true 0 (0)]
+] -66.7 MCshow
+0.500 UL
+LTb
+6853 950 M
+0 88 V
+0 6953 R
+0 -88 V
+stroke
+6853 750 M
+[ [({}) 200.0 0.0 true true 0 (1)]
+] -66.7 MCshow
+0.500 UL
+LTb
+8639 950 M
+0 88 V
+0 6953 R
+0 -88 V
+stroke
+8639 750 M
+[ [({}) 200.0 0.0 true true 0 (2)]
+] -66.7 MCshow
+0.500 UL
+LTb
+10424 950 M
+0 88 V
+0 6953 R
+0 -88 V
+stroke
+10424 750 M
+[ [({}) 200.0 0.0 true true 0 (3)]
+] -66.7 MCshow
+0.500 UL
+LTb
+0.500 UL
+LTb
+1497 7991 N
+0 -7041 V
+8927 0 V
+0 7041 V
+-8927 0 V
+Z stroke
+1.000 UP
+0.500 UL
+LTb
+% Begin plot #1
+0.667 UP
+0.500 UL
+LT0
+1497 2711 M
+1497 2711 CircleF
+% End plot #1
+% Begin plot #2
+0.667 UP
+0.500 UL
+LT0
+1506 2711 M
+1506 2711 CircleF
+% End plot #2
+% Begin plot #3
+0.667 UP
+0.500 UL
+LT0
+1515 2711 M
+1515 2711 CircleF
+% End plot #3
+% Begin plot #4
+0.667 UP
+0.500 UL
+LT0
+1524 2711 M
+1524 2711 CircleF
+% End plot #4
+% Begin plot #5
+0.667 UP
+0.500 UL
+LT0
+1533 2711 M
+1533 2711 CircleF
+% End plot #5
+% Begin plot #6
+0.667 UP
+0.500 UL
+LT0
+1542 2711 M
+1542 2711 CircleF
+% End plot #6
+% Begin plot #7
+0.667 UP
+0.500 UL
+LT0
+1551 2711 M
+1551 2711 CircleF
+% End plot #7
+% Begin plot #8
+0.667 UP
+0.500 UL
+LT0
+1560 2711 M
+1560 2711 CircleF
+% End plot #8
+% Begin plot #9
+0.667 UP
+0.500 UL
+LT0
+1568 2711 M
+1568 2711 CircleF
+% End plot #9
+% Begin plot #10
+0.667 UP
+0.500 UL
+LT0
+1577 2711 M
+1577 2711 CircleF
+% End plot #10
+% Begin plot #11
+0.667 UP
+0.500 UL
+LT0
+1586 2711 M
+1586 2711 CircleF
+% End plot #11
+% Begin plot #12
+0.667 UP
+0.500 UL
+LT0
+1595 2711 M
+1595 2711 CircleF
+% End plot #12
+% Begin plot #13
+0.667 UP
+0.500 UL
+LT0
+1604 2711 M
+1604 2711 CircleF
+% End plot #13
+% Begin plot #14
+0.667 UP
+0.500 UL
+LT0
+1613 2711 M
+1613 2711 CircleF
+% End plot #14
+% Begin plot #15
+0.667 UP
+0.500 UL
+LT0
+1622 2711 M
+1622 2711 CircleF
+% End plot #15
+% Begin plot #16
+0.667 UP
+0.500 UL
+LT0
+1631 2711 M
+1631 2711 CircleF
+% End plot #16
+% Begin plot #17
+0.667 UP
+0.500 UL
+LT0
+1640 2711 M
+1640 2711 CircleF
+% End plot #17
+% Begin plot #18
+0.667 UP
+0.500 UL
+LT0
+1649 2711 M
+1649 2711 CircleF
+% End plot #18
+% Begin plot #19
+0.667 UP
+0.500 UL
+LT0
+1658 2711 M
+1658 2711 CircleF
+% End plot #19
+% Begin plot #20
+0.667 UP
+0.500 UL
+LT0
+1667 2711 M
+1667 2711 CircleF
+% End plot #20
+% Begin plot #21
+0.667 UP
+0.500 UL
+LT0
+1676 2711 M
+1676 2711 CircleF
+% End plot #21
+% Begin plot #22
+0.667 UP
+0.500 UL
+LT0
+1685 2711 M
+1685 2711 CircleF
+% End plot #22
+% Begin plot #23
+0.667 UP
+0.500 UL
+LT0
+1694 2711 M
+1694 2711 CircleF
+% End plot #23
+% Begin plot #24
+0.667 UP
+0.500 UL
+LT0
+1703 2711 M
+1703 2711 CircleF
+% End plot #24
+% Begin plot #25
+0.667 UP
+0.500 UL
+LT0
+1711 2711 M
+1711 2711 CircleF
+% End plot #25
+% Begin plot #26
+0.667 UP
+0.500 UL
+LT0
+1720 2711 M
+1720 2711 CircleF
+% End plot #26
+% Begin plot #27
+0.667 UP
+0.500 UL
+LT0
+1729 2711 M
+1729 2711 CircleF
+% End plot #27
+% Begin plot #28
+0.667 UP
+0.500 UL
+LT0
+1738 2711 M
+1738 2711 CircleF
+% End plot #28
+% Begin plot #29
+0.667 UP
+0.500 UL
+LT0
+1747 2711 M
+1747 2711 CircleF
+% End plot #29
+% Begin plot #30
+0.667 UP
+0.500 UL
+LT0
+1756 2711 M
+1756 2711 CircleF
+% End plot #30
+% Begin plot #31
+0.667 UP
+0.500 UL
+LT0
+1765 2711 M
+1765 2711 CircleF
+% End plot #31
+% Begin plot #32
+0.667 UP
+0.500 UL
+LT0
+1774 2711 M
+1774 2711 CircleF
+% End plot #32
+% Begin plot #33
+0.667 UP
+0.500 UL
+LT0
+1783 2711 M
+1783 2711 CircleF
+% End plot #33
+% Begin plot #34
+0.667 UP
+0.500 UL
+LT0
+1792 2711 M
+1792 2711 CircleF
+% End plot #34
+% Begin plot #35
+0.667 UP
+0.500 UL
+LT0
+1801 2711 M
+1801 2711 CircleF
+% End plot #35
+% Begin plot #36
+0.667 UP
+0.500 UL
+LT0
+1810 2711 M
+1810 2711 CircleF
+% End plot #36
+% Begin plot #37
+0.667 UP
+0.500 UL
+LT0
+1819 2711 M
+1819 2711 CircleF
+% End plot #37
+% Begin plot #38
+0.667 UP
+0.500 UL
+LT0
+1828 2711 M
+1828 2711 CircleF
+% End plot #38
+% Begin plot #39
+0.667 UP
+0.500 UL
+LT0
+1837 2711 M
+1837 2711 CircleF
+% End plot #39
+% Begin plot #40
+0.667 UP
+0.500 UL
+LT0
+1846 2711 M
+1846 2711 CircleF
+% End plot #40
+% Begin plot #41
+0.667 UP
+0.500 UL
+LT0
+1854 2711 M
+1854 2711 CircleF
+% End plot #41
+% Begin plot #42
+0.667 UP
+0.500 UL
+LT0
+1863 2711 M
+1863 2711 CircleF
+% End plot #42
+% Begin plot #43
+0.667 UP
+0.500 UL
+LT0
+1872 2711 M
+1872 2711 CircleF
+% End plot #43
+% Begin plot #44
+0.667 UP
+0.500 UL
+LT0
+1881 2711 M
+1881 2711 CircleF
+% End plot #44
+% Begin plot #45
+0.667 UP
+0.500 UL
+LT0
+1890 2711 M
+1890 2711 CircleF
+% End plot #45
+% Begin plot #46
+0.667 UP
+0.500 UL
+LT0
+1899 2711 M
+1899 2711 CircleF
+% End plot #46
+% Begin plot #47
+0.667 UP
+0.500 UL
+LT0
+1908 2711 M
+1908 2711 CircleF
+% End plot #47
+% Begin plot #48
+0.667 UP
+0.500 UL
+LT0
+1917 2711 M
+1917 2711 CircleF
+% End plot #48
+% Begin plot #49
+0.667 UP
+0.500 UL
+LT0
+1926 2711 M
+1926 2711 CircleF
+% End plot #49
+% Begin plot #50
+0.667 UP
+0.500 UL
+LT0
+1935 2711 M
+1935 2711 CircleF
+% End plot #50
+% Begin plot #51
+0.667 UP
+0.500 UL
+LT0
+1944 2711 M
+1944 2711 CircleF
+% End plot #51
+% Begin plot #52
+0.667 UP
+0.500 UL
+LT0
+1953 2711 M
+1953 2711 CircleF
+% End plot #52
+% Begin plot #53
+0.667 UP
+0.500 UL
+LT0
+1962 2711 M
+1962 2711 CircleF
+% End plot #53
+% Begin plot #54
+0.667 UP
+0.500 UL
+LT0
+1971 2711 M
+1971 2711 CircleF
+% End plot #54
+% Begin plot #55
+0.667 UP
+0.500 UL
+LT0
+1980 2711 M
+1980 2711 CircleF
+% End plot #55
+% Begin plot #56
+0.667 UP
+0.500 UL
+LT0
+1988 2711 M
+1988 2711 CircleF
+% End plot #56
+% Begin plot #57
+0.667 UP
+0.500 UL
+LT0
+1997 2711 M
+1997 2711 CircleF
+% End plot #57
+% Begin plot #58
+0.667 UP
+0.500 UL
+LT0
+2006 2711 M
+2006 2711 CircleF
+% End plot #58
+% Begin plot #59
+0.667 UP
+0.500 UL
+LT0
+2015 2711 M
+2015 2711 CircleF
+% End plot #59
+% Begin plot #60
+0.667 UP
+0.500 UL
+LT0
+2024 2711 M
+2024 2711 CircleF
+% End plot #60
+% Begin plot #61
+0.667 UP
+0.500 UL
+LT0
+2033 2711 M
+2033 2711 CircleF
+% End plot #61
+% Begin plot #62
+0.667 UP
+0.500 UL
+LT0
+2042 2711 M
+2042 2711 CircleF
+% End plot #62
+% Begin plot #63
+0.667 UP
+0.500 UL
+LT0
+2051 2711 M
+2051 2711 CircleF
+% End plot #63
+% Begin plot #64
+0.667 UP
+0.500 UL
+LT0
+2060 2711 M
+2060 2711 CircleF
+% End plot #64
+% Begin plot #65
+0.667 UP
+0.500 UL
+LT0
+2069 2711 M
+2069 2711 CircleF
+% End plot #65
+% Begin plot #66
+0.667 UP
+0.500 UL
+LT0
+2078 2711 M
+2078 2711 CircleF
+% End plot #66
+% Begin plot #67
+0.667 UP
+0.500 UL
+LT0
+2087 2711 M
+2087 2711 CircleF
+% End plot #67
+% Begin plot #68
+0.667 UP
+0.500 UL
+LT0
+2096 2711 M
+2096 2711 CircleF
+% End plot #68
+% Begin plot #69
+0.667 UP
+0.500 UL
+LT0
+2105 2711 M
+2105 2711 CircleF
+% End plot #69
+% Begin plot #70
+0.667 UP
+0.500 UL
+LT0
+2114 2711 M
+2114 2711 CircleF
+% End plot #70
+% Begin plot #71
+0.667 UP
+0.500 UL
+LT0
+2123 2711 M
+2123 2711 CircleF
+% End plot #71
+% Begin plot #72
+0.667 UP
+0.500 UL
+LT0
+2131 2711 M
+2131 2711 CircleF
+% End plot #72
+% Begin plot #73
+0.667 UP
+0.500 UL
+LT0
+2140 2711 M
+2140 2711 CircleF
+% End plot #73
+% Begin plot #74
+0.667 UP
+0.500 UL
+LT0
+2149 2711 M
+2149 2711 CircleF
+% End plot #74
+% Begin plot #75
+0.667 UP
+0.500 UL
+LT0
+2158 2711 M
+2158 2711 CircleF
+% End plot #75
+% Begin plot #76
+0.667 UP
+0.500 UL
+LT0
+2167 2711 M
+2167 2711 CircleF
+% End plot #76
+% Begin plot #77
+0.667 UP
+0.500 UL
+LT0
+2176 2711 M
+2176 2711 CircleF
+% End plot #77
+% Begin plot #78
+0.667 UP
+0.500 UL
+LT0
+2185 2711 M
+2185 2711 CircleF
+% End plot #78
+% Begin plot #79
+0.667 UP
+0.500 UL
+LT0
+2194 2711 M
+2194 2711 CircleF
+% End plot #79
+% Begin plot #80
+0.667 UP
+0.500 UL
+LT0
+2203 2711 M
+2203 2711 CircleF
+% End plot #80
+% Begin plot #81
+0.667 UP
+0.500 UL
+LT0
+2212 2711 M
+2212 2711 CircleF
+% End plot #81
+% Begin plot #82
+0.667 UP
+0.500 UL
+LT0
+2221 2711 M
+2221 2711 CircleF
+% End plot #82
+% Begin plot #83
+0.667 UP
+0.500 UL
+LT0
+2230 2711 M
+2230 2711 CircleF
+% End plot #83
+% Begin plot #84
+0.667 UP
+0.500 UL
+LT0
+2239 2711 M
+2239 2711 CircleF
+% End plot #84
+% Begin plot #85
+0.667 UP
+0.500 UL
+LT0
+2248 2711 M
+2248 2711 CircleF
+% End plot #85
+% Begin plot #86
+0.667 UP
+0.500 UL
+LT0
+2257 2711 M
+2257 2711 CircleF
+% End plot #86
+% Begin plot #87
+0.667 UP
+0.500 UL
+LT0
+2265 2711 M
+2265 2711 CircleF
+% End plot #87
+% Begin plot #88
+0.667 UP
+0.500 UL
+LT0
+2274 2711 M
+2274 2711 CircleF
+% End plot #88
+% Begin plot #89
+0.667 UP
+0.500 UL
+LT0
+2283 2711 M
+2283 2711 CircleF
+% End plot #89
+% Begin plot #90
+0.667 UP
+0.500 UL
+LT0
+2292 2711 M
+2292 2711 CircleF
+% End plot #90
+% Begin plot #91
+0.667 UP
+0.500 UL
+LT0
+2301 2711 M
+2301 2711 CircleF
+% End plot #91
+% Begin plot #92
+0.667 UP
+0.500 UL
+LT0
+2310 2711 M
+2310 2711 CircleF
+% End plot #92
+% Begin plot #93
+0.667 UP
+0.500 UL
+LT0
+2319 2711 M
+2319 2711 CircleF
+% End plot #93
+% Begin plot #94
+0.667 UP
+0.500 UL
+LT0
+2328 2711 M
+2328 2711 CircleF
+% End plot #94
+% Begin plot #95
+0.667 UP
+0.500 UL
+LT0
+2337 2711 M
+2337 2711 CircleF
+% End plot #95
+% Begin plot #96
+0.667 UP
+0.500 UL
+LT0
+2346 2711 M
+2346 2711 CircleF
+% End plot #96
+% Begin plot #97
+0.667 UP
+0.500 UL
+LT0
+2355 2711 M
+2355 2711 CircleF
+% End plot #97
+% Begin plot #98
+0.667 UP
+0.500 UL
+LT0
+2364 2711 M
+2364 2711 CircleF
+% End plot #98
+% Begin plot #99
+0.667 UP
+0.500 UL
+LT0
+2373 2711 M
+2373 2711 CircleF
+% End plot #99
+% Begin plot #100
+0.667 UP
+0.500 UL
+LT0
+2382 2711 M
+2382 2711 CircleF
+% End plot #100
+% Begin plot #101
+0.667 UP
+0.500 UL
+LT0
+2391 2711 M
+2391 2711 CircleF
+% End plot #101
+% Begin plot #102
+0.667 UP
+0.500 UL
+LT0
+2400 2711 M
+2400 2711 CircleF
+% End plot #102
+% Begin plot #103
+0.667 UP
+0.500 UL
+LT0
+2408 2711 M
+2408 2711 CircleF
+% End plot #103
+% Begin plot #104
+0.667 UP
+0.500 UL
+LT0
+2417 2711 M
+2417 2711 CircleF
+% End plot #104
+% Begin plot #105
+0.667 UP
+0.500 UL
+LT0
+2426 2711 M
+2426 2711 CircleF
+% End plot #105
+% Begin plot #106
+0.667 UP
+0.500 UL
+LT0
+2435 2711 M
+2435 2711 CircleF
+% End plot #106
+% Begin plot #107
+0.667 UP
+0.500 UL
+LT0
+2444 2711 M
+2444 2711 CircleF
+% End plot #107
+% Begin plot #108
+0.667 UP
+0.500 UL
+LT0
+2453 2711 M
+2453 2711 CircleF
+% End plot #108
+% Begin plot #109
+0.667 UP
+0.500 UL
+LT0
+2462 2711 M
+2462 2711 CircleF
+% End plot #109
+% Begin plot #110
+0.667 UP
+0.500 UL
+LT0
+2471 2711 M
+2471 2711 CircleF
+% End plot #110
+% Begin plot #111
+0.667 UP
+0.500 UL
+LT0
+2480 2711 M
+2480 2711 CircleF
+% End plot #111
+% Begin plot #112
+0.667 UP
+0.500 UL
+LT0
+2489 2711 M
+2489 2711 CircleF
+% End plot #112
+% Begin plot #113
+0.667 UP
+0.500 UL
+LT0
+2498 2711 M
+2498 2711 CircleF
+% End plot #113
+% Begin plot #114
+0.667 UP
+0.500 UL
+LT0
+2507 2711 M
+2507 2711 CircleF
+% End plot #114
+% Begin plot #115
+0.667 UP
+0.500 UL
+LT0
+2516 2711 M
+2516 2711 CircleF
+% End plot #115
+% Begin plot #116
+0.667 UP
+0.500 UL
+LT0
+2525 2711 M
+2525 2711 CircleF
+% End plot #116
+% Begin plot #117
+0.667 UP
+0.500 UL
+LT0
+2534 2711 M
+2534 2711 CircleF
+% End plot #117
+% Begin plot #118
+0.667 UP
+0.500 UL
+LT0
+2543 2711 M
+2543 2711 CircleF
+% End plot #118
+% Begin plot #119
+0.667 UP
+0.500 UL
+LT0
+2551 2711 M
+2551 2711 CircleF
+% End plot #119
+% Begin plot #120
+0.667 UP
+0.500 UL
+LT0
+2560 2711 M
+2560 2711 CircleF
+% End plot #120
+% Begin plot #121
+0.667 UP
+0.500 UL
+LT0
+2569 2711 M
+2569 2711 CircleF
+% End plot #121
+% Begin plot #122
+0.667 UP
+0.500 UL
+LT0
+2578 2711 M
+2578 2711 CircleF
+% End plot #122
+% Begin plot #123
+0.667 UP
+0.500 UL
+LT0
+2587 2711 M
+2587 2711 CircleF
+% End plot #123
+% Begin plot #124
+0.667 UP
+0.500 UL
+LT0
+2596 2711 M
+2596 2711 CircleF
+% End plot #124
+% Begin plot #125
+0.667 UP
+0.500 UL
+LT0
+2605 2711 M
+2605 2711 CircleF
+% End plot #125
+% Begin plot #126
+0.667 UP
+0.500 UL
+LT0
+2614 2711 M
+2614 2711 CircleF
+% End plot #126
+% Begin plot #127
+0.667 UP
+0.500 UL
+LT0
+2623 2711 M
+2623 2711 CircleF
+% End plot #127
+% Begin plot #128
+0.667 UP
+0.500 UL
+LT0
+2632 2711 M
+2632 2711 CircleF
+% End plot #128
+% Begin plot #129
+0.667 UP
+0.500 UL
+LT0
+2641 2711 M
+2641 2711 CircleF
+% End plot #129
+% Begin plot #130
+0.667 UP
+0.500 UL
+LT0
+2650 2711 M
+2650 2711 CircleF
+% End plot #130
+% Begin plot #131
+0.667 UP
+0.500 UL
+LT0
+2659 2711 M
+2659 2711 CircleF
+% End plot #131
+% Begin plot #132
+0.667 UP
+0.500 UL
+LT0
+2668 2711 M
+2668 2711 CircleF
+% End plot #132
+% Begin plot #133
+0.667 UP
+0.500 UL
+LT0
+2677 2711 M
+2677 2711 CircleF
+% End plot #133
+% Begin plot #134
+0.667 UP
+0.500 UL
+LT0
+2685 2711 M
+2685 2711 CircleF
+% End plot #134
+% Begin plot #135
+0.667 UP
+0.500 UL
+LT0
+2694 2711 M
+2694 2711 CircleF
+% End plot #135
+% Begin plot #136
+0.667 UP
+0.500 UL
+LT0
+2703 2711 M
+2703 2711 CircleF
+% End plot #136
+% Begin plot #137
+0.667 UP
+0.500 UL
+LT0
+2712 2711 M
+2712 2711 CircleF
+% End plot #137
+% Begin plot #138
+0.667 UP
+0.500 UL
+LT0
+2721 2711 M
+2721 2711 CircleF
+% End plot #138
+% Begin plot #139
+0.667 UP
+0.500 UL
+LT0
+2730 2711 M
+2730 2711 CircleF
+% End plot #139
+% Begin plot #140
+0.667 UP
+0.500 UL
+LT0
+2739 2711 M
+2739 2711 CircleF
+% End plot #140
+% Begin plot #141
+0.667 UP
+0.500 UL
+LT0
+2748 2711 M
+2748 2711 CircleF
+% End plot #141
+% Begin plot #142
+0.667 UP
+0.500 UL
+LT0
+2757 2711 M
+2757 2711 CircleF
+% End plot #142
+% Begin plot #143
+0.667 UP
+0.500 UL
+LT0
+2766 2711 M
+2766 2711 CircleF
+% End plot #143
+% Begin plot #144
+0.667 UP
+0.500 UL
+LT0
+2775 2711 M
+2775 2711 CircleF
+% End plot #144
+% Begin plot #145
+0.667 UP
+0.500 UL
+LT0
+2784 2711 M
+2784 2711 CircleF
+% End plot #145
+% Begin plot #146
+0.667 UP
+0.500 UL
+LT0
+2793 2711 M
+2793 2711 CircleF
+% End plot #146
+% Begin plot #147
+0.667 UP
+0.500 UL
+LT0
+2802 2711 M
+2802 2711 CircleF
+% End plot #147
+% Begin plot #148
+0.667 UP
+0.500 UL
+LT0
+2811 2711 M
+2811 2711 CircleF
+% End plot #148
+% Begin plot #149
+0.667 UP
+0.500 UL
+LT0
+2820 2711 M
+2820 2711 CircleF
+% End plot #149
+% Begin plot #150
+0.667 UP
+0.500 UL
+LT0
+2828 2711 M
+2828 2711 CircleF
+% End plot #150
+% Begin plot #151
+0.667 UP
+0.500 UL
+LT0
+2837 2711 M
+2837 2711 CircleF
+% End plot #151
+% Begin plot #152
+0.667 UP
+0.500 UL
+LT0
+2846 2711 M
+2846 2711 CircleF
+% End plot #152
+% Begin plot #153
+0.667 UP
+0.500 UL
+LT0
+2855 2711 M
+2855 2711 CircleF
+% End plot #153
+% Begin plot #154
+0.667 UP
+0.500 UL
+LT0
+2864 2711 M
+2864 2711 CircleF
+% End plot #154
+% Begin plot #155
+0.667 UP
+0.500 UL
+LT0
+2873 2711 M
+2873 2711 CircleF
+% End plot #155
+% Begin plot #156
+0.667 UP
+0.500 UL
+LT0
+2882 2711 M
+2882 2711 CircleF
+% End plot #156
+% Begin plot #157
+0.667 UP
+0.500 UL
+LT0
+2891 2711 M
+2891 2711 CircleF
+% End plot #157
+% Begin plot #158
+0.667 UP
+0.500 UL
+LT0
+2900 2711 M
+2900 2711 CircleF
+% End plot #158
+% Begin plot #159
+0.667 UP
+0.500 UL
+LT0
+2909 2711 M
+2909 2711 CircleF
+% End plot #159
+% Begin plot #160
+0.667 UP
+0.500 UL
+LT0
+2918 2711 M
+2918 2711 CircleF
+% End plot #160
+% Begin plot #161
+0.667 UP
+0.500 UL
+LT0
+2927 2711 M
+2927 2711 CircleF
+% End plot #161
+% Begin plot #162
+0.667 UP
+0.500 UL
+LT0
+2936 2711 M
+2936 2711 CircleF
+% End plot #162
+% Begin plot #163
+0.667 UP
+0.500 UL
+LT0
+2945 2711 M
+2945 2711 CircleF
+% End plot #163
+% Begin plot #164
+0.667 UP
+0.500 UL
+LT0
+2954 2711 M
+2954 2711 CircleF
+% End plot #164
+% Begin plot #165
+0.667 UP
+0.500 UL
+LT0
+2962 2711 M
+2962 2711 CircleF
+% End plot #165
+% Begin plot #166
+0.667 UP
+0.500 UL
+LT0
+2971 2711 M
+2971 2711 CircleF
+% End plot #166
+% Begin plot #167
+0.667 UP
+0.500 UL
+LT0
+2980 2711 M
+2980 2711 CircleF
+% End plot #167
+% Begin plot #168
+0.667 UP
+0.500 UL
+LT0
+2989 2711 M
+2989 2711 CircleF
+% End plot #168
+% Begin plot #169
+0.667 UP
+0.500 UL
+LT0
+2998 2711 M
+2998 2711 CircleF
+% End plot #169
+% Begin plot #170
+0.667 UP
+0.500 UL
+LT0
+3007 2711 M
+3007 2711 CircleF
+% End plot #170
+% Begin plot #171
+0.667 UP
+0.500 UL
+LT0
+3016 2711 M
+3016 2711 CircleF
+% End plot #171
+% Begin plot #172
+0.667 UP
+0.500 UL
+LT0
+3025 2711 M
+3025 2711 CircleF
+% End plot #172
+% Begin plot #173
+0.667 UP
+0.500 UL
+LT0
+3034 2711 M
+3034 2711 CircleF
+% End plot #173
+% Begin plot #174
+0.667 UP
+0.500 UL
+LT0
+3043 2711 M
+3043 2711 CircleF
+% End plot #174
+% Begin plot #175
+0.667 UP
+0.500 UL
+LT0
+3052 2711 M
+3052 2711 CircleF
+% End plot #175
+% Begin plot #176
+0.667 UP
+0.500 UL
+LT0
+3061 2711 M
+3061 2711 CircleF
+% End plot #176
+% Begin plot #177
+0.667 UP
+0.500 UL
+LT0
+3070 2711 M
+3070 2711 CircleF
+% End plot #177
+% Begin plot #178
+0.667 UP
+0.500 UL
+LT0
+3079 2711 M
+3079 2711 CircleF
+% End plot #178
+% Begin plot #179
+0.667 UP
+0.500 UL
+LT0
+3088 2711 M
+3088 2711 CircleF
+% End plot #179
+% Begin plot #180
+0.667 UP
+0.500 UL
+LT0
+3097 2711 M
+3097 2711 CircleF
+% End plot #180
+% Begin plot #181
+0.667 UP
+0.500 UL
+LT0
+3105 2711 M
+3105 2711 CircleF
+% End plot #181
+% Begin plot #182
+0.667 UP
+0.500 UL
+LT0
+3114 2711 M
+3114 2711 CircleF
+% End plot #182
+% Begin plot #183
+0.667 UP
+0.500 UL
+LT0
+3123 2711 M
+3123 2711 CircleF
+% End plot #183
+% Begin plot #184
+0.667 UP
+0.500 UL
+LT0
+3132 2711 M
+3132 2711 CircleF
+% End plot #184
+% Begin plot #185
+0.667 UP
+0.500 UL
+LT0
+3141 2711 M
+3141 2711 CircleF
+% End plot #185
+% Begin plot #186
+0.667 UP
+0.500 UL
+LT0
+3150 2711 M
+3150 2711 CircleF
+% End plot #186
+% Begin plot #187
+0.667 UP
+0.500 UL
+LT0
+3159 2711 M
+3159 2711 CircleF
+% End plot #187
+% Begin plot #188
+0.667 UP
+0.500 UL
+LT0
+3168 2711 M
+3168 2711 CircleF
+% End plot #188
+% Begin plot #189
+0.667 UP
+0.500 UL
+LT0
+3177 2711 M
+3177 2711 CircleF
+% End plot #189
+% Begin plot #190
+0.667 UP
+0.500 UL
+LT0
+3186 2711 M
+3186 2711 CircleF
+% End plot #190
+% Begin plot #191
+0.667 UP
+0.500 UL
+LT0
+3195 2711 M
+3195 2711 CircleF
+% End plot #191
+% Begin plot #192
+0.667 UP
+0.500 UL
+LT0
+3204 2711 M
+3204 2711 CircleF
+% End plot #192
+% Begin plot #193
+0.667 UP
+0.500 UL
+LT0
+3213 2711 M
+3213 2711 CircleF
+% End plot #193
+% Begin plot #194
+0.667 UP
+0.500 UL
+LT0
+3222 2711 M
+3222 2711 CircleF
+% End plot #194
+% Begin plot #195
+0.667 UP
+0.500 UL
+LT0
+3231 2711 M
+3231 2711 CircleF
+% End plot #195
+% Begin plot #196
+0.667 UP
+0.500 UL
+LT0
+3240 2711 M
+3240 2711 CircleF
+% End plot #196
+% Begin plot #197
+0.667 UP
+0.500 UL
+LT0
+3248 2711 M
+3248 2711 CircleF
+% End plot #197
+% Begin plot #198
+0.667 UP
+0.500 UL
+LT0
+3257 2711 M
+3257 2711 CircleF
+% End plot #198
+% Begin plot #199
+0.667 UP
+0.500 UL
+LT0
+3266 2711 M
+3266 2711 CircleF
+% End plot #199
+% Begin plot #200
+0.667 UP
+0.500 UL
+LT0
+3275 2711 M
+3275 2711 CircleF
+% End plot #200
+% Begin plot #201
+0.667 UP
+0.500 UL
+LT0
+3284 2711 M
+3284 2711 CircleF
+% End plot #201
+% Begin plot #202
+0.667 UP
+0.500 UL
+LT0
+3293 2711 M
+3293 2711 CircleF
+% End plot #202
+% Begin plot #203
+0.667 UP
+0.500 UL
+LT0
+3302 2711 M
+3302 2711 CircleF
+% End plot #203
+% Begin plot #204
+0.667 UP
+0.500 UL
+LT0
+3311 2711 M
+3311 2711 CircleF
+% End plot #204
+% Begin plot #205
+0.667 UP
+0.500 UL
+LT0
+3320 2711 M
+3320 2711 CircleF
+% End plot #205
+% Begin plot #206
+0.667 UP
+0.500 UL
+LT0
+3329 2711 M
+3329 2711 CircleF
+% End plot #206
+% Begin plot #207
+0.667 UP
+0.500 UL
+LT0
+3338 2711 M
+3338 2711 CircleF
+% End plot #207
+% Begin plot #208
+0.667 UP
+0.500 UL
+LT0
+3347 2711 M
+3347 2711 CircleF
+% End plot #208
+% Begin plot #209
+0.667 UP
+0.500 UL
+LT0
+3356 2711 M
+3356 2711 CircleF
+% End plot #209
+% Begin plot #210
+0.667 UP
+0.500 UL
+LT0
+3365 2711 M
+3365 2711 CircleF
+% End plot #210
+% Begin plot #211
+0.667 UP
+0.500 UL
+LT0
+3374 2711 M
+3374 2711 CircleF
+% End plot #211
+% Begin plot #212
+0.667 UP
+0.500 UL
+LT0
+3382 2711 M
+3382 2711 CircleF
+% End plot #212
+% Begin plot #213
+0.667 UP
+0.500 UL
+LT0
+3391 2711 M
+3391 2711 CircleF
+% End plot #213
+% Begin plot #214
+0.667 UP
+0.500 UL
+LT0
+3400 2711 M
+3400 2711 CircleF
+% End plot #214
+% Begin plot #215
+0.667 UP
+0.500 UL
+LT0
+3409 2711 M
+3409 2711 CircleF
+% End plot #215
+% Begin plot #216
+0.667 UP
+0.500 UL
+LT0
+3418 2711 M
+3418 2711 CircleF
+% End plot #216
+% Begin plot #217
+0.667 UP
+0.500 UL
+LT0
+3427 2711 M
+3427 2711 CircleF
+% End plot #217
+% Begin plot #218
+0.667 UP
+0.500 UL
+LT0
+3436 2711 M
+3436 2711 CircleF
+% End plot #218
+% Begin plot #219
+0.667 UP
+0.500 UL
+LT0
+3445 2711 M
+3445 2711 CircleF
+% End plot #219
+% Begin plot #220
+0.667 UP
+0.500 UL
+LT0
+3454 2711 M
+3454 2711 CircleF
+% End plot #220
+% Begin plot #221
+0.667 UP
+0.500 UL
+LT0
+3463 2711 M
+3463 2711 CircleF
+% End plot #221
+% Begin plot #222
+0.667 UP
+0.500 UL
+LT0
+3472 2711 M
+3472 2711 CircleF
+% End plot #222
+% Begin plot #223
+0.667 UP
+0.500 UL
+LT0
+3481 2711 M
+3481 2711 CircleF
+% End plot #223
+% Begin plot #224
+0.667 UP
+0.500 UL
+LT0
+3490 2711 M
+3490 2711 CircleF
+% End plot #224
+% Begin plot #225
+0.667 UP
+0.500 UL
+LT0
+3499 2711 M
+3499 2711 CircleF
+% End plot #225
+% Begin plot #226
+0.667 UP
+0.500 UL
+LT0
+3508 2711 M
+3508 2711 CircleF
+% End plot #226
+% Begin plot #227
+0.667 UP
+0.500 UL
+LT0
+3517 2711 M
+3517 2711 CircleF
+% End plot #227
+% Begin plot #228
+0.667 UP
+0.500 UL
+LT0
+3525 2711 M
+3525 2711 CircleF
+% End plot #228
+% Begin plot #229
+0.667 UP
+0.500 UL
+LT0
+3534 2711 M
+3534 2711 CircleF
+% End plot #229
+% Begin plot #230
+0.667 UP
+0.500 UL
+LT0
+3543 2711 M
+3543 2711 CircleF
+% End plot #230
+% Begin plot #231
+0.667 UP
+0.500 UL
+LT0
+3552 2711 M
+3552 2711 CircleF
+% End plot #231
+% Begin plot #232
+0.667 UP
+0.500 UL
+LT0
+3561 2711 M
+3561 2711 CircleF
+% End plot #232
+% Begin plot #233
+0.667 UP
+0.500 UL
+LT0
+3570 2711 M
+3570 2711 CircleF
+% End plot #233
+% Begin plot #234
+0.667 UP
+0.500 UL
+LT0
+3579 2711 M
+3579 2711 CircleF
+% End plot #234
+% Begin plot #235
+0.667 UP
+0.500 UL
+LT0
+3588 2711 M
+3588 2711 CircleF
+% End plot #235
+% Begin plot #236
+0.667 UP
+0.500 UL
+LT0
+3597 2711 M
+3597 2711 CircleF
+% End plot #236
+% Begin plot #237
+0.667 UP
+0.500 UL
+LT0
+3606 2711 M
+3606 2711 CircleF
+% End plot #237
+% Begin plot #238
+0.667 UP
+0.500 UL
+LT0
+3615 2711 M
+3615 2711 CircleF
+% End plot #238
+% Begin plot #239
+0.667 UP
+0.500 UL
+LT0
+3624 2711 M
+3624 2711 CircleF
+% End plot #239
+% Begin plot #240
+0.667 UP
+0.500 UL
+LT0
+3633 2711 M
+3633 2711 CircleF
+% End plot #240
+% Begin plot #241
+0.667 UP
+0.500 UL
+LT0
+3642 2711 M
+3642 2711 CircleF
+% End plot #241
+% Begin plot #242
+0.667 UP
+0.500 UL
+LT0
+3651 2711 M
+3651 2711 CircleF
+% End plot #242
+% Begin plot #243
+0.667 UP
+0.500 UL
+LT0
+3659 2711 M
+3659 2711 CircleF
+% End plot #243
+% Begin plot #244
+0.667 UP
+0.500 UL
+LT0
+3668 2711 M
+3668 2711 CircleF
+% End plot #244
+% Begin plot #245
+0.667 UP
+0.500 UL
+LT0
+3677 2711 M
+3677 2711 CircleF
+% End plot #245
+% Begin plot #246
+0.667 UP
+0.500 UL
+LT0
+3686 2711 M
+3686 2711 CircleF
+% End plot #246
+% Begin plot #247
+0.667 UP
+0.500 UL
+LT0
+3695 2711 M
+3695 2711 CircleF
+% End plot #247
+% Begin plot #248
+0.667 UP
+0.500 UL
+LT0
+3704 2711 M
+3704 2711 CircleF
+% End plot #248
+% Begin plot #249
+0.667 UP
+0.500 UL
+LT0
+3713 2711 M
+3713 2711 CircleF
+% End plot #249
+% Begin plot #250
+0.667 UP
+0.500 UL
+LT0
+3722 2711 M
+3722 2711 CircleF
+% End plot #250
+% Begin plot #251
+0.667 UP
+0.500 UL
+LT0
+3731 2711 M
+3731 2711 CircleF
+% End plot #251
+% Begin plot #252
+0.667 UP
+0.500 UL
+LT0
+3740 2711 M
+3740 2711 CircleF
+% End plot #252
+% Begin plot #253
+0.667 UP
+0.500 UL
+LT0
+3749 2711 M
+3749 2711 CircleF
+% End plot #253
+% Begin plot #254
+0.667 UP
+0.500 UL
+LT0
+3758 2711 M
+3758 2711 CircleF
+% End plot #254
+% Begin plot #255
+0.667 UP
+0.500 UL
+LT0
+3767 2711 M
+3767 2711 CircleF
+% End plot #255
+% Begin plot #256
+0.667 UP
+0.500 UL
+LT0
+3776 2711 M
+3776 2711 CircleF
+% End plot #256
+% Begin plot #257
+0.667 UP
+0.500 UL
+LT0
+3785 2711 M
+3785 2711 CircleF
+% End plot #257
+% Begin plot #258
+0.667 UP
+0.500 UL
+LT0
+3794 2711 M
+3794 2711 CircleF
+% End plot #258
+% Begin plot #259
+0.667 UP
+0.500 UL
+LT0
+3802 2711 M
+3802 2711 CircleF
+% End plot #259
+% Begin plot #260
+0.667 UP
+0.500 UL
+LT0
+3811 2711 M
+3811 2711 CircleF
+% End plot #260
+% Begin plot #261
+0.667 UP
+0.500 UL
+LT0
+3820 2711 M
+3820 2711 CircleF
+% End plot #261
+% Begin plot #262
+0.667 UP
+0.500 UL
+LT0
+3829 2711 M
+3829 2711 CircleF
+% End plot #262
+% Begin plot #263
+0.667 UP
+0.500 UL
+LT0
+3838 2711 M
+3838 2711 CircleF
+% End plot #263
+% Begin plot #264
+0.667 UP
+0.500 UL
+LT0
+3847 2711 M
+3847 2711 CircleF
+% End plot #264
+% Begin plot #265
+0.667 UP
+0.500 UL
+LT0
+3856 2711 M
+3856 2711 CircleF
+% End plot #265
+% Begin plot #266
+0.667 UP
+0.500 UL
+LT0
+3865 2711 M
+3865 2711 CircleF
+% End plot #266
+% Begin plot #267
+0.667 UP
+0.500 UL
+LT0
+3874 2711 M
+3874 2711 CircleF
+% End plot #267
+% Begin plot #268
+0.667 UP
+0.500 UL
+LT0
+3883 2711 M
+3883 2711 CircleF
+% End plot #268
+% Begin plot #269
+0.667 UP
+0.500 UL
+LT0
+3892 2711 M
+3892 2711 CircleF
+% End plot #269
+% Begin plot #270
+0.667 UP
+0.500 UL
+LT0
+3901 2711 M
+3901 2711 CircleF
+% End plot #270
+% Begin plot #271
+0.667 UP
+0.500 UL
+LT0
+3910 2711 M
+3910 2711 CircleF
+% End plot #271
+% Begin plot #272
+0.667 UP
+0.500 UL
+LT0
+3919 2711 M
+3919 2711 CircleF
+% End plot #272
+% Begin plot #273
+0.667 UP
+0.500 UL
+LT0
+3928 2711 M
+3928 2711 CircleF
+% End plot #273
+% Begin plot #274
+0.667 UP
+0.500 UL
+LT0
+3937 2711 M
+3937 2711 CircleF
+% End plot #274
+% Begin plot #275
+0.667 UP
+0.500 UL
+LT0
+3945 2711 M
+3945 2711 CircleF
+% End plot #275
+% Begin plot #276
+0.667 UP
+0.500 UL
+LT0
+3954 2711 M
+3954 2711 CircleF
+% End plot #276
+% Begin plot #277
+0.667 UP
+0.500 UL
+LT0
+3963 2711 M
+3963 2711 CircleF
+% End plot #277
+% Begin plot #278
+0.667 UP
+0.500 UL
+LT0
+3972 2711 M
+3972 2711 CircleF
+% End plot #278
+% Begin plot #279
+0.667 UP
+0.500 UL
+LT0
+3981 2711 M
+3981 2711 CircleF
+% End plot #279
+% Begin plot #280
+0.667 UP
+0.500 UL
+LT0
+3990 2711 M
+3990 2711 CircleF
+% End plot #280
+% Begin plot #281
+0.667 UP
+0.500 UL
+LT0
+3999 2711 M
+3999 2711 CircleF
+% End plot #281
+% Begin plot #282
+0.667 UP
+0.500 UL
+LT0
+4008 2711 M
+4008 2711 CircleF
+% End plot #282
+% Begin plot #283
+0.667 UP
+0.500 UL
+LT0
+4017 2711 M
+4017 2711 CircleF
+% End plot #283
+% Begin plot #284
+0.667 UP
+0.500 UL
+LT0
+4026 2711 M
+4026 2711 CircleF
+% End plot #284
+% Begin plot #285
+0.667 UP
+0.500 UL
+LT0
+4035 2711 M
+4035 2711 CircleF
+% End plot #285
+% Begin plot #286
+0.667 UP
+0.500 UL
+LT0
+4044 2711 M
+4044 2711 CircleF
+% End plot #286
+% Begin plot #287
+0.667 UP
+0.500 UL
+LT0
+4053 2711 M
+4053 2711 CircleF
+% End plot #287
+% Begin plot #288
+0.667 UP
+0.500 UL
+LT0
+4062 2711 M
+4062 2711 CircleF
+% End plot #288
+% Begin plot #289
+0.667 UP
+0.500 UL
+LT0
+4071 2711 M
+4071 2711 CircleF
+% End plot #289
+% Begin plot #290
+0.667 UP
+0.500 UL
+LT0
+4079 2711 M
+4079 2711 CircleF
+% End plot #290
+% Begin plot #291
+0.667 UP
+0.500 UL
+LT0
+4088 2711 M
+4088 2711 CircleF
+% End plot #291
+% Begin plot #292
+0.667 UP
+0.500 UL
+LT0
+4097 2711 M
+4097 2711 CircleF
+% End plot #292
+% Begin plot #293
+0.667 UP
+0.500 UL
+LT0
+4106 2711 M
+4106 2711 CircleF
+% End plot #293
+% Begin plot #294
+0.667 UP
+0.500 UL
+LT0
+4115 2711 M
+4115 2711 CircleF
+% End plot #294
+% Begin plot #295
+0.667 UP
+0.500 UL
+LT0
+4124 2711 M
+4124 2711 CircleF
+% End plot #295
+% Begin plot #296
+0.667 UP
+0.500 UL
+LT0
+4133 2711 M
+4133 2711 CircleF
+% End plot #296
+% Begin plot #297
+0.667 UP
+0.500 UL
+LT0
+4142 2711 M
+4142 2711 CircleF
+% End plot #297
+% Begin plot #298
+0.667 UP
+0.500 UL
+LT0
+4151 2711 M
+4151 2711 CircleF
+% End plot #298
+% Begin plot #299
+0.667 UP
+0.500 UL
+LT0
+4160 2711 M
+4160 2711 CircleF
+% End plot #299
+% Begin plot #300
+0.667 UP
+0.500 UL
+LT0
+4169 2711 M
+4169 2711 CircleF
+% End plot #300
+% Begin plot #301
+0.667 UP
+0.500 UL
+LT0
+4178 2711 M
+4178 2711 CircleF
+% End plot #301
+% Begin plot #302
+0.667 UP
+0.500 UL
+LT0
+4187 2711 M
+4187 2711 CircleF
+% End plot #302
+% Begin plot #303
+0.667 UP
+0.500 UL
+LT0
+4196 2711 M
+4196 2711 CircleF
+% End plot #303
+% Begin plot #304
+0.667 UP
+0.500 UL
+LT0
+4205 2711 M
+4205 2711 CircleF
+% End plot #304
+% Begin plot #305
+0.667 UP
+0.500 UL
+LT0
+4214 2711 M
+4214 2711 CircleF
+% End plot #305
+% Begin plot #306
+0.667 UP
+0.500 UL
+LT0
+4222 2711 M
+4222 2711 CircleF
+% End plot #306
+% Begin plot #307
+0.667 UP
+0.500 UL
+LT0
+4231 2711 M
+4231 2711 CircleF
+% End plot #307
+% Begin plot #308
+0.667 UP
+0.500 UL
+LT0
+4240 2711 M
+4240 2711 CircleF
+% End plot #308
+% Begin plot #309
+0.667 UP
+0.500 UL
+LT0
+4249 2711 M
+4249 2711 CircleF
+% End plot #309
+% Begin plot #310
+0.667 UP
+0.500 UL
+LT0
+4258 2711 M
+4258 2711 CircleF
+% End plot #310
+% Begin plot #311
+0.667 UP
+0.500 UL
+LT0
+4267 2711 M
+4267 2711 CircleF
+% End plot #311
+% Begin plot #312
+0.667 UP
+0.500 UL
+LT0
+4276 2711 M
+4276 2711 CircleF
+% End plot #312
+% Begin plot #313
+0.667 UP
+0.500 UL
+LT0
+4285 2711 M
+4285 2711 CircleF
+% End plot #313
+% Begin plot #314
+0.667 UP
+0.500 UL
+LT0
+4294 2711 M
+4294 2711 CircleF
+% End plot #314
+% Begin plot #315
+0.667 UP
+0.500 UL
+LT0
+4303 2711 M
+4303 2711 CircleF
+% End plot #315
+% Begin plot #316
+0.667 UP
+0.500 UL
+LT0
+4312 2711 M
+4312 2711 CircleF
+% End plot #316
+% Begin plot #317
+0.667 UP
+0.500 UL
+LT0
+4321 2711 M
+4321 2711 CircleF
+% End plot #317
+% Begin plot #318
+0.667 UP
+0.500 UL
+LT0
+4330 2711 M
+4330 2711 CircleF
+% End plot #318
+% Begin plot #319
+0.667 UP
+0.500 UL
+LT0
+4339 2711 M
+4339 2711 CircleF
+% End plot #319
+% Begin plot #320
+0.667 UP
+0.500 UL
+LT0
+4348 2711 M
+4348 2711 CircleF
+% End plot #320
+% Begin plot #321
+0.667 UP
+0.500 UL
+LT0
+4356 2711 M
+4356 2711 CircleF
+% End plot #321
+% Begin plot #322
+0.667 UP
+0.500 UL
+LT0
+4365 2711 M
+4365 2711 CircleF
+% End plot #322
+% Begin plot #323
+0.667 UP
+0.500 UL
+LT0
+4374 2711 M
+4374 2711 CircleF
+% End plot #323
+% Begin plot #324
+0.667 UP
+0.500 UL
+LT0
+4383 2711 M
+4383 2711 CircleF
+% End plot #324
+% Begin plot #325
+0.667 UP
+0.500 UL
+LT0
+4392 2711 M
+4392 2711 CircleF
+% End plot #325
+% Begin plot #326
+0.667 UP
+0.500 UL
+LT0
+4401 2711 M
+4401 2711 CircleF
+% End plot #326
+% Begin plot #327
+0.667 UP
+0.500 UL
+LT0
+4410 2711 M
+4410 2711 CircleF
+% End plot #327
+% Begin plot #328
+0.667 UP
+0.500 UL
+LT0
+4419 2711 M
+4419 2711 CircleF
+% End plot #328
+% Begin plot #329
+0.667 UP
+0.500 UL
+LT0
+4428 2711 M
+4428 2711 CircleF
+% End plot #329
+% Begin plot #330
+0.667 UP
+0.500 UL
+LT0
+4437 2711 M
+4437 2711 CircleF
+% End plot #330
+% Begin plot #331
+0.667 UP
+0.500 UL
+LT0
+4446 2711 M
+4446 2711 CircleF
+% End plot #331
+% Begin plot #332
+0.667 UP
+0.500 UL
+LT0
+4455 2711 M
+4455 2711 CircleF
+% End plot #332
+% Begin plot #333
+0.667 UP
+0.500 UL
+LT0
+4464 2711 M
+4464 2711 CircleF
+% End plot #333
+% Begin plot #334
+0.667 UP
+0.500 UL
+LT0
+4473 2711 M
+4473 2711 CircleF
+% End plot #334
+% Begin plot #335
+0.667 UP
+0.500 UL
+LT0
+4482 2711 M
+4482 2711 CircleF
+% End plot #335
+% Begin plot #336
+0.667 UP
+0.500 UL
+LT0
+4491 2711 M
+4491 2711 CircleF
+% End plot #336
+% Begin plot #337
+0.667 UP
+0.500 UL
+LT0
+4499 2711 M
+4499 2711 CircleF
+% End plot #337
+% Begin plot #338
+0.667 UP
+0.500 UL
+LT0
+4508 2711 M
+4508 2711 CircleF
+% End plot #338
+% Begin plot #339
+0.667 UP
+0.500 UL
+LT0
+4517 2711 M
+4517 2711 CircleF
+% End plot #339
+% Begin plot #340
+0.667 UP
+0.500 UL
+LT0
+4526 2711 M
+4526 2711 CircleF
+% End plot #340
+% Begin plot #341
+0.667 UP
+0.500 UL
+LT0
+4535 2711 M
+4535 2711 CircleF
+% End plot #341
+% Begin plot #342
+0.667 UP
+0.500 UL
+LT0
+4544 2711 M
+4544 2711 CircleF
+% End plot #342
+% Begin plot #343
+0.667 UP
+0.500 UL
+LT0
+4553 2711 M
+4553 2711 CircleF
+% End plot #343
+% Begin plot #344
+0.667 UP
+0.500 UL
+LT0
+4562 2711 M
+4562 2711 CircleF
+% End plot #344
+% Begin plot #345
+0.667 UP
+0.500 UL
+LT0
+4571 2711 M
+4571 2711 CircleF
+% End plot #345
+% Begin plot #346
+0.667 UP
+0.500 UL
+LT0
+4580 2711 M
+4580 2711 CircleF
+% End plot #346
+% Begin plot #347
+0.667 UP
+0.500 UL
+LT0
+4589 2711 M
+4589 2711 CircleF
+% End plot #347
+% Begin plot #348
+0.667 UP
+0.500 UL
+LT0
+4598 2711 M
+4598 2711 CircleF
+% End plot #348
+% Begin plot #349
+0.667 UP
+0.500 UL
+LT0
+4607 2711 M
+4607 2711 CircleF
+% End plot #349
+% Begin plot #350
+0.667 UP
+0.500 UL
+LT0
+4616 2711 M
+4616 2711 CircleF
+% End plot #350
+% Begin plot #351
+0.667 UP
+0.500 UL
+LT0
+4625 2711 M
+4625 2711 CircleF
+% End plot #351
+% Begin plot #352
+0.667 UP
+0.500 UL
+LT0
+4634 2711 M
+4634 2711 CircleF
+% End plot #352
+% Begin plot #353
+0.667 UP
+0.500 UL
+LT0
+4642 2711 M
+4642 2711 CircleF
+% End plot #353
+% Begin plot #354
+0.667 UP
+0.500 UL
+LT0
+4651 2711 M
+4651 2711 CircleF
+% End plot #354
+% Begin plot #355
+0.667 UP
+0.500 UL
+LT0
+4660 2711 M
+4660 2711 CircleF
+% End plot #355
+% Begin plot #356
+0.667 UP
+0.500 UL
+LT0
+4669 2711 M
+4669 2711 CircleF
+% End plot #356
+% Begin plot #357
+0.667 UP
+0.500 UL
+LT0
+4678 2711 M
+4678 2711 CircleF
+% End plot #357
+% Begin plot #358
+0.667 UP
+0.500 UL
+LT0
+4687 2711 M
+4687 2711 CircleF
+% End plot #358
+% Begin plot #359
+0.667 UP
+0.500 UL
+LT0
+4696 2711 M
+4696 2711 CircleF
+% End plot #359
+% Begin plot #360
+0.667 UP
+0.500 UL
+LT0
+4705 2711 M
+4705 2711 CircleF
+% End plot #360
+% Begin plot #361
+0.667 UP
+0.500 UL
+LT0
+4714 2711 M
+4714 2711 CircleF
+% End plot #361
+% Begin plot #362
+0.667 UP
+0.500 UL
+LT0
+4723 2711 M
+4723 2711 CircleF
+% End plot #362
+% Begin plot #363
+0.667 UP
+0.500 UL
+LT0
+4732 2711 M
+4732 2711 CircleF
+% End plot #363
+% Begin plot #364
+0.667 UP
+0.500 UL
+LT0
+4741 2711 M
+4741 2711 CircleF
+% End plot #364
+% Begin plot #365
+0.667 UP
+0.500 UL
+LT0
+4750 2711 M
+4750 2711 CircleF
+% End plot #365
+% Begin plot #366
+0.667 UP
+0.500 UL
+LT0
+4759 2711 M
+4759 2711 CircleF
+% End plot #366
+% Begin plot #367
+0.667 UP
+0.500 UL
+LT0
+4768 2711 M
+4768 2711 CircleF
+% End plot #367
+% Begin plot #368
+0.667 UP
+0.500 UL
+LT0
+4776 2711 M
+4776 2711 CircleF
+% End plot #368
+% Begin plot #369
+0.667 UP
+0.500 UL
+LT0
+4785 2711 M
+4785 2711 CircleF
+% End plot #369
+% Begin plot #370
+0.667 UP
+0.500 UL
+LT0
+4794 2711 M
+4794 2711 CircleF
+% End plot #370
+% Begin plot #371
+0.667 UP
+0.500 UL
+LT0
+4803 2711 M
+4803 2711 CircleF
+% End plot #371
+% Begin plot #372
+0.667 UP
+0.500 UL
+LT0
+4812 2711 M
+4812 2711 CircleF
+% End plot #372
+% Begin plot #373
+0.667 UP
+0.500 UL
+LT0
+4821 2711 M
+4821 2711 CircleF
+% End plot #373
+% Begin plot #374
+0.667 UP
+0.500 UL
+LT0
+4830 2711 M
+4830 2711 CircleF
+% End plot #374
+% Begin plot #375
+0.667 UP
+0.500 UL
+LT0
+4839 2711 M
+4839 2711 CircleF
+% End plot #375
+% Begin plot #376
+0.667 UP
+0.500 UL
+LT0
+4848 2711 M
+4848 2711 CircleF
+% End plot #376
+% Begin plot #377
+0.667 UP
+0.500 UL
+LT0
+4857 2711 M
+4857 2711 CircleF
+% End plot #377
+% Begin plot #378
+0.667 UP
+0.500 UL
+LT0
+4866 2711 M
+4866 2711 CircleF
+% End plot #378
+% Begin plot #379
+0.667 UP
+0.500 UL
+LT0
+4875 2711 M
+4875 2711 CircleF
+% End plot #379
+% Begin plot #380
+0.667 UP
+0.500 UL
+LT0
+4884 2711 M
+4884 2711 CircleF
+% End plot #380
+% Begin plot #381
+0.667 UP
+0.500 UL
+LT0
+4893 2711 M
+4893 2711 CircleF
+% End plot #381
+% Begin plot #382
+0.667 UP
+0.500 UL
+LT0
+4902 2711 M
+4902 2711 CircleF
+% End plot #382
+% Begin plot #383
+0.667 UP
+0.500 UL
+LT0
+4911 2711 M
+4911 2711 CircleF
+% End plot #383
+% Begin plot #384
+0.667 UP
+0.500 UL
+LT0
+4919 2711 M
+4919 2711 CircleF
+% End plot #384
+% Begin plot #385
+0.667 UP
+0.500 UL
+LT0
+4928 2711 M
+4928 2711 CircleF
+% End plot #385
+% Begin plot #386
+0.667 UP
+0.500 UL
+LT0
+4937 2711 M
+4937 2711 CircleF
+% End plot #386
+% Begin plot #387
+0.667 UP
+0.500 UL
+LT0
+4946 2711 M
+4946 2711 CircleF
+% End plot #387
+% Begin plot #388
+0.667 UP
+0.500 UL
+LT0
+4955 2711 M
+4955 2711 CircleF
+% End plot #388
+% Begin plot #389
+0.667 UP
+0.500 UL
+LT0
+4964 2711 M
+4964 2711 CircleF
+% End plot #389
+% Begin plot #390
+0.667 UP
+0.500 UL
+LT0
+4973 2711 M
+4973 2711 CircleF
+% End plot #390
+% Begin plot #391
+0.667 UP
+0.500 UL
+LT0
+4982 2711 M
+4982 2711 CircleF
+% End plot #391
+% Begin plot #392
+0.667 UP
+0.500 UL
+LT0
+4991 2711 M
+4991 2711 CircleF
+% End plot #392
+% Begin plot #393
+0.667 UP
+0.500 UL
+LT0
+5000 2711 M
+5000 2711 CircleF
+% End plot #393
+% Begin plot #394
+0.667 UP
+0.500 UL
+LT0
+5009 2711 M
+5009 2711 CircleF
+% End plot #394
+% Begin plot #395
+0.667 UP
+0.500 UL
+LT0
+5018 2711 M
+5018 2711 CircleF
+% End plot #395
+% Begin plot #396
+0.667 UP
+0.500 UL
+LT0
+5027 2711 M
+5027 2711 CircleF
+% End plot #396
+% Begin plot #397
+0.667 UP
+0.500 UL
+LT0
+5036 2711 M
+5036 2711 CircleF
+% End plot #397
+% Begin plot #398
+0.667 UP
+0.500 UL
+LT0
+5045 2711 M
+5045 2711 CircleF
+% End plot #398
+% Begin plot #399
+0.667 UP
+0.500 UL
+LT0
+5054 2711 M
+5054 2711 CircleF
+% End plot #399
+% Begin plot #400
+0.667 UP
+0.500 UL
+LT0
+5062 2711 M
+5062 2711 CircleF
+% End plot #400
+% Begin plot #401
+0.667 UP
+0.500 UL
+LT0
+5071 2711 M
+5071 2711 CircleF
+% End plot #401
+% Begin plot #402
+0.667 UP
+0.500 UL
+LT0
+5080 2711 M
+5080 2711 CircleF
+% End plot #402
+% Begin plot #403
+0.667 UP
+0.500 UL
+LT0
+5089 2711 M
+5089 2711 CircleF
+% End plot #403
+% Begin plot #404
+0.667 UP
+0.500 UL
+LT0
+5098 2711 M
+5098 2711 CircleF
+% End plot #404
+% Begin plot #405
+0.667 UP
+0.500 UL
+LT0
+5107 2711 M
+5107 2711 CircleF
+% End plot #405
+% Begin plot #406
+0.667 UP
+0.500 UL
+LT0
+5116 2711 M
+5116 2711 CircleF
+% End plot #406
+% Begin plot #407
+0.667 UP
+0.500 UL
+LT0
+5125 2711 M
+5125 2711 CircleF
+% End plot #407
+% Begin plot #408
+0.667 UP
+0.500 UL
+LT0
+5134 2711 M
+5134 2711 CircleF
+% End plot #408
+% Begin plot #409
+0.667 UP
+0.500 UL
+LT0
+5143 2711 M
+5143 2711 CircleF
+% End plot #409
+% Begin plot #410
+0.667 UP
+0.500 UL
+LT0
+5152 2711 M
+5152 2711 CircleF
+% End plot #410
+% Begin plot #411
+0.667 UP
+0.500 UL
+LT0
+5161 2711 M
+5161 2711 CircleF
+% End plot #411
+% Begin plot #412
+0.667 UP
+0.500 UL
+LT0
+5170 2711 M
+5170 2711 CircleF
+% End plot #412
+% Begin plot #413
+0.667 UP
+0.500 UL
+LT0
+5179 2711 M
+5179 2711 CircleF
+% End plot #413
+% Begin plot #414
+0.667 UP
+0.500 UL
+LT0
+5188 2711 M
+5188 2711 CircleF
+% End plot #414
+% Begin plot #415
+0.667 UP
+0.500 UL
+LT0
+5196 2711 M
+5196 2711 CircleF
+% End plot #415
+% Begin plot #416
+0.667 UP
+0.500 UL
+LT0
+5205 2711 M
+5205 2711 CircleF
+% End plot #416
+% Begin plot #417
+0.667 UP
+0.500 UL
+LT0
+5214 2711 M
+5214 2711 CircleF
+% End plot #417
+% Begin plot #418
+0.667 UP
+0.500 UL
+LT0
+5223 2711 M
+5223 2711 CircleF
+% End plot #418
+% Begin plot #419
+0.667 UP
+0.500 UL
+LT0
+5232 2711 M
+5232 2711 CircleF
+% End plot #419
+% Begin plot #420
+0.667 UP
+0.500 UL
+LT0
+5241 2711 M
+5241 2711 CircleF
+% End plot #420
+% Begin plot #421
+0.667 UP
+0.500 UL
+LT0
+5250 2711 M
+5250 2711 CircleF
+% End plot #421
+% Begin plot #422
+0.667 UP
+0.500 UL
+LT0
+5259 2711 M
+5259 2711 CircleF
+% End plot #422
+% Begin plot #423
+0.667 UP
+0.500 UL
+LT0
+5268 2711 M
+5268 2711 CircleF
+% End plot #423
+% Begin plot #424
+0.667 UP
+0.500 UL
+LT0
+5277 2711 M
+5277 2711 CircleF
+% End plot #424
+% Begin plot #425
+0.667 UP
+0.500 UL
+LT0
+5286 2711 M
+5286 2711 CircleF
+% End plot #425
+% Begin plot #426
+0.667 UP
+0.500 UL
+LT0
+5295 2711 M
+5295 2711 CircleF
+% End plot #426
+% Begin plot #427
+0.667 UP
+0.500 UL
+LT0
+5304 2711 M
+5304 2711 CircleF
+% End plot #427
+% Begin plot #428
+0.667 UP
+0.500 UL
+LT0
+5313 2711 M
+5313 2711 CircleF
+% End plot #428
+% Begin plot #429
+0.667 UP
+0.500 UL
+LT0
+5322 2711 M
+5322 2711 CircleF
+% End plot #429
+% Begin plot #430
+0.667 UP
+0.500 UL
+LT0
+5331 2711 M
+5331 2711 CircleF
+% End plot #430
+% Begin plot #431
+0.667 UP
+0.500 UL
+LT0
+5339 2711 M
+5339 2711 CircleF
+% End plot #431
+% Begin plot #432
+0.667 UP
+0.500 UL
+LT0
+5348 2711 M
+5348 2711 CircleF
+% End plot #432
+% Begin plot #433
+0.667 UP
+0.500 UL
+LT0
+5357 2711 M
+5357 2711 CircleF
+% End plot #433
+% Begin plot #434
+0.667 UP
+0.500 UL
+LT0
+5366 2711 M
+5366 2711 CircleF
+% End plot #434
+% Begin plot #435
+0.667 UP
+0.500 UL
+LT0
+5375 2711 M
+5375 2711 CircleF
+% End plot #435
+% Begin plot #436
+0.667 UP
+0.500 UL
+LT0
+5384 2711 M
+5384 2711 CircleF
+% End plot #436
+% Begin plot #437
+0.667 UP
+0.500 UL
+LT0
+5393 2711 M
+5393 2711 CircleF
+% End plot #437
+% Begin plot #438
+0.667 UP
+0.500 UL
+LT0
+5402 2711 M
+5402 2711 CircleF
+% End plot #438
+% Begin plot #439
+0.667 UP
+0.500 UL
+LT0
+5411 2711 M
+5411 2711 CircleF
+% End plot #439
+% Begin plot #440
+0.667 UP
+0.500 UL
+LT0
+5420 2711 M
+5420 2711 CircleF
+% End plot #440
+% Begin plot #441
+0.667 UP
+0.500 UL
+LT0
+5429 2711 M
+5429 2711 CircleF
+% End plot #441
+% Begin plot #442
+0.667 UP
+0.500 UL
+LT0
+5438 2711 M
+5438 2711 CircleF
+% End plot #442
+% Begin plot #443
+0.667 UP
+0.500 UL
+LT0
+5447 2711 M
+5447 2711 CircleF
+% End plot #443
+% Begin plot #444
+0.667 UP
+0.500 UL
+LT0
+5456 2711 M
+5456 2711 CircleF
+% End plot #444
+% Begin plot #445
+0.667 UP
+0.500 UL
+LT0
+5465 2711 M
+5465 2711 CircleF
+% End plot #445
+% Begin plot #446
+0.667 UP
+0.500 UL
+LT0
+5473 2711 M
+5473 2711 CircleF
+% End plot #446
+% Begin plot #447
+0.667 UP
+0.500 UL
+LT0
+5482 2711 M
+5482 2711 CircleF
+% End plot #447
+% Begin plot #448
+0.667 UP
+0.500 UL
+LT0
+5491 2711 M
+5491 2711 CircleF
+% End plot #448
+% Begin plot #449
+0.667 UP
+0.500 UL
+LT0
+5500 2711 M
+5500 2711 CircleF
+% End plot #449
+% Begin plot #450
+0.667 UP
+0.500 UL
+LT0
+5509 2711 M
+5509 2711 CircleF
+% End plot #450
+% Begin plot #451
+0.667 UP
+0.500 UL
+LT0
+5518 2711 M
+5518 2711 CircleF
+% End plot #451
+% Begin plot #452
+0.667 UP
+0.500 UL
+LT0
+5527 2711 M
+5527 2711 CircleF
+% End plot #452
+% Begin plot #453
+0.667 UP
+0.500 UL
+LT0
+5536 2711 M
+5536 2711 CircleF
+% End plot #453
+% Begin plot #454
+0.667 UP
+0.500 UL
+LT0
+5545 2711 M
+5545 2711 CircleF
+% End plot #454
+% Begin plot #455
+0.667 UP
+0.500 UL
+LT0
+5554 2711 M
+5554 2711 CircleF
+% End plot #455
+% Begin plot #456
+0.667 UP
+0.500 UL
+LT0
+5563 2711 M
+5563 2711 CircleF
+% End plot #456
+% Begin plot #457
+0.667 UP
+0.500 UL
+LT0
+5572 2711 M
+5572 2711 CircleF
+% End plot #457
+% Begin plot #458
+0.667 UP
+0.500 UL
+LT0
+5581 2711 M
+5581 2711 CircleF
+% End plot #458
+% Begin plot #459
+0.667 UP
+0.500 UL
+LT0
+5590 2711 M
+5590 2711 CircleF
+% End plot #459
+% Begin plot #460
+0.667 UP
+0.500 UL
+LT0
+5599 2711 M
+5599 2711 CircleF
+% End plot #460
+% Begin plot #461
+0.667 UP
+0.500 UL
+LT0
+5608 2711 M
+5608 2711 CircleF
+% End plot #461
+% Begin plot #462
+0.667 UP
+0.500 UL
+LT0
+5616 2711 M
+5616 2711 CircleF
+% End plot #462
+% Begin plot #463
+0.667 UP
+0.500 UL
+LT0
+5625 2711 M
+5625 2711 CircleF
+% End plot #463
+% Begin plot #464
+0.667 UP
+0.500 UL
+LT0
+5634 2711 M
+5634 2711 CircleF
+% End plot #464
+% Begin plot #465
+0.667 UP
+0.500 UL
+LT0
+5643 2711 M
+5643 2711 CircleF
+% End plot #465
+% Begin plot #466
+0.667 UP
+0.500 UL
+LT0
+5652 2711 M
+5652 2711 CircleF
+% End plot #466
+% Begin plot #467
+0.667 UP
+0.500 UL
+LT0
+5661 2711 M
+5661 2711 CircleF
+% End plot #467
+% Begin plot #468
+0.667 UP
+0.500 UL
+LT0
+5670 2711 M
+5670 2711 CircleF
+% End plot #468
+% Begin plot #469
+0.667 UP
+0.500 UL
+LT0
+5679 2711 M
+5679 2711 CircleF
+% End plot #469
+% Begin plot #470
+0.667 UP
+0.500 UL
+LT0
+5688 2711 M
+5688 2711 CircleF
+% End plot #470
+% Begin plot #471
+0.667 UP
+0.500 UL
+LT0
+5697 2711 M
+5697 2711 CircleF
+% End plot #471
+% Begin plot #472
+0.667 UP
+0.500 UL
+LT0
+5706 2711 M
+5706 2711 CircleF
+% End plot #472
+% Begin plot #473
+0.667 UP
+0.500 UL
+LT0
+5715 2711 M
+5715 2711 CircleF
+% End plot #473
+% Begin plot #474
+0.667 UP
+0.500 UL
+LT0
+5724 2711 M
+5724 2711 CircleF
+% End plot #474
+% Begin plot #475
+0.667 UP
+0.500 UL
+LT0
+5733 2711 M
+5733 2711 CircleF
+% End plot #475
+% Begin plot #476
+0.667 UP
+0.500 UL
+LT0
+5742 2711 M
+5742 2711 CircleF
+% End plot #476
+% Begin plot #477
+0.667 UP
+0.500 UL
+LT0
+5751 2711 M
+5751 2711 CircleF
+% End plot #477
+% Begin plot #478
+0.667 UP
+0.500 UL
+LT0
+5759 2711 M
+5759 2711 CircleF
+% End plot #478
+% Begin plot #479
+0.667 UP
+0.500 UL
+LT0
+5768 2711 M
+5768 2711 CircleF
+% End plot #479
+% Begin plot #480
+0.667 UP
+0.500 UL
+LT0
+5777 2711 M
+5777 2711 CircleF
+% End plot #480
+% Begin plot #481
+0.667 UP
+0.500 UL
+LT0
+5786 2711 M
+5786 2711 CircleF
+% End plot #481
+% Begin plot #482
+0.667 UP
+0.500 UL
+LT0
+5795 2711 M
+5795 2711 CircleF
+% End plot #482
+% Begin plot #483
+0.667 UP
+0.500 UL
+LT0
+5804 2711 M
+5804 2711 CircleF
+% End plot #483
+% Begin plot #484
+0.667 UP
+0.500 UL
+LT0
+5813 2711 M
+5813 2711 CircleF
+% End plot #484
+% Begin plot #485
+0.667 UP
+0.500 UL
+LT0
+5822 2711 M
+5822 2711 CircleF
+% End plot #485
+% Begin plot #486
+0.667 UP
+0.500 UL
+LT0
+5831 2711 M
+5831 2711 CircleF
+% End plot #486
+% Begin plot #487
+0.667 UP
+0.500 UL
+LT0
+5840 2711 M
+5840 2711 CircleF
+% End plot #487
+% Begin plot #488
+0.667 UP
+0.500 UL
+LT0
+5849 2711 M
+5849 2711 CircleF
+% End plot #488
+% Begin plot #489
+0.667 UP
+0.500 UL
+LT0
+5858 2711 M
+5858 2711 CircleF
+% End plot #489
+% Begin plot #490
+0.667 UP
+0.500 UL
+LT0
+5867 2711 M
+5867 2711 CircleF
+% End plot #490
+% Begin plot #491
+0.667 UP
+0.500 UL
+LT0
+5876 2711 M
+5876 2711 CircleF
+% End plot #491
+% Begin plot #492
+0.667 UP
+0.500 UL
+LT0
+5885 2711 M
+5885 2711 CircleF
+% End plot #492
+% Begin plot #493
+0.667 UP
+0.500 UL
+LT0
+5893 2711 M
+5893 2711 CircleF
+% End plot #493
+% Begin plot #494
+0.667 UP
+0.500 UL
+LT0
+5902 2711 M
+5902 2711 CircleF
+% End plot #494
+% Begin plot #495
+0.667 UP
+0.500 UL
+LT0
+5911 2711 M
+5911 2711 CircleF
+% End plot #495
+% Begin plot #496
+0.667 UP
+0.500 UL
+LT0
+5920 2711 M
+5920 2711 CircleF
+% End plot #496
+% Begin plot #497
+0.667 UP
+0.500 UL
+LT0
+5929 2711 M
+5929 2711 CircleF
+% End plot #497
+% Begin plot #498
+0.667 UP
+0.500 UL
+LT0
+5938 2711 M
+5938 2711 CircleF
+% End plot #498
+% Begin plot #499
+0.667 UP
+0.500 UL
+LT0
+5947 2711 M
+5947 2711 CircleF
+% End plot #499
+% Begin plot #500
+0.667 UP
+0.500 UL
+LT0
+5956 2711 M
+5956 2711 CircleF
+% End plot #500
+% Begin plot #501
+0.667 UP
+0.500 UL
+LT0
+5965 2711 M
+5965 2711 CircleF
+% End plot #501
+% Begin plot #502
+0.667 UP
+0.500 UL
+LT0
+5974 2711 M
+5974 2711 CircleF
+% End plot #502
+% Begin plot #503
+0.667 UP
+0.500 UL
+LT0
+5983 2711 M
+5983 2711 CircleF
+% End plot #503
+% Begin plot #504
+0.667 UP
+0.500 UL
+LT0
+5992 2711 M
+5992 2711 CircleF
+% End plot #504
+% Begin plot #505
+0.667 UP
+0.500 UL
+LT0
+6001 2711 M
+6001 2711 CircleF
+% End plot #505
+% Begin plot #506
+0.667 UP
+0.500 UL
+LT0
+6010 2711 M
+6010 2711 CircleF
+% End plot #506
+% Begin plot #507
+0.667 UP
+0.500 UL
+LT0
+6019 2711 M
+6019 2711 CircleF
+% End plot #507
+% Begin plot #508
+0.667 UP
+0.500 UL
+LT0
+6028 2711 M
+6028 2711 CircleF
+% End plot #508
+% Begin plot #509
+0.667 UP
+0.500 UL
+LT0
+6036 2711 M
+6036 2711 CircleF
+% End plot #509
+% Begin plot #510
+0.667 UP
+0.500 UL
+LT0
+6045 2711 M
+6045 2711 CircleF
+% End plot #510
+% Begin plot #511
+0.667 UP
+0.500 UL
+LT0
+6054 2711 M
+6054 2711 CircleF
+% End plot #511
+% Begin plot #512
+0.667 UP
+0.500 UL
+LT0
+6063 2711 M
+6063 2711 CircleF
+% End plot #512
+% Begin plot #513
+0.667 UP
+0.500 UL
+LT0
+6072 2711 M
+6072 2711 CircleF
+% End plot #513
+% Begin plot #514
+0.667 UP
+0.500 UL
+LT0
+6081 2711 M
+6081 2711 CircleF
+% End plot #514
+% Begin plot #515
+0.667 UP
+0.500 UL
+LT0
+6090 2711 M
+6090 2711 CircleF
+% End plot #515
+% Begin plot #516
+0.667 UP
+0.500 UL
+LT0
+6099 2711 M
+6099 2711 CircleF
+% End plot #516
+% Begin plot #517
+0.667 UP
+0.500 UL
+LT0
+6108 2711 M
+6108 2711 CircleF
+% End plot #517
+% Begin plot #518
+0.667 UP
+0.500 UL
+LT0
+6117 2711 M
+6117 2711 CircleF
+% End plot #518
+% Begin plot #519
+0.667 UP
+0.500 UL
+LT0
+6126 2711 M
+6126 2711 CircleF
+% End plot #519
+% Begin plot #520
+0.667 UP
+0.500 UL
+LT0
+6135 2711 M
+6135 2711 CircleF
+% End plot #520
+% Begin plot #521
+0.667 UP
+0.500 UL
+LT0
+6144 2711 M
+6144 2711 CircleF
+% End plot #521
+% Begin plot #522
+0.667 UP
+0.500 UL
+LT0
+6153 2711 M
+6153 2711 CircleF
+% End plot #522
+% Begin plot #523
+0.667 UP
+0.500 UL
+LT0
+6162 2711 M
+6162 2711 CircleF
+% End plot #523
+% Begin plot #524
+0.667 UP
+0.500 UL
+LT0
+6170 2711 M
+6170 2711 CircleF
+% End plot #524
+% Begin plot #525
+0.667 UP
+0.500 UL
+LT0
+6179 2711 M
+6179 2711 CircleF
+% End plot #525
+% Begin plot #526
+0.667 UP
+0.500 UL
+LT0
+6188 2711 M
+6188 2711 CircleF
+% End plot #526
+% Begin plot #527
+0.667 UP
+0.500 UL
+LT0
+6197 2711 M
+6197 2711 CircleF
+% End plot #527
+% Begin plot #528
+0.667 UP
+0.500 UL
+LT0
+6206 2711 M
+6206 2711 CircleF
+% End plot #528
+% Begin plot #529
+0.667 UP
+0.500 UL
+LT0
+6215 2711 M
+6215 2711 CircleF
+% End plot #529
+% Begin plot #530
+0.667 UP
+0.500 UL
+LT0
+6224 2711 M
+6224 2711 CircleF
+% End plot #530
+% Begin plot #531
+0.667 UP
+0.500 UL
+LT0
+6233 2711 M
+6233 2711 CircleF
+% End plot #531
+% Begin plot #532
+0.667 UP
+0.500 UL
+LT0
+6242 2711 M
+6242 2711 CircleF
+% End plot #532
+% Begin plot #533
+0.667 UP
+0.500 UL
+LT0
+6251 2711 M
+6251 2711 CircleF
+% End plot #533
+% Begin plot #534
+0.667 UP
+0.500 UL
+LT0
+6260 2711 M
+6260 2711 CircleF
+% End plot #534
+% Begin plot #535
+0.667 UP
+0.500 UL
+LT0
+6269 2711 M
+6269 2711 CircleF
+% End plot #535
+% Begin plot #536
+0.667 UP
+0.500 UL
+LT0
+6278 2711 M
+6278 2711 CircleF
+% End plot #536
+% Begin plot #537
+0.667 UP
+0.500 UL
+LT0
+6287 2711 M
+6287 2711 CircleF
+% End plot #537
+% Begin plot #538
+0.667 UP
+0.500 UL
+LT0
+6296 2711 M
+6296 2711 CircleF
+% End plot #538
+% Begin plot #539
+0.667 UP
+0.500 UL
+LT0
+6305 2711 M
+6305 2711 CircleF
+% End plot #539
+% Begin plot #540
+0.667 UP
+0.500 UL
+LT0
+6313 2711 M
+6313 2711 CircleF
+% End plot #540
+% Begin plot #541
+0.667 UP
+0.500 UL
+LT0
+6322 2711 M
+6322 2711 CircleF
+% End plot #541
+% Begin plot #542
+0.667 UP
+0.500 UL
+LT0
+6331 2711 M
+6331 2711 CircleF
+% End plot #542
+% Begin plot #543
+0.667 UP
+0.500 UL
+LT0
+6340 2711 M
+6340 2711 CircleF
+% End plot #543
+% Begin plot #544
+0.667 UP
+0.500 UL
+LT0
+6349 2711 M
+6349 2711 CircleF
+% End plot #544
+% Begin plot #545
+0.667 UP
+0.500 UL
+LT0
+6358 2711 M
+6358 2711 CircleF
+% End plot #545
+% Begin plot #546
+0.667 UP
+0.500 UL
+LT0
+6367 2711 M
+6367 2711 CircleF
+% End plot #546
+% Begin plot #547
+0.667 UP
+0.500 UL
+LT0
+6376 2711 M
+6376 2711 CircleF
+% End plot #547
+% Begin plot #548
+0.667 UP
+0.500 UL
+LT0
+6385 2711 M
+6385 2711 CircleF
+% End plot #548
+% Begin plot #549
+0.667 UP
+0.500 UL
+LT0
+6394 2711 M
+6394 2711 CircleF
+% End plot #549
+% Begin plot #550
+0.667 UP
+0.500 UL
+LT0
+6403 2711 M
+6403 2711 CircleF
+% End plot #550
+% Begin plot #551
+0.667 UP
+0.500 UL
+LT0
+6412 2711 M
+6412 2711 CircleF
+% End plot #551
+% Begin plot #552
+0.667 UP
+0.500 UL
+LT0
+6421 2711 M
+6421 2711 CircleF
+% End plot #552
+% Begin plot #553
+0.667 UP
+0.500 UL
+LT0
+6430 2711 M
+6430 2711 CircleF
+% End plot #553
+% Begin plot #554
+0.667 UP
+0.500 UL
+LT0
+6439 2711 M
+6439 2711 CircleF
+% End plot #554
+% Begin plot #555
+0.667 UP
+0.500 UL
+LT0
+6448 2711 M
+6448 2711 CircleF
+% End plot #555
+% Begin plot #556
+0.667 UP
+0.500 UL
+LT0
+6456 2711 M
+6456 2711 CircleF
+% End plot #556
+% Begin plot #557
+0.667 UP
+0.500 UL
+LT0
+6465 2711 M
+6465 2711 CircleF
+% End plot #557
+% Begin plot #558
+0.667 UP
+0.500 UL
+LT0
+6474 2711 M
+6474 2711 CircleF
+% End plot #558
+% Begin plot #559
+0.667 UP
+0.500 UL
+LT0
+6483 2711 M
+6483 2711 CircleF
+% End plot #559
+% Begin plot #560
+0.667 UP
+0.500 UL
+LT0
+6492 2711 M
+6492 2711 CircleF
+% End plot #560
+% Begin plot #561
+0.667 UP
+0.500 UL
+LT0
+6501 2711 M
+6501 2711 CircleF
+% End plot #561
+% Begin plot #562
+0.667 UP
+0.500 UL
+LT0
+6510 2711 M
+6510 2711 CircleF
+% End plot #562
+% Begin plot #563
+0.667 UP
+0.500 UL
+LT0
+6519 2711 M
+6519 2711 CircleF
+% End plot #563
+% Begin plot #564
+0.667 UP
+0.500 UL
+LT0
+6528 2711 M
+6528 2711 CircleF
+% End plot #564
+% Begin plot #565
+0.667 UP
+0.500 UL
+LT0
+6537 2711 M
+6537 2711 CircleF
+% End plot #565
+% Begin plot #566
+0.667 UP
+0.500 UL
+LT0
+6546 2711 M
+6546 2711 CircleF
+% End plot #566
+% Begin plot #567
+0.667 UP
+0.500 UL
+LT0
+6555 2711 M
+6555 2711 CircleF
+% End plot #567
+% Begin plot #568
+0.667 UP
+0.500 UL
+LT0
+6564 2711 M
+6564 2711 CircleF
+% End plot #568
+% Begin plot #569
+0.667 UP
+0.500 UL
+LT0
+6573 2711 M
+6573 2711 CircleF
+% End plot #569
+% Begin plot #570
+0.667 UP
+0.500 UL
+LT0
+6582 2711 M
+6582 2711 CircleF
+% End plot #570
+% Begin plot #571
+0.667 UP
+0.500 UL
+LT0
+6590 2711 M
+6590 2711 CircleF
+% End plot #571
+% Begin plot #572
+0.667 UP
+0.500 UL
+LT0
+6599 2711 M
+6599 2711 CircleF
+% End plot #572
+% Begin plot #573
+0.667 UP
+0.500 UL
+LT0
+6608 2711 M
+6608 2711 CircleF
+% End plot #573
+% Begin plot #574
+0.667 UP
+0.500 UL
+LT0
+6617 2711 M
+6617 2711 CircleF
+% End plot #574
+% Begin plot #575
+0.667 UP
+0.500 UL
+LT0
+6626 2711 M
+6626 2711 CircleF
+% End plot #575
+% Begin plot #576
+0.667 UP
+0.500 UL
+LT0
+6635 2711 M
+6635 2711 CircleF
+% End plot #576
+% Begin plot #577
+0.667 UP
+0.500 UL
+LT0
+6644 2711 M
+6644 2711 CircleF
+% End plot #577
+% Begin plot #578
+0.667 UP
+0.500 UL
+LT0
+6653 2711 M
+6653 2711 CircleF
+% End plot #578
+% Begin plot #579
+0.667 UP
+0.500 UL
+LT0
+6662 2711 M
+6662 2711 CircleF
+% End plot #579
+% Begin plot #580
+0.667 UP
+0.500 UL
+LT0
+6671 2711 M
+6671 2711 CircleF
+% End plot #580
+% Begin plot #581
+0.667 UP
+0.500 UL
+LT0
+6680 2711 M
+6680 2711 CircleF
+% End plot #581
+% Begin plot #582
+0.667 UP
+0.500 UL
+LT0
+6689 2711 M
+6689 2711 CircleF
+% End plot #582
+% Begin plot #583
+0.667 UP
+0.500 UL
+LT0
+6698 2711 M
+6698 2711 CircleF
+% End plot #583
+% Begin plot #584
+0.667 UP
+0.500 UL
+LT0
+6707 2711 M
+6707 2711 CircleF
+% End plot #584
+% Begin plot #585
+0.667 UP
+0.500 UL
+LT0
+6716 2711 M
+6716 2711 CircleF
+% End plot #585
+% Begin plot #586
+0.667 UP
+0.500 UL
+LT0
+6725 2711 M
+6725 2711 CircleF
+% End plot #586
+% Begin plot #587
+0.667 UP
+0.500 UL
+LT0
+6733 2711 M
+6733 2711 CircleF
+% End plot #587
+% Begin plot #588
+0.667 UP
+0.500 UL
+LT0
+6742 2711 M
+6742 2711 CircleF
+% End plot #588
+% Begin plot #589
+0.667 UP
+0.500 UL
+LT0
+6751 2711 M
+6751 2711 CircleF
+% End plot #589
+% Begin plot #590
+0.667 UP
+0.500 UL
+LT0
+6760 2711 M
+6760 2711 CircleF
+% End plot #590
+% Begin plot #591
+0.667 UP
+0.500 UL
+LT0
+6769 2711 M
+6769 2711 CircleF
+% End plot #591
+% Begin plot #592
+0.667 UP
+0.500 UL
+LT0
+6778 2711 M
+6778 2711 CircleF
+% End plot #592
+% Begin plot #593
+0.667 UP
+0.500 UL
+LT0
+6787 2711 M
+6787 2711 CircleF
+% End plot #593
+% Begin plot #594
+0.667 UP
+0.500 UL
+LT0
+6796 2711 M
+6796 2711 CircleF
+% End plot #594
+% Begin plot #595
+0.667 UP
+0.500 UL
+LT0
+6805 2711 M
+6805 2711 CircleF
+% End plot #595
+% Begin plot #596
+0.667 UP
+0.500 UL
+LT0
+6814 2711 M
+6814 2711 CircleF
+% End plot #596
+% Begin plot #597
+0.667 UP
+0.500 UL
+LT0
+6823 2711 M
+6823 2711 CircleF
+% End plot #597
+% Begin plot #598
+0.667 UP
+0.500 UL
+LT0
+6832 2711 M
+6832 2711 CircleF
+% End plot #598
+% Begin plot #599
+0.667 UP
+0.500 UL
+LT0
+6841 2711 M
+6841 2711 CircleF
+% End plot #599
+% Begin plot #600
+0.667 UP
+0.500 UL
+LT0
+6850 2711 M
+6850 2711 CircleF
+% End plot #600
+% Begin plot #601
+0.667 UP
+0.500 UL
+LT0
+6859 2711 M
+6859 2711 CircleF
+% End plot #601
+% Begin plot #602
+0.667 UP
+0.500 UL
+LT0
+6867 2711 M
+6867 2711 CircleF
+% End plot #602
+% Begin plot #603
+0.667 UP
+0.500 UL
+LT0
+6876 2711 M
+6876 2711 CircleF
+% End plot #603
+% Begin plot #604
+0.667 UP
+0.500 UL
+LT0
+6885 2711 M
+6885 2711 CircleF
+% End plot #604
+% Begin plot #605
+0.667 UP
+0.500 UL
+LT0
+6894 2711 M
+6894 2711 CircleF
+% End plot #605
+% Begin plot #606
+0.667 UP
+0.500 UL
+LT0
+6903 2711 M
+6903 2711 CircleF
+% End plot #606
+% Begin plot #607
+0.667 UP
+0.500 UL
+LT0
+6912 2711 M
+6912 2711 CircleF
+% End plot #607
+% Begin plot #608
+0.667 UP
+0.500 UL
+LT0
+6921 2711 M
+6921 2711 CircleF
+% End plot #608
+% Begin plot #609
+0.667 UP
+0.500 UL
+LT0
+6930 2711 M
+6930 2711 CircleF
+% End plot #609
+% Begin plot #610
+0.667 UP
+0.500 UL
+LT0
+6939 2711 M
+6939 2711 CircleF
+% End plot #610
+% Begin plot #611
+0.667 UP
+0.500 UL
+LT0
+6948 2711 M
+6948 2711 CircleF
+% End plot #611
+% Begin plot #612
+0.667 UP
+0.500 UL
+LT0
+6957 2711 M
+6957 2711 CircleF
+% End plot #612
+% Begin plot #613
+0.667 UP
+0.500 UL
+LT0
+6966 2711 M
+6966 2711 CircleF
+% End plot #613
+% Begin plot #614
+0.667 UP
+0.500 UL
+LT0
+6975 2711 M
+6975 2711 CircleF
+% End plot #614
+% Begin plot #615
+0.667 UP
+0.500 UL
+LT0
+6984 2711 M
+6984 2711 CircleF
+% End plot #615
+% Begin plot #616
+0.667 UP
+0.500 UL
+LT0
+6993 2711 M
+6993 2711 CircleF
+% End plot #616
+% Begin plot #617
+0.667 UP
+0.500 UL
+LT0
+7002 2711 M
+7002 2711 CircleF
+% End plot #617
+% Begin plot #618
+0.667 UP
+0.500 UL
+LT0
+7010 2711 M
+7010 2711 CircleF
+% End plot #618
+% Begin plot #619
+0.667 UP
+0.500 UL
+LT0
+7019 2711 M
+7019 2711 CircleF
+% End plot #619
+% Begin plot #620
+0.667 UP
+0.500 UL
+LT0
+7028 2711 M
+7028 2711 CircleF
+% End plot #620
+% Begin plot #621
+0.667 UP
+0.500 UL
+LT0
+7037 2711 M
+7037 2711 CircleF
+% End plot #621
+% Begin plot #622
+0.667 UP
+0.500 UL
+LT0
+7046 2711 M
+7046 2711 CircleF
+% End plot #622
+% Begin plot #623
+0.667 UP
+0.500 UL
+LT0
+7055 2711 M
+7055 2711 CircleF
+% End plot #623
+% Begin plot #624
+0.667 UP
+0.500 UL
+LT0
+7064 2711 M
+7064 2711 CircleF
+% End plot #624
+% Begin plot #625
+0.667 UP
+0.500 UL
+LT0
+7073 2711 M
+7073 2711 CircleF
+% End plot #625
+% Begin plot #626
+0.667 UP
+0.500 UL
+LT0
+7082 2711 M
+7082 2711 CircleF
+% End plot #626
+% Begin plot #627
+0.667 UP
+0.500 UL
+LT0
+7091 2711 M
+7091 2711 CircleF
+% End plot #627
+% Begin plot #628
+0.667 UP
+0.500 UL
+LT0
+7100 2711 M
+7100 2711 CircleF
+% End plot #628
+% Begin plot #629
+0.667 UP
+0.500 UL
+LT0
+7109 2711 M
+7109 2711 CircleF
+% End plot #629
+% Begin plot #630
+0.667 UP
+0.500 UL
+LT0
+7118 2711 M
+7118 2711 CircleF
+% End plot #630
+% Begin plot #631
+0.667 UP
+0.500 UL
+LT0
+7127 2711 M
+7127 2711 CircleF
+% End plot #631
+% Begin plot #632
+0.667 UP
+0.500 UL
+LT0
+7136 2711 M
+7136 2711 CircleF
+% End plot #632
+% Begin plot #633
+0.667 UP
+0.500 UL
+LT0
+7145 2711 M
+7145 2711 CircleF
+% End plot #633
+% Begin plot #634
+0.667 UP
+0.500 UL
+LT0
+7153 2711 M
+7153 2711 CircleF
+% End plot #634
+% Begin plot #635
+0.667 UP
+0.500 UL
+LT0
+7162 2711 M
+7162 2711 CircleF
+% End plot #635
+% Begin plot #636
+0.667 UP
+0.500 UL
+LT0
+7171 2711 M
+7171 2711 CircleF
+% End plot #636
+% Begin plot #637
+0.667 UP
+0.500 UL
+LT0
+7180 2711 M
+7180 2711 CircleF
+% End plot #637
+% Begin plot #638
+0.667 UP
+0.500 UL
+LT0
+7189 2711 M
+7189 2711 CircleF
+% End plot #638
+% Begin plot #639
+0.667 UP
+0.500 UL
+LT0
+7198 2711 M
+7198 2711 CircleF
+% End plot #639
+% Begin plot #640
+0.667 UP
+0.500 UL
+LT0
+7207 2711 M
+7207 2711 CircleF
+% End plot #640
+% Begin plot #641
+0.667 UP
+0.500 UL
+LT0
+7216 2711 M
+7216 2711 CircleF
+% End plot #641
+% Begin plot #642
+0.667 UP
+0.500 UL
+LT0
+7225 2711 M
+7225 2711 CircleF
+% End plot #642
+% Begin plot #643
+0.667 UP
+0.500 UL
+LT0
+7234 2711 M
+7234 2711 CircleF
+% End plot #643
+% Begin plot #644
+0.667 UP
+0.500 UL
+LT0
+7243 2711 M
+7243 2711 CircleF
+% End plot #644
+% Begin plot #645
+0.667 UP
+0.500 UL
+LT0
+7252 2711 M
+7252 2711 CircleF
+% End plot #645
+% Begin plot #646
+0.667 UP
+0.500 UL
+LT0
+7261 2711 M
+7261 2711 CircleF
+% End plot #646
+% Begin plot #647
+0.667 UP
+0.500 UL
+LT0
+7270 2711 M
+7270 2711 CircleF
+% End plot #647
+% Begin plot #648
+0.667 UP
+0.500 UL
+LT0
+7279 2711 M
+7279 2711 CircleF
+% End plot #648
+% Begin plot #649
+0.667 UP
+0.500 UL
+LT0
+7287 2711 M
+7287 2711 CircleF
+% End plot #649
+% Begin plot #650
+0.667 UP
+0.500 UL
+LT0
+7296 2711 M
+7296 2711 CircleF
+% End plot #650
+% Begin plot #651
+0.667 UP
+0.500 UL
+LT0
+7305 2711 M
+7305 2711 CircleF
+% End plot #651
+% Begin plot #652
+0.667 UP
+0.500 UL
+LT0
+7314 2711 M
+7314 2711 CircleF
+% End plot #652
+% Begin plot #653
+0.667 UP
+0.500 UL
+LT0
+7323 2711 M
+7323 2711 CircleF
+% End plot #653
+% Begin plot #654
+0.667 UP
+0.500 UL
+LT0
+7332 2711 M
+7332 2711 CircleF
+% End plot #654
+% Begin plot #655
+0.667 UP
+0.500 UL
+LT0
+7341 2711 M
+7341 2711 CircleF
+% End plot #655
+% Begin plot #656
+0.667 UP
+0.500 UL
+LT0
+7350 2711 M
+7350 2711 CircleF
+% End plot #656
+% Begin plot #657
+0.667 UP
+0.500 UL
+LT0
+7359 2711 M
+7359 2711 CircleF
+% End plot #657
+% Begin plot #658
+0.667 UP
+0.500 UL
+LT0
+7368 2711 M
+7368 2711 CircleF
+% End plot #658
+% Begin plot #659
+0.667 UP
+0.500 UL
+LT0
+7377 2711 M
+7377 2711 CircleF
+% End plot #659
+% Begin plot #660
+0.667 UP
+0.500 UL
+LT0
+7386 2711 M
+7386 2711 CircleF
+% End plot #660
+% Begin plot #661
+0.667 UP
+0.500 UL
+LT0
+7395 2711 M
+7395 2711 CircleF
+% End plot #661
+% Begin plot #662
+0.667 UP
+0.500 UL
+LT0
+7404 2711 M
+7404 2711 CircleF
+% End plot #662
+% Begin plot #663
+0.667 UP
+0.500 UL
+LT0
+7413 2711 M
+7413 2711 CircleF
+% End plot #663
+% Begin plot #664
+0.667 UP
+0.500 UL
+LT0
+7422 2711 M
+7422 2711 CircleF
+% End plot #664
+% Begin plot #665
+0.667 UP
+0.500 UL
+LT0
+7430 2711 M
+7430 2711 CircleF
+% End plot #665
+% Begin plot #666
+0.667 UP
+0.500 UL
+LT0
+7439 2711 M
+7439 2711 CircleF
+% End plot #666
+% Begin plot #667
+0.667 UP
+0.500 UL
+LT0
+7448 2711 M
+7448 2711 CircleF
+% End plot #667
+% Begin plot #668
+0.667 UP
+0.500 UL
+LT0
+7457 2711 M
+7457 2711 CircleF
+% End plot #668
+% Begin plot #669
+0.667 UP
+0.500 UL
+LT0
+7466 2711 M
+7466 2711 CircleF
+% End plot #669
+% Begin plot #670
+0.667 UP
+0.500 UL
+LT0
+7475 2711 M
+7475 2711 CircleF
+% End plot #670
+% Begin plot #671
+0.667 UP
+0.500 UL
+LT0
+7484 2711 M
+7484 2711 CircleF
+% End plot #671
+% Begin plot #672
+0.667 UP
+0.500 UL
+LT0
+7493 2711 M
+7493 2711 CircleF
+% End plot #672
+% Begin plot #673
+0.667 UP
+0.500 UL
+LT0
+7502 2711 M
+7502 2711 CircleF
+% End plot #673
+% Begin plot #674
+0.667 UP
+0.500 UL
+LT0
+7511 2711 M
+7511 2711 CircleF
+% End plot #674
+% Begin plot #675
+0.667 UP
+0.500 UL
+LT0
+7520 2711 M
+7520 2711 CircleF
+% End plot #675
+% Begin plot #676
+0.667 UP
+0.500 UL
+LT0
+7529 2711 M
+7529 2711 CircleF
+% End plot #676
+% Begin plot #677
+0.667 UP
+0.500 UL
+LT0
+7538 2711 M
+7538 2711 CircleF
+% End plot #677
+% Begin plot #678
+0.667 UP
+0.500 UL
+LT0
+7547 2711 M
+7547 2711 CircleF
+% End plot #678
+% Begin plot #679
+0.667 UP
+0.500 UL
+LT0
+7556 2711 M
+7556 2711 CircleF
+% End plot #679
+% Begin plot #680
+0.667 UP
+0.500 UL
+LT0
+7565 2711 M
+7565 2711 CircleF
+% End plot #680
+% Begin plot #681
+0.667 UP
+0.500 UL
+LT0
+7573 2711 M
+7573 2711 CircleF
+% End plot #681
+% Begin plot #682
+0.667 UP
+0.500 UL
+LT0
+7582 2711 M
+7582 2711 CircleF
+% End plot #682
+% Begin plot #683
+0.667 UP
+0.500 UL
+LT0
+7591 2711 M
+7591 2711 CircleF
+% End plot #683
+% Begin plot #684
+0.667 UP
+0.500 UL
+LT0
+7600 2711 M
+7600 2711 CircleF
+% End plot #684
+% Begin plot #685
+0.667 UP
+0.500 UL
+LT0
+7609 2711 M
+7609 2711 CircleF
+% End plot #685
+% Begin plot #686
+0.667 UP
+0.500 UL
+LT0
+7618 2711 M
+7618 2711 CircleF
+% End plot #686
+% Begin plot #687
+0.667 UP
+0.500 UL
+LT0
+7627 2711 M
+7627 2711 CircleF
+% End plot #687
+% Begin plot #688
+0.667 UP
+0.500 UL
+LT0
+7636 2711 M
+7636 2711 CircleF
+% End plot #688
+% Begin plot #689
+0.667 UP
+0.500 UL
+LT0
+7645 2711 M
+7645 2711 CircleF
+% End plot #689
+% Begin plot #690
+0.667 UP
+0.500 UL
+LT0
+7654 2711 M
+7654 2711 CircleF
+% End plot #690
+% Begin plot #691
+0.667 UP
+0.500 UL
+LT0
+7663 2711 M
+7663 2711 CircleF
+% End plot #691
+% Begin plot #692
+0.667 UP
+0.500 UL
+LT0
+7672 2711 M
+7672 2711 CircleF
+% End plot #692
+% Begin plot #693
+0.667 UP
+0.500 UL
+LT0
+7681 2711 M
+7681 2711 CircleF
+% End plot #693
+% Begin plot #694
+0.667 UP
+0.500 UL
+LT0
+7690 2711 M
+7690 2711 CircleF
+% End plot #694
+% Begin plot #695
+0.667 UP
+0.500 UL
+LT0
+7699 2711 M
+7699 2711 CircleF
+% End plot #695
+% Begin plot #696
+0.667 UP
+0.500 UL
+LT0
+7707 2711 M
+7707 2711 CircleF
+% End plot #696
+% Begin plot #697
+0.667 UP
+0.500 UL
+LT0
+7716 2711 M
+7716 2711 CircleF
+% End plot #697
+% Begin plot #698
+0.667 UP
+0.500 UL
+LT0
+7725 2711 M
+7725 2711 CircleF
+% End plot #698
+% Begin plot #699
+0.667 UP
+0.500 UL
+LT0
+7734 2711 M
+7734 2711 CircleF
+% End plot #699
+% Begin plot #700
+0.667 UP
+0.500 UL
+LT0
+7743 2711 M
+7743 2711 CircleF
+% End plot #700
+% Begin plot #701
+0.667 UP
+0.500 UL
+LT0
+7752 2711 M
+7752 2711 CircleF
+% End plot #701
+% Begin plot #702
+0.667 UP
+0.500 UL
+LT0
+7761 2711 M
+7761 2711 CircleF
+% End plot #702
+% Begin plot #703
+0.667 UP
+0.500 UL
+LT0
+7770 2711 M
+7770 2711 CircleF
+% End plot #703
+% Begin plot #704
+0.667 UP
+0.500 UL
+LT0
+7779 2711 M
+7779 2711 CircleF
+% End plot #704
+% Begin plot #705
+0.667 UP
+0.500 UL
+LT0
+7788 2711 M
+7788 2711 CircleF
+% End plot #705
+% Begin plot #706
+0.667 UP
+0.500 UL
+LT0
+7797 2711 M
+7797 2711 CircleF
+% End plot #706
+% Begin plot #707
+0.667 UP
+0.500 UL
+LT0
+7806 2711 M
+7806 2711 CircleF
+% End plot #707
+% Begin plot #708
+0.667 UP
+0.500 UL
+LT0
+7815 2711 M
+7815 2711 CircleF
+% End plot #708
+% Begin plot #709
+0.667 UP
+0.500 UL
+LT0
+7824 2711 M
+7824 2711 CircleF
+% End plot #709
+% Begin plot #710
+0.667 UP
+0.500 UL
+LT0
+7833 2711 M
+7833 2711 CircleF
+% End plot #710
+% Begin plot #711
+0.667 UP
+0.500 UL
+LT0
+7842 2711 M
+7842 2711 CircleF
+% End plot #711
+% Begin plot #712
+0.667 UP
+0.500 UL
+LT0
+7850 2711 M
+7850 2711 CircleF
+% End plot #712
+% Begin plot #713
+0.667 UP
+0.500 UL
+LT0
+7859 2711 M
+7859 2711 CircleF
+% End plot #713
+% Begin plot #714
+0.667 UP
+0.500 UL
+LT0
+7868 2711 M
+7868 2711 CircleF
+% End plot #714
+% Begin plot #715
+0.667 UP
+0.500 UL
+LT0
+7877 2711 M
+7877 2711 CircleF
+% End plot #715
+% Begin plot #716
+0.667 UP
+0.500 UL
+LT0
+7886 2711 M
+7886 2711 CircleF
+% End plot #716
+% Begin plot #717
+0.667 UP
+0.500 UL
+LT0
+7895 2711 M
+7895 2711 CircleF
+% End plot #717
+% Begin plot #718
+0.667 UP
+0.500 UL
+LT0
+7904 2711 M
+7904 2711 CircleF
+% End plot #718
+% Begin plot #719
+0.667 UP
+0.500 UL
+LT0
+7913 2711 M
+7913 2711 CircleF
+% End plot #719
+% Begin plot #720
+0.667 UP
+0.500 UL
+LT0
+7922 2711 M
+7922 2711 CircleF
+% End plot #720
+% Begin plot #721
+0.667 UP
+0.500 UL
+LT0
+7931 2711 M
+7931 2711 CircleF
+% End plot #721
+% Begin plot #722
+0.667 UP
+0.500 UL
+LT0
+7940 2711 M
+7940 2711 CircleF
+% End plot #722
+% Begin plot #723
+0.667 UP
+0.500 UL
+LT0
+7949 2711 M
+7949 2711 CircleF
+% End plot #723
+% Begin plot #724
+0.667 UP
+0.500 UL
+LT0
+7958 2711 M
+7958 2711 CircleF
+% End plot #724
+% Begin plot #725
+0.667 UP
+0.500 UL
+LT0
+7967 2711 M
+7967 2711 CircleF
+% End plot #725
+% Begin plot #726
+0.667 UP
+0.500 UL
+LT0
+7976 2711 M
+7976 2711 CircleF
+% End plot #726
+% Begin plot #727
+0.667 UP
+0.500 UL
+LT0
+7984 2711 M
+7984 2711 CircleF
+% End plot #727
+% Begin plot #728
+0.667 UP
+0.500 UL
+LT0
+7993 2711 M
+7993 2711 CircleF
+% End plot #728
+% Begin plot #729
+0.667 UP
+0.500 UL
+LT0
+8002 2711 M
+8002 2711 CircleF
+% End plot #729
+% Begin plot #730
+0.667 UP
+0.500 UL
+LT0
+8011 2711 M
+8011 2711 CircleF
+% End plot #730
+% Begin plot #731
+0.667 UP
+0.500 UL
+LT0
+8020 2711 M
+8020 2711 CircleF
+% End plot #731
+% Begin plot #732
+0.667 UP
+0.500 UL
+LT0
+8029 2711 M
+8029 2711 CircleF
+% End plot #732
+% Begin plot #733
+0.667 UP
+0.500 UL
+LT0
+8038 2711 M
+8038 2711 CircleF
+% End plot #733
+% Begin plot #734
+0.667 UP
+0.500 UL
+LT0
+8047 2711 M
+8047 2711 CircleF
+% End plot #734
+% Begin plot #735
+0.667 UP
+0.500 UL
+LT0
+8056 2711 M
+8056 2711 CircleF
+% End plot #735
+% Begin plot #736
+0.667 UP
+0.500 UL
+LT0
+8065 2711 M
+8065 2711 CircleF
+% End plot #736
+% Begin plot #737
+0.667 UP
+0.500 UL
+LT0
+8074 2711 M
+8074 2711 CircleF
+% End plot #737
+% Begin plot #738
+0.667 UP
+0.500 UL
+LT0
+8083 2711 M
+8083 2711 CircleF
+% End plot #738
+% Begin plot #739
+0.667 UP
+0.500 UL
+LT0
+8092 2711 M
+8092 2711 CircleF
+% End plot #739
+% Begin plot #740
+0.667 UP
+0.500 UL
+LT0
+8101 2711 M
+8101 2711 CircleF
+% End plot #740
+% Begin plot #741
+0.667 UP
+0.500 UL
+LT0
+8110 2711 M
+8110 2711 CircleF
+% End plot #741
+% Begin plot #742
+0.667 UP
+0.500 UL
+LT0
+8119 2711 M
+8119 2711 CircleF
+% End plot #742
+% Begin plot #743
+0.667 UP
+0.500 UL
+LT0
+8127 2711 M
+8127 2711 CircleF
+% End plot #743
+% Begin plot #744
+0.667 UP
+0.500 UL
+LT0
+8136 2711 M
+8136 2711 CircleF
+% End plot #744
+% Begin plot #745
+0.667 UP
+0.500 UL
+LT0
+8145 2711 M
+8145 2711 CircleF
+% End plot #745
+% Begin plot #746
+0.667 UP
+0.500 UL
+LT0
+8154 2711 M
+8154 2711 CircleF
+% End plot #746
+% Begin plot #747
+0.667 UP
+0.500 UL
+LT0
+8163 2711 M
+8163 2711 CircleF
+% End plot #747
+% Begin plot #748
+0.667 UP
+0.500 UL
+LT0
+8172 2711 M
+8172 2711 CircleF
+% End plot #748
+% Begin plot #749
+0.667 UP
+0.500 UL
+LT0
+8181 2711 M
+8181 2711 CircleF
+% End plot #749
+% Begin plot #750
+0.667 UP
+0.500 UL
+LT0
+8190 2711 M
+8190 2711 CircleF
+% End plot #750
+% Begin plot #751
+0.667 UP
+0.500 UL
+LT0
+8199 2711 M
+8199 2711 CircleF
+% End plot #751
+% Begin plot #752
+0.667 UP
+0.500 UL
+LT0
+8208 2711 M
+8208 2711 CircleF
+% End plot #752
+% Begin plot #753
+0.667 UP
+0.500 UL
+LT0
+8217 2711 M
+8217 2711 CircleF
+% End plot #753
+% Begin plot #754
+0.667 UP
+0.500 UL
+LT0
+8226 2711 M
+8226 2711 CircleF
+% End plot #754
+% Begin plot #755
+0.667 UP
+0.500 UL
+LT0
+8235 2711 M
+8235 2711 CircleF
+% End plot #755
+% Begin plot #756
+0.667 UP
+0.500 UL
+LT0
+8244 2711 M
+8244 2711 CircleF
+% End plot #756
+% Begin plot #757
+0.667 UP
+0.500 UL
+LT0
+8253 2711 M
+8253 2711 CircleF
+% End plot #757
+% Begin plot #758
+0.667 UP
+0.500 UL
+LT0
+8262 2711 M
+8262 2711 CircleF
+% End plot #758
+% Begin plot #759
+0.667 UP
+0.500 UL
+LT0
+8270 2711 M
+8270 2711 CircleF
+% End plot #759
+% Begin plot #760
+0.667 UP
+0.500 UL
+LT0
+8279 2711 M
+8279 2711 CircleF
+% End plot #760
+% Begin plot #761
+0.667 UP
+0.500 UL
+LT0
+8288 2711 M
+8288 2711 CircleF
+% End plot #761
+% Begin plot #762
+0.667 UP
+0.500 UL
+LT0
+8297 2711 M
+8297 2711 CircleF
+% End plot #762
+% Begin plot #763
+0.667 UP
+0.500 UL
+LT0
+8306 2711 M
+8306 2711 CircleF
+% End plot #763
+% Begin plot #764
+0.667 UP
+0.500 UL
+LT0
+8315 2711 M
+8315 2711 CircleF
+% End plot #764
+% Begin plot #765
+0.667 UP
+0.500 UL
+LT0
+8324 2711 M
+8324 2711 CircleF
+% End plot #765
+% Begin plot #766
+0.667 UP
+0.500 UL
+LT0
+8333 2711 M
+8333 2711 CircleF
+% End plot #766
+% Begin plot #767
+0.667 UP
+0.500 UL
+LT0
+8342 2711 M
+8342 2711 CircleF
+% End plot #767
+% Begin plot #768
+0.667 UP
+0.500 UL
+LT0
+8351 2711 M
+8351 2711 CircleF
+% End plot #768
+% Begin plot #769
+0.667 UP
+0.500 UL
+LT0
+8360 2711 M
+8360 2711 CircleF
+% End plot #769
+% Begin plot #770
+0.667 UP
+0.500 UL
+LT0
+8369 2711 M
+8369 2711 CircleF
+% End plot #770
+% Begin plot #771
+0.667 UP
+0.500 UL
+LT0
+8378 2711 M
+8378 2711 CircleF
+% End plot #771
+% Begin plot #772
+0.667 UP
+0.500 UL
+LT0
+8387 2711 M
+8387 2711 CircleF
+% End plot #772
+% Begin plot #773
+0.667 UP
+0.500 UL
+LT0
+8396 2711 M
+8396 2711 CircleF
+% End plot #773
+% Begin plot #774
+0.667 UP
+0.500 UL
+LT0
+8404 2711 M
+8404 2711 CircleF
+% End plot #774
+% Begin plot #775
+0.667 UP
+0.500 UL
+LT0
+8413 2711 M
+8413 2711 CircleF
+% End plot #775
+% Begin plot #776
+0.667 UP
+0.500 UL
+LT0
+8422 2711 M
+8422 2711 CircleF
+% End plot #776
+% Begin plot #777
+0.667 UP
+0.500 UL
+LT0
+8431 2711 M
+8431 2711 CircleF
+% End plot #777
+% Begin plot #778
+0.667 UP
+0.500 UL
+LT0
+8440 2711 M
+8440 2711 CircleF
+% End plot #778
+% Begin plot #779
+0.667 UP
+0.500 UL
+LT0
+8449 2711 M
+8449 2711 CircleF
+% End plot #779
+% Begin plot #780
+0.667 UP
+0.500 UL
+LT0
+8458 2711 M
+8458 2711 CircleF
+% End plot #780
+% Begin plot #781
+0.667 UP
+0.500 UL
+LT0
+8467 2711 M
+8467 2711 CircleF
+% End plot #781
+% Begin plot #782
+0.667 UP
+0.500 UL
+LT0
+8476 2711 M
+8476 2711 CircleF
+% End plot #782
+% Begin plot #783
+0.667 UP
+0.500 UL
+LT0
+8485 2711 M
+8485 2711 CircleF
+% End plot #783
+% Begin plot #784
+0.667 UP
+0.500 UL
+LT0
+8494 2711 M
+8494 2711 CircleF
+% End plot #784
+% Begin plot #785
+0.667 UP
+0.500 UL
+LT0
+8503 2711 M
+8503 2711 CircleF
+% End plot #785
+% Begin plot #786
+0.667 UP
+0.500 UL
+LT0
+8512 2711 M
+8512 2711 CircleF
+% End plot #786
+% Begin plot #787
+0.667 UP
+0.500 UL
+LT0
+8521 2711 M
+8521 2711 CircleF
+% End plot #787
+% Begin plot #788
+0.667 UP
+0.500 UL
+LT0
+8530 2711 M
+8530 2711 CircleF
+% End plot #788
+% Begin plot #789
+0.667 UP
+0.500 UL
+LT0
+8539 2711 M
+8539 2711 CircleF
+% End plot #789
+% Begin plot #790
+0.667 UP
+0.500 UL
+LT0
+8547 2711 M
+8547 2711 CircleF
+% End plot #790
+% Begin plot #791
+0.667 UP
+0.500 UL
+LT0
+8556 2711 M
+8556 2711 CircleF
+% End plot #791
+% Begin plot #792
+0.667 UP
+0.500 UL
+LT0
+8565 2711 M
+8565 2711 CircleF
+% End plot #792
+% Begin plot #793
+0.667 UP
+0.500 UL
+LT0
+8574 2711 M
+8574 2711 CircleF
+% End plot #793
+% Begin plot #794
+0.667 UP
+0.500 UL
+LT0
+8583 2711 M
+8583 2711 CircleF
+% End plot #794
+% Begin plot #795
+0.667 UP
+0.500 UL
+LT0
+8592 2711 M
+8592 2711 CircleF
+% End plot #795
+% Begin plot #796
+0.667 UP
+0.500 UL
+LT0
+8601 2711 M
+8601 2711 CircleF
+% End plot #796
+% Begin plot #797
+0.667 UP
+0.500 UL
+LT0
+8610 2711 M
+8610 2711 CircleF
+% End plot #797
+% Begin plot #798
+0.667 UP
+0.500 UL
+LT0
+8619 2711 M
+8619 2711 CircleF
+% End plot #798
+% Begin plot #799
+0.667 UP
+0.500 UL
+LT0
+8628 2711 M
+8628 2711 CircleF
+% End plot #799
+% Begin plot #800
+0.667 UP
+0.500 UL
+LT0
+8637 2711 M
+8637 2711 CircleF
+% End plot #800
+% Begin plot #801
+0.667 UP
+0.500 UL
+LT0
+8646 2711 M
+8646 2711 CircleF
+% End plot #801
+% Begin plot #802
+0.667 UP
+0.500 UL
+LT0
+8655 2711 M
+8655 2711 CircleF
+% End plot #802
+% Begin plot #803
+0.667 UP
+0.500 UL
+LT0
+8664 2711 M
+8664 2711 CircleF
+% End plot #803
+% Begin plot #804
+0.667 UP
+0.500 UL
+LT0
+8673 2711 M
+8673 2711 CircleF
+% End plot #804
+% Begin plot #805
+0.667 UP
+0.500 UL
+LT0
+8681 2711 M
+8681 2711 CircleF
+% End plot #805
+% Begin plot #806
+0.667 UP
+0.500 UL
+LT0
+8690 2711 M
+8690 2711 CircleF
+% End plot #806
+% Begin plot #807
+0.667 UP
+0.500 UL
+LT0
+8699 2711 M
+8699 2711 CircleF
+% End plot #807
+% Begin plot #808
+0.667 UP
+0.500 UL
+LT0
+8708 2711 M
+8708 2711 CircleF
+% End plot #808
+% Begin plot #809
+0.667 UP
+0.500 UL
+LT0
+8717 2711 M
+8717 2711 CircleF
+% End plot #809
+% Begin plot #810
+0.667 UP
+0.500 UL
+LT0
+8726 2711 M
+8726 2711 CircleF
+% End plot #810
+% Begin plot #811
+0.667 UP
+0.500 UL
+LT0
+8735 2711 M
+8735 2711 CircleF
+% End plot #811
+% Begin plot #812
+0.667 UP
+0.500 UL
+LT0
+8744 2711 M
+8744 2711 CircleF
+% End plot #812
+% Begin plot #813
+0.667 UP
+0.500 UL
+LT0
+8753 2711 M
+8753 2711 CircleF
+% End plot #813
+% Begin plot #814
+0.667 UP
+0.500 UL
+LT0
+8762 2711 M
+8762 2711 CircleF
+% End plot #814
+% Begin plot #815
+0.667 UP
+0.500 UL
+LT0
+8771 2711 M
+8771 2711 CircleF
+% End plot #815
+% Begin plot #816
+0.667 UP
+0.500 UL
+LT0
+8780 2711 M
+8780 2711 CircleF
+% End plot #816
+% Begin plot #817
+0.667 UP
+0.500 UL
+LT0
+8789 2711 M
+8789 2711 CircleF
+% End plot #817
+% Begin plot #818
+0.667 UP
+0.500 UL
+LT0
+8798 2711 M
+8798 2711 CircleF
+% End plot #818
+% Begin plot #819
+0.667 UP
+0.500 UL
+LT0
+8807 2711 M
+8807 2711 CircleF
+% End plot #819
+% Begin plot #820
+0.667 UP
+0.500 UL
+LT0
+8816 2711 M
+8816 2711 CircleF
+% End plot #820
+% Begin plot #821
+0.667 UP
+0.500 UL
+LT0
+8824 2711 M
+8824 2711 CircleF
+% End plot #821
+% Begin plot #822
+0.667 UP
+0.500 UL
+LT0
+8833 2711 M
+8833 2711 CircleF
+% End plot #822
+% Begin plot #823
+0.667 UP
+0.500 UL
+LT0
+8842 2711 M
+8842 2711 CircleF
+% End plot #823
+% Begin plot #824
+0.667 UP
+0.500 UL
+LT0
+8851 2711 M
+8851 2711 CircleF
+% End plot #824
+% Begin plot #825
+0.667 UP
+0.500 UL
+LT0
+8860 2711 M
+8860 2711 CircleF
+% End plot #825
+% Begin plot #826
+0.667 UP
+0.500 UL
+LT0
+8869 2711 M
+8869 2711 CircleF
+% End plot #826
+% Begin plot #827
+0.667 UP
+0.500 UL
+LT0
+8878 2711 M
+8878 2711 CircleF
+% End plot #827
+% Begin plot #828
+0.667 UP
+0.500 UL
+LT0
+8887 2711 M
+8887 2711 CircleF
+% End plot #828
+% Begin plot #829
+0.667 UP
+0.500 UL
+LT0
+8896 2711 M
+8896 2711 CircleF
+% End plot #829
+% Begin plot #830
+0.667 UP
+0.500 UL
+LT0
+8905 2711 M
+8905 2711 CircleF
+% End plot #830
+% Begin plot #831
+0.667 UP
+0.500 UL
+LT0
+8914 2711 M
+8914 2711 CircleF
+% End plot #831
+% Begin plot #832
+0.667 UP
+0.500 UL
+LT0
+8923 2711 M
+8923 2711 CircleF
+% End plot #832
+% Begin plot #833
+0.667 UP
+0.500 UL
+LT0
+8932 2711 M
+8932 2711 CircleF
+% End plot #833
+% Begin plot #834
+0.667 UP
+0.500 UL
+LT0
+8941 2711 M
+8941 2711 CircleF
+% End plot #834
+% Begin plot #835
+0.667 UP
+0.500 UL
+LT0
+8950 2711 M
+8950 2711 CircleF
+% End plot #835
+% Begin plot #836
+0.667 UP
+0.500 UL
+LT0
+8959 2711 M
+8959 2711 CircleF
+% End plot #836
+% Begin plot #837
+0.667 UP
+0.500 UL
+LT0
+8967 2711 M
+8967 2711 CircleF
+% End plot #837
+% Begin plot #838
+0.667 UP
+0.500 UL
+LT0
+8976 2711 M
+8976 2711 CircleF
+% End plot #838
+% Begin plot #839
+0.667 UP
+0.500 UL
+LT0
+8985 2711 M
+8985 2711 CircleF
+% End plot #839
+% Begin plot #840
+0.667 UP
+0.500 UL
+LT0
+8994 2711 M
+8994 2711 CircleF
+% End plot #840
+% Begin plot #841
+0.667 UP
+0.500 UL
+LT0
+9003 2711 M
+9003 2711 CircleF
+% End plot #841
+% Begin plot #842
+0.667 UP
+0.500 UL
+LT0
+9012 2711 M
+9012 2711 CircleF
+% End plot #842
+% Begin plot #843
+0.667 UP
+0.500 UL
+LT0
+9021 2711 M
+9021 2711 CircleF
+% End plot #843
+% Begin plot #844
+0.667 UP
+0.500 UL
+LT0
+9030 2711 M
+9030 2711 CircleF
+% End plot #844
+% Begin plot #845
+0.667 UP
+0.500 UL
+LT0
+9039 2711 M
+9039 2711 CircleF
+% End plot #845
+% Begin plot #846
+0.667 UP
+0.500 UL
+LT0
+9048 2711 M
+9048 2711 CircleF
+% End plot #846
+% Begin plot #847
+0.667 UP
+0.500 UL
+LT0
+9057 2711 M
+9057 2711 CircleF
+% End plot #847
+% Begin plot #848
+0.667 UP
+0.500 UL
+LT0
+9066 2711 M
+9066 2711 CircleF
+% End plot #848
+% Begin plot #849
+0.667 UP
+0.500 UL
+LT0
+9075 2711 M
+9075 2711 CircleF
+% End plot #849
+% Begin plot #850
+0.667 UP
+0.500 UL
+LT0
+9084 2711 M
+9084 2711 CircleF
+% End plot #850
+% Begin plot #851
+0.667 UP
+0.500 UL
+LT0
+9093 2711 M
+9093 2711 CircleF
+% End plot #851
+% Begin plot #852
+0.667 UP
+0.500 UL
+LT0
+9101 2711 M
+9101 2711 CircleF
+% End plot #852
+% Begin plot #853
+0.667 UP
+0.500 UL
+LT0
+9110 2711 M
+9110 2711 CircleF
+% End plot #853
+% Begin plot #854
+0.667 UP
+0.500 UL
+LT0
+9119 2711 M
+9119 2711 CircleF
+% End plot #854
+% Begin plot #855
+0.667 UP
+0.500 UL
+LT0
+9128 2711 M
+9128 2711 CircleF
+% End plot #855
+% Begin plot #856
+0.667 UP
+0.500 UL
+LT0
+9137 2711 M
+9137 2711 CircleF
+% End plot #856
+% Begin plot #857
+0.667 UP
+0.500 UL
+LT0
+9146 2711 M
+9146 2711 CircleF
+% End plot #857
+% Begin plot #858
+0.667 UP
+0.500 UL
+LT0
+9155 2711 M
+9155 2711 CircleF
+% End plot #858
+% Begin plot #859
+0.667 UP
+0.500 UL
+LT0
+9164 2711 M
+9164 2711 CircleF
+% End plot #859
+% Begin plot #860
+0.667 UP
+0.500 UL
+LT0
+9173 2711 M
+9173 2711 CircleF
+% End plot #860
+% Begin plot #861
+0.667 UP
+0.500 UL
+LT0
+9182 2711 M
+9182 2711 CircleF
+% End plot #861
+% Begin plot #862
+0.667 UP
+0.500 UL
+LT0
+9191 2711 M
+9191 2711 CircleF
+% End plot #862
+% Begin plot #863
+0.667 UP
+0.500 UL
+LT0
+9200 2711 M
+9200 2711 CircleF
+% End plot #863
+% Begin plot #864
+0.667 UP
+0.500 UL
+LT0
+9209 2711 M
+9209 2711 CircleF
+% End plot #864
+% Begin plot #865
+0.667 UP
+0.500 UL
+LT0
+9218 2711 M
+9218 2711 CircleF
+% End plot #865
+% Begin plot #866
+0.667 UP
+0.500 UL
+LT0
+9227 2711 M
+9227 2711 CircleF
+% End plot #866
+% Begin plot #867
+0.667 UP
+0.500 UL
+LT0
+9236 2711 M
+9236 2711 CircleF
+% End plot #867
+% Begin plot #868
+0.667 UP
+0.500 UL
+LT0
+9244 2711 M
+9244 2711 CircleF
+% End plot #868
+% Begin plot #869
+0.667 UP
+0.500 UL
+LT0
+9253 2711 M
+9253 2711 CircleF
+% End plot #869
+% Begin plot #870
+0.667 UP
+0.500 UL
+LT0
+9262 2711 M
+9262 2711 CircleF
+% End plot #870
+% Begin plot #871
+0.667 UP
+0.500 UL
+LT0
+9271 2711 M
+9271 2711 CircleF
+% End plot #871
+% Begin plot #872
+0.667 UP
+0.500 UL
+LT0
+9280 2711 M
+9280 2711 CircleF
+% End plot #872
+% Begin plot #873
+0.667 UP
+0.500 UL
+LT0
+9289 2711 M
+9289 2711 CircleF
+% End plot #873
+% Begin plot #874
+0.667 UP
+0.500 UL
+LT0
+9298 2711 M
+9298 2711 CircleF
+% End plot #874
+% Begin plot #875
+0.667 UP
+0.500 UL
+LT0
+9307 2711 M
+9307 2711 CircleF
+% End plot #875
+% Begin plot #876
+0.667 UP
+0.500 UL
+LT0
+9316 2711 M
+9316 2711 CircleF
+% End plot #876
+% Begin plot #877
+0.667 UP
+0.500 UL
+LT0
+9325 2711 M
+9325 2711 CircleF
+% End plot #877
+% Begin plot #878
+0.667 UP
+0.500 UL
+LT0
+9334 2711 M
+9334 2711 CircleF
+% End plot #878
+% Begin plot #879
+0.667 UP
+0.500 UL
+LT0
+9343 2711 M
+9343 2711 CircleF
+% End plot #879
+% Begin plot #880
+0.667 UP
+0.500 UL
+LT0
+9352 2711 M
+9352 2711 CircleF
+% End plot #880
+% Begin plot #881
+0.667 UP
+0.500 UL
+LT0
+9361 2711 M
+9361 2711 CircleF
+% End plot #881
+% Begin plot #882
+0.667 UP
+0.500 UL
+LT0
+9370 2711 M
+9370 2711 CircleF
+% End plot #882
+% Begin plot #883
+0.667 UP
+0.500 UL
+LT0
+9378 2711 M
+9378 2711 CircleF
+% End plot #883
+% Begin plot #884
+0.667 UP
+0.500 UL
+LT0
+9387 2711 M
+9387 2711 CircleF
+% End plot #884
+% Begin plot #885
+0.667 UP
+0.500 UL
+LT0
+9396 2711 M
+9396 2711 CircleF
+% End plot #885
+% Begin plot #886
+0.667 UP
+0.500 UL
+LT0
+9405 2711 M
+9405 2711 CircleF
+% End plot #886
+% Begin plot #887
+0.667 UP
+0.500 UL
+LT0
+9414 2711 M
+9414 2711 CircleF
+% End plot #887
+% Begin plot #888
+0.667 UP
+0.500 UL
+LT0
+9423 2711 M
+9423 2711 CircleF
+% End plot #888
+% Begin plot #889
+0.667 UP
+0.500 UL
+LT0
+9432 2711 M
+9432 2711 CircleF
+% End plot #889
+% Begin plot #890
+0.667 UP
+0.500 UL
+LT0
+9441 2711 M
+9441 2711 CircleF
+% End plot #890
+% Begin plot #891
+0.667 UP
+0.500 UL
+LT0
+9450 2711 M
+9450 2711 CircleF
+% End plot #891
+% Begin plot #892
+0.667 UP
+0.500 UL
+LT0
+9459 2711 M
+9459 2711 CircleF
+% End plot #892
+% Begin plot #893
+0.667 UP
+0.500 UL
+LT0
+9468 2711 M
+9468 2711 CircleF
+% End plot #893
+% Begin plot #894
+0.667 UP
+0.500 UL
+LT0
+9477 2711 M
+9477 2711 CircleF
+% End plot #894
+% Begin plot #895
+0.667 UP
+0.500 UL
+LT0
+9486 2711 M
+9486 2711 CircleF
+% End plot #895
+% Begin plot #896
+0.667 UP
+0.500 UL
+LT0
+9495 2711 M
+9495 2711 CircleF
+% End plot #896
+% Begin plot #897
+0.667 UP
+0.500 UL
+LT0
+9504 2711 M
+9504 2711 CircleF
+% End plot #897
+% Begin plot #898
+0.667 UP
+0.500 UL
+LT0
+9513 2711 M
+9513 2711 CircleF
+% End plot #898
+% Begin plot #899
+0.667 UP
+0.500 UL
+LT0
+9521 2711 M
+9521 2711 CircleF
+% End plot #899
+% Begin plot #900
+0.667 UP
+0.500 UL
+LT0
+9530 2711 M
+9530 2711 CircleF
+% End plot #900
+% Begin plot #901
+0.667 UP
+0.500 UL
+LT0
+9539 2711 M
+9539 2711 CircleF
+% End plot #901
+% Begin plot #902
+0.667 UP
+0.500 UL
+LT0
+9548 2711 M
+9548 2711 CircleF
+% End plot #902
+% Begin plot #903
+0.667 UP
+0.500 UL
+LT0
+9557 2711 M
+9557 2711 CircleF
+% End plot #903
+% Begin plot #904
+0.667 UP
+0.500 UL
+LT0
+9566 2711 M
+9566 2711 CircleF
+% End plot #904
+% Begin plot #905
+0.667 UP
+0.500 UL
+LT0
+9575 2711 M
+9575 2711 CircleF
+% End plot #905
+% Begin plot #906
+0.667 UP
+0.500 UL
+LT0
+9584 2711 M
+9584 2711 CircleF
+% End plot #906
+% Begin plot #907
+0.667 UP
+0.500 UL
+LT0
+9593 2711 M
+9593 2711 CircleF
+% End plot #907
+% Begin plot #908
+0.667 UP
+0.500 UL
+LT0
+9602 2711 M
+9602 2711 CircleF
+% End plot #908
+% Begin plot #909
+0.667 UP
+0.500 UL
+LT0
+9611 2711 M
+9611 2711 CircleF
+% End plot #909
+% Begin plot #910
+0.667 UP
+0.500 UL
+LT0
+9620 2711 M
+9620 2711 CircleF
+% End plot #910
+% Begin plot #911
+0.667 UP
+0.500 UL
+LT0
+9629 2711 M
+9629 2711 CircleF
+% End plot #911
+% Begin plot #912
+0.667 UP
+0.500 UL
+LT0
+9638 2711 M
+9638 2711 CircleF
+% End plot #912
+% Begin plot #913
+0.667 UP
+0.500 UL
+LT0
+9647 2711 M
+9647 2711 CircleF
+% End plot #913
+% Begin plot #914
+0.667 UP
+0.500 UL
+LT0
+9656 2711 M
+9656 2711 CircleF
+% End plot #914
+% Begin plot #915
+0.667 UP
+0.500 UL
+LT0
+9664 2711 M
+9664 2711 CircleF
+% End plot #915
+% Begin plot #916
+0.667 UP
+0.500 UL
+LT0
+9673 2711 M
+9673 2711 CircleF
+% End plot #916
+% Begin plot #917
+0.667 UP
+0.500 UL
+LT0
+9682 2711 M
+9682 2711 CircleF
+% End plot #917
+% Begin plot #918
+0.667 UP
+0.500 UL
+LT0
+9691 2711 M
+9691 2711 CircleF
+% End plot #918
+% Begin plot #919
+0.667 UP
+0.500 UL
+LT0
+9700 2711 M
+9700 2711 CircleF
+% End plot #919
+% Begin plot #920
+0.667 UP
+0.500 UL
+LT0
+9709 2711 M
+9709 2711 CircleF
+% End plot #920
+% Begin plot #921
+0.667 UP
+0.500 UL
+LT0
+9718 2711 M
+9718 2711 CircleF
+% End plot #921
+% Begin plot #922
+0.667 UP
+0.500 UL
+LT0
+9727 2711 M
+9727 2711 CircleF
+% End plot #922
+% Begin plot #923
+0.667 UP
+0.500 UL
+LT0
+9736 2711 M
+9736 2711 CircleF
+% End plot #923
+% Begin plot #924
+0.667 UP
+0.500 UL
+LT0
+9745 2711 M
+9745 2711 CircleF
+% End plot #924
+% Begin plot #925
+0.667 UP
+0.500 UL
+LT0
+9754 2711 M
+9754 2711 CircleF
+% End plot #925
+% Begin plot #926
+0.667 UP
+0.500 UL
+LT0
+9763 2711 M
+9763 2711 CircleF
+% End plot #926
+% Begin plot #927
+0.667 UP
+0.500 UL
+LT0
+9772 2711 M
+9772 2711 CircleF
+% End plot #927
+% Begin plot #928
+0.667 UP
+0.500 UL
+LT0
+9781 2711 M
+9781 2711 CircleF
+% End plot #928
+% Begin plot #929
+0.667 UP
+0.500 UL
+LT0
+9790 2711 M
+9790 2711 CircleF
+% End plot #929
+% Begin plot #930
+0.667 UP
+0.500 UL
+LT0
+9798 2711 M
+9798 2711 CircleF
+% End plot #930
+% Begin plot #931
+0.667 UP
+0.500 UL
+LT0
+9807 2711 M
+9807 2711 CircleF
+% End plot #931
+% Begin plot #932
+0.667 UP
+0.500 UL
+LT0
+9816 2711 M
+9816 2711 CircleF
+% End plot #932
+% Begin plot #933
+0.667 UP
+0.500 UL
+LT0
+9825 2711 M
+9825 2711 CircleF
+% End plot #933
+% Begin plot #934
+0.667 UP
+0.500 UL
+LT0
+9834 2711 M
+9834 2711 CircleF
+% End plot #934
+% Begin plot #935
+0.667 UP
+0.500 UL
+LT0
+9843 2711 M
+9843 2711 CircleF
+% End plot #935
+% Begin plot #936
+0.667 UP
+0.500 UL
+LT0
+9852 2711 M
+9852 2711 CircleF
+% End plot #936
+% Begin plot #937
+0.667 UP
+0.500 UL
+LT0
+9861 2711 M
+9861 2711 CircleF
+% End plot #937
+% Begin plot #938
+0.667 UP
+0.500 UL
+LT0
+9870 2711 M
+9870 2711 CircleF
+% End plot #938
+% Begin plot #939
+0.667 UP
+0.500 UL
+LT0
+9879 2711 M
+9879 2711 CircleF
+% End plot #939
+% Begin plot #940
+0.667 UP
+0.500 UL
+LT0
+9888 2711 M
+9888 2711 CircleF
+% End plot #940
+% Begin plot #941
+0.667 UP
+0.500 UL
+LT0
+9897 2711 M
+9897 2711 CircleF
+% End plot #941
+% Begin plot #942
+0.667 UP
+0.500 UL
+LT0
+9906 2711 M
+9906 2711 CircleF
+% End plot #942
+% Begin plot #943
+0.667 UP
+0.500 UL
+LT0
+9915 2711 M
+9915 2711 CircleF
+% End plot #943
+% Begin plot #944
+0.667 UP
+0.500 UL
+LT0
+9924 2711 M
+9924 2711 CircleF
+% End plot #944
+% Begin plot #945
+0.667 UP
+0.500 UL
+LT0
+9933 2711 M
+9933 2711 CircleF
+% End plot #945
+% Begin plot #946
+0.667 UP
+0.500 UL
+LT0
+9941 2711 M
+9941 2711 CircleF
+% End plot #946
+% Begin plot #947
+0.667 UP
+0.500 UL
+LT0
+9950 2711 M
+9950 2711 CircleF
+% End plot #947
+% Begin plot #948
+0.667 UP
+0.500 UL
+LT0
+9959 2711 M
+9959 2711 CircleF
+% End plot #948
+% Begin plot #949
+0.667 UP
+0.500 UL
+LT0
+9968 2711 M
+9968 2711 CircleF
+% End plot #949
+% Begin plot #950
+0.667 UP
+0.500 UL
+LT0
+9977 2711 M
+9977 2711 CircleF
+% End plot #950
+% Begin plot #951
+0.667 UP
+0.500 UL
+LT0
+9986 2711 M
+9986 2711 CircleF
+% End plot #951
+% Begin plot #952
+0.667 UP
+0.500 UL
+LT0
+9995 2711 M
+9995 2711 CircleF
+% End plot #952
+% Begin plot #953
+0.667 UP
+0.500 UL
+LT0
+10004 2711 M
+10004 2711 CircleF
+% End plot #953
+% Begin plot #954
+0.667 UP
+0.500 UL
+LT0
+10013 2711 M
+10013 2711 CircleF
+% End plot #954
+% Begin plot #955
+0.667 UP
+0.500 UL
+LT0
+10022 2711 M
+10022 2711 CircleF
+% End plot #955
+% Begin plot #956
+0.667 UP
+0.500 UL
+LT0
+10031 2711 M
+10031 2711 CircleF
+% End plot #956
+% Begin plot #957
+0.667 UP
+0.500 UL
+LT0
+10040 2711 M
+10040 2711 CircleF
+% End plot #957
+% Begin plot #958
+0.667 UP
+0.500 UL
+LT0
+10049 2711 M
+10049 2711 CircleF
+% End plot #958
+% Begin plot #959
+0.667 UP
+0.500 UL
+LT0
+10058 2711 M
+10058 2711 CircleF
+% End plot #959
+% Begin plot #960
+0.667 UP
+0.500 UL
+LT0
+10067 2711 M
+10067 2711 CircleF
+% End plot #960
+% Begin plot #961
+0.667 UP
+0.500 UL
+LT0
+10075 2711 M
+10075 2711 CircleF
+% End plot #961
+% Begin plot #962
+0.667 UP
+0.500 UL
+LT0
+10084 2711 M
+10084 2711 CircleF
+% End plot #962
+% Begin plot #963
+0.667 UP
+0.500 UL
+LT0
+10093 2711 M
+10093 2711 CircleF
+% End plot #963
+% Begin plot #964
+0.667 UP
+0.500 UL
+LT0
+10102 2711 M
+10102 2711 CircleF
+% End plot #964
+% Begin plot #965
+0.667 UP
+0.500 UL
+LT0
+10111 2711 M
+10111 2711 CircleF
+% End plot #965
+% Begin plot #966
+0.667 UP
+0.500 UL
+LT0
+10120 2711 M
+10120 2711 CircleF
+% End plot #966
+% Begin plot #967
+0.667 UP
+0.500 UL
+LT0
+10129 2711 M
+10129 2711 CircleF
+% End plot #967
+% Begin plot #968
+0.667 UP
+0.500 UL
+LT0
+10138 2711 M
+10138 2711 CircleF
+% End plot #968
+% Begin plot #969
+0.667 UP
+0.500 UL
+LT0
+10147 2711 M
+10147 2711 CircleF
+% End plot #969
+% Begin plot #970
+0.667 UP
+0.500 UL
+LT0
+10156 2711 M
+10156 2711 CircleF
+% End plot #970
+% Begin plot #971
+0.667 UP
+0.500 UL
+LT0
+10165 2711 M
+10165 2711 CircleF
+% End plot #971
+% Begin plot #972
+0.667 UP
+0.500 UL
+LT0
+10174 2711 M
+10174 2711 CircleF
+% End plot #972
+% Begin plot #973
+0.667 UP
+0.500 UL
+LT0
+10183 2711 M
+10183 2711 CircleF
+% End plot #973
+% Begin plot #974
+0.667 UP
+0.500 UL
+LT0
+10192 2711 M
+10192 2711 CircleF
+% End plot #974
+% Begin plot #975
+0.667 UP
+0.500 UL
+LT0
+10201 2711 M
+10201 2711 CircleF
+% End plot #975
+% Begin plot #976
+0.667 UP
+0.500 UL
+LT0
+10210 2711 M
+10210 2711 CircleF
+% End plot #976
+% Begin plot #977
+0.667 UP
+0.500 UL
+LT0
+10218 2711 M
+10218 2711 CircleF
+% End plot #977
+% Begin plot #978
+0.667 UP
+0.500 UL
+LT0
+10227 2711 M
+10227 2711 CircleF
+% End plot #978
+% Begin plot #979
+0.667 UP
+0.500 UL
+LT0
+10236 2711 M
+10236 2711 CircleF
+% End plot #979
+% Begin plot #980
+0.667 UP
+0.500 UL
+LT0
+10245 2711 M
+10245 2711 CircleF
+% End plot #980
+% Begin plot #981
+0.667 UP
+0.500 UL
+LT0
+10254 2711 M
+10254 2711 CircleF
+% End plot #981
+% Begin plot #982
+0.667 UP
+0.500 UL
+LT0
+10263 2711 M
+10263 2711 CircleF
+% End plot #982
+% Begin plot #983
+0.667 UP
+0.500 UL
+LT0
+10272 2711 M
+10272 2711 CircleF
+% End plot #983
+% Begin plot #984
+0.667 UP
+0.500 UL
+LT0
+10281 2711 M
+10281 2711 CircleF
+% End plot #984
+% Begin plot #985
+0.667 UP
+0.500 UL
+LT0
+10290 2711 M
+10290 2711 CircleF
+% End plot #985
+% Begin plot #986
+0.667 UP
+0.500 UL
+LT0
+10299 2711 M
+10299 2711 CircleF
+% End plot #986
+% Begin plot #987
+0.667 UP
+0.500 UL
+LT0
+10308 2711 M
+10308 2711 CircleF
+% End plot #987
+% Begin plot #988
+0.667 UP
+0.500 UL
+LT0
+10317 2711 M
+10317 2711 CircleF
+% End plot #988
+% Begin plot #989
+0.667 UP
+0.500 UL
+LT0
+10326 2711 M
+10326 2711 CircleF
+% End plot #989
+% Begin plot #990
+0.667 UP
+0.500 UL
+LT0
+10335 2711 M
+10335 2711 CircleF
+% End plot #990
+% Begin plot #991
+0.667 UP
+0.500 UL
+LT0
+10344 2711 M
+10344 2711 CircleF
+% End plot #991
+% Begin plot #992
+0.667 UP
+0.500 UL
+LT0
+10353 2711 M
+10353 2711 CircleF
+% End plot #992
+% Begin plot #993
+0.667 UP
+0.500 UL
+LT0
+10361 2711 M
+10361 2711 CircleF
+% End plot #993
+% Begin plot #994
+0.667 UP
+0.500 UL
+LT0
+10370 2711 M
+10370 2711 CircleF
+% End plot #994
+% Begin plot #995
+0.667 UP
+0.500 UL
+LT0
+10379 2711 M
+10379 2711 CircleF
+% End plot #995
+% Begin plot #996
+0.667 UP
+0.500 UL
+LT0
+10388 2711 M
+10388 2711 CircleF
+% End plot #996
+% Begin plot #997
+0.667 UP
+0.500 UL
+LT0
+10397 2711 M
+10397 2711 CircleF
+% End plot #997
+% Begin plot #998
+0.667 UP
+0.500 UL
+LT0
+10406 2711 M
+10406 2711 CircleF
+% End plot #998
+% Begin plot #999
+0.667 UP
+0.500 UL
+LT0
+10415 2711 M
+10415 2711 CircleF
+% End plot #999
+% Begin plot #1000
+0.667 UP
+0.500 UL
+LT0
+10424 2711 M
+10424 2711 CircleF
+% End plot #1000
+% Begin plot #1001
+0.500 UL
+LT0
+1497 2709 M
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+stroke 2426 2709 M
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+stroke 3356 2710 M
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+stroke 4285 2710 M
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+stroke 5214 2710 M
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+stroke 6144 2711 M
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+stroke 7073 2711 M
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+stroke 8002 2711 M
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+stroke 8932 2712 M
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+stroke 9861 2712 M
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+% End plot #1001
+% Begin plot #1002
+-8927 20 R
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 -1 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 -1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 -1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 -1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+stroke 1854 2728 M
+9 0 V
+9 0 V
+9 -1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 -1 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 -1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 -1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 -1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 -1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 -1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 -1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 -1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+stroke 2784 2719 M
+9 0 V
+9 0 V
+9 0 V
+9 -1 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 -1 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 -1 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 -1 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 -1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 -1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+stroke 3713 2713 M
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 -1 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 -1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 -1 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+stroke 4642 2710 M
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+stroke 5572 2710 M
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+stroke 6501 2713 M
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+stroke 7430 2719 M
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+stroke 8360 2729 M
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+stroke 9289 2741 M
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+stroke 10218 2756 M
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+% End plot #1002
+% Begin plot #1003
+1497 1277 M
+9 10 V
+9 11 V
+9 11 V
+9 10 V
+9 11 V
+9 11 V
+9 10 V
+8 10 V
+9 11 V
+9 10 V
+9 10 V
+9 10 V
+9 11 V
+9 10 V
+9 10 V
+9 10 V
+9 10 V
+9 10 V
+9 9 V
+9 10 V
+9 10 V
+9 10 V
+9 9 V
+8 10 V
+9 9 V
+9 10 V
+9 9 V
+9 9 V
+9 10 V
+9 9 V
+9 9 V
+9 9 V
+9 10 V
+9 9 V
+9 9 V
+9 9 V
+9 9 V
+9 8 V
+9 9 V
+8 9 V
+9 9 V
+9 8 V
+9 9 V
+9 9 V
+9 8 V
+9 9 V
+9 8 V
+9 8 V
+9 9 V
+9 8 V
+9 8 V
+9 8 V
+9 9 V
+9 8 V
+8 8 V
+9 8 V
+9 8 V
+9 8 V
+9 8 V
+9 7 V
+9 8 V
+9 8 V
+9 8 V
+9 7 V
+9 8 V
+9 7 V
+9 8 V
+9 7 V
+9 8 V
+9 7 V
+8 7 V
+9 8 V
+9 7 V
+9 7 V
+9 7 V
+9 7 V
+9 7 V
+9 7 V
+9 7 V
+9 7 V
+stroke 2212 1979 M
+9 7 V
+9 7 V
+9 7 V
+9 7 V
+9 6 V
+8 7 V
+9 7 V
+9 6 V
+9 7 V
+9 6 V
+9 7 V
+9 6 V
+9 6 V
+9 7 V
+9 6 V
+9 6 V
+9 6 V
+9 7 V
+9 6 V
+9 6 V
+9 6 V
+8 6 V
+9 6 V
+9 6 V
+9 6 V
+9 6 V
+9 5 V
+9 6 V
+9 6 V
+9 5 V
+9 6 V
+9 6 V
+9 5 V
+9 6 V
+9 5 V
+9 6 V
+9 5 V
+8 6 V
+9 5 V
+9 5 V
+9 5 V
+9 6 V
+9 5 V
+9 5 V
+9 5 V
+9 5 V
+9 5 V
+9 5 V
+9 5 V
+9 5 V
+9 5 V
+9 5 V
+8 5 V
+9 4 V
+9 5 V
+9 5 V
+9 5 V
+9 4 V
+9 5 V
+9 4 V
+9 5 V
+9 4 V
+9 5 V
+9 4 V
+9 5 V
+9 4 V
+9 4 V
+9 5 V
+8 4 V
+9 4 V
+9 4 V
+9 4 V
+9 5 V
+9 4 V
+9 4 V
+9 4 V
+9 4 V
+9 4 V
+9 4 V
+9 3 V
+9 4 V
+9 4 V
+9 4 V
+8 4 V
+9 3 V
+9 4 V
+9 4 V
+9 3 V
+9 4 V
+9 4 V
+9 3 V
+9 4 V
+9 3 V
+9 4 V
+9 3 V
+9 3 V
+9 4 V
+9 3 V
+9 3 V
+8 4 V
+9 3 V
+9 3 V
+9 3 V
+9 3 V
+stroke 3141 2488 M
+9 3 V
+9 4 V
+9 3 V
+9 3 V
+9 3 V
+9 3 V
+9 3 V
+9 2 V
+9 3 V
+9 3 V
+9 3 V
+8 3 V
+9 3 V
+9 2 V
+9 3 V
+9 3 V
+9 2 V
+9 3 V
+9 3 V
+9 2 V
+9 3 V
+9 2 V
+9 3 V
+9 2 V
+9 3 V
+9 2 V
+8 3 V
+9 2 V
+9 2 V
+9 3 V
+9 2 V
+9 2 V
+9 3 V
+9 2 V
+9 2 V
+9 2 V
+9 2 V
+9 2 V
+9 3 V
+9 2 V
+9 2 V
+9 2 V
+8 2 V
+9 2 V
+9 2 V
+9 2 V
+9 2 V
+9 1 V
+9 2 V
+9 2 V
+9 2 V
+9 2 V
+9 2 V
+9 1 V
+9 2 V
+9 2 V
+9 1 V
+8 2 V
+9 2 V
+9 1 V
+9 2 V
+9 2 V
+9 1 V
+9 2 V
+9 1 V
+9 2 V
+9 1 V
+9 2 V
+9 1 V
+9 2 V
+9 1 V
+9 1 V
+9 2 V
+8 1 V
+9 1 V
+9 2 V
+9 1 V
+9 1 V
+9 2 V
+9 1 V
+9 1 V
+9 1 V
+9 1 V
+9 2 V
+9 1 V
+9 1 V
+9 1 V
+9 1 V
+9 1 V
+8 1 V
+9 1 V
+9 1 V
+9 1 V
+9 1 V
+9 1 V
+9 1 V
+9 1 V
+9 1 V
+9 1 V
+9 1 V
+9 1 V
+9 1 V
+9 0 V
+9 1 V
+stroke 4071 2681 M
+8 1 V
+9 1 V
+9 1 V
+9 0 V
+9 1 V
+9 1 V
+9 1 V
+9 0 V
+9 1 V
+9 1 V
+9 0 V
+9 1 V
+9 1 V
+9 0 V
+9 1 V
+9 1 V
+8 0 V
+9 1 V
+9 0 V
+9 1 V
+9 0 V
+9 1 V
+9 0 V
+9 1 V
+9 0 V
+9 1 V
+9 0 V
+9 1 V
+9 0 V
+9 1 V
+9 0 V
+8 1 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 1 V
+8 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+stroke 5000 2710 M
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 1 V
+8 0 V
+9 0 V
+9 1 V
+9 0 V
+9 1 V
+9 0 V
+9 1 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+9 1 V
+9 1 V
+9 0 V
+9 1 V
+8 0 V
+9 1 V
+9 0 V
+9 1 V
+9 0 V
+stroke 5929 2728 M
+9 1 V
+9 1 V
+9 0 V
+9 1 V
+9 1 V
+9 0 V
+9 1 V
+9 1 V
+9 0 V
+9 1 V
+9 1 V
+8 1 V
+9 1 V
+9 0 V
+9 1 V
+9 1 V
+9 1 V
+9 1 V
+9 1 V
+9 0 V
+9 1 V
+9 1 V
+9 1 V
+9 1 V
+9 1 V
+9 1 V
+8 1 V
+9 1 V
+9 1 V
+9 1 V
+9 1 V
+9 1 V
+9 1 V
+9 2 V
+9 1 V
+9 1 V
+9 1 V
+9 1 V
+9 1 V
+9 2 V
+9 1 V
+9 1 V
+8 2 V
+9 1 V
+9 1 V
+9 1 V
+9 2 V
+9 1 V
+9 2 V
+9 1 V
+9 2 V
+9 1 V
+9 1 V
+9 2 V
+9 1 V
+9 2 V
+9 2 V
+9 1 V
+8 2 V
+9 1 V
+9 2 V
+9 2 V
+9 1 V
+9 2 V
+9 2 V
+9 2 V
+9 1 V
+9 2 V
+9 2 V
+9 2 V
+9 2 V
+9 2 V
+9 2 V
+8 1 V
+9 2 V
+9 2 V
+9 2 V
+9 2 V
+9 2 V
+9 3 V
+9 2 V
+9 2 V
+9 2 V
+9 2 V
+9 2 V
+9 3 V
+9 2 V
+9 2 V
+9 2 V
+8 3 V
+9 2 V
+9 2 V
+9 3 V
+9 2 V
+9 3 V
+9 2 V
+9 3 V
+9 2 V
+9 3 V
+9 2 V
+9 3 V
+9 3 V
+9 2 V
+9 3 V
+stroke 6859 2888 M
+8 3 V
+9 2 V
+9 3 V
+9 3 V
+9 3 V
+9 3 V
+9 2 V
+9 3 V
+9 3 V
+9 3 V
+9 3 V
+9 3 V
+9 3 V
+9 3 V
+9 4 V
+9 3 V
+8 3 V
+9 3 V
+9 3 V
+9 4 V
+9 3 V
+9 3 V
+9 3 V
+9 4 V
+9 3 V
+9 4 V
+9 3 V
+9 4 V
+9 3 V
+9 4 V
+9 3 V
+9 4 V
+8 4 V
+9 3 V
+9 4 V
+9 4 V
+9 4 V
+9 3 V
+9 4 V
+9 4 V
+9 4 V
+9 4 V
+9 4 V
+9 4 V
+9 4 V
+9 4 V
+9 4 V
+8 4 V
+9 5 V
+9 4 V
+9 4 V
+9 4 V
+9 5 V
+9 4 V
+9 4 V
+9 5 V
+9 4 V
+9 5 V
+9 4 V
+9 5 V
+9 4 V
+9 5 V
+9 5 V
+8 4 V
+9 5 V
+9 5 V
+9 5 V
+9 5 V
+9 4 V
+9 5 V
+9 5 V
+9 5 V
+9 5 V
+9 5 V
+9 5 V
+9 6 V
+9 5 V
+9 5 V
+9 5 V
+8 6 V
+9 5 V
+9 5 V
+9 6 V
+9 5 V
+9 6 V
+9 5 V
+9 6 V
+9 5 V
+9 6 V
+9 6 V
+9 5 V
+9 6 V
+9 6 V
+9 6 V
+8 6 V
+9 5 V
+9 6 V
+9 6 V
+9 6 V
+9 7 V
+9 6 V
+9 6 V
+9 6 V
+9 6 V
+stroke 7788 3341 M
+9 7 V
+9 6 V
+9 6 V
+9 7 V
+9 6 V
+9 7 V
+8 6 V
+9 7 V
+9 6 V
+9 7 V
+9 7 V
+9 6 V
+9 7 V
+9 7 V
+9 7 V
+9 7 V
+9 7 V
+9 7 V
+9 7 V
+9 7 V
+9 7 V
+8 7 V
+9 7 V
+9 8 V
+9 7 V
+9 7 V
+9 8 V
+9 7 V
+9 8 V
+9 7 V
+9 8 V
+9 7 V
+9 8 V
+9 8 V
+9 8 V
+9 7 V
+9 8 V
+8 8 V
+9 8 V
+9 8 V
+9 8 V
+9 8 V
+9 8 V
+9 9 V
+9 8 V
+9 8 V
+9 8 V
+9 9 V
+9 8 V
+9 9 V
+9 8 V
+9 9 V
+9 8 V
+8 9 V
+9 9 V
+9 9 V
+9 8 V
+9 9 V
+9 9 V
+9 9 V
+9 9 V
+9 9 V
+9 9 V
+9 9 V
+9 10 V
+9 9 V
+9 9 V
+9 9 V
+8 10 V
+9 9 V
+9 10 V
+9 9 V
+9 10 V
+9 10 V
+9 9 V
+9 10 V
+9 10 V
+9 10 V
+9 10 V
+9 10 V
+9 10 V
+9 10 V
+9 10 V
+9 10 V
+8 10 V
+9 11 V
+9 10 V
+9 10 V
+9 11 V
+9 10 V
+9 11 V
+9 10 V
+9 11 V
+9 11 V
+9 11 V
+9 10 V
+9 11 V
+9 11 V
+9 11 V
+8 11 V
+9 11 V
+9 12 V
+9 11 V
+9 11 V
+stroke 8717 4241 M
+9 11 V
+9 12 V
+9 11 V
+9 12 V
+9 11 V
+9 12 V
+9 11 V
+9 12 V
+9 12 V
+9 12 V
+9 12 V
+8 11 V
+9 12 V
+9 12 V
+9 13 V
+9 12 V
+9 12 V
+9 12 V
+9 13 V
+9 12 V
+9 12 V
+9 13 V
+9 13 V
+9 12 V
+9 13 V
+9 13 V
+9 12 V
+8 13 V
+9 13 V
+9 13 V
+9 13 V
+9 13 V
+9 13 V
+9 14 V
+9 13 V
+9 13 V
+9 14 V
+9 13 V
+9 14 V
+9 13 V
+9 14 V
+9 14 V
+8 13 V
+9 14 V
+9 14 V
+9 14 V
+9 14 V
+9 14 V
+9 14 V
+9 14 V
+9 15 V
+9 14 V
+9 14 V
+9 15 V
+9 14 V
+9 15 V
+9 14 V
+9 15 V
+8 15 V
+9 15 V
+9 15 V
+9 15 V
+9 15 V
+9 15 V
+9 15 V
+9 15 V
+9 15 V
+9 16 V
+9 15 V
+9 15 V
+9 16 V
+9 16 V
+9 15 V
+8 16 V
+9 16 V
+9 16 V
+9 16 V
+9 16 V
+9 16 V
+9 16 V
+9 16 V
+9 16 V
+9 16 V
+9 17 V
+9 16 V
+9 17 V
+9 16 V
+9 17 V
+9 17 V
+8 17 V
+9 16 V
+9 17 V
+9 17 V
+9 17 V
+9 17 V
+9 18 V
+9 17 V
+9 17 V
+9 18 V
+9 17 V
+9 18 V
+9 17 V
+9 18 V
+9 18 V
+stroke 9647 5740 M
+9 18 V
+8 17 V
+9 18 V
+9 18 V
+9 18 V
+9 19 V
+9 18 V
+9 18 V
+9 19 V
+9 18 V
+9 19 V
+9 18 V
+9 19 V
+9 18 V
+9 19 V
+9 19 V
+8 19 V
+9 19 V
+9 19 V
+9 19 V
+9 20 V
+9 19 V
+9 19 V
+9 20 V
+9 19 V
+9 20 V
+9 20 V
+9 19 V
+9 20 V
+9 20 V
+9 20 V
+9 20 V
+8 20 V
+9 20 V
+9 21 V
+9 20 V
+9 20 V
+9 21 V
+9 20 V
+9 21 V
+9 21 V
+9 20 V
+9 21 V
+9 21 V
+9 21 V
+9 21 V
+9 21 V
+8 22 V
+9 21 V
+9 21 V
+9 22 V
+9 21 V
+9 22 V
+9 22 V
+9 21 V
+9 22 V
+9 22 V
+9 22 V
+9 22 V
+9 22 V
+9 23 V
+9 22 V
+9 22 V
+8 23 V
+9 22 V
+9 23 V
+9 23 V
+9 22 V
+9 23 V
+9 23 V
+9 23 V
+9 23 V
+9 24 V
+9 23 V
+9 23 V
+9 23 V
+9 24 V
+9 24 V
+9 23 V
+8 24 V
+9 24 V
+9 24 V
+9 24 V
+9 24 V
+9 24 V
+9 24 V
+9 24 V
+% End plot #1003
+1.000 UP
+stroke
+LTb
+grestore % colour palette end
+stroke
+grestore
+end
+showpage
+%%Trailer
+%%DocumentFonts: Helvetica

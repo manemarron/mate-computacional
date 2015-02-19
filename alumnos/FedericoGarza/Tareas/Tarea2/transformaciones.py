@@ -8,12 +8,12 @@ def cartesianas(r,theta,phi):
     z=r*cos(phi)
     print x,y,z    
     
-from math import sqrt,atan
+from math import sqrt,atan2
 def esfericas(x,y,z):
     """
     convierte coordenadas cartesianas en esfericas
     """
     r=sqrt(x**2+y**2+z**2)
-    theta=atan(sqrt(x**2+y**2)/z)
-    phi=atan(y/x)
+    theta=atan2(sqrt(x**2+y**2)/z)
+    phi=atan2(y/x)
     print r,theta,phi      
