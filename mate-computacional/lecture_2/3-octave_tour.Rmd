@@ -1,0 +1,390 @@
+---
+title: "Introducción a GNU/Octave"
+author: "Adolfo De Unánue T."
+date: "21/1/2015"
+output: ioslides_presentation
+---
+
+## Pasos necesarios
+
+Para hacer este laboratorio, necesitarás abrir la consola de octave.
+
+Usando `docker` puedes hacer:
+
+```{r, eval=FALSE}
+docker run -ti --user itam --name octave-console \ 
+  -v /home/nano/proyectos:/home/itam/proyectos \ 
+    nanounanue/docker-ds /usr/bin/octave
+```
+
+Si no lo has hecho antes, si ya la habías creado, utiliza
+
+```{r, eval=FALSE}
+docker start -ai octave-console
+```
+
+
+
+# GNU / Octave
+
+## ¿Qué es?
+
+- Al igual que los otros lenguajes (`python` y `R`) `GNU/Octave` es un lenguaje de alto nivel interpretado.
+- A diferencia de `Python` que su propósito es genérico, y de `R` que su propósito es estadístico, `Octave` tiene como propósito realizar computación numérica.
+- Provee capacidades para la solución de problemas lineales y no lineales.
+- También cuenta con excelentes capacidades gráficas y una extensa biblioteca para resolver problemas adicionales.
+- Se ejecuta principalmente de manera interactiva, aunque es posible desarrollar programas no interactivos.
+
+- Es compatible con el programa comercial `Matlab`.
+
+# Vectores y Matrices
+
+## Vectores y Matrices
+
+- Los principales objetos en `octave` son las matrices. 
+  - Los vectores simplemente son una subclase de las matrices.
+
+## Vectores
+
+Los vectores-fila:
+
+```{r, eval=FALSE}
+# Vector fila
+x = [1 3 2]
+
+```
+
+Esto crea el vector $\vec{x} = (1, 3, 2)$.
+
+También es posible usar `,` en lugar de espacios:
+
+```{r, eval=FALSE}
+x = [1,3,2]
+```
+
+
+## Vectores 
+
+El vector columna:
+
+$$
+x = 
+\left(
+\begin{array}{c}
+1\\
+3\\
+2\\
+\end{array}
+\right)
+$$
+
+
+```{r, eval=FALSE}
+x=[1;3;2]
+```
+
+También de manera más gráfica se puede hacer lo siguiente:
+
+```{r, eval=FALSE}
+x = [1
+     3
+     2]
+```
+
+## Vectores 
+
+Se pueden usar secuencias para definir un vector (como en `R` y `NumPy`), usando la nomenclatura:
+
+```
+x=a:h:b
+```
+
+Ejemplo:
+
+```{r, eval=FALSE}
+x=0:1:10 # Note la diferencia con las secuencia de R y de Python
+```
+
+## Vectores
+
+El operador traspuesto $x^T$ se define en `octave` como `.'`:
+
+```{r, eval=FALSE}
+x
+```
+
+```{r, eval=FALSE}
+x.'
+```
+
+**Nota:** Si el vector $x$ es complejo, el operador `'` solito (sin el punto) traspone y conjuga el vector.
+
+```{r, eval=FALSE}
+x' # En este caso ya que x es real, ' hace lo mismo.
+```
+
+
+## Matrices
+
+La matriz $A_{mn}$
+
+$$
+A_{mn} =
+ \begin{pmatrix}
+  1 & 3 & 5 \\
+  5 & 6 & 7  \\
+  8 & 3 & 1
+ \end{pmatrix}
+$$
+
+se obtiene con
+
+
+```{r, eval=FALSE}
+A = [1 3 2; 5 6 7; 8 3 1]
+```
+
+**Nota:** También puedes usar la notacion con _enters_ en lugar de _puntos y comas_.
+
+## Matrices
+
+Para seleccionar un elemento de la matriz $A_{ij}$, usamos 
+
+```{r, eval=FALSE}
+A(2,3) # i = 2, j = 3
+```
+
+Para obtener toda la fila
+
+```{r, eval=FALSE}
+A(2,:)
+```
+A esta operación en `octave` se le llama **extraer**.
+
+En el caso de la columna
+```{r, eval=FALSE}
+A(:,3)
+```
+
+## Matrices
+
+Podemos combinar el operador `:` para extraer de maneras muy elegantes elementos de la matriz, por ejemplo:
+
+Crea la matriz
+
+$$
+B =
+ \begin{pmatrix}
+  1 & 7 & 9 & 2 \\
+  2 & 3 & 3 & 4 \\
+  5 & 0 & 2 & 6 \\
+  6 & 1 & 5 & 5
+ \end{pmatrix}
+$$
+
+¿Qué realizan cada una de las siguientes operaciones?'
+
+```{r, eval=FALSE}
+B(2:3,2)
+B(2:end,3)
+B(2:4,1:end-1)
+```
+
+
+
+## Operaciones
+
+Define los operadores base: $\hat{i}$, $\hat{j}$ y $\hat{k}$ en $\mathbf{R}^3$ y las matrices
+$I$ (la identidad) y
+
+$$
+A_{mn} =
+ \begin{pmatrix}
+  1 & 1 & 1 \\
+  2 & 3 & 1  \\
+  3 & 2 & 1
+ \end{pmatrix}
+$$
+
+Las operaciones matriciales ocurren con los operadores tradicionales: `+`, `-` y `*`
+
+```{r, eval=FALSE}
+i + j
+k - i
+A*I
+I*A
+I*I
+A**2
+3*I
+```
+
+¿Qué pasa con: `A*i` y `i*A`? ¿Cómo usas el operador traspuesta para arreglarlo?
+
+
+## Operadores por elemento
+
+¿Qué hacen las siguientes operaciones?
+
+```{r, eval=FALSE}
+A.+I
+A.*A
+A./A
+```
+
+```{r, eval=FALSE}
+a = 5 # Un escalar
+a./I
+a.^I
+```
+
+
+## Subsetting Lógico
+
+```{r, eval=FALSE}
+(x > 0)
+(x > 0).*x
+(x > 0)*3
+```
+
+## Algunas funciones útiles
+
+- `eye(n)` Crea una matriz identidad de $n \times n$.
+- `ones(m,n)` y `zeros(m, n)` crean matrices de unos y ceros respectivamente.
+- `rand(m,n)` y `randn(m,n)` regresan matrices cuyos elementos son seleccionados al azar (de una densidad uniforme o normal).
+- `diag(A)` Regresa la diagonal de la matriz $A$.
+- `diag(x)` Regresa una matriz cuadrada cuya diagonal es el vector $x$.
+
+
+## Ejercicio 1
+
+Sea $\vec{a} = [0, -1, 2, 4, -2, 1, 5, 3]$ y  $\vec{b} = [5, 2, 1, 6, 3, 8, 4, 7]$. Determine que hacen las siguientes operaciones:
+
+```
+x = a'
+A = x*x'
+S = x'*x
+W = x*b
+length(x)
+length(a)
+size(A)
+size(x)
+size(a)
+size(S)
+```
+
+
+## Ejercicio 2
+
+- ¿Qué hace lo siguiente?
+
+```
+n = 101
+x = linspace(0,1,n)
+```
+
+- Determina la salida del siguiente código
+
+```
+x = 1:10
+y = 1:2:11
+z = 5:-2:-3
+```
+
+- Usando los vectores $\vec{a}$ y $\vec{b}$ ¿Cuál es la salida de lo siguiente?
+
+```
+a(2:5)
+a(b)
+```
+
+## Ejercicio 3
+
+¿Cuál es el espacio entre los puntos?
+
+```
+x = linspace(1, 1000, 5)
+y = logspace(0,3,5)
+```
+
+
+## Gráficas
+
+Queremos graficar la función $y = x^2 - \sqrt{x+5} + \sin 5x$ en el intervalo $-1 \leq x \leq 6$.
+
+La idea es crear varios puntos $(x_i, y_i)$ y luego unirlos con líneas.
+
+```
+n = 100
+x = linspace(-1, 6, n)
+y = zeros(1, n)
+for i = 1:n
+  y(i) = x(i)^2 - sqrt(x(i) + 5) + sin(5*x(i));
+end
+plot(x,y)
+```
+Esto lo mostrará en la consola...
+
+
+## Gráficas
+
+Es muy triste usar un `for` para una operación así, recordando los operadores de elemento, 
+podemos reescribirlo como sigue:  
+
+```
+n = 100;
+y = zeros(1,n);
+x = linspace(-1, 6, n);
+
+y = x.^2 - sqrt(x+5) + sin(5*x);
+
+plot(x,y)
+```
+
+Siempre que puedas usa operaciones _vectorizadas_ son más eficientes.
+
+## Gráficas
+
+¿Cómo hacerle para guardar la imagen?
+
+**NOTA**: `octave` soporta los comandos del SO directo  ( a diferencia de `ipython` que requiere `!`)
+
+1. Navega a tu carpeta de alumnos y crea una carpeta `graficas`.
+
+```
+print('grafica-test', "-dpng")  # Para guardarla como PNG
+print('grafica-test', "-deps")  # Para guardarla como EPS
+```
+
+## Ejercicio 
+
+Los 2 primeros [polinomios de Hermite](http://en.wikipedia.org/wiki/Hermite_polynomials) son
+
+$$
+H_1(x) = 1 \\
+H_2(x) = 2x
+$$
+
+Los podemos graficar usando `subplot` en un rango de $-2 \leq x \leq 3$
+
+```
+...  # Aquí falta código -> x, H1, H2, H3, H4
+subplot(2,2,1), plot(x,H1)
+subplot(2,2,2), plot(x,H2)
+... # Aquí falta más código
+```
+
+Grafica en subgráficas los primeros 4 polinomios de Hermite. ¿Cómo interpretas los argumentos de `subplot`?
+Guarda la gráfica en `graficas` con el nombre `hermite` en formato `eps` y `png`.
+
+## Ejercicio
+
+Para guardar todo en una gráfica usa el comando `hold on`
+
+```
+subplot(1,1,1)
+plot(x, H1, 'b')  # La `b` es el color negro
+hold on
+plot(x, H2, 'r')
+... # Aquí falta código
+```
+Guarda la gráfica como `hermite2` en ambos formatos.

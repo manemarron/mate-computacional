@@ -1,0 +1,37 @@
+In [6]: #problema 2. Inicializo 2 contadores uno para los elementos de la secuencia 
+   ...: #Fibonacci: suma1 y otro para el valor de la suma total de los elementos 
+   ...: #pares de la anterior: sumaT
+   ...: suma1 = 1
+   ...: i = 1
+   ...: sumaT = 0
+   ...: while i <= 4000000:  #pregunto si estoy por debajo del número hasta el cual
+   ...:     # se quiere hacer la suma
+   ...:     k = suma1 + i #elemento nuevo de la secuencia de Fibonacci
+   ...:     suma1 = i     #elemento anterior de la secuencia de Fibonacci
+   ...:     if k%2 == 0:
+   ...:        sumaT = sumaT + k
+   ...:     else:
+   ...:         sumaT = sumaT
+   ...:     i = k         # terminando la iteracion k ya es el valor antiguo de la
+   ...:     # secuencia quizas me podría ahorrar esto si pusiera i = suma1 + i
+   ...: print sumaT
+   ...: 
+4613732
+In [7]: #x número del cual queremos obtener su factorización
+   ...: x = 600851475143  
+   ...: factores = [] #inicializa una lista donde guardar los factores
+   ...: j = 2   #comienzo con el primer factor posible
+   ...: while j <= x:
+   ...:     if x%j == 0:    #si la división me da exacta es un factor
+   ...:         x = x/j     #y obtengo el siguiente el primer cociente sobre el
+   ...:     #cual continuar la factorización
+   ...:         factores.append(j) #guardo el facotr en la lista
+   ...:         j = j+1  #se incrementa en 1 el siguiente posible factor
+   ...:     else:
+   ...:         j = j+1
+   ...: print factores
+   ...: largestfactor = factores.pop()
+   ...: print largestfactor
+   ...: 
+[71, 839, 1471, 6857]
+6857
