@@ -1,0 +1,150 @@
+from IPython.html.widgets import interact, fixed
+from IPython.html import widgets
+
+def max(bit): #Esta es la función que definí en clase para que de acuerdo a los bits que se deseen
+    numero=0 #me va a regresar el valor máximo que se puede representar
+    for i in xrange(0,bit-1):
+        numero+=2**i
+    return numero
+
+
+def enteroabin(x): #Primero construí una función para que me convirtiera un número entero a binario
+    original=x# guarde el número original en otra variable para ver si se sale del rango de valores 
+    # que pueden ser representados por 8 bits
+    numbin = '' #Decidí definir una variable string para poder guardar ahí el número en binario
+    while x / 2 != 0 : #El proceso de convertir un número entero en binario es dividiendo el número original 
+        #Entre dos y guardar su residuo en la variable 'numbin'
+        numbin = str(x % 2) + numbin 
+        x = x / 2 # luego definimos la variable como el resultado de haberlo dividido entre dos y  al dividir este
+        # nuevo número entre dos otra vez, le agregamos el nuevo resuduo al nuevo valor de numbin, y así
+        #sucesivamente
+    bit = int (str(x) + numbin) #ya que el residuo resulte cero, este número lo guardamos en la variable que se va
+    # a regresar junto con 'numbin' que guardaba todos los demás valores
+    
+    if (-1)*(max(8)+1)<= original <= max(8): #Aquí es donde checo la condición para ver si el número
+        #esta dentro del rango de los 8 bits, en caso de que no lo esté imprimo 'overflow'
+            print bit
+    else:
+            print 'Overflow'
+    
+
+
+enteroabin(5); #Cheque que funcionara la función que acabo de definir y me resulto '101' entonces si funciona
+
+
+def binadecimal(x): #Esta función es para convertir de binairo a decimal
+    binario=list(x) #Lo primero que hice es pasar a lista los elementos que se ponen en tipio string para la función
+    numero=0 #La variable número es la que va a almacenar las potencias de dos, por lo que va a ser una suma y tiene
+    #que empezar de cero
+    y=0 #la variable 'y' convierte cada elemento de la lista 'binario' en un entero para poder hacer operaciones con el
+    print binario #pedí que me imprimiera la lista para asegurarme que se estaban guardando correctamente los valores
+    for i in xrange(1,len(binario)): #necesito un for para recorrer todos los valores de la lista 'bianrio'
+        y=int(binario[len(binario)-i]) #convierto en entero a cada string guardado en la lista
+        numero+=y*2**(i-1) #ya que puedo ahcer operaciones con los valores de la lista, cada uno lo múltimplico por
+        # dos elevado a la potencia según lugar en donde se encontraba el valor, hasta la derecha vale cero
+    if binario[0]=='1': #Como le voy a permitir que guaarde el signo hasta el último lugar (hasta la izquierda)
+            numero+= (-1)*2**(len(binario)-1)
+    print numero
+
+
+
+print(binadecimal('10000000')) #Para comprobar que si se guardo el número negativo imprimí el -128
+
+
+print(binadecimal('01111111')) #y el número 127 para asegurarme que tambien guardaba bien los positivos
+
+
+def letras(x): #para la función de convertir de hexadecimal a decimal voy a necesitar una función que
+    # en caso de meterle letras me devuelva los números correspondientes, en caso de que no sea ninguna
+    #de las letras que están definidas en la base hexadecimal entonces me va a regresar cero
+    z=str(x)
+    if z=='A':
+        return 10
+    if z=='B':
+        return 11
+    if z=='C':
+        return 12
+    if z=='D':
+        return 13
+    if z=='E':
+        return 14
+    if z=='F':
+        return 15
+    else:
+        return 0
+
+
+
+def num(x): #para la función de convertir de decimal a hexadecimal voy a necesitar una función que
+    # en caso de meterle números del 10 al 15 me devuelva las letras correspondientes, en caso de que no sea ninguna
+    #de esos números, entonces me va a regresar el mismo número
+    if x==10:
+        return 'A'
+    if x==11:
+        return 'B'
+    if x==12:
+        return 'C'
+    if x==13:
+        return 'D'
+    if x==14:
+        return 'E'
+    if x==15:
+        return 'F'
+    else:
+        return x
+
+
+
+def hexadecimal(x): #Esta fnción es para convertir de hexadecimal a decimal
+    hexa=list(x) #Lo primero que hice es pasar a lista los elementos que se ponen en tipio string para la función
+    numero=0 #La variable número es la que va a almacenar las potencias de 16, por lo que va a ser una suma y tiene
+    #que empezar de cero
+    y=0#la variable 'y' convierte cada elemento de la lista 'hexa' en un entero para poder hacer operaciones con el
+    print hexa #pedí que me imprimiera la lista para asegurarme que se estaban guardando correctamente los valores
+    for i in xrange(1,len(hexa)+1):#necesito un for para recorrer todos los valores de la lista 'hexa'
+        if letras(hexa[len(hexa)-i])==0: #Si el poniendo el valor de la lista 'hexa' en la primer posición de 
+            #derecha a izquierda en la función anteriormente definida como 'letras' tiene el valor cero 
+            y=int(hexa[len(hexa)-i])# entonces voy a convertir a número el valor que esta en dicha posicion de la lista
+            #y se lo voy a asignar a la variable 'y'
+        else:
+            y=letras(hexa[len(hexa)-i]) #si la función letras no me devuelve cero, a y le voy a asignar el número que me
+            #regrese
+        numero+=y*16**(i-1) # entonces ya que esta definidia 'y' para ambos casos, ese número lo voy a multiplicar por
+        #la potencia 16 dependiendo el lugar en donde se encuentre en la lista y se lo asigno a la variable 'numero'
+    print numero
+    
+
+
+hexadecimal('3E0A') #para comprobar que funcionara le pase el string '3E0A' a la función hexadecimal
+# y me devolvió 15882 lo cual es correcto
+
+
+
+
+def decimalahex(x):#Esta función es para convertir de decimal a hexadecimal 
+    original=x # guarde el número original en otra variable para ver si se sale del rango de valores 
+    # que pueden ser representados por 16 bits, para ver el rango en más números, pero se puede modificar
+    # a ocho bits muy fácil, solo se cambia la condición para 'overflow'
+    hexa='' #Decidí definir una variable string para poder guardar ahí el número en hexadecimal
+    while x/16 != 0:#El proceso de convertir un número entero en binario es dividiendo el número original 
+        #Entre 16 y guardar su residuo en la variable 'hexa', si es diferente a cero entonces
+        hexa=str(num(x%16)) +hexa # a hexa le agrego el residuo, pero cuidado porque tiene que pasar
+        # por la función ya definida 'num' para ver si lo convierte en letra o lo deja como número
+        x=x/16 # luego definimos la variable como el resultado de haberlo dividido entre 16 y  al dividir este
+        # nuevo número entre 16 otra vez, le agregamos el nuevo resuduo al nuevo valor de hexa, y así
+        #sucesivamente
+    bit= str(num(x))+hexa #ya que el residuo resulte cero, este número lo guardamos en la variable que se va
+    # a regresar junto con 'hexa' que guardaba todos los demás valores
+    if (-1)*(max(16)+1)<= original <= max(16):#Aquí es donde checo la condición para ver si el número
+        #esta dentro del rango de los 16 bits, en caso de que no lo esté imprimo 'overflow', si se quiere cambiar
+        # a los rangos de 8 bits solo se sustituye el 16 por el 8
+            print bit
+    else:
+            print 'Overflow'
+
+
+
+
+decimalahex(15882) #Para comprobar que la función si me devolvía en base hexadecimal puse el número 15882 que 
+# ya sabía cual era su representación en hexadecimal, la cuál me dió 3E0A
+

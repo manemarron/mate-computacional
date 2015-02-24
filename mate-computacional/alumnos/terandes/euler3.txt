@@ -1,0 +1,18 @@
+In [7]: #x número del cual queremos obtener su factorización
+   ...: x = 600851475143  
+   ...: factores = [] #inicializa una lista donde guardar los factores
+   ...: j = 2   #comienzo con el primer factor posible
+   ...: while j <= x:
+   ...:     if x%j == 0:    #si la división me da exacta es un factor
+   ...:         x = x/j     #y obtengo el siguiente el primer cociente sobre el
+   ...:     #cual continuar la factorización
+   ...:         factores.append(j) #guardo el facotr en la lista
+   ...:         j = j+1  #se incrementa en 1 el siguiente posible factor
+   ...:     else:
+   ...:         j = j+1
+   ...: print factores
+   ...: largestfactor = factores.pop()
+   ...: print largestfactor
+   ...: 
+[71, 839, 1471, 6857]
+6857
