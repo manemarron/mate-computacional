@@ -1,0 +1,117 @@
+#PROBLEMA EULER 17
+def lista(n): #Lo primero que hice fue definir una función que al ponerle un número
+    convertir=[int(i) for i in str(n)[::-1]] #invierte el orden del número y lo guarda en una
+    #lista, para esto recorre el número de atrás para delante, pero observa que 
+    #recorre como string al número y lo convierte en entero 
+    return convertir # esta función me regresa la lista con el número ingresado en orden inverso
+
+lista(100) # probé la función y me arrojó como resultado [0,0,1]
+
+
+def cadenaletras(x): #Ahora el siguiente paso fue crear una función en la que al ingresar un número, 
+    #lo asocia con su manera escrita y guarda 
+    diccionario={1: 'one',2: 'two' ,3: 'three' ,4: 'four' ,5:'five' ,6: 'six' ,7: 'seven' ,8: 'eight' ,9:'nine' ,10: 'ten', 
+          11:'eleven', 12:'twelve', 13:'thirteen' ,14:'fourteen', 15:'fifteen', 16:'sixteen', 17:'seventeen', 18:'eighteen',
+          19:'nineteen', 20:'twenty', 30:'thirty', 40:'forty', 50:'fifty', 60:'sixty', 70:'seventy', 80:'eighty',
+          90:'ninety', 100:'hundred', 1000:'thousand'} #para asociar letras es necesario un diccionario, en el que
+        #al decirle la posición me regresa como se escribe ese número
+    contenedor='' #necesito una variable string que me guarde la palabra que voy a ir acumulando
+    numeros=lista(x) # El número que se ingresó lo voy a guardar en una lista en sentido inverso, por lo que llamé
+    #la función lista anteriormente definida
+    if len(numeros)==4: #El primer caso que checo es que si el número ingresado es de 4 dígitos, quiere decir que 
+        #mi lista 'numeros' va a tener 4 lugares.
+        if numeros[3]!=0: #si mi número no empieza con '0', es decir, mi lista 'numeros' no tiene un cero hasta la derecha
+            contenedor=diccionario[numeros[3]]+ 'thousand' #entonces a mi contenedor de palabras le voy a asignar las 
+            #palabras contenidas en el diccionario que le corresponden al último número que esta en mi lista (numeros[3])
+            # más la parabra thousand porque en inglés es vez de mil se dice así
+    if len(numeros)>=3: #el segundo caso es que si el número ingresado es de 3 dígitos, quiere decir que 
+        #mi lista 'numeros' va a tener 3 lugares.
+         if numeros[2]!=0:#si mi número no empieza con '0', es decir, mi lista 'numeros' no tiene un cero hasta la derecha
+            contenedor += diccionario[numeros[2]]+ 'hundred'#entonces a mi contenedor de palabras le voy a asignar las 
+            #palabras contenidas en el diccionario que le corresponden al último número que esta en mi lista (numeros[2])
+            # más la parabra 'hundred' porque en inglés es vez de 'cientos' se dice así
+            if len(numeros)>=2: #En el caso que sean tres dígitos y en el segundo lugar de la lista haya 
+                #un número distinto a cero, quiere decir que vamos a necesitar un 'and' ya que en inglés así se utiliza
+                   if numeros[1]!=0:
+                        contenedor += 'and'
+            if len(numeros)>=1:#De la misma manera, si en el primer lugar de la lista hay
+                #un número distinto a cero, quiere decir que vamos a necesitar un 'and' ya que en inglés así se utiliza
+                   if numeros[0]!=0:
+                        contenedor += 'and'
+    posicion=99 #voy a necesitar una variable que me ayude a identificar si estamos tratando con números que son 
+    #multiplos del 10 o que son números entre 10-20
+    if len(numeros)>=2:#el tercer caso es que si el número ingresado es de 2 dígitos, quiere decir que 
+        #mi lista 'numeros' va a tener 2 lugares.
+        if numeros[1]!=0:#si mi número no empieza con '0', es decir, mi lista 'numeros' no tiene un cero hasta la derecha
+            posicion=int(numeros[1])*10 + numeros[0] #la variable que nos va a ayudar a identificar, le vamos a multiplicar
+            #el segundo número por 10 y le vamos a sumar el primer número, ejemplo, numeros=[3,1] entonces lo que hacemos
+            #es 1*10+3=13
+            if posicion <=20:#Si la posición resulta ser menos o igual a 20, quiere decir que esta entre 10-20
+                contenedor= ' ' + diccionario[posicion] # y buscamos como se llama en el diccionario
+            else : #en otro caso
+                contenedor+= ' ' + diccionario[numeros[1]*10]# es un múltiplo de 10 entonces al segundo valor de la 
+                #lista lo multiplicamos por 10 y buscamos su nombre en la lista
+    if len(numeros)>=1: #el último caso es si el número ingresado es de 1 digito, quiere decir que 
+        #mi lista 'numeros' va a tener 1 lugar.
+        if numeros[0]!=0:#si mi número no es '0'
+            if posicion>20: #y la variable que definimos es mayor a 20
+                contenedor= ' ' + diccionario[numeros[0]] #Entonces lo que hacemos es simplemente buscar el 
+                #nombre de ese número en el diccionario
+    return contenedor.replace(' ','') #Le quitamos los espacios porque sino contaríamos de más, y me devuelve el nombre
+    #del número
+def numero(x): #Ahora necesito una función que cuente el número de letras que me regrese mi función 'cadena letras'
+    return len(cadenaletras(x))
+
+
+print numero(1) #Para ver que estaba funcionando vi 5 números por separados y me dio 3,3,5,4,4 respectivamente, lo cual es
+print numero(2)#correcto
+print numero(3)
+print numero(4)
+print numero(5)
+
+
+def sumar(x): #Como lo que me pidieron es la suma de letras de todos los números anteriores al que yo indique
+    suma=0 #definí una función que lo haga, para esto necesito que mi variable suma empiece en cero
+    for i in xrange(1,x+1): #para cada i que esta antes o igual a mi número
+        suma+= numero(i) #quiero que me sume el número de letras que me regresa mi función 'numero'
+    print suma
+
+
+sumar(5) #cheque para el caso 5 que ya sabía que la respuesta es 19, lo cual me dio lo correcto
+sumar(1000)# y el caso 1000, que es el caso que me pidieron originalmente, y me dio 5392
+
+#PROBLEMA EULER 31
+maneras=0 #necesito una variable que me cuente cuantas veces es posible dar un cambio de 200
+moneda=200 #como lo que quiero es cambio de 200, eso va  a ser el principal valor de esta variable
+for i in range(0, moneda+1, 200):#pensé el problema de manera cíclica, de manera que si primero doy una moneda de
+    #200 entonces asigné una i que vaya de 0 a 201 para que cuente el 200, de 200 en 200, es decir, o no doy la moneda o si
+    #la doy una vez
+    moneda = 200 - i # pero esto va a cambiar la cantidad de cambio que necesito, por eso le resto la i 
+    for j in range(0, moneda+1, 100): #en caso de no dar la moneda de 200 entonces ahora tengo que checar con las monedas de 
+        #100, por lo que mi variable j va de cero a mi nuevo valor de moneda, de 100 en 100 porque no se puede dividir esta
+        #moneda
+        moneda = 200 - i - j #se vuelve a cambiar la cantidad de cambio necesaria, por lo que cambio la variable
+        for k in range(0, moneda+1, 50):#Ahora pasa lo mismo pero para monedas de 50, entonces mi variable k va de 0 a 
+            # la cantidad total necesaria de 50 en 50
+            moneda = 200 - i - j - k #pero al nuevo valor de cambio necesario ahora le resto también lo que ya le pienso dar
+            #de monedas de 50
+            for l in range(0, moneda+1, 20):#Pasa lo mismo pero para monedas de 20, entonces mi variable l va de 0 a 
+            # la cantidad total necesaria de 20 en 20
+                moneda = 200 - i - j - k - l#pero al nuevo valor de cambio necesario ahora le resto también lo que ya le pienso dar
+            #de monedas de 20
+                for m in range(0, moneda+1, 10):#Pasa lo mismo pero para monedas de 10, entonces mi variable m va de 0 a 
+            # la cantidad total necesaria de 10 en 10
+                    moneda = 200 - i - j - k - l - m#pero al nuevo valor de cambio necesario ahora le resto también lo que ya le pienso dar
+            #de monedas de 10
+                    for n in range(0, moneda+1, 5):#Pasa lo mismo pero para monedas de 5, entonces mi variable n va de 0 a 
+            # la cantidad total necesaria de 5 en 5
+                        moneda = 200 - i - j - k - l - m - n #pero al nuevo valor de cambio necesario ahora le resto también lo que ya le pienso dar
+            #de monedas de 5
+                        for o in range(0, moneda+1, 2):#Por último checamos las monedas de 2, entonces mi variable o va de 0 a 
+            # la cantidad total necesaria de 2 en 2
+                            p = 200 - i - j - k - l - m - n - o #pero la condición para que se pueda dar esta combinación de 
+                #cambio es que la suma total menos todos los cambios no de algo negativo
+                            if p >= 0:
+                                maneras += 1 #entonces sumo uno a mi contador de formas de dar cambio
+print cambio #al pedir que me registre el cambio me devolvió la cantidad de 73682
+
