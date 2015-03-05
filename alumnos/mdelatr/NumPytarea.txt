@@ -1,0 +1,439 @@
+Ejercicios de NumPy
+> %pylab inline
+> import numpy as np
+> 
+> Ejercicio 1
+> 
+> Crea los siguientes arreglos con los tipos correctos.
+> Un arreglo de 5×5 cuya diagonal sean [2.0,3.0,4.0,5.0]
+> Un arreglo de 4×4 cuyo último renglón sea [1,2,3,4] y el resto sean 0.
+> 
+> diagonal = np.eye(5) #Lo primero que hice fue crear un arreglo de 5x5 con unos en su diagonal y todo lo demás cero
+> 
+> for i in range(2,7): #para manipular los numeros de la diagonal utilicé un for, en el que una variable
+>     #va a recorrer los números que quiero para la diagonal de mi nuevo arreglo
+>     diagonal [i-2][i-2]= i #pero ojo con que la dimensión se empieza a contar desde cero entonces por esto
+>     #recorrí dos lugares mis renglones y columnas y les asigné un nuevo valor
+> print diagonal
+> 
+> 
+> [[ 2.  0.  0.  0.  0.]
+>  [ 0.  3.  0.  0.  0.]
+>  [ 0.  0.  4.  0.  0.]
+>  [ 0.  0.  0.  5.  0.]
+>  [ 0.  0.  0.  0.  6.]]
+> 
+> ceros=np.zeros((4,4)) #para el segundo arreglo empecé con un arreglo de 4x4 con todas sus entradas ceros
+> ceros
+> 
+> for i in range(1,5):    #como quiero los numeros del 1 al 4 le pedí a una variable que los recorriera
+>     ceros[3][i-1]= i #fijé mi último renglón y fui recorriendo todas las columnas asignándoles un nuevo valor
+> print ceros
+> 
+> 
+> [[ 0.  0.  0.  0.]
+>  [ 0.  0.  0.  0.]
+>  [ 0.  0.  0.  0.]
+>  [ 1.  2.  3.  4.]]
+> 
+> Ejercicio 2
+> 
+> (a) Crea un arreglo de booleanos de shape (100,), con todos sus elementos True. El índice representa el número.
+> In [ ]:
+> 
+> bool_arr = np.ones((100,), dtype=bool)
+> (b) Tacha los elementos 0 y 1.
+> (c) Para cada entero subsiguiente, tacha sus múltiplos. Una manera de hacerlo es el código que se muestra. Explica que hace el código, sobretodo explica que hace el slicing.
+> In [ ]:
+> 
+> N_max = int(np.sqrt(len(bool_arr)))
+> for j in range(2, N_max):
+>     bool_arr[2*j::j] = False
+> In [ ]:
+> 
+> bool_arr
+> (d) Mira la documentacion de np.nonzero para imprimir todos los números primos.
+> (e) Encapsula lo que acabamos de hacer en una función llamada criba_eratostenes, que reciba como argumento maximo el cual representa el tamaño del array. Muestra el resultado para maximo = {10, 100, 200}, usando un for.
+> 
+> bool_arr = np.ones((100,), dtype=bool)
+> 
+> N_max = int(np.sqrt(len(bool_arr))) #este primer renglon saca la raíz cuadrada de la 
+> #longitud del arreglo (la cuál es 100) y lo guarda en N_max como entero por lo que N_max=10
+> for j in range(2, N_max): #Agarro una variable que va de dos a 10, porque uno si es multiplo de todos
+>     bool_arr[2*j::j] = False #Lo que esta haciendo el slicing es primero recorrer cuando j=2 de 4 en adelante
+>     #( porque tanto 1 , 2, 3 son primos) PERO moviendose lugares de dos en dos hasta recorrer
+>     #rodo el arreglo, por lo que esos valores les asignamos el valor de 'FALSE'
+>     #y así los tachamos ya que son divisibles entre dos y no son primos. Lo mismo se hace para todos los números
+>     #del 1 al 10 para asegurarnos que ya no hay más numeros que puedan ser divisibles por algún otro número
+>     #que no sea si  mismo
+> 
+> bool_arr #Solo quedan los primos como True
+> 
+> array([ True,  True,  True,  True, False,  True, False,  True, False,
+>        False, False,  True, False,  True, False, False, False,  True,
+>        False,  True, False, False, False,  True, False, False, False,
+>        False, False,  True, False,  True, False, False, False, False,
+>        False,  True, False, False, False,  True, False,  True, False,
+>        False, False,  True, False, False, False, False, False,  True,
+>        False, False, False, False, False,  True, False,  True, False,
+>        False, False, False, False,  True, False, False, False,  True,
+>        False,  True, False, False, False, False, False,  True, False,
+>        False, False,  True, False, False, False, False, False,  True,
+>        False, False, False, False, False, False, False,  True, False, False], dtype=bool)
+> 
+> booleano= np.zeros(100) #vi que la funcion que tenemos que usar 'np.nonzero' necesita un arreglo con ceros y unos
+> #por lo que decidí  pasar la información de bool_arr a unos y ceros donde esta 'True' lo pase a '1' y donde estaba
+> #'False' le asigne '0'
+> for i in range(1,100):
+>     if bool_arr[i]==True:
+>         booleano[i]=1
+> booleano
+> 
+> np.nonzero(booleano) #observar que la función 'np.nonzero' regresa el LUGAR del arreglo donde
+> # no hay ceros que es donde puse el lugar de los primos, por lo tanto esto me devuelve los 
+> #primos hasta antes de 100
+> 
+> (array([ 1,  2,  3,  5,  7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53,
+>         59, 61, 67, 71, 73, 79, 83, 89, 97]),)
+> def criba_eratostenes(max): #Esta función recibe el número del tamaño de mi arreglo
+>     arr_bool= np.ones((max,), dtype=bool) 
+>     N_max = int(np.sqrt(len(arr_bool)))# esto saca la raíz cuadrada de la 
+>     #longitud del arreglo (max) y lo guarda como entero
+>     primos= np.zeros(max) #asigne el arreglo donde voy a meter '0' y '1' como un arreglo de ceros con longitud max
+>     for j in range(2, N_max+1):
+>         arr_bool[2*j::j] = False#Lo que esta haciendo el slicing es primero recorrer cuando j=2 de 4 en adelante
+>     #( porque tanto 1 , 2, 3 son primos) PERO moviendose lugares de dos en dos hasta recorrer
+>     #rodo el arreglo, por lo que esos valores les asignamos el valor de 'FALSE'
+>     #y así los tachamos ya que son divisibles entre dos y no son primos. Lo mismo se hace para todos los números
+>     #del 1 al max+1
+>     for i in range(1,max): #asigne '1' a mi arreglo 'primos' de ceros donde la información de arr_bool
+>     #Dice 'True' 
+>         if arr_bool[i]==True:
+>             primos[i]=1
+>     print np.nonzero(primos) # por ultimo me imprime la lista de primos antes de max
+> 
+> for i in xrange(10,201): #Utilizando un for saque la lista de primos antes de 10, 100 y 200
+>     if i==10 or i==100 or i==200:
+>         print criba_eratostenes(i)
+> 
+> 
+> (array([1, 2, 3, 5, 7]),)
+> None
+> (array([ 1,  2,  3,  5,  7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53,
+>        59, 61, 67, 71, 73, 79, 83, 89, 97]),)
+> None
+> (array([  1,   2,   3,   5,   7,  11,  13,  17,  19,  23,  29,  31,  37,
+>         41,  43,  47,  53,  59,  61,  67,  71,  73,  79,  83,  89,  97,
+>        101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163,
+>        167, 173, 179, 181, 191, 193, 197, 199]),)
+> None
+> 
+> Ejercicio 3
+> 
+> Crea un cubo rubik, partiendo de un arreglo de ceros y usando slicing dibuja cada una de las caras como si estuviera resuelto (cada colo un entero a partir del 1). Muestra con indexing que está resuelto (es decir, imprime las seis caras). ¿Cuántos elementos del arreglo quedaron en 0?
+> 
+> rubix=np.zeros((6,3,3))#primero lo que hice fue crear las caras del rubix cube con puros ceros
+> # es decir un arreglo de 6x3x3
+> rubix #me aseguré que si se guardara lo que yo estaba tratar de definir
+> 
+> numero=0 # voy a necesitar una variable que vaya guardando los números que se van a imprimir en cada cara
+> for i in xrange(1,7):# le pedí a 'i' que fuera de 1 a 6 porque es el número de caras que se tiene en un cubo
+>     numero+=1 #para cada cara aumento en un número mi variable
+>     for j in xrange(1,4):# necesito que 'j' vaya recorriendo mis renglones (4)
+>         for k in xrange (1,4):#y que 'k' recorra mis columnas (4)
+>             rubix[i-1,j-1,k-1]=numero # por lo que voy asignando entrada por entrada el número que le corresponde
+>             # primero voy en la primer cara y recorro todas las columnas de dicho renglón asignándoles el número
+>             #luego cambio de renglon y así sucesivamente hasta que acaben los renglones, entonces cambio de 'cara'
+> rubix
+> 
+> Ejercicio 4
+> 
+> El Sudoku es un pasatiempo que consiste en un arreglo 9×9 de celdas, con dígitos del 1 al 9, de tal manera que no se repiten valores en cada columna, cada renglón y en cada subarreglo de 3×3.
+> (a) Crea una función llamada correcto que reciba un array 1d de tamaño 9 e indique si está completo o no (i.e. incluye los números del 1 al 9.
+> (b) Crea una función llamada descomponer3x3 que reciba un array de enteros de 9×9 y lo separe en sus 9 subarreglos 3×3.
+> (c) Crea la función esSolucion que recibe un array de 9×9 y devuelve si es o no solución del sudoku.
+> 
+> def correcto(arreglo):
+>     num=0 #primero necesito una variable que empiece de cero 
+>     if arreglo.shape==(9,): #lo principal es que el arreglo que ce inserte para esta función sea de 1x9, en caso
+>         # de que no lo sea, se imprime 'Necesita ser un arreglo de 1x9 elementos', lo que esta hasta el final del 
+>         #código
+>         for k in xrange(0,9):# mi variable'k' va cambiando las entradas de mi arreglo
+>             for i in xrange(1,10): #mi variable 'i' es para recorrer los números del 1 al 9 y asegurarme que todos
+>                 #están dentro de mi arreglo y que no se repitan (esto ya es un extra pero facilita el código de las
+>                 #siguientes funciones)
+>                 if arreglo[k]==i: #si alguna entrada de mi arreglo es igual a mi número del 1 al 9
+>                     # me tengo que asegurar que no esté repetido más adelante por lo que necesito otra variable
+>                     for j in xrange(k+1,9): # esta variable la defini como 'j' la cual recorre las siguientes
+>                         # entradas despues de k
+>                         if arreglo[k]!= arreglo[j]: # si el elemento que esta en el lugar k, no se repite entonces
+>                             #aumento en 1 mi variable num
+>                             num+=1
+>         if num==36: #OBSERVAR que si no se repite ningún número la suma daría 36 porque es la suma de
+>             #primero, los 8 lugares sobrantes, luego los 7 restantes cuando k=1, luego suma: 6, 5, 4, 3, 2 y 1
+>                 return 1
+>                 print 'Esta Completo'#en caso que si de la suma 36 entonces si esta completo 
+>         else:
+>             return 0
+>             print 'No contiene todos los números del 1 al 9' # en caso de que no sea 36 es que se repite algún numero
+>     else:
+>         print 'Necesita ser un arreglo de 1x9 elementos'
+> 
+> arr = np.array([1,2,3,4,5,6,7,8,9]) #aquí hice el ejemplo para un arreglo bien definido y si me devolvió 
+> correcto(arr) #'Esta completo'
+> arr0 = np.array([1,3,3,7,4,4,7,8,9]) #aquí fue un ejemplo de elementos repetidos y me imprimió 
+> correcto(arr0)# 'No contiene todos los números del 1 al 9'
+> arr1 = np.array([1,3,4,5,6,7,8,9])#aquí fue un ejemplo de un arreglo de 1x8 y me imprimió 
+> correcto(arr1) #'Necesita ser un arreglo de 1x9 elementos'
+> 
+> def descomponer3x3(sudoku):#Esta función tiene como objetivo separar un arreglo de 9x9  en un arreglo de 9x3x3
+>     #ya que contiene los 9 subconjuntos de 3x3 del sudoku
+>     if sudoku.shape==(9,9): # lo principal es crear una condición de que únicamente se acepten arreglos de 9x9
+>         sudokuT=np.zeros((9,3,3)) #Para crear un nuevo arreglo que va a contener mis suconjuntos es necesario
+>         # definirlo, yo decidi definirlo con ceros 
+>         for a in xrange(0,3): #Los siguientes pasos son repetitivos, lo que hice fue moverme tres columnas
+>             #para cada renglon y al llegar al tercer renglon ya quedó listo el primer elemento de mi nuevo arreglo
+>             #por lo que ahora me muevo a la cuarta columna y al primer renglon 
+>             #de nuevo y así sucesivamente pero cuando ya llegue a la columna en la posición 8 
+>             #me regreso a la cero y ahora mis renglones empiezan del renglón en la posición tres y se paran en 
+>             #la posición 5. Siguiendo esté método va a quedar definido mi nuevo arreglo con 9 entradas, y en cada
+>             #entrada tiene un arreglo de 3x3
+>             for b in xrange(0,3):
+>                 sudokuT[0,a,b]=sudoku[a][b]
+>         for c in xrange(0,3):
+>             for d in xrange(3,6):
+>                 sudokuT[1,c,d-3]=sudoku[c][d]
+>         for e in xrange(0,3):
+>             for f in xrange(6,9):
+>                 sudokuT[2,e,f-6]=sudoku[e][f]
+>         for g in xrange(3,6):
+>             for h in xrange(0,3):
+>                 sudokuT[3,g-3,h]=sudoku[g][h]
+>         for i in xrange(3,6):
+>             for j in xrange(3,6):
+>                 sudokuT[4,i-3,j-3]=sudoku[i][j]
+>         for k in xrange(3,6):
+>             for l in xrange(6,9):
+>                 sudokuT[5,k-3,l-6]=sudoku[k][l]
+>         for m in xrange(6,9):
+>             for n in xrange(0,3):
+>                 sudokuT[6,m-6,n]=sudoku[m][n]
+>         for o in xrange(6,9):
+>             for p in xrange(3,6):
+>                 sudokuT[7,o-6,p-3]=sudoku[o][p]
+>         for q in xrange(6,9):
+>             for r in xrange(6,9):
+>                 sudokuT[8,q-6,r-6]=sudoku[q][r]
+>         return sudokuT
+> 
+> sudoku = np.array([[1,2,3,4,5,6,7,8,9],[10,12,13,14,15,16,17,18,19],[21,22,23,24,25,26,27,28,29],
+>                   [31,32,33,34,35,36,37,38,39],[41,42,43,44,45,46,47,48,49],
+>                   [51,52,53,54,55,56,57,58,59],[51,52,53,54,55,56,57,58,59],
+>                   [61,62,63,64,65,66,67,68,69],[71,72,73,74,75,76,77,78,79]])
+> descomponer3x3(sudoku) #quise comprovar que si funcionara y me imprimió
+> array([[[  1.,   2.,   3.],
+>         [ 10.,  12.,  13.],
+>         [ 21.,  22.,  23.]],
+> 
+>        [[  4.,   5.,   6.],
+>         [ 14.,  15.,  16.],
+>         [ 24.,  25.,  26.]],
+> 
+>        [[  7.,   8.,   9.],
+>         [ 17.,  18.,  19.],
+>         [ 27.,  28.,  29.]],
+> 
+>        [[ 31.,  32.,  33.],
+>         [ 41.,  42.,  43.],
+>         [ 51.,  52.,  53.]],
+> 
+>        [[ 34.,  35.,  36.],
+>         [ 44.,  45.,  46.],
+>         [ 54.,  55.,  56.]],
+> 
+>        [[ 37.,  38.,  39.],
+>         [ 47.,  48.,  49.],
+>         [ 57.,  58.,  59.]],
+> 
+>        [[ 51.,  52.,  53.],
+>         [ 61.,  62.,  63.],
+>         [ 71.,  72.,  73.]],
+> 
+>        [[ 54.,  55.,  56.],
+>         [ 64.,  65.,  66.],
+>         [ 74.,  75.,  76.]],
+> 
+>        [[ 57.,  58.,  59.],
+>         [ 67.,  68.,  69.],
+>         [ 77.,  78.,  79.]]])
+> 
+> def esSolucion(solucion): #por último falta comprobar que si es solución de sudoku, es decir que todos los
+>     #renglones y columnas tengan los números del 1 al 9 y no se repitan y de igual forma en cada suconjunto
+>     #de 3x3
+>     renglones=0 #Necesito 3 contadores (renglones, columnas y cuadro) para que evalue cada elemento
+>     # de algún arreglo me regrese el número de veces en que el arreglo 9x1 esta bien definido y no se repiten elementos
+>     columnas=0
+>     cuadro=0
+>     cuadros=np.zeros((9,9,)) #esta va a convertir los cuadros en arreglos para poder usar la formula 'correcto'
+>     num=0 #Esta variable es para poderme mover en los renglones de mi arreglo cuadros
+>     if sudoku.shape==(9,9): #De nuevo lo principal es que sólo me acepte arreglos de 9x9 porque sino no sería sudoku
+>         sudokus=np.zeros((9,3,3)) #la variable donde voy a desomponer el arreglo que se ingresó se llama' sudokus'
+>         sudokus=descomponer3x3(solucion)
+>         for i in xrange(0,9): #como dije anteriormente voy a evaluar renglon por renglon para ver si 
+>             #mi funcion correcto me devuelve 1 en cada caso es que no se repiten elementos y que contiene
+>             # a los números del 1 al 9
+>             if correcto(solucion[i])==1:
+>                 renglones+=1
+>         for j in xrange(0,9):#Ahora se va a evaluar columna por columna para ver si 
+>             #mi funcion correcto me devuelve 1 en cada caso es que no se repiten elementos y que contiene
+>             # a los números del 1 al 9
+>             if correcto(solucion[:,j])==1:
+>                 columnas+=1
+>         for k in xrange(0,9): #la 'k' es la variable que va a ir checando las entradas del arreglo donde descompuse 
+>             # el arreglo de 9x9
+>             for m in xrange(0,3): # mi 'm' es la variable que va a checar los renglones de cada entrada
+>                 for n in xrange(0,3): # la 'n' es la variable que va a checar cada columna para cada renglon
+>                     # de cada entrada del arreglo 'sudokus'
+>                     cuadros[k,num,]=sudokus[k,m,n] #aquí convierto en un formato para que cada entrada
+>                     #se pueda evaluar en mi función 'correcto' y así saber si se repiten elementos en cada cuadro
+>                     num+=1 #este num lo necesito para saber los renglones poorque 
+>             num=0
+>         print cuadros #pedí que me imprimiera 'cuadros' para ver si movio de orden a 'sudokus' correctamente
+>         for s in xrange(0,9): #la variable 's' es la que va a recorrer cada entrada de 'cuadros' para 
+>             # evaluarla en mi función correcto, si me devuelve 1 para cada entrada, entonces todos los
+>             #cuadros del arreglo insertado de 9x9 tienen números del 1 al 9 que no se repiten
+>             # por lo que me debería de dar igual a 9 para que pueda ser solución de un sudoku
+>                 if correcto(cuadros[s])==1:
+>                     cuadro+=1 
+>         if renglones==9: #si todos los reglones todos renglones y columnas tienen los números 
+>             #del 1 al 9 y no se repitan y de igual forma en cada suconjunto de 3x3 del arreglo original, 
+>             # enconces las variables renglones, columnas y cuadro me deben de dar nueve, por lo que
+>             #es solución de un sudoku
+>             if columnas==9:
+>                 if cuadro==9:
+>                     print 'Es solución del sudoku'
+>         else:
+>             print 'No es solución'
+> 
+> sudokuu= np.array([[2,8,6,1,3,7,4,5,9],[3,1,5,9,4,2,6,8,7],[9,7,4,6,8,5,3,1,2],
+>                   [6,3,1,7,5,4,2,9,8],[8,5,7,2,6,9,1,4,3],[4,9,2,3,1,8,5,7,6],
+>                   [5,2,8,4,7,6,9,3,1],[7,6,3,5,9,1,8,2,4],[1,4,9,8,2,3,7,6,5]])
+> esSolucion(sudokuu) #comprobé que sirviera con un arreglo de 9x9 que SI es sudoku y me lo afirmó también el código
+> 
+> 
+> [[ 2.  8.  6.  3.  1.  5.  9.  7.  4.]
+>  [ 1.  3.  7.  9.  4.  2.  6.  8.  5.]
+>  [ 4.  5.  9.  6.  8.  7.  3.  1.  2.]
+>  [ 6.  3.  1.  8.  5.  7.  4.  9.  2.]
+>  [ 7.  5.  4.  2.  6.  9.  3.  1.  8.]
+>  [ 2.  9.  8.  1.  4.  3.  5.  7.  6.]
+>  [ 5.  2.  8.  7.  6.  3.  1.  4.  9.]
+>  [ 4.  7.  6.  5.  9.  1.  8.  2.  3.]
+>  [ 9.  3.  1.  8.  2.  4.  7.  6.  5.]]
+> Es solución del sudoku
+> 
+> Ejercico 5
+> 
+> Utiliza el archivo sunspots.txt (localizado en la carpeta data), el cual contiene el número de manchas solares por cada mes desde enero de 1749. La primera columna es el mes, el segundo el número de manchas.
+> 
+> (a) Escribe el código que lea el archivo y haga una gráfica de las manchas en función del tiempo. Formatea el ejec x para que se muestren cada 25 años empezando en 1750.
+> 
+> NOTA: La gráfica debe de estar en calidad de publicación.
+> 
+> (b) Calcula el promedio móvil. Dibújalo sobre el dibujo original.
+> 
+> %pylab inline
+> import numpy as np
+> import matplotlib.pyplot as plt
+> 
+> def leerygraficar(archivo):
+>     archivo=open('../../lecture_4/data/sunspots.txt') #Lo primero que hice fue abrir el archivo que se encuentra en 
+>     # la carpeta data y lo abrí para poder usarlo y leerlo
+>     archivo.read()
+>     # a 'x' le asigné los valores de la primer columna del archivo, y a 'y' los de la segunda columna
+>     #por lo que tuve que poner el archivo de donde iba a sacar los datos y que las columnas estaban 
+>     # separadas por 
+>     x, y = np.loadtxt('../../lecture_4/data/sunspots.txt',unpack=True, delimiter='', usecols=[0,1])
+>     #Luego hice una lista de ceros donde iba a ir poniendo los datos del promedio móvil
+>     promedios=np.zeros((3143))
+>     #Por definición de promedio movil la primer entrada es la misma que la original
+>     promedios[0]=y[0]
+>     #para las demás entradas lo que hice fue usar el promedio de la entrada anterior, multiplicarlo por 
+>     #(n-1) para que me de la suma de los primeros n-1 elementos y le sume el elemento en la entrada n, 
+>     # y ya lo dividí entre i+1 para que me de el nuevo promedio 
+>     for i in xrange(1,3143):
+>          promedios[i]=(promedios[i-1]*(i)+y[i])/(i+1)
+>     
+>     #La gráfica la quería grande para que se viera bien porque son muchos datos entonces la hice de 32x15
+>     plt.figure(figsize=(32, 15), dpi=80)
+>     #Aquí pido que se grafiquen los datos que coloque en 'x' y en 'y'
+>     plt.plot(x,y);
+>     #Pero también quiero graficar los datos del mes con respecto al promedio móvil
+>     plt.plot(x,promedios);
+>     #Le puse color verde a los datos de cada mes y puse la etiqueta manchas solares para luego poder identificarlas
+>     plt.plot(x,y, color=green, linewidth=1.0, linestyle=-, label=manchas solares)
+>     #Al promedio movil le puse color rojo y la linea más gruesa para que se viera bien y una etiqueta que lo
+>     #identificara
+>     plt.plot(x,promedios, color=red, linewidth=3.0, linestyle=-,label=promedio movil)
+>     #Puse las etiquetas arriba a la izquierda
+>     plt.legend(loc='upper left', fontsize=16)
+>     #Los límites de los ejes los puse con xlim y con ylim
+>     plt.xlim(1750, 3142)
+>     #PEro para que me diera cada 50 años empecé de 1750 como se requirió y vi cuantas divisiones tendría que
+>     #Hacer para que me diera cada 50 años entonces lo dividí en 56 fechas
+>     plt.xticks(np.linspace(1750, 3142, 56, endpoint=True))
+>     plt.ylim(0, 280)
+>     #Aquí la división de los datos lo dividi en 15 porque así se podía leer bien
+>     plt.yticks(np.linspace(0, 280, 15, endpoint=True))
+>     #Y por último hay que cerrar el archivo
+>     archivo.close()
+> 
+> leerygraficar('../../lecture_4/data/sunspots.txt')
+> 
+> Ejercicio 6
+> 
+> Utiliza el archivo starts.txt (localizado en la carpeta data), el cual contiene la temperatura y magnitud de varias estrellas en la Vía Lactea. Usa esta información para dibujar un scatter plot del logaritmo del brillo vs. la temperatura (en K). Este diagrama se conoce como diagrama de Hertzsprung-Russell.
+> 
+> (a) Lee el archivo y dibuja los datos tal como vienen en el archivo. Agrega etiquetas y formatea la gráfica de tal manera que tenga calidad de publicación.
+> 
+> (b) Ahora usa el xlim() y  ylim() para que quede de manera correcta el diagrama. Hay regiones donde las estrellas parece que se aglomeran, ve el archivo de wikipedia y agrega anotaciones para explicarlas.
+> 
+> def estrellas(archivo):
+>     archivo=open('../../lecture_4/data/stars.txt')#Lo primero que hice fue abrir el archivo que se encuentra en 
+>     # la carpeta data y lo abrí para poder usarlo y leerlo
+>     archivo.read()
+>     # a 'x' le asigné los valores de la segunda columna porque es el brillo del archivo, y a 'y' los de la segunda columna
+>     #porque es la temperatura porque así estaba el diagrama en internet por lo que tuve que poner el archivo de 
+>     #donde iba a sacar los datos y que las columnas estaban  separadas por ' '
+>     y, x = np.loadtxt('../../lecture_4/data/stars.txt',unpack=True, delimiter=' ', usecols=[0,1])
+>     #La gráfica la quería grande  y vertical para que se viera bien porque son muchos datos concentrados 
+>     #entonces la hice de 8x18
+>     plt.figure(figsize=(8, 18), dpi=80)
+>     ax = plt.gca() 
+>     #En las instrucciones se pedía que se dibujara un scatter plot
+>     plt.scatter(x,y);
+>     #Los límites de los ejes los puse con xlim y con ylim, para estos números me fije los máximos y mínimos que 
+>     #venían en el archivo
+>     plt.ylim(683, 14787)
+>     #la división de los datos lo dividi en 12 porque así se podía leer bien
+>     plt.yticks(np.linspace(600, 14850, 12, endpoint=True))
+>     plt.xlim(-10, 20)
+>     #la división de los datos lo dividi en 8 porque había pocos números en el rango
+>     plt.xticks(np.linspace(-10, 20, 8, endpoint=True))
+>     #Puse tres líneas en el diagrama, una roja encima de las estrellas que se clasifican como 'Main Sequence'
+>     #Y les puse una etiqueta con el nombre, otra naranja que esta donde estan las estrellas clasificadas como
+>     # 'Giants'  y por último una amarilla que cruza donde estan las entrellas 'subgiants'
+>     plt.plot((-.9,10), (8373,3191), color=red, linewidth=2.5, linestyle=-, label=Main Sequence)
+>     plt.plot((5,11), (7500,4350), color=orange, linewidth=2.5, linestyle=-, label=Giants)
+>     plt.plot((8,16.5), (12259,3800), color=yellow, linewidth=2.5, linestyle=-, label=Subgiants)
+>     #El cuadro que identifica a cada línea lo puse hasta arriba con el título 'Tipos de Estrellas'
+>     plt.legend(loc='upper left',title=Tipos de Estrellas,fontsize=10)
+>     #Aquí cambie el tamaño de los números en los ejes para que se vieran un poco más
+>     for label in ax.get_xticklabels() + ax.get_yticklabels():
+>         label.set_fontsize(10)
+>         label.set_bbox(dict(facecolor='white', edgecolor='None', alpha=0.65))
+>     #Por último cerré el archivo
+>     archivo.close()
+> 
+> estrellas('../../lecture_4/data/stars.txt') 
+
