@@ -40,5 +40,5 @@ endif
 # Tenemos que en este caso, ambos resultados son iguales en las dos operaciones, y eso ocurre al momento
 # de definir a ambos, z y z1, ya que en este caso no especificamos que ambos tendrían que ser singles.
 # Por lo tanto, nos dan números con decimales iguales. 
-# Tenemos que los dos números son SP.
+# Tenemos que los dos números son DP.
 
