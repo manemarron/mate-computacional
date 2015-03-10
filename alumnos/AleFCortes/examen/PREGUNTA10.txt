@@ -1,0 +1,33 @@
+PREGUNTA 1O
+octave:11> var1 = @(x) sum(x)/length(x)
+var1 =
+
+@(x) sum (x) / length (x)
+
+octave:12> var2 = @(x) (1.0/(length(x)-1))*sum(((x.-var1(x)).**2))
+var2 =
+
+@(x) (1.0 / (length (x) - 1)) * sum (((x - var1 (x)) .^ 2))
+octave:13> var3 = @(x) (1.0/(length(x)-1))*(sum(x.*x)-(1.0/length(x))*((sum(x))**2))
+var3 =
+
+@(x) (1.0 / (length (x) - 1)) * (sum (x .* x) - (1.0 / length (x)) * ((sum (x)) ^ 2))
+
+octave:14> var1([10000,10001,10002])
+ans =  10001
+octave:15> var2([10000,10001,10002])
+ans =  1
+octave:16> var3([10000,10001,10002])
+ans =  1
+
+32bits
+octave:17> var2(single([10000,10001,10002]))
+ans =  1
+octave:18> var3(single([10000,10001,10002])) #ERROR
+ans = -16
+
+64 bits
+octave:19> var2(double([10000,10001,10002]))
+ans =  1
+octave:20> var3(double([10000,10001,10002]))
+ans =  1
