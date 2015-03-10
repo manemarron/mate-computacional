@@ -1,0 +1,1 @@
+ aclarando sobre el ejercicio 7 los resultados mostrados en pantalla para ambos scripts son SP, sin embargo, supongo que por default Octave maneja en sus operaciones DP y finalmente por eso no encuentra entre dividir o multiplicar por el reciproco aunque el resultado mostrado este solo en SP
