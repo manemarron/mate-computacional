@@ -1,0 +1,4 @@
+x=np.linspace(1,101)
+y=(x**2)*cos(x)
+for line in open('valoresfuncion.csv'):
+    line=str(x)+' '+str(y)
