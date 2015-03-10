@@ -1,0 +1,15 @@
+se agrega las 2 formas de calcular la varianza, lo que se obtuvo en python:
+x=np.array([10000,10001,10002])
+xprom = x.sum()/3
+sn2=lambda x:sum((x-xprom)**2)/2
+sn2(x)
+
+Out[92]: 1
+
+x=np.array([10000,10001,10002])
+#xprom = (1/3)*x.sum()
+sn2a=lambda x:(sum(x**2)-x.sum()**2/3)/2
+sn2a(x)
+
+Out[93]: 1
+el resultado para ambos casos es igual que el que se obtiene a mano, por lo que no hay diferencias en el cálculo o algo hice mal
