@@ -1,0 +1,7 @@
+ resultado del valor de la funcional exponencial utilizando np.exp
+xseries=np.array([0,1,5.5, -5.5])
+np.exp(xseries)
+
+Out[170]: 
+array([  1.00000000e+00,   2.71828183e+00,   2.44691932e+02,
+         4.08677144e-03])
