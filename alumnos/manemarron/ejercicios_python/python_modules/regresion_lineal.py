@@ -1,6 +1,9 @@
-# -*- coding: utf8 -*-
+ # -*- coding: utf8 -*-
+
 import numpy as np
 import matplotlib.pyplot as plt
+
+
 
 class RegresionLineal:
     def __init__(self, alpha=0.3, max_iters=100, tols=0.001):
@@ -43,7 +46,7 @@ class RegresionLineal:
             
             if abs(J - prep_J) <= self.tols:
                 print 'La función convergió con beta: %s en la iteración %i' % ( str(self.beta), i )
-                self.breaking_iteration = i-1
+                self.breaking_iteration = i
                 break
             else:
                 prep_J = J
@@ -51,8 +54,8 @@ class RegresionLineal:
             self.historia['costo'].append(J)
             self.historia['beta'].append(self.beta)                
             i += 1
-        if self.breaking_iteration is None:
-            self.breaking_iteration = i-1
+        if not self.breaking_iteration:
+        	self.breaking_iteration = i -1
     
     def hipotesis(self, x):
         return np.dot(x, self.beta)
@@ -65,14 +68,15 @@ class RegresionLineal:
     def gradiente(self, x, y):
         m = x.shape[0]
         error = self.hipotesis(x) - y        
-        return np.dot(x.T, error) / m   
+        return np.dot(x.T, error) / m    
 
-    def plot(self,x,y):
+    def plot(self,x,y,labelX="X",labelY="Y"):
         modelo = lambda xt,b,m: b + m*xt
+
         _beta = self.historia['beta'][self.breaking_iteration]
 
-        plt.scatter(x,y, label="datos")
-        plt.plot(x, modelo(x, _beta[0], _beta[1]), label="int: %1.2f, pen: %1.2f" % (_beta[0], _beta[1]))
-        plt.xlabel('X')
-        plt.ylabel('Y')
+        plt.scatter(x,y, label="Data")
+        plt.plot(x, modelo(x, _beta[0], _beta[1]), label="b: %.2f, m: %.2f" % (_beta[0], _beta[1]))
+        plt.xlabel(labelX)
+        plt.ylabel(labelY)
         plt.legend(loc="best")
