@@ -1,8 +1,6 @@
- # -*- coding: utf8 -*-
+# -*- coding: utf8 -*-
 
 import numpy as np
-import matplotlib.pyplot as plt
-
 
 
 class RegresionLineal:
@@ -18,65 +16,49 @@ class RegresionLineal:
         self.max_iters = max_iters
         self.tols = tols
         self.breaking_iteration = None
-        self.historia = {'costo':[], 'beta':[]}  # Con fines de graficación
-        
+        self.historia = {'costo': [], 'beta': []}  # Con fines de graficación
+
     def gradientDescent(self, x, y):
         """
         Parámetros:
         ---------------
         x = vector de entrenamiento de features
         y = vector de entrenamiento de variable a predecir (target)
-        """    
-        
+        """
         # ajustamos el vector de features
         unos = np.ones((x.shape[0], 1))
         Xt = x.reshape(x.shape[0], 1)
         Xt = np.concatenate((unos, Xt), axis=1)
-        
+
         i = 0
         prep_J = 0
         m, n = Xt.shape
-        self.beta = np.zeros(n) 
-        
-        while i < self.max_iters:     
+        self.beta = np.zeros(n)
+        while i < self.max_iters:
             # Actualizamos beta
             self.beta = self.beta - self.alpha * self.gradiente(Xt, y)
-            
             J = self.costo(Xt, y)
-            
             if abs(J - prep_J) <= self.tols:
-                print 'La función convergió con beta: %s en la iteración %i' % ( str(self.beta), i )
+                print ('La función convergió con beta: '
+                       '%s en la iteración %i' % (str(self.beta), i))
                 self.breaking_iteration = i
                 break
             else:
                 prep_J = J
-            
+
             self.historia['costo'].append(J)
-            self.historia['beta'].append(self.beta)                
+            self.historia['beta'].append(self.beta)
             i += 1
-        if not self.breaking_iteration:
-        	self.breaking_iteration = i -1
-    
+
     def hipotesis(self, x):
         return np.dot(x, self.beta)
-    
+
     def costo(self, x, y):
         m = x.shape[0]
         error = self.hipotesis(x) - y
-        return np.dot(error.T, error) / (2 * m) 
-    
+        return np.dot(error.T, error) / (2 * m)
+
     def gradiente(self, x, y):
         m = x.shape[0]
-        error = self.hipotesis(x) - y        
-        return np.dot(x.T, error) / m    
-
-    def plot(self,x,y,labelX="X",labelY="Y"):
-        modelo = lambda xt,b,m: b + m*xt
-
-        _beta = self.historia['beta'][self.breaking_iteration]
-
-        plt.scatter(x,y, label="Data")
-        plt.plot(x, modelo(x, _beta[0], _beta[1]), label="b: %.2f, m: %.2f" % (_beta[0], _beta[1]))
-        plt.xlabel(labelX)
-        plt.ylabel(labelY)
-        plt.legend(loc="best")
+        error = self.hipotesis(x) - y
+        return np.dot(x.T, error) / m
