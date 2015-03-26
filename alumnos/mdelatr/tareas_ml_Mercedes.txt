@@ -1,0 +1,284 @@
+ Problema 1
+**(a)** Usando **SimPy** demostrar que 
+
+2866
+\frac{\partial}{\partial \beta_j} \textbf{J}(\beta) = \frac{1}{m}\sum_{i=1}^{m}\left(\hat{y}(x^{(i)}) - y(x^{(i)})\right) \cdot x^{(i)}_j
+2866
+
+
+from sympy.interactive import printing
+printing.init_printing(use_latex=True)
+import sympy as sym
+
+Definimos todos nuestros simbolos a usar
+
+delta = sym.symbols('delta')
+B = sym.symbols('beta')
+B_j = sym.symbols('beta_j')
+J = sym.symbols('J')
+m = sym.symbols('m')
+y = sym.symbols('y')
+yhat = sym.symbols('\hat{y}')
+x = sym.symbols('x^{(i)}')
+x_j = sym.symbols('x^{(i)}_j')
+suma = sym.symbols('Sigma') #La sumatoria también se usa como símbolo para que sea más sencillo derivar
+
+
+Tenemos que $\textbf{J}(\beta)$ es:
+
+1/(2*m)*suma(y - yhat(x))**2
+#o también puede ser visto como
+1/(2*m)*suma(y - suma(beta_j*x_j))**2 #ya que esa es la defnición de 'y' sombrero
+
+Por lo tanto si derivamos con respecto a $\beta_j$ tenemos
+
+1/m *suma((y-suma(beta_j*x_j))*x_j)
+
+o también se pude ver como:
+
+1/m*suma(x_j(+y-y_hat)) #Que esto es lo que queríamos demostrar
+
+
+
+
+Problema 2
+i.Entrenar una regresión lineal. 
+
+ii.Grafique los datos y el mejor modelo. 
+
+iii.Explique como llegó a los valores de $\alpha$. 
+
+iv.¿Coinciden con los mostrados en la página web?
+
+
+%cat data/chirps.txt
+
+20.0 88.6
+16.0 71.6
+19.8 93.3
+18.4 84.3
+17.1 80.6
+15.5 75.2
+14.7 69.7
+15.7 71.6
+15.4 69.4
+16.3 83.3
+15.0 79.6
+17.2 82.6
+16.0 80.6
+17.0 83.5
+14.4 76.3
+
+#Lo principal es importar las herramientas necesarias para que funcione el código
+%pylab inline
+import numpy as np
+import matplotlib.pyplot as plt
+from IPython.html.widgets import interact, fixed
+from IPython.html import widgets
+import os
+os.chdir('/home') #Cambio el directorio de trabajo para encontrar el archivo de datos
+chirps = np.loadtxt('../../lecture_5/data/chirps.txt')
+
+#No pude guardar la clase ☹ entonces la volví a poner
+class RegresionLineal:
+    def __init__(self, alpha=0.3, max_iters=100, tols=0.001):
+         (Me saca si pongo los tres pares de comillas pero aquí van)
+        Parámetros.
+        ---------------
+        alpha = Learning rate
+        max_iters = Número máximo de iteraciones
+        tols = definición de convergencia
+        (Cerramos comillas)
+        self.alpha = alpha
+        self.max_iters = max_iters
+        self.tols = tols
+        self.breaking_iteration = None
+        self.historia = {'costo':[], 'beta':[]}  # Con fines de graficación
+        
+    def gradientDescent(self, x, y):
+        (Abrimos comillas)
+        Parámetros:
+        ---------------
+        x = vector de entrenamiento de features
+        y = vector de entrenamiento de variable a predecir (target)
+        (Cerramos)
+        
+        # ajustamos el vector de features
+        unos = np.ones((x.shape[0], 1))
+        Xt = X.reshape(x.shape[0], 1)
+        Xt = np.concatenate((unos, Xt), axis=1)
+        
+        i = 0
+        prep_J = 0
+        m, n = Xt.shape
+        self.beta = np.zeros(n) 
+        
+        while i < self.max_iters:     
+            # Actualizamos beta
+            self.beta = self.beta - self.alpha * self.gradiente(Xt, y)
+            
+            J = self.costo(Xt, y)
+            
+            if abs(J - prep_J) <= self.tols:
+                print 'La función convergió con beta: %s en la iteración %i' % ( str(self.beta), i )
+                self.breaking_iteration = i
+                break
+            else:
+                prep_J = J
+            
+            self.historia['costo'].append(J)
+            self.historia['beta'].append(self.beta)                
+            i += 1
+    
+    def hipotesis(self, x):
+        return np.dot(x, self.beta)
+    
+    def costo(self, x, y):
+        m = x.shape[0]
+        error = self.hipotesis(x) - y
+        return np.dot(error.T, error) / (2 * m) 
+    
+    def gradiente(self, x, y):
+        m = x.shape[0]
+        error = self.hipotesis(x) - y        
+        return np.dot(x.T, error) / m   
+
+#voy a guardar los datos del archivo en vectores
+
+X = chirps[:,0]
+Y = chirps[:,1]
+plt.scatter(X,Y) #Ahora graficamos los datos de ambo vectores
+plt.xlabel('Chirps/second')
+plt.ylabel('Temperature (F)')
+
+#voy a tratar de graficar todos los datos, y por tantéo acercarlos a una recta
+def plotAcercar(x, y, interceptor, pendiente):
+      modelo = lambda x,b,m: b + m*x # función para graficar el modelo
+      plt.scatter(X,Y, label=\’data\’) #Aquí en vez de comillas puse ‘ porque sino me sacaba de donde estoy escribiendo la tarea
+      plt.plot(X, modelo(X, interceptor, pendiente), label='Acercar')
+      plt.xlabel('Chirps/segundos')
+      plt.ylabel('Temperatura (F)')
+      plt.legend(loc=\’best\’) #Aquí también cambié comillas por ‘ 
+interact(plotAcercar, x=fixed(X), y=fixed(Y), interceptor=(20,90,0.1), pendiente=(0,4, 0.1))
+
+#Observando lo que pasó, podemos inferir de cierta manera que $\beta(22.5,3.4)$
+#Ahora voy a buscar los valores de $\alpha$. Para lo cual usaremos un 
+
+def plotRegresion(x, y, alpha1, iteraciones, tolerancia): #definimos nuestra función para poder modificar alpha
+    r = RegresionLineal(alpha=alpha1, max_iters=iteraciones, tols= tolerancia)
+    print r.gradientDescent(x,y)
+
+from IPython.html.widgets import interact, fixed
+from IPython.html import widgets
+interact(plotRegresion, x=fixed(X), y=fixed(Y), alpha1=(0,.3,0.0001), iteraciones = (100,100000,10), tolerancia = .000000001)
+#La función convergió con beta: [ 22.78009249   3.41444041] en la iteración 90517 con alpha= 0.0065
+
+#Por lo tanto $\beta(22.78,3.41)$ minimiza la función cuando $\alpha = 0.0065$ con iteraciones y tolerancia 
+muy pequeñas.
+OJO hay otro mínimo cuando hay pocas iteraciones. Los datos coinciden con la pagina web y para logra entrenar la alpha necesitamos muchas iteraciones y tolerancia MUY pequeña
+
+
+Problema 3
+
+#Lo primero que se debe de hacer es guardar los datos en arreglos
+x_1=array([10.0,8.0,13.0,9.0,11.0,14.0,6.0,4.0,12.0,7.0,5.0])
+y_1=array([8.04,6.95,7.58,8.81,8.33,9.96,7.24,4.26,10.84,4,82,5.68])
+x_2=array([10.0,8.0,13.0,9.0,11.0,14.0,6.0,4.0,12.0,7.0,5.0])
+y_2=array([9.14,8.14,8.74,8.77,9.26, 8.10,6.13,3.10,9.13,7.26,4.74])
+x_3=array([10.0,8.0,13.0,9.0,11.0,14.0,6.0,4.0,12.0,7.0,5.0])
+y_3=array([7.46,6.77,12.74,7.11,7.81,8.84,6.08,5.39,8.15,6.42,5.73])
+x_4=array([8.0,8.0,8.0,8.0,8.0,8.0,8.0,19.0,8.0,8.0,8.0])
+y_4=array([6.58,5.76,7.71,8.84,8.47,7.04,5.25,12.5,5.56,7.91,6.89])
+
+def plotRegresion(x, y, alpha1, iteraciones, tolerancia): #definimos nuestra función para poder modificar alpha
+    r = RegresionLineal(alpha=alpha1, max_iters=iteraciones, tols= tolerancia)
+    print r.gradientDescent(x,y)
+
+
+interact(plotRegresion, x=fixed(x_1), y=fixed(y_1), alpha1=(0,.3,0.0001), iteraciones = (100,100000,10), tolerancia = .000000001)
+interact(plotRegresion, x=fixed(x_2), y=fixed(y_2), alpha1=(0,.3,0.0001), iteraciones = (100,100000,10), tolerancia = .000000001)
+interact(plotRegresion, x=fixed(x_3), y=fixed(y_3), alpha1=(0,.3,0.0001), iteraciones = (100,100000,10), tolerancia = .000000001)
+interact(plotRegresion, x=fixed(x_4), y=fixed(y_4), alpha1=(0,.3,0.0001), iteraciones = (100,100000,10), tolerancia = .000000001)
+
+#Profesor no se que pasó, le picaba para que corriera y no me quiere ni leer el código, me quedé horas tratando porque 
+# en los otros problemas si me funcionó pero en este caso no se que paso :(
+
+
+Problema 4
+
+#Lo primero que hay que hacer es guardar el archivo para no tener que estarlo llamando todo el tiempo y simplificar el código
+import os
+os.chdir('/home')
+radioactive = np.loadtxt('../../lecture_5/data/radioactive_decay.txt')
+x = radioactive[:,0] #Aquí guarde los datos en dos arreglos 
+y = radioactive[:,1]
+radioactive #Imprimí los datos para asegurarme que si se están guardando
+array([[  0.  ,  10.48],
+        [  1.  ,   7.54],
+        [  2.  ,   5.49],
+        [  3.  ,   4.02],
+        [  4.  ,   2.74],
+        [  5.  ,   2.02],
+        [  6.  ,   1.5 ],
+        [  7.  ,   1.09],
+        [  8.  ,   0.68],
+        [  9.  ,   0.57],
+        [ 10.  ,   0.37],
+        [ 11.  ,   0.31],
+        [ 12.  ,   0.19],
+        [ 13.  ,   0.15],
+        [ 14.  ,   0.13],
+        [ 15.  ,   0.11]])
+#Ahora para graficarlo
+plt.scatter(X,Y)
+#Observemos que Vemos que tienen forma de exponencial negativa  ^{-x}$, una parábola 
+#o tamibén se puede ver como una función inversa /x$. Por lo tanto probaremos con los tres casos
+#y después vamos a averiguar que modelo se ajusta mejor
+Y_0= []
+for j in xrange(0,len(Y)):
+    Y_0.append(np.e**-(Y[j]))
+    Y_1 = []
+    for j in xrange(0,len(Y)):
+        Y_1.append(1/Y[j])
+        Y_2 = []
+        for j in xrange(0,len(Y)):
+            Y_2.append(sqrt(Y[j]))
+
+#Ahora vamos a graficar las distintas posibilidades para ver cuál se ajusta mejor :)
+plt.scatter(X,Y_transf_2, color = 'green', label = 'sqrt(y)') # esta es la parábola en términos de 'y'
+plt.scatter(X,Y_transf_1, color = 'blue', label = '1/y')
+plt.scatter(X,Y_transf_0, color ='red' , label = 'e^(-y)')
+plt.legend(loc = "best")
+plt.xlabel('Tiempo')
+plt.ylabel('Radiación')
+#Con estas gráficas, vmeos que el modelo que mejor linealiza los datos es la inversa. 
+#Entonces ahora queremos correr nuestro modelo con los datos ajustados y con los datos sin ajustar
+           
+           
+regresion_radiacion = RegresionLineal(alpha = 0.001 , max_iters= 10000)
+regresion_radiacion.gradientDescent(X,Y) #Estos son los datos que no están ajustados
+reg_radiacion_aj = RegresionLineal(alpha = 0.001, max_iters = 10000)
+reg_radiacion_aj.gradientDescent(X,Y_0) #Datos AJUSTADOS!
+
+#La función convergiò con beta: [ 2.79362843 -0.19358] con alpha= 0.001 en la iteración 2081 
+#La función ajustada convergió con beta: [ 0.00396273  0.04861571] en la iteración 19 con alpha= 0.001
+
+#Ahora lo que voy a hacer es juntarlas en una gráfica :)
+fig, ax = plt.subplots(2, figsize = (5,5), sharex= True, sharey = True)
+modelo = lambda x,b,m: b + m*x
+ax[0].scatter(X,Y , color = 'red')
+ax[0].set_title('Datos Sin Ajustar')
+ax[0].plot(X,modelo(X,radiacion.beta[0], radiacion.beta[1]), 
+label="int: %1.2f, pen: %1.2f" % (radiacion.beta[0], radiacion.beta[1]))
+ax[0].legend(loc = 'best')
+#Ahora para los datos que ya están transformados
+ax[1].scatter(X,Y_transf_0, color = 'blue')
+ax[1].set_title('Datos transformados')
+ax[1].set_xlabel('Observacion')
+ax[1].plot(X, modelo(X,radiacion_ajustada.beta[0], radiacion_ajustada.beta[1])
+label="int: %1.2f, pen: %1.2f" % (radiacion_ajustada.beta[0], radiacion_ajustada.beta[1]), color = 'green')
+x[1].legend(loc = 'best')
+           
+#Algo interesante que se puede ver es que los datos linealizados convergen más rápido ya que
+#los cálculos se simplifican
+
