@@ -1,3 +1,0 @@
-este codigo hace 6 gráficas, de x y cos(3x)-2sin(x), ordenadas en tres columnas y dos filas (como si fuera una matriz de gráficas. En cada gráfica la cantidad de puntos se va haciendo mayor. El eje x, va de -1.5 a 1.5 mientras que el eje y va de 0 a 4pi (aunque los números mostrados son enteros)
-cuando cambias los parámetros del subplot, cambias la presentación de las gráficas, es decir, que en este caso hay dos columnas y tres filas
-al quitarle la información del axis, los ejes se vuelven los predeterminados por octave
