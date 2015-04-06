@@ -1,0 +1,204 @@
+
+Problema 1
+Utilizando el código de runge-kutta de segundo orden como base, implemente el código de runge-kutta de cuarto orden. La función debe de llamarse . 
+
+La diferencia de el còdigo de runge-kutta de cuarto òrden con el visto en clase (segundo orden) es que se
+hacen dos iteraciones más por lo que podemos tener una mejor aproximación ya que tenemos más pendientes ponderadas.
+Hay que tomar en cuenta que la información para hacer esta función fue sacada de wikipedia y del código de 
+runge-kutta de segundo orden
+
+def rk4(y, t, dt, derivadas): 
+      k0 = dt*derivadas(y, t)
+      k1 = dt*derivadas(y + 0.5*k0*dt, t + 0.5*dt)
+      k2 = dt*derivadas(y + 0.5*k1*dt, t + 0.5*dt)
+      k3 = dt*derivadas(y + k2*dt, t + dt)
+      y1 = y + (k0 + 2*k1 + 2*k2 +k3)/6 #OJO: Aquí sacamos el promedio ponderado de las pendientes, 
+        #hay que observar que hay más que en el código de segundo orden
+      return y1 #Regresa la poderación de pendientes para la oproximación
+
+Problema 2
+La taza a la cual un recurso finito es recogido depende de la dificultad y de la demanda. Supón que la demanda $ se incrementa con la cantidad extraída $:
+
+289\dot D = \alpha E289
+
+Supón que la dificultad de extracción $ es inversamentedependiente de la fracción restante del recurso:
+
+289
+W = \frac{1}{1 -E}
+289
+
+Finalmente, supón que la tasa de extracción 289 es la razón de la demanda a la dificultad.
+
+289 R = \dot E = \frac{D}{W} 289
+
+Por último, el costo $ del recurso depende de la tasa de la extracción y de la demanda:
+
+289 C = \frac{D}{R}\xi289,
+
+donde $\xi$ es un factor de escala.
+
+(a) Escribe un programa que dibuja la tasa de la extracción y el costo como una función del tiempo. Usando las condiciones iniciales:  = 0.1$,  = 0.1$,  $\alpha = 2.0$ y $\xi = 0.01$. Grafica de 0 a 5 unidades de tiempo. 
+
+
+(b) Resuelve con  y con  . Compara los tiempos y los resultados. ¿Qué puedes concluir?
+
+(c) Agrega un _widget_ para los valores de $\alpha$ y $\xi$.
+
+(d) Discute la dinámica del sistema en general y menciona algunos hallazgos interesantes para diferentes valores y condiciones iniciales.
+
+from IPython.html.widgets import interact, fixed
+from IPython.html import widgets
+
+from scipy.integrate import odeint
+import numpy as np
+import matplotlib.pyplot as plt
+
+Primero veamos que queremos resolver para $ y $ por lo que voy a usar un vector cuyas 
+funciones coordenadas son esas mismas y con esto ya puedo usar mi función del problema 1 (rk4)
+
+Para empezar a resolver esto lo primerito que hay que hacer es formular nuestros vectores 'y' y dot{y}
+
+289
+y = 
+\begin{pmatrix}
+D \
+E 
+\end{pmatrix}
+289
+      
+289
+\dot{y} = 
+\begin{pmatrix}
+dot{D} \
+dot{E}
+\end{pmatrix}= 
+\begin{pmatrix}
+alpha E \
+R 
+\end{pmatrix}
+289
+
+Que es lo mismo que: (Por las ecuaciónes definidas en el problema)
+
+289
+\dot{y} = 
+\begin{pmatrix}
+alpha E \
+D(1 - E) 
+\end{pmatrix} = 
+\begin{pmatrix}
+alpha y_{2,1} \
+y_{1,1} (1- y_{2,1}) 
+\end{pmatrix}
+289
+
+#Ahora lo que nos falta es definir son los parámentros constantes y las condiciones iniciales: 
+alpha = 2.0
+epsilon = 0.01
+y0 = np.zeros((2,)) #Empecé definiendolo con ceros para que se vaya modificando sus entradas
+y0[0] = 0.1 #(Que es lo mismo que mi condición inicial para D)
+y0[1] = 0.1 #(y esta es para E)
+      
+t = 5 #Esto es porque en el problema nos piden graficar de 0 a 5
+N = 1000 # Estas son las divisiones del intervalo que vamos a iterar
+dt = t/(N - 1) # Como sabemos una derivada implica un cambió, por lo que 
+# esta significa el tamaño de las divisiones del intervalo
+tiempo = np.linspace(0, t, N) # es un vector que va de 0 a 5 y es dividido en N intervalos
+y = np.zeros((N, 2)) #Este es el arreglo de soluciones
+y[0] = y0 #Por lo que suena lógico a que la primer entrada tiene la condición inicial
+
+def dinamica(estado, t): # Esta función es para ver como funciona el sistema que acabamos de definir :)
+    h0 = alpha*estado[1]
+    h1 = estado[0]*(1 - estado[1])
+    y1 = np.array([h0, h1])
+    return y1
+
+D = y[:, 0]
+E = (1/alpha)*y[:, 1]
+R = D*(1 - E)
+C = epsilon*D/R #Aquì simplemente estoy definiendo las variables como estan descritas en el problema para
+#poder graficar bien
+
+fig, ax = plt.subplots(1, 2, figsize=(20,8), sharex=True)
+    # Esta primera gráfica es la del costo 
+      ax[1].set_xlim(0, 5)
+      ax[1].set_ylim(C.min()*1.1, C.max()*1.1 )
+      ax[1].set_xlabel(u'tiempo (ángulo)', fontsize=12)
+      ax[1].set_ylabel(u'Costo del recurso (C, $)', fontsize=10)
+      ax[1].spines['right'].set_color('none')
+      ax[1].spines['top'].set_color('none')
+      ax[1].xaxis.set_ticks_position('bottom')
+      ax[1].yaxis.set_ticks_position('left')
+      ax[1].set_xticks([1, 2, 3, 4, 5])
+      ax[1].plot(tiempo, C, color="red")
+      # Ahora, la siguiente gráfica es de la tasa de extracción
+      ax[0].set_xlim(0, 5)
+      ax[0].set_ylim(R.min()*1.1, R.max()*1.1 )
+      ax[0].set_xlabel(u'tiempo (ángulo)', fontsize=12)
+      ax[0].set_ylabel(u'Tasa de extracción (R)', fontsize=12)
+      ax[0].spines['right'].set_color('none')
+      ax[0].spines['top'].set_color('none')
+      ax[0].xaxis.set_ticks_position('bottom')
+      ax[0].yaxis.set_ticks_position('left')
+      ax[0].set_xticks([1, 2, 3, 4, 5])
+      ax[0].plot(tiempo, R)
+
+#Vamos a usar rk4 para resolver el sistema
+def solucion_rk4(y0, t):
+      y = np.zeros((len(t), 2))
+      y[0] = y0
+      for j in range(N-1):
+          y[j+1] = rk4(y[j], t[j], dt, dinamica)
+
+# Tenemos que checar el tiempo que toma en resolver con mi función rk4 
+%timeit solucion_rk4(y0, tiempo)
+# me dió como solución 10 loops, best of 3: 45.1 ms per loop
+
+#Ahora con odeint
+%timeit odeint(func=dinamica, y0=y0, t=tiempo)
+#Lo que me da como solución 1000 loops, best of 3: 627 µs per loop
+
+#Por lo que podemos concluir que es más rápido con el método de rk4
+
+def solve_and_plot(alpha, epsilon): #Modifique la función para que usara mis variables
+          def derivadas(estado, t): # Esta es para hacer las derivadas
+              h0 = estado[1]
+              h1 = alpha*estado[0]*(1 - (estado[1]/alpha))
+              y1 = np.array([h0, h1])
+              return y1
+          solucion = odeint(derivadas, y0=y0, t=tiempo)
+          D = solucion[:, 0]
+          E = (1/alpha)*solucion[:, 1]
+          R = D*(1 - E)
+          C = epsilon*D/R
+          fig, ax = plt.subplots(2, 1, figsize=(10,8), sharex=True)
+      #La primer gráfica es la de tasa de extracción pero ahora con rk4
+          ax[0].set_xlim(0, 5)
+          ax[0].set_ylim(R.min()*1.1, R.max()*1.1 )
+          ax[0].set_xlabel(u'tiempo (ángulo)', fontsize=12)
+          ax[0].set_ylabel(u'Tasa de extracción', fontsize=12)
+          ax[0].spines['right'].set_color('none')
+          ax[0].spines['top'].set_color('none')
+          ax[0].xaxis.set_ticks_position('bottom')
+          ax[0].yaxis.set_ticks_position('left')
+          ax[0].set_xticks([1, 2, 3, 4, 5])
+          ax[0].plot(tiempo, R, label=odeint, color=red)
+      #Esta siguiente gráfica es la del costo pero ahora con rk4
+          ax[1].set_xlim(0, 5)
+          ax[1].set_ylim(C.min()*1.1, C.max()*1.1)
+          ax[1].set_xlabel(u'tiempo (a\u00f1os)', fontsize=12)
+          ax[1].set_ylabel(u'Costo del recurso ($)', fontsize=10)
+          ax[1].spines['right'].set_color('none')
+          ax[1].spines['top'].set_color('none')
+          ax[1].xaxis.set_ticks_position('bottom')
+          ax[1].yaxis.set_ticks_position('left')
+          ax[1].set_xticks([1, 2, 3, 4, 5])
+          ax[1].plot(tiempo, C, label=odeint, color=red)
+
+interact(solve_and_plot, alpha=(2, 12, 2), epsilon=(0, .1, .01))
+
+Utilizando la funcion de solve_and_plot pudimos ver la interaccion entre las variables pero con las 
+condiciones iniciales constantes
+Utilizando el método de runge-kutta es evidente que se va a resolver más rápido pero entre más 
+iteraciones le hagamos más exacto se va a volver >> tarea_rk4.txt
+
