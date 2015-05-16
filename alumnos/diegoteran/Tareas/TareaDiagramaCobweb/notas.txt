@@ -1,0 +1,27 @@
+# Chaotic movement
+t1 = 3/4*np.pi
+t2 = 3/4*np.pi
+omega_1 = -7
+omega_2 = 7.25
+m1=1
+m2=0.2
+
+# Movimiento armónico
+t1 = np.pi
+t2 = np.pi
+omega_1 = -7.39
+omega_2 = -20
+m1=1
+m2=0.1
+
+#Animar dos
+t1=4
+t2=3
+omega_1=0
+omega_2 = 0
+m_1=0.5
+m_2=1
+L1=1
+L2=0.5
+
+# el segundo péndulo igual salvo t2= 3.00000003
