@@ -1,0 +1,357 @@
+
+Ya habíamos subido el proyecto pero no sabemos si si se logró hacer el pull request adecuadamente entonces mejor yo también lo voy a subir
+El alumno estratégico: una aplicación del algoritmo
+PageRank
+Alberto Jiménez y Mercedes de la Torre
+May 15, 2015
+Abstract
+En este trabajo se describir_a el algoritmo PageRank y se utilizar_a para rankear las materias
+del Plan Conjunto de Econom__a y Matem_aticas Aplicadas que se ofrece en el Instituto Tec-
+nol_ogico Aut_onomo de M_exico (ITAM). Se de_nir_a el Avance Acad_emico en funci_on del rango
+de cada materia y se ilustrar_a su utilidad en la toma decisiones por medio de una simulaci_on
+por agentes.
+Una de las principales tareas de un motor de busqueda es decidir el orden en el cual se presentan
+los resultados al usuario con base en a) la relevancia de las p_aginas en funci_on de la busqueda y b)
+la relevancia general de la p_agina. PageRank es el algortimo que desarrollaron Larry Page y Sergey
+Brin (fundadores de Google) para realizar esta tarea.
+Nuestro objetivo es describir el algoritmo y demostrar su utilidad en la toma de decisiones de
+un alumno del ITAM que cursa el Plan Conjunto de Econo__a y Matem_aticas Aplicadas, y utilizarlo
+para rede_nir el concepto tradicional de Avance Acad_emico.
+El algoritmo PageRank
+Los motores de busqueda realizan diversas tareas. Aqu__ est_an las m_as importantes.
+1. Localizar p_aginas web y almacenar informaci_on pertinente.
+2. En respuesta al query del usuario, ejecutar busquedas de las p_aginas relevantes en tiempo real.
+3. Decidir el orden en el cual se presentan los resultados al usuario con base en
+a) La relevancia de las p_aginas en funci_on de la busqueda.
+b) La relevancia general de la p_agina.
+El PageRank se encarga de la tercera tarea. Su objetivo es medir la importancia de cada p_agina
+en la web: informar al usuario el punto 3b.
+Para dar una descripci_on intuitiva del algoritmo, supongamos que la web es una matriz de 4x4.
+En la Tabla 1 se muestra un modelo simpli_cado de la web. Supongamos que tenemos 4 p_aginas
+1
+Table 1: Entradas de la matriz de adyacencia. En la _ultima columna se presenta el grado de cada
+p_agina
+MATEM_ATICAS F_ISICA LETRAS ECONOM_IA grado
+MATEM_ATICAS 0 1 1 1 3
+F_ISICA 1 0 0 0 1
+LETRAS 1 0 0 0 1
+ECONOM_IA 1 0 1 0 2
+MATEM_ATICAS,F_ISICA,ECONOM_IA y LETRAS. Generalmente W(i,j) es igual a 1 si existe un
+link de la p_agina i a la p_agina j y zero en otro caso.
+El grado de la p_agina i se de_ne como la suma de las entradas del rengl_on i de la matriz de
+adyacencia.
+Nos apoyaremos en la siguiente notaci_on para generalizar el concepto.
+• Sea N el n_umero total de p_aginas.
+• Sea W la matriz de adyacencia de N X N, de tal manera que wij es igual a 1 si existe un
+link de la p_agina i a la p_agina j, cero en otro caso.
+• Sea degi el grado del regl_on i, de tal manera que degi :=
+NP
+j=1
+wij .
+En el trabajo original [1] se asume que degi 6= 0 para toda 1 _ i _ N, sin embargo, es un
+supuesto que no podremos manterner en nuestro trabajo. Para _nes de este apartado, tomaremos
+el supuesto como v_alido.
+El algoritmo PageRank procede de manera iterativa, asignando un valor rn
+j a la p_agina j en la
+iteraci_on n.La iteraci_on es
+rn
+j = (1 􀀀 d) + d
+XN
+i=1
+wijrn􀀀1
+i
+degi
+(1)
+Donde d representa una constante tal que 0 < d < 1. Se utilizar_a d = 0:85. La clave del
+algoritmo es entender que un link de i a j es un voto de con_anza para la p_agina j de la p_agina
+i. Por lo tanto, la importancia de la p_agina j se puede medir con links referenciados a _esta. Se
+ponderan los votos de acuerdo a la importancia de los votantes: un voto de una p_agina importante
+pesa m_as que uno de otra menos importante. Tambi_en se escala cada voto por la cantidad de votos
+que emite el votante. Esto signi_ca que escalamos los pesos wij con su respectivo grado, degi, de
+tal manera que tenemos wij
+degi
+. El _ultimo elemento del algoritmo es la constante d. A cada nodo se
+le da una importancia de 1 􀀀 d de manera gratuita, y despu_es se le asigna d veces el valor de los
+votos de con_anza.
+En resumen, la iteraci_on (1) para actualizar el rango de la p_agina j se puede describir de la
+siguiente manera:
+• Por cada p_agina i que vote por j, suma el valor escalado del ranking actual,rn􀀀1
+i
+degi
+.
+• Multiplicamos por la constante d y sumamos 1 􀀀 d.
+2
+Ranking del Plan Conjunto de Econom__a y Matem_aticas
+Aplicadas
+El Instituto Tecnol_ogico Aut_onomo de M_exico (ITAM) ofrece la oportunidad de cursar dos progra-
+mas de manera simultanea aprovechando las materias en com_un que tiene cada licenciatura, a esta
+modalidad se le conoce como Plan Conjunto. En este trabajo rankearemos las materias del Plan
+Conjunto de Econom__a y Matem_aticas Aplicadas (Eco y Mate).
+El Plan Conjunto de Eco y Mate est_a compuesto por 64 materias que se cursan en once semestres
+intensivos. De estas 64 materias, 60 ya est_an de_nidas y 4 son elegidas libremente por el alumno.
+Dado que no est_an de_nidas las optativas, supondremos que el plan de Eco y Mate consiste
+en 60 materias, las cuales se muestran en la Tabla 2.
+Table 2: Materias del Plan Conjunto de Econom__a y Matem_aticas Aplicadas
+Indice Materia
+1 Introducci_on a la Matem_atica Superior
+2 Herramientas Computacionales y Algor__tmicas
+3 Econom__a I
+. . . . . .
+. . . . . .
+. . . . . .
+58 Econom__a Internacional
+59 Seminario de la Investigaci_on Econ_omica I
+60 Seminario de la Investigaci_on Econ_omica II
+La matriz de adyacencia del plan de estudios de Eco y Mate se construye de la siguiente
+manera.
+Si la clase i es prerrequisito para la clase j, entonces wij = 1. Aqu__, el voto de con_anza es
+otorgado a aquellas materias que utilizan el contenido de las materias que emiten su voto, de tal
+manera que el PageRanking se puede interpretar como encontrar las materias m_as dif__ciles o
+densas.
+El supuesto degi 6= 0: dangling pages
+El algoritmo PageRank, de_nido como en la secci_on anterior, se sostiene de un supuesto muy fuerte:
+degi 6= 0. Este supuesto no se cumple en nuestra matriz de adyacencia, por lo que tendremos que
+agregar links arti_ciales. Si bien agregar links arti_ciales es el m_etodo m_as utilizado, no es el m_as
+adecuado. En [2] se desarrolla un algoritmo cuya e_ciencia incrementa entre m_as dangling pages
+se tengan.Dado que nuestro objetivo no es rankear las materias de Eco y Mate sino analizar como
+un agente toma decisiones dado que sabe que una materia tiene mayor rango que otra (sea cual sea
+la materia), utilizaremos el m_etodo de links arti_ciales para satisfacer la condici_on degi 6= 0
+3
+0 10 20 30 40 50 60
+0
+0.5
+1
+1.5
+2
+2.5
+3
+3.5
+4
+Historia Económica de México
+I. Matemática Superior
+Figure 1: Rango de las materias de Eco y Mate
+Ranking
+Los resultados del PageRank se muestran en el Figura 1. Se puede observar que las materias de
+los _ultimos semestres , tomando en cuenta que mayor __ndice implica que la materia se cursa en un
+semestre m_as avanzado, tienen un mayor rango. Esto no es sorprendente, dado que las materias de
+_ultimos semestres son las que utlizan el contenido de todas las anteriores. Historia Econ_omica de
+M_exico es la materia de mayor rango en el plan de estudios, una explicaci_on es que es referenciada
+por dos de las materias m_as relevantes en todo el plan de estudios: Econom__a V y Problemas de la
+Realidad Mexicana Contempor_anea.
+El estrat_egico, el torpe y el algoritmo
+El objetivo del PageRank es presentar al usuario las p_aginas m_as relevantes de acuerdo a su
+busqueda. En este caso lo que se presenta al usuario son materias en funci_on de su relevancia. Cada
+periodo el agente (nuestro usuario en la simulaci_on) acredita m materias, las cuales son prerrequisito
+de otra serie de materias que se podran elegir para cursar en el siguiente periodo. Al conjunto de
+materias que el agente puede elegir en el periodo t para cursar en el t + 1 lo llamaremos conjunto
+elegible. El objetivo de la simulaci_on ser_a analizar la utilidad del PageRank para la toma de
+decisiones de nuestro agente. De_niremos distintos tipos de agentes los cuales tienen una meta en
+com_un: maximizar su Avance Academico.
+Simulaci_on
+Tenemos dos caracter__sticas que de_nen a cada agente:
+Buen alumno/Mal alumno: Se de_ne en funci_on de la probabilidad que tiene el agente de
+acreditar una materia. Sea p es la probabilidad de acreditar una materia, el Buen alumno ser_a
+aquel que tenga p > :6
+Estrat_egico/Torpe: Un alumno Estrat_egico ser_a aquel que elija las materias del conjunto
+elegible de acuerdo al vector de rangos. Un alumno Torpe elegir_a las materias del conjunto elegible
+de manera aleatoria.
+Estas dos caracteri__sticas producen cuatro tipos de agentes
+Table 3: Agentes
+Buen alumno/Estrat_egico Buen alumno/Torpe
+Mal alumno/Estrat_egico Mal alumno/Torpe
+El agente _unicamente est_a interesado en su Avance Academico
+AvanceAcademico =
+Pt
+k=1
+Rk
+Pn
+k=1
+Rk
+(2)
+donde
+Rk =
+Xm
+k=1
+rj
+k (3)
+Rk es la suma de los rangos de las m materias acreditadas en el periodo k.
+La simulaci_on procede como sigue:
+• Para cada semestre t el agente debe elgir 6 materias del conjunto elegible. Las materias en
+t = 0 ya est_an determinadas.
+• El conjunto elegible se de_ne como aquellas materias para las cuales ya se cumple con el
+prerrequisito.
+• Se evaluar_a el Avance Academico de los cuatro agentes en un periodo t = T
+5
+La simulaci_on se realizar_a en Python. Primero de_niremos las funciones sobre las cuales se
+construir_a la simulaci_on.
+Listing 1: Suma de rangos de las m materias acreditadas en el periodo k (Eq. 3)
+def R_k (k,r_k , m, p):
+suma =0
+for j in xrange (1,m):
+if acreditar (p )==1:
+suma += r_k **j
+else :
+suma +=0
+return suma
+Listing 2: Avance Acad_emico (Eq. 2)
+def avance (t, n, m, p):
+suma_t =0
+suma_n =0
+for k in xrange (1,t +1):
+suma_t += R_k (k, r_k , m, p)
+for l in xrange (1, n +1):
+suma_n += R_k (l,r_k ,m, p)
+return suma_t / suma_n
+Listing 3: Aprobaci_on de materias
+# Aqui es donde requerimos nuestra herramienta ( Bernoulli )
+# llamada al principio .
+# Como tenemos diferentes tipos de alumnos ,
+# especialmente buen / mal alumno con probabilidad p de
+# acreditar cada materia ,
+#lo que se hace en esta funcion es que metiendo dicha
+# probabilidad , nos va a regresar 0 o 1.
+#Si nos regresa cero es que no acredito la materia ,
+#si nos regresa 1 es que si la acredito .
+def acreditar (p):
+return bernoulli .rvs (p)
+}
+# Ahora para descartar las materias ya acreditadas
+# para obtener un arreglo de las que faltan
+#por acreditar definimos :
+def primer_semestre (p):
+6
+primer =np. zeros (6)
+for i in xrange (0 ,6):
+if acreditar (p )==1:
+a[i]=0
+else :
+a[i]=1
+return a
+# Primero como las primeras seis materias no son
+# elegibles vemos si s t a s ya fueron acreditadas o no.
+# Por lo que creamos un arreglo de 6 entradas con puro ceros ,
+#y si la a c r e d i t se marca con uno y si no ,
+#es con cero .
+def materias_por_acreditar (matriz , p):
+a=np. zeros (60)
+for i in xrange (0 ,61):
+if acreditar (p )==1:
+a[i]=0
+else :
+a[i]=1
+return a
+Listing 4: Conjunto de materias elegibles
+# Para esta funcion lo que se hizo primero fue definir un arreglo
+#de 60 entradas de ceros inicialmente (una por cada materia ),
+#lo que representa que no se ha acreditado nada
+# Para esto vamos a ver si ya la acredito o no , primero
+# debemos de saber si ya acredito alguna
+#de las que no pudo elegir , por lo que pasamos el arreglo
+#del primer semestre a las primeras 6 entradas
+#de nuestro arreglo con todas las materias .
+# Luego lo que se hizo fue checar el semestre en el que se
+# encuentra t y como idealmente ya pudo haber llevado t*6
+# materias en el mejor de los casos ,
+#se van a checar esa cantidad de materias .
+# Para esto debemos de saber si ya se abrio dicha materia ,
+#lo cual lo vemos con nuestra matriz . En caso de que si se
+# haya acreditado alguna de sus prerrequisitos
+# vemos si se pudo acreditar esta nueva materia ,
+#en cuyo caso ponemos un uno en nuestro arreglo .
+#En cualquier otro caso ponemos un cero , ya sea porque
+#no se pudo abrir o porque no se acredito .
+#Por lo que nuestras materias por acreditar son las
+#que se encuentran en cero en este arreglo
+7
+def materias_elegibles (matriz , p):
+b= materias_por_acreditar (matriz , p)
+elegibles =np. zeros (60)
+for i in xrange (0 ,60):
+for j in xrange (i ,60):
+if b[i ]==0:
+if matriz [i,j ]==1:
+elegibles [j]=1
+return elegibles
+# Para saber que tipo de materias son elegibles d e s p u s de
+# haber acreditado sus prerrequisitos ,
+# creamos otro arreglo con ceros y mandamos llamar
+# nuestras materias que faltan por acreditar en el semestre t.
+# Recorremos nuestra matriz para ver si cuales son prerrequisito
+#de las materias recorro
+# sobre todas las materias para ver c u l e s abren , pero como
+#no va a abrir ninguna materia anterior a s t a ,
+# s l o vamos a checar el t r i n g u l o superior de la matriz y optimizar tiempo .
+Con nuestro arreglo llamado b que es el que se d e f i n i como el que
+#ya tiene las materias acreditadas
+# cuenta con un 1 en sus entradas , vamos a revisar que materias abre
+#y ponemos en el lugar de esa materia un uno como que ya se a b r i en
+# nuestro arreglo de elegibles . Idealmente s e r a que se abrieran todos los prerrequisitos # pero esto ya se empexo a complicar mucho y quebro el codigo ,
+# porque h a b a muchos supestos d e t r s de eso.
+# Esta f u n c i n me devuelve un arreglo con ceros donde estan las materias
+#ya acreditadas o las que no se me han abierto .
+# Para siguientes funciones vamos a necesitar el numero de materias que
+# puedo escoger para el siguiente semestre ,
+# por lo que se definio la f u n c i n :
+def numero_materias_elegibles (matriz ,p):
+suma =0
+for i in xrange (0 ,60):
+suma += materias_elegibles (matriz ,p)
+return suma
+Listing 5: El alumno torpe
+#Lo primero que se hizo en esta funcion fue definir como n el numero
+#de materias que puede elegir
+#ya que se hayan acreditado sus prerrequisitos .
+8
+#El arreglo m a t e r i a s _ p o r _ e s c o g e r son las materias elegibles ,
+#el conjunto de eleccion con n entradas va a contener el numero
+#del lugar donde se encuentran las materias elegibles ,
+#y por ultimo materias_elegidas_torpe son las materias que
+# elige aleatoriamente el torpe en un semestre .
+# Primero recorro mi materias por escoger , si este arreglo tiene 1
+#en una entrada entonces si puedo escogerla ,
+# por lo que el lugar donde se encuentra lo guardamos en e
+#l conjunto de materias elegibles .
+# Ahora para elegir las marerias al azar , creo una copia del arreglo
+#que tiene el conjunto de eleccion pero con
+#los numeros en las entradas desordenados
+( azar =np. random . permutation ( conjunto_de_eleccion ) .
+#Sin perdida de generalidad puedo escoger las primeras seis materias
+#que ya puedo escoger y se permutaron en
+#el arreglo de azar y las pongo como las materias elegidas por el torpe .
+# Esta funcion devuelve el numero de la materia que va a escoger para
+#el siguente semestre suponiendo que va a meter 6
+def eleccion_alumno_torpe (matriz ,p):
+n= numero_materias_elegibles (matriz ,p)
+materias_por_escoger = materias_elegibles (matriz ,p)
+conjunto_de_eleccion =np. zeros (n)
+#va a contener el numero del lugar donde se
+# encuentran las materias
+#que ya se pueden escoger en el arreglo de
+# materias elegibles
+materias_elegidas_torpe =np. zeros (6)
+#se escogen 6 materias en total
+for k in xrange (0,n):
+for i in xrange (0 ,60):
+if materias_por_escoger [i ]==1:
+#si puedo escoger la materia entonces voy a poner su numero de lugar
+#en un nuevo arreglo llamado conjunto_de_eleccion
+conjunto_de_eleccion [k]=i+1
+# Para que las materias las cuente a partir de 1 y no de cero
+azar =n
+p. random . permutation ( conjunto_de_eleccion )
+# para elegir las materias al azar creo una copia del arreglo
+# de conjunto de eleccion pero con los numeros desordenados
+for r in
+xrange (0 ,6):
+materias_elegidas_torpe [r]= azar [r]
+#sin perdida de generalidad puedo escoger las primeras
+# seis materias que ya puedo escoger y se permutaron
+#en el arreglo de azar
+return materis_elegidas_torpe
+9
+# devuelve el numero de la materia que va a escoger
+# para el siguente semestre
+# suponiendo que va a meter 6
+Resultados
+con el algoritmo de page rank nos salió que la materia que era más referenciada (o con mayor rango) es la materia de Historia Económica de México. Los 4 distintos alumnos fueron descritos de manera que los buenos alumnos tienen más probabilidad de pasar las materias, y haciendo varios experimentos con la bernoulli si era bastante la diferencia entre los buenos y malos alumnos por lo que tendrían mayor materias acreditadas al pasar los semestres. Lo que ocasiona que tengan mayor avance independientemente de si son estratégicos o no. La diferencia entre un alumno estratégico y uno torpe es que uno selecciona las materias al azar, lo que hace que eventualmente no se le abran las materias necesarias y su avance sea menor al de alumno estratégico. Por lo que concluimos que para que un alumno tenga mayor avance es necesario que sea buen alumno y piense que materias mater dependiendo de cuantas le va a abrir, en segundo lugar si es mal alumno también puede ser tan estratégico que eventualmente si la probabilidad de ser buen alumno o malo no es tan diferente entonces puede ser que aunque sea mal alumno tenga mayor avance que un buen alumno torpe. El mal alumno torpe va a tener el peor avance debido a que no solo no mete sus materias pensando en cuántas le va a abrir, sino que tambiien tiene una probabilidad sesgada a reprobar.
+
