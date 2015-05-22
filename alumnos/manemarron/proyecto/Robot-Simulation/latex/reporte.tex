@@ -1,0 +1,313 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} % Used to insert images
+\usepackage{adjustbox} % Used to constrain images to a maximum size 
+\usepackage{color} % Allow colors to be defined
+\usepackage{fixltx2e}
+\usepackage{textgreek}
+
+\title{Simulación de robot bípedo}
+\date{18 de Mayo de 2015}
+\author{
+	Daniela Blanco\\
+	José Manuel Marrón Ruiz\\
+	Jorge Alfredo Delgado Meraz
+}
+\begin{document}
+\maketitle
+\section{Introducción}
+El proyecto consiste en simular el comportamiento de un robot bípedo auto-balanceable utilizando librerías de cómputo numérico de Python, como numpy y matplotlib. Se contemplaron tres etapas en el desarrollo del proyecto:
+\begin{enumerate}
+\item Evolución del sistema dinámico sin aplicación de control
+\item Evolución del sistema dinámico con aplicación del control (PID)
+\item Evolución del sistema dinámico con aplicación del filtro de Kalman y el control (PID)
+\end{enumerate}
+Debido a la naturaleza del proyecto, no obtuvimos directamente las ecuaciones dinámicas del sistema, sino que utilizamos las ecuaciones obtenidas por Ooi\cite{ooi03}. De la misma forma, utilizamos las mismas condiciones físicas y eléctricas del robot utilizado en la tesis previamente citada.\\
+El objetivo del proyecto es observar el comportamiento esperado del robot bajo diferentes condiciones iniciales y bajo diferentes simulaciones, con el propósito de observar la diferencias que presentan y extraer conclusiones sobre el movimiento y la dinámica de un robot bípedo. 
+\section{Marco teórico}
+\subsection{Métodos de Runge-Kutta}
+Consiste en un conjunto de métodos genéricos iterativos, explícitos e implícitos que sirven para resolver ecuaciones diferenciales. Tiene el error local de truncamiento del mismo orden que los métodos de Taylor, pero tiene la ventaja que prescinden del cálculo y evaluación de las derivadas de la función f(t,y). Se define como el orden del método el numero n, variable que representa la cantidad de términos utilizados. En nuestro proyecto implementamos orden 4. Se usan las fórmulas expresadas en la siguiente imagen:
+\begin{center}
+\adjustimage{max size={0.8\linewidth}{0.8\paperheight}}{images/runge.png}
+\end{center}
+\subsection{Controlador}
+El sistema de control en el desarrollo auto-balanceable es muy importante para que funcione. Hay muchos sistemas de control pero nosotros decidimos utilizar el controlador PID.\\
+El PID es un mecanismo de control por retroalimentación  que funciona calculando el error entre un valor medio y un valor deseado. Es muy usado en sistemas de control industrial. Consiste en tres parámetros :\\
+\begin{enumerate}
+\item \textbf{Proporcional}: Depende del error actual. Produce una señal de control proporcional al error de la salida del proceso respecto a la posición que se desea.
+\item \textbf{Integral}: Depende de los errores pasados. Produce una señal  que proporciona una corrección para poder compensar las perturbaciones y mantener el proceso controlado en el punto que se desea. 
+\item \textbf{Derivativo}: Predice errores futuros y de esta manera anticipa el efecto de la acción proporcional para poder estabilizar el proceso mas rápidamente después de alguna perturbación.
+\end{enumerate}
+Al sumar estos tres parámetros  se obtiene el ajuste deseado  al proceso. En el caso de nuestro proyecto en la etapa en la que aplicamos el controlador lo que logramos fue que la posición y la velocidad del robot bípedo se estabilizara, y en el caso del chasis que se balanceara para evitar que el robot se cayera.\\
+La siguiente imagen muestra la manera en la que el PID funciona y la ecuación:
+\begin{center}
+\adjustimage{max size={0.8\linewidth}{0.8\paperheight}}{images/pid.png}
+\begin{equation}
+u(t) = K_p[e(t) + \frac{1}{T_i}\int_{}^{}e(t)dt + T_d\frac{d}{dt}e(t)]
+\end{equation}
+\end{center}
+\subsection{Filtro de Kalman}
+El filtro de Kalman es un algoritmo que fue desarrollado por Rudolf E. Kalman en 1960. Sirve para poder estimar el estado no medible de un sistema dinámico lineal a partir de mediciones de ruido blanco (señal aleatoria que se caracteriza porque sus valores de señal en dos instantes de tiempo distintos no tienen correlación).\\
+Este algoritmo es un método recursivo que estima el estado lineal mediante la minimización de la media del error cuadrático.  Al conocer el comportamiento actual del proceso al que se aplica (en nuestro caso el robot bípedo), el filtro estima el estado futuro del sistema sumando un termino de corrección proporcional al factor que se predijo.\\
+Las ecuaciones que representan el sistema son:
+\begin{center}
+\begin{equation}
+x_k = A_{k-1} x_{k-1} + B_{k-1} u_{k-1} + w_{k-1}
+\end{equation}
+\begin{equation}
+z_k = H_{k-1} x_{k} + v_{k}
+\end{equation}
+\end{center}
+en donde,
+\begin{itemize}
+\item A y B son las mismas matrices de la dinámica del robot
+\item x\textsubscript{k} es la matriz de estados (al igual que X\textsubscript{k-1} solo que un estado adelante)
+\item U\textsubscript{k-1} es generada por el controlador
+\item H\textsubscript{k} es una matriz de 2X4 con unos en la posición (1,1) y (2,2) y ceros en las demás posiciones  la cual indica la relación entre mediciones y el vector de estado al momento k
+\item v\textsubscript{k} es ruido blanco generado por la función de numpy, randn
+\item Z\textsubscript{k} es el vector de posiciones al momento k.
+\end{itemize}
+\subsubsection{Algoritmo del filtro de Kalman}
+\paragraph{Predicción}
+\begin{center}
+\begin{equation}
+x_{k|k-1} = \Phi_k x_{k-1|k-1} + B_k u_k
+\end{equation}
+\begin{equation}
+P_{k|k-1} = \Phi_k P_{k-1|k-1} \Phi_k ^ T + Q_k
+\end{equation}
+\end{center}
+\paragraph{Actualización}
+\begin{center}
+\begin{equation}
+y_k = z_k - H_k x_{k|k-1}
+\end{equation}
+\begin{equation}
+K_k = P_{k|k-1} H_k ^ T (H_k P_{k|k-1} H_k ^ T + R_k)^{-1}
+\end{equation}
+\begin{equation}
+x_{k|k} = x_{k|k-1} + K_k y_k
+\end{equation}
+\begin{equation}
+P_{k|k} = (I - K_k H_k)P_{k|k-1}
+\end{equation}
+\end{center}
+donde,
+\begin{itemize}
+\item \textPhi\textsubscript{k} : Matriz de transición de estados
+\item x\textsubscript{k|k-1} : Estimación futura del vector de estados
+\item P\textsubscript{k|k-1} : Covarianza del error asociada a la estimación futura
+\item Q\textsubscript{k} : La matriz de covarianza de ruido de la observación
+\item R\textsubscript{k} : La matriz de covarianza de ruido de las mediciones
+\item K\textsubscript{k} : Ganancia de Kalman
+\end{itemize}
+\section{Modelado del sistema}
+La dinámica del robot debe ser descrita por un modelo matemático para facilitar el desarrollo y eficiencia del sistema de control  de balance angular. Para la implementación física del robot, debemos considerar dos modelos matemáticos: un péndulo invertido y un modelo lineal para un motor DC. El modelo del motor requiere de conocimientos de electrónica y circuitería, por lo que excede los propósitos del presente proyecto y nos concentraremos en la formulación teórica del auto-balance y su modelado matemático.
+\subsection{Modelo dinámico para un péndulo invertido de dos ruedas}
+Primeramente analizaremos el péndulo y la dinámica de las ruedas por separado, y al final combinaremos ambos modelos.
+\subsubsection{Ruedas}
+Como las ecuaciones de las ruedas son análogas entre sí, sólo mostraremos el desarrollo para la rueda derecha.
+Por la segunda ley de Newton, la suma de las fuerzas horizontales en \emph{x} es:
+\vspace{2 mm}
+ $\sum{F_{}x} = Ma$
+\vspace{1 mm}
+\begin{equation} 
+M_{\omega}\ddot{x} = H_{fR} - H_{R}
+\end{equation} 
+\vspace{2 mm}
+La suma de fuerzas alrededor de la rueda nos da:
+\vspace{2 mm}
+$\sum{M_{o}} = I\alpha$
+\vspace{1 mm}
+\begin{equation} 
+I_{w}\ddot{\theta}_{w} = C_{R} - H_{_{fR}}r
+\end{equation} 
+\vspace{2 mm}
+Acomodando los términos y substituyendo los parámetros del motor DC, la ecuación anterior se convierte en:
+
+\vspace{2 mm}
+\begin{equation} 
+I_{w}\ddot{\theta}_{w} = \frac{-k_{m}k_{e}}{R}\dot{\theta}_{w} + \frac{k_{m}}{R}V_{a} - H_{_{fR}}r
+\end{equation} 
+\vspace{2 mm}
+\emph{Para la rueda derecha}
+\vspace{2 mm}
+\begin{equation} 
+\Rightarrow M_{w}\ddot{x} = \frac{-k_{m}k_{e}}{Rr}\dot{\theta}_{w} + \frac{k_{m}}{Rr}V_{a} - \frac{I_{w}}{r}\ddot{\theta}_{w} - H_{L}
+\end{equation} 
+\vspace{2 mm}
+\emph{Para la rueda izquierda}
+\vspace{2 mm}
+\begin{equation} 
+\Rightarrow M_{w}\ddot{x} = \frac{-k_{m}k_{e}}{Rr}\dot{\theta}_{w} + \frac{k_{m}}{Rr}V_{a} - \frac{I_{w}}{r}\ddot{\theta}_{w} - H_{R}
+\end{equation} 
+\vspace{2 mm}
+\emph{Tomando en cuenta las transformaciones:}\
+\vspace{2 mm}
+
+$\ddot{\theta}_{w}r = \ddot{x} \Rightarrow \ddot{\theta}_{w} = \frac{\ddot{x}}{r}$
+
+\vspace{2 mm}
+
+$\dot{\theta}_{w}r = \dot{x} \Rightarrow \dot{\theta}_{w} = \frac{\dot{x}}{r}$
+
+\vspace{2 mm}
+\emph{Y sumando las ecuaciones de las ruedas, obtenemos finalmente:}
+\vspace{2 mm}
+\begin{equation} 
+2(M_{w} + \frac{I_{w}}{r^2})\ddot{x} = \frac{-2k_{m}k_{e}}{Rr^2}\dot{x} + \frac{2k_{m}}{Rr}V_{a} - (H_{L} + H_{R})
+\end{equation} 
+\vspace{2 mm}
+
+\subsubsection{Péndulo Invertido}
+A continuación, mostramos cómo se modela el chasis del robot, lo cual se puede realizar como un péndulo invertido.
+De nuevo, por la segunda Ley de Newton, la suma de fuerzas \emph{horizontales} es:
+
+\vspace{2 mm}
+ $\sum{F_{x}} = M_{p}\ddot{x}$
+\vspace{2 mm}
+\begin{equation} 
+(H_{L} + H_{R}) - M_{p}l\ddot{\theta}_{p} + M_{p}l\dot{\theta}^2_{p}\sin(\theta_{p}) = M_{p}\ddot{x}
+\end{equation} 
+\vspace{2 mm}
+
+La suma de fuerzas \emph{perpendiculares} al péndulo son:
+
+\vspace{2 mm}
+ $\sum{F_{xp}} = M_{p}\ddot{x}\cos(\theta_{p})$
+\vspace{2 mm}
+\begin{equation} 
+(H_{L} + H_{R})\cos(\theta_{p}) + (P_{L} + P_{R})\sin(\theta_{p}) - M_{p}g\sin(\theta_{p}) - M_{p}l\ddot{\theta_{p}} = M_{p}\ddot{x}\cos(\theta_{p})
+\end{equation} 
+\vspace{2 mm}
+
+La suma de \emph{momentos} alrededor del centro de masa del péndulo:
+
+\vspace{2 mm}
+$\sum{M_{o}} = I\alpha$ , es decir
+\vspace{2 mm}
+\begin{equation} 
+-(H_{L} + H_{R})l\cos(\theta_{p}) - (P_{L} + P_{R})l\sin(\theta_{p}) - (C_{L} + C_{R}) = I_{p}\ddot{\theta_{p}}
+\end{equation}  
+\vspace{2 mm}
+
+Definiendo el torque aplicado al péndulo y después de una transformación lineal tenemos:
+\begin{equation} 
+C_{L} + C_{R} = \frac{-2k_{m}k_{e}}{R}\frac{\dot{x}}{r} + \frac{2k_{m}}{R}V_{a}
+\end{equation}
+ 
+\vspace{2 mm}
+Substituyendo en la ecuación (9) anterior y re-ordenando:
+\begin{equation}
+-(H_{L} + H_{R})l\cos{\theta_{p}} - (P_{L} + P_{R})l\sin{\theta_{p}} - (\frac{-2k_{m}k_{e}}{Rr}\dot{x} + \frac{2k_{m}}{R}V_{a}) = I_{p}\ddot{\theta_{p}}
+\end{equation}
+
+\vspace{2 mm}
+De esta forma obtenemos las dos siguientes ecuaciones:
+\vspace{2 mm}
+\begin{equation}
+(I_{p} + M_{p}l^2)\ddot{\theta_{p}} - \frac{2k_{m}k_{e}}{Rr}\dot{x} + \frac{2k_{m}}{R}V_{a} + M_{p}gl\sin(\theta_{p}) = -M_{p}l\ddot{x}\cos(\theta_{p})
+\end{equation}
+
+\begin{equation}
+\frac{2k_{m}}{Rr}V_{a} = (2M_{w} + \frac{2I_{w}}{r^2} + M_{p})\ddot{x} + \frac{2k_{m}k_{e}}{Rr^2}\dot{x} + M_{p}l\ddot{\theta_{p}}\cos(\theta_{p}) - M_{p}I\dot{\theta_{p}^2}\sin(\theta_{p})
+\end{equation}
+
+\vspace{2 mm}
+\subsection*{4.2 Obtención del Sistema}
+\vspace{2 mm}
+Linealizando las ecuaciones (12) y (13), asumiendo que $\theta_{p} = \pi + \phi$ , donde $\phi$ representa el ángulo vertical en dirección ascendente y re-ordenando dichas ecuaciones, obtenemos:
+
+\vspace{2 mm}
+\begin{equation}
+\ddot{\phi} = \frac{M_{p}l}{I_{p} + M_{p}l^2}\ddot{x} + \frac{2k_{m}k_{e}}{Rr(I_{p} + M_{p}l^2)}\dot{x} - \frac{2k_{m}}{R(I_{p} + M_{p}l^2)}V_{a} + \frac{M_{p}gl}{I_{p} + M_{p}l^2}\theta
+\end{equation}
+
+\vspace{2 mm}
+\begin{equation}
+\ddot{x} = \frac{2k_{m}}{Rr(2M_{w} + \frac{2I_{w}}{r^2} + M_{p})}V_{a} - \frac{2k_{m}k_{e}}{Rr^2(2M_{w} + \frac{2I_{w}}{r^2} + M_{p})}\dot{x} + \frac{M_{p}l}{2M_{w} + \frac{2I_{w}}{r^2} + M_{p}}\ddot{\phi}
+\end{equation}
+
+\vspace{2 mm}
+Después de sustituir las ecuaciones y de una serie de manipulaciones algebráicas, obtenemos el siguiente \emph{sistema}:
+\vspace{2 mm}
+\begin{equation}
+\  \left( \begin{array}{c}
+\dot{x} \\
+\ddot{x}\\
+\dot{\phi} \\
+\ddot{\phi} \end{array} \right) \   =
+\  \left( \begin{array}{cccc}
+0 & 1 & 0 & 0\\
+0 & \frac{2k_{m}k_{2}(M_{p}lr - I_{p} - M_{p}l^2)}{Rr^2\alpha} & \frac{M_{p}^2gl^2}{\alpha} & 0\\
+0 & 0 & 0 & 1 \\
+0 & \frac{2k_{m}k_{e}(r\beta - M_{p}l)}{Rr^2\alpha} & \frac{M_{p}gl\beta}{\alpha} & 0 \end{array} \right) \ 
+\  \left( \begin{array}{c}
+x \\
+\dot{x}\\
+\phi \\
+\dot{\phi}\end{array} \right) \ 
++
+\  \left( \begin{array}{c}
+0 \\
+\frac{2k_{m}(I_{p} + M_{p}l^2 - M_{p}lr)}{Rr\alpha}\\
+0\\
+\frac{2k_{m}(M_{p}l) - r\beta}{Rr\alpha} \end{array} \right) \ V_{a}
+\end{equation}
+
+\vspace{2 mm}
+donde:
+$\beta = (2M_{w} + \frac{2I_{w}}{r^2} + M_{p})$,   
+\hspace{4 mm}
+$\alpha = (I_{p}\beta + 2M_{p}l^2[M_{w} + \frac{I_{w}}{r^2}])$
+
+\vspace{2 mm}
+En este modelo se asume que las ruedas del robot siempre estarán en contacto con la tierra (suelo) y que no hay "deslizamiento" (slip) de las llantas (por ejemplo, suelo mojado).
+\section{Resultados}
+Tras hacer simulaciones al evolucionar el sistema sin ningún tipo de control externo, se obtuvo la gráfica siguiente. Esta gráfica se obtuvo a partir de las condiciones iniciales [0,1,0,0], es decir, el robot vertical pero con una velocidad inicial en x de 1 m/s. Se puede observar como el robot se mueve en un principio en la dirección de la velocidad y a una tasa casi constante. Sin embargo, en cuanto llega a un punto inestable, el robot trata de re-estabilizarse modificando su dirección de movimiento diametralmente, pero no logra la estabilización.
+\begin{center}
+\adjustimage{max size={\linewidth}{\paperheight}}{images/Robot_sincodigo_4_0.png}
+\end{center}
+La gráfica a continuación muestra el comportamiento del robot bajo diferentes ángulos iniciales (en este caso de +-\textpi /10). Se logra observar en las gráficas como al no tener una velocidad en X, el robot únicamente cae, modificando la posición debido a esta caida.
+\begin{center}
+\adjustimage{max size={\linewidth}{\paperheight}}{images/Robot_sincodigo_8_1.png}
+\end{center}
+La siguiente gráfica nos provee el comportamiento del sistema tras aplicar un control al sistema. El sistema está constantemente midiendo su orientación mediante sensores (cuyo comportamiento simplificamos obteniendo el ángulo en cada momento del tiempo y agregando una componente de ruido con una distribución normal). Se puede observar como el sistema, a pesar de permanecer estable durante más tiempo, finalmente termina por desestabilizarse. Esto nos muestra la dificultad de controlar este tipo de sistemas mediante métodos tradicionales, como es el controlador PID. 
+\begin{center}
+\adjustimage{max size={\linewidth}{\paperheight}}{images/Robot_sincodigo_10_0.png}
+\end{center}
+Finalmente, la siguiente gráfica nos da información sobre como evoluciona el sistema utilizando un filtro de Kalman en conjunto con el controlador PID. Se puede observar como en este caso el sistema sí logra estabilizarse al menos durante la duración de la simulación. Esto se debe a que el filtro de Kalman, siendo un método de predicción estocástica, logra adivinar con bastante precisión el movimiento del robot y por lo tanto, logra pasar al controlador una señal mejor procesada. Así, podemos ver como el sistema se mantiene dentro de límites bastante correctos, pues el robot permanece con un ángulo cercano a la vertical durante toda la simulación.
+\begin{center}
+\adjustimage{max size={\linewidth}{\paperheight}}{images/Robot_sincodigo_12_1.png}
+\end{center}
+Tras la simulación con el filtro de Kalman, procedimos a buscar, mediante prueba y error, valores para  K\textsubscript{p},K\textsubscript{i} y K\textsubscript{d} que lograran que el sistema permaneciera estable. Tras varias pruebas y simulaciones, terminamos con los valores de 0.5, 0.75 y 0.00002 respectivamente, que son los valores que se ven en la gráfica. Es decir, hubo que hacer una investigación exhaustiva de estas constantes antes de poder llegar a un punto estable del sistema.\\
+Habiendo encontrado estas constantes, nos dimos a la tarea de medir la eficiencia de las mismas, con el afán de ver si realmente en todos los casos estas constantes eran suficientemente buenas para el robot que simulamos. Simulamos el robot con el filtro de Kalman mil veces, utilizando los valores obtenidos, y los resultados obtenidos fueron los que se muestran en la siguiente tabla:
+\begin{center}
+\begin{tabular}{| c | c |}       
+  \hline              
+  Ángulo medio (radianes) & Varianza media (radianes) \\
+  \hline
+  -0.00180966930094 & 0.0244610975524 \\
+  \hline  
+\end{tabular}
+\end{center}
+Es decir, el ángulo medio obtenido se acerca mucho a los 0 grados, mientras que la varianza media de las mil simulaciones fue de un poco menos que 1.5 grados. Es decir, los valores obtenidos logran una eficiencia bastante buena dadas las condiciones del robot. 
+\section{Conclusiones}
+Después de las simulaciones ejecutadas es necesario decir que el robot bípedo es un sistema que se vuelve inestable muy rápidamente. Las simulaciones sin ningún tipo de control tardan milisegundos en llegar a un punto inestable. Es por ello que la teoría de control es de vital importancia para el estudio de este tipo de proyectos. 
+Por otra parte, notamos a partir de las simulaciones hechas con el controlador PID (sin Filtro de Kalman), que a pesar de realizar varias simulaciones con diferentes valores de K\textsubscript{p},K\textsubscript{i} y K\textsubscript{d}, después de un tiempo no demasiado largo, el sistema entraba a un estado inestable. Por esta razón, cuestionamos en este trabajo la eficiencia de un controlador PID para lograr la estabilización de un robot bípedo. 
+Las simulaciones hechas evolucionando el sistema utilizando el filtro de Kalman brindaron resultados más positivos. El controlador PID, junto con el filtro, mantenían el sistema en un estado estable tras segundos de simulación.
+El desarrollo de esta simulación implicó la gran dificultad de no poder comprobar los resultados de las simulaciones realizadas empíricamente ya que el proyecto involucraba la construcción del robot. Para solventar esta problemática recurrimos a resultados experimentales obtenidos por Ooi\cite{ooi03} y Adeel(et. al)\cite{adeel13}.
+\begin{thebibliography}{9}
+
+\bibitem{ooi03}
+  Rich Chi Ooi,
+  \emph{Balancing a Two-Wheeled Autonomous Robot},
+  The University of Western Australia, School of Mechanical Engineering,
+  2003.
+\bibitem{adeel13}
+  Umar Adeel, K.S.Alimgeer, et. al
+  \emph{Autonomous Dual Wheel Self Balancing Robot Based on Microcontroller},
+  COMSATS Institute of Information Technology, Pakistan,
+  2013.
+\end{thebibliography}
+\end{document}
